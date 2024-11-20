@@ -1993,6 +1993,7 @@ function actions(state = {}, action) {
  */
 
 
+
 /**
  * Returns a post attribute value, flattening nested rendered content using its
  * raw value in place of its original object form.
@@ -7935,6 +7936,7 @@ const registerPostTypeActions = postType => async ({
  */
 
 
+
 /**
  * Returns an action object used to set which template is currently being used/edited.
  *
@@ -12208,6 +12210,7 @@ const unescapeTerms = terms => {
 
 
 
+
 /**
  * Internal dependencies
  */
@@ -13894,6 +13897,7 @@ function CreateNewTemplate({
 
 
 
+
 /**
  * Internal dependencies
  */
@@ -14108,6 +14112,7 @@ const AUTHORS_QUERY = {
 /**
  * WordPress dependencies
  */
+
 
 
 
@@ -14363,6 +14368,7 @@ function PostAuthorCheck({
 /**
  * WordPress dependencies
  */
+
 
 
 
@@ -17431,6 +17437,7 @@ function validateTimezone(_hours, minutes) {
 
 
 
+
 /**
  * Internal dependencies
  */
@@ -17693,6 +17700,7 @@ function MostUsedTerms({
 /**
  * WordPress dependencies
  */
+
 
 
 
@@ -19677,6 +19685,7 @@ function PostSticky() {
 
 
 
+
 /**
  * Internal dependencies
  */
@@ -20277,6 +20286,7 @@ function PostSlug() {
 /**
  * WordPress dependencies
  */
+
 
 
 
@@ -24467,6 +24477,7 @@ function TemplatePartConverterMenuItem({
 
 
 
+
 const {
   ExperimentalBlockEditorProvider
 } = unlock(external_wp_blockEditor_namespaceObject.privateApis);
@@ -26026,6 +26037,7 @@ const tablet = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ext
 
 
 
+
 /**
  * Internal dependencies
  */
@@ -26264,6 +26276,7 @@ const ZoomOutToggle = ({
 /**
  * Internal dependencies
  */
+
 
 
 
@@ -26821,9 +26834,11 @@ function SavePublishPanels({
 
 
 
+
 /**
  * Internal dependencies
  */
+
 
 
 
@@ -27583,6 +27598,7 @@ function VisualEditor({
 /**
  * Internal dependencies
  */
+
 
 
 
@@ -29196,6 +29212,7 @@ function useAutoSwitchEditorSidebars() {
 
 
 
+
 const {
   Tabs: sidebar_Tabs
 } = unlock(external_wp_components_namespaceObject.privateApis);
@@ -29328,6 +29345,7 @@ const Sidebar = ({
 /**
  * Internal dependencies
  */
+
 
 
 
@@ -29670,6 +29688,7 @@ function BlockManager() {
 /**
  * Internal dependencies
  */
+
 
 
 

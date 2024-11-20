@@ -263,6 +263,7 @@ html :where(.wp-block-column){
 .wp-block-comments-title.has-background{
   padding:inherit;
 }
+
 .wp-block-cover.is-placeholder{
   align-items:stretch;
   display:flex;

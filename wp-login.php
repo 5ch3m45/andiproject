@@ -426,6 +426,7 @@ function login_footer( $input_id = '' ) {
 				</div>
 		<?php } ?>
 	<?php } ?>
+
 	<?php
 
 	if ( ! empty( $input_id ) ) {

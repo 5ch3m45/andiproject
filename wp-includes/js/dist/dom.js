@@ -1968,6 +1968,7 @@ function removeInvalidHTML(HTML, schema, inline) {
 
 
 
+
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/dom/build-module/data-transfer.js
 /**
  * Gets all files from a DataTransfer object.

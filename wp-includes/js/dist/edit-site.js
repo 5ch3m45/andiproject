@@ -7329,6 +7329,7 @@ function getFilteredTemplatePartBlocks(blocks = EMPTY_ARRAY, templateParts) {
 
 
 
+
 /**
  * Internal dependencies
  */
@@ -12965,6 +12966,7 @@ function isVariationWithProperties(variation, properties) {
 /**
  * WordPress dependencies
  */
+
 
 
 
@@ -19544,6 +19546,7 @@ function FontFamilies() {
 
 
 
+
 function ScreenTypography() {
   const fontLibraryEnabled = (0,external_wp_data_namespaceObject.useSelect)(select => select(external_wp_editor_namespaceObject.store).getEditorSettings().fontLibraryEnabled, []);
   return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_ReactJSXRuntime_namespaceObject.Fragment, {
@@ -22009,6 +22012,7 @@ function StyleVariationsContainer({
 
 
 
+
 /**
  * Internal dependencies
  */
@@ -24462,6 +24466,7 @@ const arrowDown = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 /**
  * WordPress dependencies
  */
+
 
 
 /**
@@ -29861,6 +29866,7 @@ var ComboboxItem = memo2(
 
 
 
+
 // src/combobox/combobox-item-value.tsx
 
 
@@ -29970,6 +29976,7 @@ var ComboboxItemValue = forwardRef2(function ComboboxItemValue2(props) {
 /**
  * WordPress dependencies
  */
+
 
 
 
@@ -37779,6 +37786,7 @@ function AddCustomGenericTemplateModalContent({
 
 
 
+
 /**
  * Internal dependencies
  */
@@ -40732,6 +40740,7 @@ function CustomDataViewsList({
 /**
  * WordPress dependencies
  */
+
 
 
 /**

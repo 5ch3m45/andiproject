@@ -255,6 +255,7 @@ const {
       let containerMaxHeight = imgMaxHeight;
       let containerWidth = imgMaxWidth;
       let containerHeight = imgMaxHeight;
+
       // Checks if the target image has a different ratio than the original
       // one (thumbnail). Recalculates the width and height.
       if (naturalRatio.toFixed(2) !== imgRatio.toFixed(2)) {

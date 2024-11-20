@@ -5676,6 +5676,7 @@ function useDropZone({
       // zone.
       // Note: This is not entirely reliable in Safari due to this bug
       // https://bugs.webkit.org/show_bug.cgi?id=66547
+
       if (isElementInZone(event.relatedTarget)) {
         return;
       }
@@ -5969,6 +5970,7 @@ function useObservableValue(map, name) {
 
 
 // Hooks.
+
 
 
 

@@ -2699,6 +2699,7 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 			case '+INPUT':
 				$this->reconstruct_active_formatting_elements();
 				$this->insert_html_element( $this->state->current_token );
+
 				/*
 				 * > If the token does not have an attribute with the name "type", or if it does,
 				 * > but that attribute's value is not an ASCII case-insensitive match for the

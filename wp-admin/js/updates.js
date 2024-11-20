@@ -3074,6 +3074,7 @@
 
 		if ( $pluginSearch.length ) {
 			$pluginSearch.attr( 'aria-describedby', 'live-search-desc' );
+
 		}
 
 		/**

@@ -4877,6 +4877,7 @@ function WelcomeGuideImage({
 
 
 
+
 /**
  * Internal dependencies
  */

@@ -1133,6 +1133,7 @@ const getEditedPostTemplateId = (0,external_wp_data_namespaceObject.createRegist
  * Internal dependencies
  */
 
+
 const {
   interfaceStore: selectors_interfaceStore
 } = unlock(external_wp_editor_namespaceObject.privateApis);
@@ -1686,6 +1687,7 @@ function KeyboardShortcuts() {
 /**
  * WordPress dependencies
  */
+
 
 
 

@@ -20,7 +20,7 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'andi_db' );
+define( 'DB_NAME', 'andiproject_db' );
 
 /** Database username */
 define( 'DB_USER', 'admin' );
@@ -91,6 +91,8 @@ define( 'WP_DEBUG', true );
 if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', __DIR__ . '/' );
 }
+
+define('FS_METHOD', 'direct'); 
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';

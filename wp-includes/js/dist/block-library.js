@@ -3251,6 +3251,7 @@ function Caption({
 
 
 
+
 /**
  * Internal dependencies
  */
@@ -6483,6 +6484,7 @@ const categories_metadata = {
   editorStyle: "wp-block-categories-editor",
   style: "wp-block-categories"
 };
+
 
 const {
   name: categories_name
@@ -15958,6 +15960,7 @@ const details_metadata = {
   editorStyle: "wp-block-details-editor",
   style: "wp-block-details"
 };
+
 
 
 const {
@@ -26720,6 +26723,7 @@ function useMaxWidthObserver() {
 
 
 
+
 /**
  * Internal dependencies
  */
@@ -26727,9 +26731,11 @@ function useMaxWidthObserver() {
 
 
 
+
 /**
  * Module constants
  */
+
 
 
 
@@ -40927,6 +40933,7 @@ function PostAuthorEdit({
  */
 
 
+
 /**
  * Internal dependencies
  */
@@ -48111,6 +48118,7 @@ function EnhancedPaginationModal({
 /**
  * Internal dependencies
  */
+
 
 
 
@@ -56235,6 +56243,7 @@ const check = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(exte
 
 
 
+
 const sizeOptions = [{
   name: (0,external_wp_i18n_namespaceObject.__)('Small'),
   value: 'has-small-icon-size'
@@ -58461,6 +58470,7 @@ function isEmptyRow(row) {
 /**
  * Internal dependencies
  */
+
 
 
 

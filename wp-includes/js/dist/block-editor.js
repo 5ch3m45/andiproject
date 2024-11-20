@@ -10342,6 +10342,7 @@ const STORE_NAME = 'core/block-editor';
  */
 
 
+
 /**
  * Internal dependencies
  */
@@ -13654,6 +13655,7 @@ const getBlockEditingMode = (0,external_wp_data_namespaceObject.createRegistrySe
   if (clientId === null) {
     clientId = '';
   }
+
   // In zoom-out mode, override the behavior set by
   // __unstableSetBlockEditingMode to only allow editing the top-level
   // sections.
@@ -16746,6 +16748,7 @@ function getFontStylesAndWeights(fontFamilyFaces) {
  */
 
 
+
 /**
  * @typedef {Object} FluidPreset
  * @property {string|undefined}  max A maximum font size value.
@@ -16973,6 +16976,7 @@ function findNearestStyleAndWeight(fontFamilyFaces, fontStyle, fontWeight) {
 /**
  * WordPress dependencies
  */
+
 
 
 /**
@@ -20007,6 +20011,7 @@ const stretchWide = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 /**
  * Internal dependencies
  */
+
 
 
 
@@ -28157,6 +28162,7 @@ function color_addTransforms(result, source, index, results) {
 
 
 
+
 /**
  * Internal dependencies
  */
@@ -28231,6 +28237,7 @@ function FontFamilyControl({
  * @param {boolean} hasFontWeights Whether font weights are enabled and present.
  * @return {string} A label representing what font appearance is being edited.
  */
+
 const getFontAppearanceLabel = (hasFontStyles, hasFontWeights) => {
   if (!hasFontStyles) {
     return (0,external_wp_i18n_namespaceObject.__)('Font weight');
@@ -29013,6 +29020,7 @@ function WritingModeControl({
 /**
  * Internal dependencies
  */
+
 
 
 
@@ -38068,6 +38076,7 @@ function useFocusHandler(clientId) {
  */
 
 
+
 /**
  * Adds block behaviour:
  *   - Removes the block on BACKSPACE.
@@ -38634,6 +38643,7 @@ function shimAttributeSource(settings, name) {
 /**
  * Internal dependencies
  */
+
 
 
 
@@ -43009,6 +43019,7 @@ function useDragSelection() {
 /**
  * WordPress dependencies
  */
+
 
 
 
@@ -47576,9 +47587,11 @@ function PatternsFilter({
 
 
 
+
 /**
  * Internal dependencies
  */
+
 
 
 
@@ -47693,6 +47706,7 @@ function PatternCategoryPreviews({
 /**
  * WordPress dependencies
  */
+
 
 
 
@@ -48834,6 +48848,7 @@ function useZoomOut(zoomOut = true) {
 
 
 
+
 const NOOP = () => {};
 function InserterMenu({
   rootClientId,
@@ -49650,6 +49665,7 @@ const ButtonBlockerAppender = (0,external_wp_element_namespaceObject.forwardRef)
 
 
 
+
 /**
  * Internal dependencies
  */
@@ -50138,6 +50154,7 @@ const chevronDown = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 /**
  * WordPress dependencies
  */
+
 
 
 
@@ -52893,6 +52910,7 @@ function useBlockOverlayActive(clientId) {
 
 
 
+
 const COMMON_PROPS = {
   placement: 'top-start'
 };
@@ -54135,6 +54153,7 @@ const copy_copy = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(
 /**
  * WordPress dependencies
  */
+
 
 
 
@@ -57765,6 +57784,7 @@ function Shuffle({
 
 
 
+
 /**
  * Renders the block toolbar.
  *
@@ -58483,6 +58503,7 @@ function ZoomOutModeInserters() {
  */
 
 
+
 /**
  * Source of truth for which block tools are showing in the block editor.
  *
@@ -58532,6 +58553,7 @@ function useShowBlockTools() {
 /**
  * Internal dependencies
  */
+
 
 
 
@@ -63150,6 +63172,7 @@ const BlockPatternSetup = ({
 /**
  * Internal dependencies
  */
+
 
 
 
@@ -67821,6 +67844,7 @@ function withDeprecations(Component) {
 
 
 
+
 /**
  * Internal dependencies
  */
@@ -68572,6 +68596,7 @@ function __unstableRichTextInputEvent({
 
 
 
+
 const selectIcon = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.SVG, {
   xmlns: "http://www.w3.org/2000/svg",
   width: "24",
@@ -69164,6 +69189,7 @@ function useResizeCanvas(deviceType) {
 /**
  * WordPress dependencies
  */
+
 
 
 
@@ -70771,6 +70797,7 @@ const __experimentalGetElementClassName = element => {
 /* harmony default export */ const get_px_from_css_unit = (() => '');
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-editor/build-module/utils/index.js
+
 
 
 

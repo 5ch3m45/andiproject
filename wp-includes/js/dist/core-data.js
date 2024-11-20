@@ -6991,6 +6991,7 @@ const external_ReactJSXRuntime_namespaceObject = window["ReactJSXRuntime"];
  * @return {Object} The provided children, wrapped with
  *                   the entity's context provider.
  */
+
 function EntityProvider({
   kind,
   type: name,
@@ -7468,6 +7469,7 @@ function __experimentalUseEntityRecord(kind, name, recordId, options) {
 
 
 
+
 /**
  * Internal dependencies
  */
@@ -7609,6 +7611,7 @@ var external_wp_warning_default = /*#__PURE__*/__webpack_require__.n(external_wp
 /**
  * WordPress dependencies
  */
+
 
 
 /**
@@ -8199,6 +8202,7 @@ lock(privateApis, {
 
 
 
+
 // The entity selectors/resolvers and actions are shortcuts to their generic equivalents
 // (getEntityRecord, getEntityRecords, updateEntityRecord, updateEntityRecords)
 // Instead of getEntityRecord, the consumer could use more user-friendly named selector: getPostType, getTaxonomy...
@@ -8265,6 +8269,7 @@ const store = (0,external_wp_data_namespaceObject.createReduxStore)(STORE_NAME, 
 unlock(store).registerPrivateSelectors(private_selectors_namespaceObject);
 unlock(store).registerPrivateActions(private_actions_namespaceObject);
 (0,external_wp_data_namespaceObject.register)(store); // Register store after unlocking private selectors to allow resolvers to use them.
+
 
 
 
