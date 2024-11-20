@@ -77,7 +77,11 @@ class WP_REST_Menu_Locations_Controller extends WP_REST_Controller {
 	 * @since 5.9.0
 	 *
 	 * @param WP_REST_Request $request Full details about the request.
+<<<<<<< HEAD
 	 * @return WP_Error|bool True if the request has read access, WP_Error object otherwise.
+=======
+	 * @return true|WP_Error True if the request has read access, WP_Error object otherwise.
+>>>>>>> 2b44096 (initial commit 2)
 	 */
 	public function get_items_permissions_check( $request ) {
 		if ( ! current_user_can( 'edit_theme_options' ) ) {
@@ -97,7 +101,11 @@ class WP_REST_Menu_Locations_Controller extends WP_REST_Controller {
 	 * @since 5.9.0
 	 *
 	 * @param WP_REST_Request $request Full details about the request.
+<<<<<<< HEAD
 	 * @return WP_Error|WP_REST_Response Response object on success, or WP_Error object on failure.
+=======
+	 * @return WP_REST_Response|WP_Error Response object on success, or WP_Error object on failure.
+>>>>>>> 2b44096 (initial commit 2)
 	 */
 	public function get_items( $request ) {
 		$data = array();
@@ -140,7 +148,11 @@ class WP_REST_Menu_Locations_Controller extends WP_REST_Controller {
 	 * @since 5.9.0
 	 *
 	 * @param WP_REST_Request $request Full details about the request.
+<<<<<<< HEAD
 	 * @return WP_Error|WP_REST_Response Response object on success, or WP_Error object on failure.
+=======
+	 * @return WP_REST_Response|WP_Error Response object on success, or WP_Error object on failure.
+>>>>>>> 2b44096 (initial commit 2)
 	 */
 	public function get_item( $request ) {
 		$registered_menus = get_registered_nav_menus();

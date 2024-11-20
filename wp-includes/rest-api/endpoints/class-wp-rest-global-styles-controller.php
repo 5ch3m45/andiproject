@@ -327,10 +327,18 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Posts_Controller {
 		}
 		if ( rest_is_field_included( 'title.rendered', $fields ) ) {
 			add_filter( 'protected_title_format', array( $this, 'protected_title_format' ) );
+<<<<<<< HEAD
+=======
+			add_filter( 'private_title_format', array( $this, 'protected_title_format' ) );
+>>>>>>> 2b44096 (initial commit 2)
 
 			$data['title']['rendered'] = get_the_title( $post->ID );
 
 			remove_filter( 'protected_title_format', array( $this, 'protected_title_format' ) );
+<<<<<<< HEAD
+=======
+			remove_filter( 'private_title_format', array( $this, 'protected_title_format' ) );
+>>>>>>> 2b44096 (initial commit 2)
 		}
 
 		if ( rest_is_field_included( 'settings', $fields ) ) {
@@ -507,12 +515,17 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Posts_Controller {
 	 * Checks if a given request has access to read a single theme global styles config.
 	 *
 	 * @since 5.9.0
+<<<<<<< HEAD
+=======
+	 * @since 6.7.0 Allow users with edit post capabilities to view theme global styles.
+>>>>>>> 2b44096 (initial commit 2)
 	 *
 	 * @param WP_REST_Request $request Full details about the request.
 	 * @return true|WP_Error True if the request has read access for the item, WP_Error object otherwise.
 	 */
 	public function get_theme_item_permissions_check( $request ) {
 		/*
+<<<<<<< HEAD
 		 * Verify if the current user has edit_theme_options capability.
 		 * This capability is required to edit/view/delete templates.
 		 */
@@ -527,6 +540,35 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Posts_Controller {
 		}
 
 		return true;
+=======
+		 * Verify if the current user has edit_posts capability.
+		 * This capability is required to view global styles.
+		 */
+		if ( current_user_can( 'edit_posts' ) ) {
+			return true;
+		}
+
+		foreach ( get_post_types( array( 'show_in_rest' => true ), 'objects' ) as $post_type ) {
+			if ( current_user_can( $post_type->cap->edit_posts ) ) {
+				return true;
+			}
+		}
+
+		/*
+		 * Verify if the current user has edit_theme_options capability.
+		 */
+		if ( current_user_can( 'edit_theme_options' ) ) {
+			return true;
+		}
+
+		return new WP_Error(
+			'rest_cannot_read_global_styles',
+			__( 'Sorry, you are not allowed to access the global styles on this site.' ),
+			array(
+				'status' => rest_authorization_required_code(),
+			)
+		);
+>>>>>>> 2b44096 (initial commit 2)
 	}
 
 	/**
@@ -587,11 +629,16 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Posts_Controller {
 	 * Checks if a given request has access to read a single theme global styles config.
 	 *
 	 * @since 6.0.0
+<<<<<<< HEAD
+=======
+	 * @since 6.7.0 Allow users with edit post capabilities to view theme global styles.
+>>>>>>> 2b44096 (initial commit 2)
 	 *
 	 * @param WP_REST_Request $request Full details about the request.
 	 * @return true|WP_Error True if the request has read access for the item, WP_Error object otherwise.
 	 */
 	public function get_theme_items_permissions_check( $request ) {
+<<<<<<< HEAD
 		/*
 		 * Verify if the current user has edit_theme_options capability.
 		 * This capability is required to edit/view/delete templates.
@@ -607,6 +654,9 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Posts_Controller {
 		}
 
 		return true;
+=======
+		return $this->get_theme_item_permissions_check( $request );
+>>>>>>> 2b44096 (initial commit 2)
 	}
 
 	/**
@@ -630,7 +680,11 @@ class WP_REST_Global_Styles_Controller extends WP_REST_Posts_Controller {
 			);
 		}
 
+<<<<<<< HEAD
 		$response   = array();
+=======
+		$response = array();
+>>>>>>> 2b44096 (initial commit 2)
 
 		// Register theme-defined variations e.g. from block style variation partials under `/styles`.
 		$partials = WP_Theme_JSON_Resolver::get_style_variations( 'block' );

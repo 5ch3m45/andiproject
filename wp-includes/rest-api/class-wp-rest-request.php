@@ -165,7 +165,11 @@ class WP_REST_Request implements ArrayAccess {
 	 * Canonicalizes the header name.
 	 *
 	 * Ensures that header names are always treated the same regardless of
+<<<<<<< HEAD
 	 * source. Header names are always case insensitive.
+=======
+	 * source. Header names are always case-insensitive.
+>>>>>>> 2b44096 (initial commit 2)
 	 *
 	 * Note that we treat `-` (dashes) and `_` (underscores) as the same
 	 * character, as per header parsing rules in both Apache and nginx.
@@ -709,7 +713,11 @@ class WP_REST_Request implements ArrayAccess {
 	 * Parses the request body parameters.
 	 *
 	 * Parses out URL-encoded bodies for request methods that aren't supported
+<<<<<<< HEAD
 	 * natively by PHP. In PHP 5.x, only POST has these parsed automatically.
+=======
+	 * natively by PHP.
+>>>>>>> 2b44096 (initial commit 2)
 	 *
 	 * @since 4.4.0
 	 */

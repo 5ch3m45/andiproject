@@ -1777,9 +1777,16 @@ function get_the_password_form( $post = 0 ) {
 	/**
 	 * Filters the HTML output for the protected post password form.
 	 *
+<<<<<<< HEAD
 	 * If modifying the password field, please note that the core database schema
 	 * limits the password field to 20 characters regardless of the value of the
 	 * size attribute in the form input.
+=======
+	 * If modifying the password field, please note that the WordPress database schema
+	 * limits the password field to 255 characters regardless of the value of the
+	 * `minlength` or `maxlength` attributes or other validation that may be added to
+	 * the input.
+>>>>>>> 2b44096 (initial commit 2)
 	 *
 	 * @since 2.7.0
 	 * @since 5.8.0 Added the `$post` parameter.

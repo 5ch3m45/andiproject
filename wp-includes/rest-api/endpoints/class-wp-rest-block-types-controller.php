@@ -141,7 +141,11 @@ class WP_REST_Block_Types_Controller extends WP_REST_Controller {
 			$namespace = $request['namespace'];
 		}
 
+<<<<<<< HEAD
 		foreach ( $block_types as $slug => $obj ) {
+=======
+		foreach ( $block_types as $obj ) {
+>>>>>>> 2b44096 (initial commit 2)
 			if ( $namespace ) {
 				list ( $block_namespace ) = explode( '/', $obj->name );
 

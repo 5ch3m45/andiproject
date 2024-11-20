@@ -1092,7 +1092,11 @@ function get_edit_term_link( $term, $taxonomy = '', $object_type = '' ) {
 	}
 
 	$args = array(
+<<<<<<< HEAD
 		'taxonomy' => $taxonomy,
+=======
+		'taxonomy' => $tax->name,
+>>>>>>> 2b44096 (initial commit 2)
 		'tag_ID'   => $term_id,
 	);
 
@@ -1595,6 +1599,7 @@ function get_delete_post_link( $post = 0, $deprecated = '', $force_delete = fals
  * Retrieves the edit comment link.
  *
  * @since 2.3.0
+<<<<<<< HEAD
  *
  * @param int|WP_Comment $comment_id Optional. Comment ID or WP_Comment object.
  * @return string|void The edit comment link URL for the given comment.
@@ -1607,15 +1612,52 @@ function get_edit_comment_link( $comment_id = 0 ) {
 	}
 
 	$location = admin_url( 'comment.php?action=editcomment&amp;c=' ) . $comment->comment_ID;
+=======
+ * @since 6.7.0 The $context parameter was added.
+ *
+ * @param int|WP_Comment $comment_id Optional. Comment ID or WP_Comment object.
+ * @param string         $context    Optional. Context in which the URL should be used. Either 'display',
+ *                                   to include HTML entities, or 'url'. Default 'display'.
+ * @return string|void The edit comment link URL for the given comment, or void if the comment id does not exist or
+ *                     the current user is not allowed to edit it.
+ */
+function get_edit_comment_link( $comment_id = 0, $context = 'display' ) {
+	$comment = get_comment( $comment_id );
+
+	if ( ! is_object( $comment ) || ! current_user_can( 'edit_comment', $comment->comment_ID ) ) {
+		return;
+	}
+
+	if ( 'display' === $context ) {
+		$action = 'comment.php?action=editcomment&amp;c=';
+	} else {
+		$action = 'comment.php?action=editcomment&c=';
+	}
+
+	$location = admin_url( $action ) . $comment->comment_ID;
+
+	// Ensure the $comment_id variable passed to the filter is always an ID.
+	$comment_id = (int) $comment->comment_ID;
+>>>>>>> 2b44096 (initial commit 2)
 
 	/**
 	 * Filters the comment edit link.
 	 *
 	 * @since 2.3.0
+<<<<<<< HEAD
 	 *
 	 * @param string $location The edit link.
 	 */
 	return apply_filters( 'get_edit_comment_link', $location );
+=======
+	 * @since 6.7.0 The $comment_id and $context parameters are now being passed to the filter.
+	 *
+	 * @param string $location   The edit link.
+	 * @param int    $comment_id Unique ID of the comment to generate an edit link.
+	 * @param string $context    Context to include HTML entities in link. Default 'display'.
+	 */
+	return apply_filters( 'get_edit_comment_link', $location, $comment_id, $context );
+>>>>>>> 2b44096 (initial commit 2)
 }
 
 /**
@@ -2915,8 +2957,13 @@ function the_posts_navigation( $args = array() ) {
  *     Optional. Default pagination arguments, see paginate_links().
  *
  *     @type string $screen_reader_text Screen reader text for navigation element.
+<<<<<<< HEAD
  *                                      Default 'Posts navigation'.
  *     @type string $aria_label         ARIA label text for the nav element. Default 'Posts'.
+=======
+ *                                      Default 'Posts pagination'.
+ *     @type string $aria_label         ARIA label text for the nav element. Default 'Posts pagination'.
+>>>>>>> 2b44096 (initial commit 2)
  *     @type string $class              Custom class for the nav element. Default 'pagination'.
  * }
  * @return string Markup for pagination links.
@@ -2939,8 +2986,13 @@ function get_the_posts_pagination( $args = array() ) {
 				'mid_size'           => 1,
 				'prev_text'          => _x( 'Previous', 'previous set of posts' ),
 				'next_text'          => _x( 'Next', 'next set of posts' ),
+<<<<<<< HEAD
 				'screen_reader_text' => __( 'Posts navigation' ),
 				'aria_label'         => __( 'Posts' ),
+=======
+				'screen_reader_text' => __( 'Posts pagination' ),
+				'aria_label'         => __( 'Posts pagination' ),
+>>>>>>> 2b44096 (initial commit 2)
 				'class'              => 'pagination',
 			)
 		);
@@ -3093,6 +3145,7 @@ function get_comments_pagenum_link( $pagenum = 1, $max_page = 0 ) {
  * Retrieves the link to the next comments page.
  *
  * @since 2.7.1
+<<<<<<< HEAD
  *
  * @global WP_Query $wp_query WordPress Query object.
  *
@@ -3101,13 +3154,31 @@ function get_comments_pagenum_link( $pagenum = 1, $max_page = 0 ) {
  * @return string|void HTML-formatted link for the next page of comments.
  */
 function get_next_comments_link( $label = '', $max_page = 0 ) {
+=======
+ * @since 6.7.0 Added the `page` parameter.
+ *
+ * @global WP_Query $wp_query WordPress Query object.
+ *
+ * @param string   $label    Optional. Label for link text. Default empty.
+ * @param int      $max_page Optional. Max page. Default 0.
+ * @param int|null $page     Optional. Page number. Default null.
+ * @return string|void HTML-formatted link for the next page of comments.
+ */
+function get_next_comments_link( $label = '', $max_page = 0, $page = null ) {
+>>>>>>> 2b44096 (initial commit 2)
 	global $wp_query;
 
 	if ( ! is_singular() ) {
 		return;
 	}
 
+<<<<<<< HEAD
 	$page = get_query_var( 'cpage' );
+=======
+	if ( is_null( $page ) ) {
+		$page = get_query_var( 'cpage' );
+	}
+>>>>>>> 2b44096 (initial commit 2)
 
 	if ( ! $page ) {
 		$page = 1;
@@ -3164,16 +3235,32 @@ function next_comments_link( $label = '', $max_page = 0 ) {
  * Retrieves the link to the previous comments page.
  *
  * @since 2.7.1
+<<<<<<< HEAD
  *
  * @param string $label Optional. Label for comments link text. Default empty.
  * @return string|void HTML-formatted link for the previous page of comments.
  */
 function get_previous_comments_link( $label = '' ) {
+=======
+ * @since 6.7.0 Added the `page` parameter.
+ *
+ * @param string   $label Optional. Label for comments link text. Default empty.
+ * @param int|null $page  Optional. Page number. Default null.
+ * @return string|void HTML-formatted link for the previous page of comments.
+ */
+function get_previous_comments_link( $label = '', $page = null ) {
+>>>>>>> 2b44096 (initial commit 2)
 	if ( ! is_singular() ) {
 		return;
 	}
 
+<<<<<<< HEAD
 	$page = get_query_var( 'cpage' );
+=======
+	if ( is_null( $page ) ) {
+		$page = get_query_var( 'cpage' );
+	}
+>>>>>>> 2b44096 (initial commit 2)
 
 	if ( (int) $page <= 1 ) {
 		return;
@@ -3343,8 +3430,13 @@ function the_comments_navigation( $args = array() ) {
  * @param array $args {
  *     Optional. Default pagination arguments.
  *
+<<<<<<< HEAD
  *     @type string $screen_reader_text Screen reader text for the nav element. Default 'Comments navigation'.
  *     @type string $aria_label         ARIA label text for the nav element. Default 'Comments'.
+=======
+ *     @type string $screen_reader_text Screen reader text for the nav element. Default 'Comments pagination'.
+ *     @type string $aria_label         ARIA label text for the nav element. Default 'Comments pagination'.
+>>>>>>> 2b44096 (initial commit 2)
  *     @type string $class              Custom class for the nav element. Default 'comments-pagination'.
  * }
  * @return string Markup for pagination links.
@@ -3360,8 +3452,13 @@ function get_the_comments_pagination( $args = array() ) {
 	$args         = wp_parse_args(
 		$args,
 		array(
+<<<<<<< HEAD
 			'screen_reader_text' => __( 'Comments navigation' ),
 			'aria_label'         => __( 'Comments' ),
+=======
+			'screen_reader_text' => __( 'Comments pagination' ),
+			'aria_label'         => __( 'Comments pagination' ),
+>>>>>>> 2b44096 (initial commit 2)
 			'class'              => 'comments-pagination',
 		)
 	);
@@ -4328,6 +4425,10 @@ function is_avatar_comment_type( $comment_type ) {
  * Retrieves default data about the avatar.
  *
  * @since 4.2.0
+<<<<<<< HEAD
+=======
+ * @since 6.7.0 Gravatar URLs always use HTTPS.
+>>>>>>> 2b44096 (initial commit 2)
  *
  * @param mixed $id_or_email The avatar to retrieve. Accepts a user ID, Gravatar MD5 hash,
  *                           user email, WP_User object, WP_Post object, or WP_Comment object.
@@ -4358,6 +4459,12 @@ function is_avatar_comment_type( $comment_type ) {
  *                                  - 'X' (even more mature than above)
  *                                  Default is the value of the 'avatar_rating' option.
  *     @type string $scheme         URL scheme to use. See set_url_scheme() for accepted values.
+<<<<<<< HEAD
+=======
+ *                                  For Gravatars this setting is ignored and HTTPS is used to avoid
+ *                                  unnecessary redirects. The setting is retained for systems using
+ *                                  the {@see 'pre_get_avatar_data'} filter to customize avatars.
+>>>>>>> 2b44096 (initial commit 2)
  *                                  Default null.
  *     @type array  $processed_args When the function returns, the value will be the processed/sanitized $args
  *                                  plus a "found_avatar" guess. Pass as a reference. Default null.
@@ -4508,9 +4615,12 @@ function get_avatar_data( $id_or_email, $args = null ) {
 
 	if ( $email_hash ) {
 		$args['found_avatar'] = true;
+<<<<<<< HEAD
 		$gravatar_server      = hexdec( $email_hash[0] ) % 3;
 	} else {
 		$gravatar_server = rand( 0, 2 );
+=======
+>>>>>>> 2b44096 (initial commit 2)
 	}
 
 	$url_args = array(
@@ -4520,6 +4630,7 @@ function get_avatar_data( $id_or_email, $args = null ) {
 		'r' => $args['rating'],
 	);
 
+<<<<<<< HEAD
 	if ( is_ssl() ) {
 		$url = 'https://secure.gravatar.com/avatar/' . $email_hash;
 	} else {
@@ -4529,6 +4640,19 @@ function get_avatar_data( $id_or_email, $args = null ) {
 	$url = add_query_arg(
 		rawurlencode_deep( array_filter( $url_args ) ),
 		set_url_scheme( $url, $args['scheme'] )
+=======
+	/*
+	 * Gravatars are always served over HTTPS.
+	 *
+	 * The Gravatar website redirects HTTP requests to HTTPS URLs so always
+	 * use the HTTPS scheme to avoid unnecessary redirects.
+	 */
+	$url = 'https://secure.gravatar.com/avatar/' . $email_hash;
+
+	$url = add_query_arg(
+		rawurlencode_deep( array_filter( $url_args ) ),
+		$url
+>>>>>>> 2b44096 (initial commit 2)
 	);
 
 	/**

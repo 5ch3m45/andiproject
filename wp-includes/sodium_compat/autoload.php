@@ -54,6 +54,12 @@ if (PHP_VERSION_ID >= 50300) {
     // unless PHP >= 5.3.0
     require_once dirname(__FILE__) . '/lib/namespaced.php';
     require_once dirname(__FILE__) . '/lib/sodium_compat.php';
+<<<<<<< HEAD
+=======
+    if (!defined('SODIUM_CRYPTO_AEAD_AEGIS128L_KEYBYTES')) {
+        require_once dirname(__FILE__) . '/lib/php84compat_const.php';
+    }
+>>>>>>> 2b44096 (initial commit 2)
 } else {
     require_once dirname(__FILE__) . '/src/PHP52/SplFixedArray.php';
 }
@@ -71,5 +77,11 @@ if (PHP_VERSION_ID < 70200 || !extension_loaded('sodium')) {
     // Older versions of {PHP, ext/sodium} will not define these
     require_once(dirname(__FILE__) . '/lib/php72compat.php');
 }
+<<<<<<< HEAD
+=======
+if (PHP_VERSION_ID < 80400 || !extension_loaded('sodium')) {
+    require_once dirname(__FILE__) . '/lib/php84compat.php';
+}
+>>>>>>> 2b44096 (initial commit 2)
 require_once(dirname(__FILE__) . '/lib/stream-xchacha20.php');
 require_once(dirname(__FILE__) . '/lib/ristretto255.php');

@@ -38,26 +38,74 @@ function register_rest_route( $route_namespace, $route, $args = array(), $overri
 		 * and namespace indexes. If you really need to register a
 		 * non-namespaced route, call `WP_REST_Server::register_route` directly.
 		 */
+<<<<<<< HEAD
 		_doing_it_wrong( 'register_rest_route', __( 'Routes must be namespaced with plugin or theme name and version.' ), '4.4.0' );
 		return false;
 	} elseif ( empty( $route ) ) {
 		_doing_it_wrong( 'register_rest_route', __( 'Route must be specified.' ), '4.4.0' );
+=======
+		_doing_it_wrong(
+			__FUNCTION__,
+			sprintf(
+				/* translators: 1: string value of the namespace, 2: string value of the route. */
+				__( 'Routes must be namespaced with plugin or theme name and version. Instead there seems to be an empty namespace \'%1$s\' for route \'%2$s\'.' ),
+				'<code>' . $route_namespace . '</code>',
+				'<code>' . $route . '</code>'
+			),
+			'4.4.0'
+		);
+		return false;
+	} elseif ( empty( $route ) ) {
+		_doing_it_wrong(
+			__FUNCTION__,
+			sprintf(
+				/* translators: 1: string value of the namespace, 2: string value of the route. */
+				__( 'Route must be specified. Instead within the namespace \'%1$s\', there seems to be an empty route \'%2$s\'.' ),
+				'<code>' . $route_namespace . '</code>',
+				'<code>' . $route . '</code>'
+			),
+			'4.4.0'
+		);
+>>>>>>> 2b44096 (initial commit 2)
 		return false;
 	}
 
 	$clean_namespace = trim( $route_namespace, '/' );
 
 	if ( $clean_namespace !== $route_namespace ) {
+<<<<<<< HEAD
 		_doing_it_wrong( __FUNCTION__, __( 'Namespace must not start or end with a slash.' ), '5.4.2' );
+=======
+		_doing_it_wrong(
+			__FUNCTION__,
+			sprintf(
+				/* translators: 1: string value of the namespace, 2: string value of the route. */
+				__( 'Namespace must not start or end with a slash. Instead namespace \'%1$s\' for route \'%2$s\' seems to contain a slash.' ),
+				'<code>' . $route_namespace . '</code>',
+				'<code>' . $route . '</code>'
+			),
+			'5.4.2'
+		);
+>>>>>>> 2b44096 (initial commit 2)
 	}
 
 	if ( ! did_action( 'rest_api_init' ) ) {
 		_doing_it_wrong(
+<<<<<<< HEAD
 			'register_rest_route',
 			sprintf(
 				/* translators: %s: rest_api_init */
 				__( 'REST API routes must be registered on the %s action.' ),
 				'<code>rest_api_init</code>'
+=======
+			__FUNCTION__,
+			sprintf(
+				/* translators: 1: rest_api_init, 2: string value of the route, 3: string value of the namespace. */
+				__( 'REST API routes must be registered on the %1$s action. Instead route \'%2$s\' with namespace \'%3$s\' was not registered on this action.' ),
+				'<code>rest_api_init</code>',
+				'<code>' . $route . '</code>',
+				'<code>' . $route_namespace . '</code>'
+>>>>>>> 2b44096 (initial commit 2)
 			),
 			'5.1.0'
 		);
@@ -1275,6 +1323,12 @@ function rest_get_avatar_sizes() {
 /**
  * Parses an RFC3339 time into a Unix timestamp.
  *
+<<<<<<< HEAD
+=======
+ * Explicitly check for `false` to detect failure, as zero is a valid return
+ * value on success.
+ *
+>>>>>>> 2b44096 (initial commit 2)
  * @since 4.4.0
  *
  * @param string $date      RFC3339 timestamp.
@@ -1340,7 +1394,11 @@ function rest_get_date_with_gmt( $date, $is_utc = false ) {
 
 	$date = rest_parse_date( $date );
 
+<<<<<<< HEAD
 	if ( empty( $date ) ) {
+=======
+	if ( false === $date ) {
+>>>>>>> 2b44096 (initial commit 2)
 		return null;
 	}
 
@@ -2230,7 +2288,11 @@ function rest_validate_value_from_schema( $value, $args, $param = '' ) {
 				break;
 
 			case 'date-time':
+<<<<<<< HEAD
 				if ( ! rest_parse_date( $value ) ) {
+=======
+				if ( false === rest_parse_date( $value ) ) {
+>>>>>>> 2b44096 (initial commit 2)
 					return new WP_Error( 'rest_invalid_date', __( 'Invalid date.' ) );
 				}
 				break;

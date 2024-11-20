@@ -776,6 +776,22 @@ function delete_user_option( $user_id, $option_name, $is_global = false ) {
 }
 
 /**
+<<<<<<< HEAD
+=======
+ * Retrieves user info by user ID.
+ *
+ * @since 6.7.0
+ *
+ * @param int $user_id User ID.
+ *
+ * @return WP_User|false WP_User object on success, false on failure.
+ */
+function get_user( $user_id ) {
+	return get_user_by( 'id', $user_id );
+}
+
+/**
+>>>>>>> 2b44096 (initial commit 2)
  * Retrieves list of users matching criteria.
  *
  * @since 3.1.0
@@ -1185,7 +1201,12 @@ function delete_user_meta( $user_id, $meta_key, $meta_value = '' ) {
  * @return mixed An array of values if `$single` is false.
  *               The value of meta data field if `$single` is true.
  *               False for an invalid `$user_id` (non-numeric, zero, or negative value).
+<<<<<<< HEAD
  *               An empty string if a valid but non-existing user ID is passed.
+=======
+ *               An empty array if a valid but non-existing user ID is passed and `$single` is false.
+ *               An empty string if a valid but non-existing user ID is passed and `$single` is true.
+>>>>>>> 2b44096 (initial commit 2)
  */
 function get_user_meta( $user_id, $key = '', $single = false ) {
 	return get_metadata( 'user', $user_id, $key, $single );
@@ -1549,12 +1570,19 @@ function setup_userdata( $for_user_id = 0 ) {
 /**
  * Creates dropdown HTML content of users.
  *
+<<<<<<< HEAD
  * The content can either be displayed, which it is by default or retrieved by
  * setting the 'echo' argument. The 'include' and 'exclude' arguments do not
  * need to be used; all users will be displayed in that case. Only one can be
  * used, either 'include' or 'exclude', but not both.
  *
  * The available arguments are as follows:
+=======
+ * The content can either be displayed, which it is by default, or retrieved by
+ * setting the 'echo' argument to false. The 'include' and 'exclude' arguments
+ * are optional; if they are not specified, all users will be displayed. Only one
+ * can be used in a single call, either 'include' or 'exclude', but not both.
+>>>>>>> 2b44096 (initial commit 2)
  *
  * @since 2.3.0
  * @since 4.5.0 Added the 'display_name_with_login' value for 'show'.
@@ -2354,7 +2382,11 @@ function wp_insert_user( $userdata ) {
 	$admin_color         = empty( $userdata['admin_color'] ) ? 'fresh' : $userdata['admin_color'];
 	$meta['admin_color'] = preg_replace( '|[^a-z0-9 _.\-@]|i', '', $admin_color );
 
+<<<<<<< HEAD
 	$meta['use_ssl'] = empty( $userdata['use_ssl'] ) ? 0 : (bool) $userdata['use_ssl'];
+=======
+	$meta['use_ssl'] = empty( $userdata['use_ssl'] ) ? '0' : '1';
+>>>>>>> 2b44096 (initial commit 2)
 
 	$meta['show_admin_bar_front'] = empty( $userdata['show_admin_bar_front'] ) ? 'true' : $userdata['show_admin_bar_front'];
 
@@ -2386,7 +2418,11 @@ function wp_insert_user( $userdata ) {
 	 *     @type string $user_pass       The user's password.
 	 *     @type string $user_email      The user's email.
 	 *     @type string $user_url        The user's url.
+<<<<<<< HEAD
 	 *     @type string $user_nicename   The user's nice name. Defaults to a URL-safe version of user's login
+=======
+	 *     @type string $user_nicename   The user's nice name. Defaults to a URL-safe version of user's login.
+>>>>>>> 2b44096 (initial commit 2)
 	 *     @type string $display_name    The user's display name.
 	 *     @type string $user_registered MySQL timestamp describing the moment when the user registered. Defaults to
 	 *                                   the current UTC timestamp.
@@ -3219,7 +3255,19 @@ function retrieve_password( $user_login = null ) {
 	$message .= sprintf( __( 'Username: %s' ), $user_login ) . "\r\n\r\n";
 	$message .= __( 'If this was a mistake, ignore this email and nothing will happen.' ) . "\r\n\r\n";
 	$message .= __( 'To reset your password, visit the following address:' ) . "\r\n\r\n";
+<<<<<<< HEAD
 	$message .= network_site_url( "wp-login.php?action=rp&key=$key&login=" . rawurlencode( $user_login ), 'login' ) . '&wp_lang=' . $locale . "\r\n\r\n";
+=======
+
+	/*
+	 * Since some user login names end in a period, this could produce ambiguous URLs that
+	 * end in a period. To avoid the ambiguity, ensure that the login is not the last query
+	 * arg in the URL. If moving it to the end, a trailing period will need to be escaped.
+	 *
+	 * @see https://core.trac.wordpress.org/tickets/42957
+	 */
+	$message .= network_site_url( 'wp-login.php?login=' . rawurlencode( $user_login ) . "&key=$key&action=rp", 'login' ) . '&wp_lang=' . $locale . "\r\n\r\n";
+>>>>>>> 2b44096 (initial commit 2)
 
 	if ( ! is_user_logged_in() ) {
 		$requester_ip = $_SERVER['REMOTE_ADDR'];
@@ -4148,7 +4196,11 @@ function _wp_privacy_send_request_confirmation_notification( $request_id ) {
 	 *     Data relating to the account action email.
 	 *
 	 *     @type WP_User_Request $request     User request object.
+<<<<<<< HEAD
 	 *     @type string          $user_email  The email address confirming a request
+=======
+	 *     @type string          $user_email  The email address confirming a request.
+>>>>>>> 2b44096 (initial commit 2)
 	 *     @type string          $description Description of the action being performed so the user knows what the email is for.
 	 *     @type string          $manage_url  The link to click manage privacy requests of this type.
 	 *     @type string          $sitename    The site name sending the mail.
@@ -4199,7 +4251,11 @@ All at ###SITENAME###
 	 *     Data relating to the account action email.
 	 *
 	 *     @type WP_User_Request $request     User request object.
+<<<<<<< HEAD
 	 *     @type string          $user_email  The email address confirming a request
+=======
+	 *     @type string          $user_email  The email address confirming a request.
+>>>>>>> 2b44096 (initial commit 2)
 	 *     @type string          $description Description of the action being performed
 	 *                                        so the user knows what the email is for.
 	 *     @type string          $manage_url  The link to click manage privacy requests of this type.
@@ -4239,7 +4295,11 @@ All at ###SITENAME###
 	 *     Data relating to the account action email.
 	 *
 	 *     @type WP_User_Request $request     User request object.
+<<<<<<< HEAD
 	 *     @type string          $user_email  The email address confirming a request
+=======
+	 *     @type string          $user_email  The email address confirming a request.
+>>>>>>> 2b44096 (initial commit 2)
 	 *     @type string          $description Description of the action being performed so the user knows what the email is for.
 	 *     @type string          $manage_url  The link to click manage privacy requests of this type.
 	 *     @type string          $sitename    The site name sending the mail.
@@ -4270,7 +4330,11 @@ All at ###SITENAME###
 	 *     Data relating to the account action email.
 	 *
 	 *     @type WP_User_Request $request     User request object.
+<<<<<<< HEAD
 	 *     @type string          $user_email  The email address confirming a request
+=======
+	 *     @type string          $user_email  The email address confirming a request.
+>>>>>>> 2b44096 (initial commit 2)
 	 *     @type string          $description Description of the action being performed so the user knows what the email is for.
 	 *     @type string          $manage_url  The link to click manage privacy requests of this type.
 	 *     @type string          $sitename    The site name sending the mail.

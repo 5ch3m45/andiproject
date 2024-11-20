@@ -131,7 +131,11 @@ var Details = wp.media.view.Attachment.Details,
  * @augments wp.Backbone.View
  * @augments Backbone.View
  */
+<<<<<<< HEAD
 TwoColumn = Details.extend(/** @lends wp.media.view.Attachment.Details.TowColumn.prototype */{
+=======
+TwoColumn = Details.extend(/** @lends wp.media.view.Attachment.Details.TwoColumn.prototype */{
+>>>>>>> 2b44096 (initial commit 2)
 	template: wp.template( 'attachment-details-two-column' ),
 
 	initialize: function() {

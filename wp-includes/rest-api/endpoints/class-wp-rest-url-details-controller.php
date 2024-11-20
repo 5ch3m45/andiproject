@@ -192,7 +192,11 @@ class WP_REST_URL_Details_Controller extends WP_REST_Controller {
 	 *
 	 * @since 5.9.0
 	 *
+<<<<<<< HEAD
 	 * @return WP_Error|bool True if the request has permission, else WP_Error.
+=======
+	 * @return true|WP_Error True if the request has permission, else WP_Error.
+>>>>>>> 2b44096 (initial commit 2)
 	 */
 	public function permissions_check() {
 		if ( current_user_can( 'edit_posts' ) ) {
@@ -347,7 +351,11 @@ class WP_REST_URL_Details_Controller extends WP_REST_Controller {
 	 * @since 5.9.0
 	 *
 	 * @param array $meta_elements {
+<<<<<<< HEAD
 	 *     A multi-dimensional indexed array on success, else empty array.
+=======
+	 *     A multidimensional indexed array on success, else empty array.
+>>>>>>> 2b44096 (initial commit 2)
 	 *
 	 *     @type string[] $0 Meta elements with a content attribute.
 	 *     @type string[] $1 Content attribute's opening quotation mark.
@@ -383,7 +391,11 @@ class WP_REST_URL_Details_Controller extends WP_REST_Controller {
 	 * @since 5.9.0
 	 *
 	 * @param array  $meta_elements {
+<<<<<<< HEAD
 	 *     A multi-dimensional indexed array on success, else empty array.
+=======
+	 *     A multidimensional indexed array on success, else empty array.
+>>>>>>> 2b44096 (initial commit 2)
 	 *
 	 *     @type string[] $0 Meta elements with a content attribute.
 	 *     @type string[] $1 Content attribute's opening quotation mark.
@@ -525,7 +537,11 @@ class WP_REST_URL_Details_Controller extends WP_REST_Controller {
 	 *
 	 * @param string $html The string of HTML to be parsed.
 	 * @return array {
+<<<<<<< HEAD
 	 *     A multi-dimensional indexed array on success, else empty array.
+=======
+	 *     A multidimensional indexed array on success, else empty array.
+>>>>>>> 2b44096 (initial commit 2)
 	 *
 	 *     @type string[] $0 Meta elements with a content attribute.
 	 *     @type string[] $1 Content attribute's opening quotation mark.
@@ -588,7 +604,11 @@ class WP_REST_URL_Details_Controller extends WP_REST_Controller {
 
 				/*
 				* These are the options:
+<<<<<<< HEAD
 				* - i : case insensitive
+=======
+				* - i : case-insensitive
+>>>>>>> 2b44096 (initial commit 2)
 				* - s : allows newline characters for the . match (needed for multiline elements)
 				* - U means non-greedy matching
 				*/
@@ -637,7 +657,11 @@ class WP_REST_URL_Details_Controller extends WP_REST_Controller {
 
 				/*
 				 * These are the options:
+<<<<<<< HEAD
 				 * - i : case insensitive
+=======
+				 * - i : case-insensitive
+>>>>>>> 2b44096 (initial commit 2)
 				 * - s : allows newline characters for the . match (needed for multiline elements)
 				 * - U means non-greedy matching
 				 */

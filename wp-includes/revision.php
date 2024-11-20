@@ -1107,12 +1107,17 @@ function _wp_upgrade_revisions_of_post( $post, $revisions ) {
  * @param mixed  $value     Meta value to filter.
  * @param int    $object_id Object ID.
  * @param string $meta_key  Meta key to filter a value for.
+<<<<<<< HEAD
  * @param bool   $single    Whether to return a single value. Default false.
+=======
+ * @param bool   $single    Whether to return a single value.
+>>>>>>> 2b44096 (initial commit 2)
  * @return mixed Original meta value if the meta key isn't revisioned, the object doesn't exist,
  *               the post type is a revision or the post ID doesn't match the object ID.
  *               Otherwise, the revisioned meta value is returned for the preview.
  */
 function _wp_preview_meta_filter( $value, $object_id, $meta_key, $single ) {
+<<<<<<< HEAD
 
 	$post = get_post();
 	if (
@@ -1120,11 +1125,23 @@ function _wp_preview_meta_filter( $value, $object_id, $meta_key, $single ) {
 		$post->ID !== $object_id ||
 		! in_array( $meta_key, wp_post_revision_meta_keys( $post->post_type ), true ) ||
 		'revision' === $post->post_type
+=======
+	$post = get_post();
+
+	if ( empty( $post )
+		|| $post->ID !== $object_id
+		|| ! in_array( $meta_key, wp_post_revision_meta_keys( $post->post_type ), true )
+		|| 'revision' === $post->post_type
+>>>>>>> 2b44096 (initial commit 2)
 	) {
 		return $value;
 	}
 
 	$preview = wp_get_post_autosave( $post->ID );
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2b44096 (initial commit 2)
 	if ( false === $preview ) {
 		return $value;
 	}

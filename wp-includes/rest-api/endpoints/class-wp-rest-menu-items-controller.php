@@ -102,7 +102,11 @@ class WP_REST_Menu_Items_Controller extends WP_REST_Posts_Controller {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Creates a single post.
+=======
+	 * Creates a single nav menu item.
+>>>>>>> 2b44096 (initial commit 2)
 	 *
 	 * @since 5.9.0
 	 *
@@ -267,7 +271,11 @@ class WP_REST_Menu_Items_Controller extends WP_REST_Posts_Controller {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Deletes a single menu item.
+=======
+	 * Deletes a single nav menu item.
+>>>>>>> 2b44096 (initial commit 2)
 	 *
 	 * @since 5.9.0
 	 *
@@ -317,7 +325,11 @@ class WP_REST_Menu_Items_Controller extends WP_REST_Posts_Controller {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Prepares a single post for create or update.
+=======
+	 * Prepares a single nav menu item for create or update.
+>>>>>>> 2b44096 (initial commit 2)
 	 *
 	 * @since 5.9.0
 	 *
@@ -482,7 +494,11 @@ class WP_REST_Menu_Items_Controller extends WP_REST_Posts_Controller {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Prepares a single post output for response.
+=======
+	 * Prepares a single nav menu item output for response.
+>>>>>>> 2b44096 (initial commit 2)
 	 *
 	 * @since 5.9.0
 	 *
@@ -510,6 +526,10 @@ class WP_REST_Menu_Items_Controller extends WP_REST_Posts_Controller {
 
 		if ( rest_is_field_included( 'title.rendered', $fields ) ) {
 			add_filter( 'protected_title_format', array( $this, 'protected_title_format' ) );
+<<<<<<< HEAD
+=======
+			add_filter( 'private_title_format', array( $this, 'protected_title_format' ) );
+>>>>>>> 2b44096 (initial commit 2)
 
 			/** This filter is documented in wp-includes/post-template.php */
 			$title = apply_filters( 'the_title', $menu_item->title, $menu_item->ID );
@@ -517,6 +537,10 @@ class WP_REST_Menu_Items_Controller extends WP_REST_Posts_Controller {
 			$data['title']['rendered'] = $title;
 
 			remove_filter( 'protected_title_format', array( $this, 'protected_title_format' ) );
+<<<<<<< HEAD
+=======
+			remove_filter( 'private_title_format', array( $this, 'protected_title_format' ) );
+>>>>>>> 2b44096 (initial commit 2)
 		}
 
 		if ( rest_is_field_included( 'status', $fields ) ) {
@@ -676,7 +700,11 @@ class WP_REST_Menu_Items_Controller extends WP_REST_Posts_Controller {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Retrieves Link Description Objects that should be added to the Schema for the posts collection.
+=======
+	 * Retrieves Link Description Objects that should be added to the Schema for the nav menu items collection.
+>>>>>>> 2b44096 (initial commit 2)
 	 *
 	 * @since 5.9.0
 	 *
@@ -703,7 +731,11 @@ class WP_REST_Menu_Items_Controller extends WP_REST_Posts_Controller {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Retrieves the term's schema, conforming to JSON Schema.
+=======
+	 * Retrieves the nav menu item's schema, conforming to JSON Schema.
+>>>>>>> 2b44096 (initial commit 2)
 	 *
 	 * @since 5.9.0
 	 *
@@ -924,7 +956,11 @@ class WP_REST_Menu_Items_Controller extends WP_REST_Posts_Controller {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Retrieves the query params for the posts collection.
+=======
+	 * Retrieves the query params for the nav menu items collection.
+>>>>>>> 2b44096 (initial commit 2)
 	 *
 	 * @since 5.9.0
 	 *

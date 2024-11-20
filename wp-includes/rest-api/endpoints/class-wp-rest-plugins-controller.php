@@ -913,7 +913,11 @@ class WP_REST_Plugins_Controller extends WP_REST_Controller {
 				),
 				'author'       => array(
 					'description' => __( 'The plugin author.' ),
+<<<<<<< HEAD
 					'type'        => 'object',
+=======
+					'type'        => 'string',
+>>>>>>> 2b44096 (initial commit 2)
 					'readonly'    => true,
 					'context'     => array( 'view', 'edit' ),
 				),

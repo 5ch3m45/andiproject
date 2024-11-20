@@ -10,8 +10,17 @@ if (!is_callable('sodium_crypto_stream_xchacha20')) {
      * @throws SodiumException
      * @throws TypeError
      */
+<<<<<<< HEAD
     function sodium_crypto_stream_xchacha20($len, $nonce, $key)
     {
+=======
+    function sodium_crypto_stream_xchacha20(
+        $len,
+        $nonce,
+        #[\SensitiveParameter]
+        $key
+    ) {
+>>>>>>> 2b44096 (initial commit 2)
         return ParagonIE_Sodium_Compat::crypto_stream_xchacha20($len, $nonce, $key, true);
     }
 }
@@ -36,8 +45,18 @@ if (!is_callable('sodium_crypto_stream_xchacha20_xor')) {
      * @throws SodiumException
      * @throws TypeError
      */
+<<<<<<< HEAD
     function sodium_crypto_stream_xchacha20_xor($message, $nonce, $key)
     {
+=======
+    function sodium_crypto_stream_xchacha20_xor(
+        #[\SensitiveParameter]
+        $message,
+        $nonce,
+        #[\SensitiveParameter]
+        $key
+    ) {
+>>>>>>> 2b44096 (initial commit 2)
         return ParagonIE_Sodium_Compat::crypto_stream_xchacha20_xor($message, $nonce, $key, true);
     }
 }
@@ -52,8 +71,19 @@ if (!is_callable('sodium_crypto_stream_xchacha20_xor_ic')) {
      * @throws SodiumException
      * @throws TypeError
      */
+<<<<<<< HEAD
     function sodium_crypto_stream_xchacha20_xor_ic($message, $nonce, $counter, $key)
     {
+=======
+    function sodium_crypto_stream_xchacha20_xor_ic(
+        #[\SensitiveParameter]
+        $message,
+        $nonce,
+        $counter,
+        #[\SensitiveParameter]
+        $key
+    ) {
+>>>>>>> 2b44096 (initial commit 2)
         return ParagonIE_Sodium_Compat::crypto_stream_xchacha20_xor_ic($message, $nonce, $counter, $key, true);
     }
 }

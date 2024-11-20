@@ -9,6 +9,11 @@ if (class_exists('ParagonIE_Sodium_Core_Util', false)) {
  */
 abstract class ParagonIE_Sodium_Core_Util
 {
+<<<<<<< HEAD
+=======
+    const U32_MAX = 0xFFFFFFFF;
+
+>>>>>>> 2b44096 (initial commit 2)
     /**
      * @param int $integer
      * @param int $size (16, 32, 64)
@@ -34,6 +39,31 @@ abstract class ParagonIE_Sodium_Core_Util
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * @param string $a
+     * @param string $b
+     * @return string
+     * @throws SodiumException
+     */
+    public static function andStrings($a, $b)
+    {
+        /* Type checks: */
+        if (!is_string($a)) {
+            throw new TypeError('Argument 1 must be a string');
+        }
+        if (!is_string($b)) {
+            throw new TypeError('Argument 2 must be a string');
+        }
+        $len = self::strlen($a);
+        if (self::strlen($b) !== $len) {
+            throw new SodiumException('Both strings must be of equal length to combine with bitwise AND');
+        }
+        return $a & $b;
+    }
+
+    /**
+>>>>>>> 2b44096 (initial commit 2)
      * Convert a binary string into a hexadecimal string without cache-timing
      * leaks
      *
