@@ -187,10 +187,6 @@ final class WP_Recovery_Mode_Key_Service {
 	 * @return bool True on success, false on failure.
 	 */
 	private function update_keys( array $keys ) {
-<<<<<<< HEAD
-		return update_option( $this->option_name, $keys );
-=======
 		return update_option( $this->option_name, $keys, false );
->>>>>>> 535c0c1 (initial commit)
 	}
 }

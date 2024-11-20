@@ -13,11 +13,7 @@
 			"source": "rich-text",
 			"selector": "pre",
 			"__unstablePreserveWhiteSpace": true,
-<<<<<<< HEAD
-			"__experimentalRole": "content"
-=======
 			"role": "content"
->>>>>>> 535c0c1 (initial commit)
 		},
 		"textAlign": {
 			"type": "string"
@@ -25,8 +21,6 @@
 	},
 	"supports": {
 		"anchor": true,
-<<<<<<< HEAD
-=======
 		"background": {
 			"backgroundImage": true,
 			"backgroundSize": true,
@@ -34,7 +28,6 @@
 				"backgroundImage": true
 			}
 		},
->>>>>>> 535c0c1 (initial commit)
 		"color": {
 			"gradients": true,
 			"link": true,
@@ -43,15 +36,12 @@
 				"text": true
 			}
 		},
-<<<<<<< HEAD
-=======
 		"dimensions": {
 			"minHeight": true,
 			"__experimentalDefaultControls": {
 				"minHeight": false
 			}
 		},
->>>>>>> 535c0c1 (initial commit)
 		"typography": {
 			"fontSize": true,
 			"__experimentalFontFamily": true,
@@ -61,10 +51,7 @@
 			"__experimentalLetterSpacing": true,
 			"__experimentalTextTransform": true,
 			"__experimentalTextDecoration": true,
-<<<<<<< HEAD
-=======
 			"__experimentalWritingMode": true,
->>>>>>> 535c0c1 (initial commit)
 			"__experimentalDefaultControls": {
 				"fontSize": true
 			}

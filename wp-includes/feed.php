@@ -482,13 +482,10 @@ function rss_enclosure() {
 			foreach ( (array) $val as $enc ) {
 				$enclosure = explode( "\n", $enc );
 
-<<<<<<< HEAD
-=======
 				if ( count( $enclosure ) < 3 ) {
 					continue;
 				}
 
->>>>>>> 535c0c1 (initial commit)
 				// Only get the first element, e.g. 'audio/mpeg' from 'audio/mpeg mpga mp2 mp3'.
 				$t    = preg_split( '/[ \t]/', trim( $enclosure[2] ) );
 				$type = $t[0];
@@ -798,17 +795,10 @@ function feed_content_type( $type = '' ) {
  * @param string|string[] $url URL of feed to retrieve. If an array of URLs, the feeds are merged
  *                             using SimplePie's multifeed feature.
  *                             See also {@link http://simplepie.org/wiki/faq/typical_multifeed_gotchas}
-<<<<<<< HEAD
- * @return SimplePie|WP_Error SimplePie object on success or WP_Error object on failure.
- */
-function fetch_feed( $url ) {
-	if ( ! class_exists( 'SimplePie', false ) ) {
-=======
  * @return SimplePie\SimplePie|WP_Error SimplePie object on success or WP_Error object on failure.
  */
 function fetch_feed( $url ) {
 	if ( ! class_exists( 'SimplePie\SimplePie', false ) ) {
->>>>>>> 535c0c1 (initial commit)
 		require_once ABSPATH . WPINC . '/class-simplepie.php';
 	}
 
@@ -816,11 +806,7 @@ function fetch_feed( $url ) {
 	require_once ABSPATH . WPINC . '/class-wp-simplepie-file.php';
 	require_once ABSPATH . WPINC . '/class-wp-simplepie-sanitize-kses.php';
 
-<<<<<<< HEAD
-	$feed = new SimplePie();
-=======
 	$feed = new SimplePie\SimplePie();
->>>>>>> 535c0c1 (initial commit)
 
 	$feed->set_sanitize_class( 'WP_SimplePie_Sanitize_KSES' );
 	/*
@@ -850,22 +836,13 @@ function fetch_feed( $url ) {
 	 *
 	 * @since 3.0.0
 	 *
-<<<<<<< HEAD
-	 * @param SimplePie       $feed SimplePie feed object (passed by reference).
-	 * @param string|string[] $url  URL of feed or array of URLs of feeds to retrieve.
-=======
 	 * @param SimplePie\SimplePie $feed SimplePie feed object (passed by reference).
 	 * @param string|string[]     $url  URL of feed or array of URLs of feeds to retrieve.
->>>>>>> 535c0c1 (initial commit)
 	 */
 	do_action_ref_array( 'wp_feed_options', array( &$feed, $url ) );
 
 	$feed->init();
-<<<<<<< HEAD
-	$feed->set_output_encoding( get_option( 'blog_charset' ) );
-=======
 	$feed->set_output_encoding( get_bloginfo( 'charset' ) );
->>>>>>> 535c0c1 (initial commit)
 
 	if ( $feed->error() ) {
 		return new WP_Error( 'simplepie-error', $feed->error() );

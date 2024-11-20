@@ -131,11 +131,7 @@ class WP_Network {
 	 */
 	public function __construct( $network ) {
 		foreach ( get_object_vars( $network ) as $key => $value ) {
-<<<<<<< HEAD
-			$this->$key = $value;
-=======
 			$this->__set( $key, $value );
->>>>>>> 535c0c1 (initial commit)
 		}
 
 		$this->_set_site_name();

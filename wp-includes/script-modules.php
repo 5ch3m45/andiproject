@@ -123,8 +123,6 @@ function wp_dequeue_script_module( string $id ) {
 function wp_deregister_script_module( string $id ) {
 	wp_script_modules()->deregister( $id );
 }
-<<<<<<< HEAD
-=======
 
 /**
  * Registers all the default WordPress Script Modules.
@@ -175,4 +173,3 @@ function wp_default_script_modules() {
 		wp_register_script_module( $script_module_id, $path, $script_module_data['dependencies'], $script_module_data['version'] );
 	}
 }
->>>>>>> 2b44096 (initial commit 2)

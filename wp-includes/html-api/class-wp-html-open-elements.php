@@ -58,11 +58,7 @@ class WP_HTML_Open_Elements {
 	 *
 	 * @since 6.6.0
 	 *
-<<<<<<< HEAD
-	 * @var Closure
-=======
 	 * @var Closure|null
->>>>>>> 535c0c1 (initial commit)
 	 */
 	private $pop_handler = null;
 
@@ -73,11 +69,7 @@ class WP_HTML_Open_Elements {
 	 *
 	 * @since 6.6.0
 	 *
-<<<<<<< HEAD
-	 * @var Closure
-=======
 	 * @var Closure|null
->>>>>>> 535c0c1 (initial commit)
 	 */
 	private $push_handler = null;
 
@@ -91,11 +83,7 @@ class WP_HTML_Open_Elements {
 	 *
 	 * @param Closure $handler The handler function.
 	 */
-<<<<<<< HEAD
-	public function set_pop_handler( Closure $handler ) {
-=======
 	public function set_pop_handler( Closure $handler ): void {
->>>>>>> 535c0c1 (initial commit)
 		$this->pop_handler = $handler;
 	}
 
@@ -109,17 +97,11 @@ class WP_HTML_Open_Elements {
 	 *
 	 * @param Closure $handler The handler function.
 	 */
-<<<<<<< HEAD
-	public function set_push_handler( Closure $handler ) {
-=======
 	public function set_push_handler( Closure $handler ): void {
->>>>>>> 535c0c1 (initial commit)
 		$this->push_handler = $handler;
 	}
 
 	/**
-<<<<<<< HEAD
-=======
 	 * Returns the name of the node at the nth position on the stack
 	 * of open elements, or `null` if no such position exists.
 	 *
@@ -163,7 +145,6 @@ class WP_HTML_Open_Elements {
 	}
 
 	/**
->>>>>>> 535c0c1 (initial commit)
 	 * Reports if a specific node is in the stack of open elements.
 	 *
 	 * @since 6.4.0
@@ -171,15 +152,9 @@ class WP_HTML_Open_Elements {
 	 * @param WP_HTML_Token $token Look for this node in the stack.
 	 * @return bool Whether the referenced node is in the stack of open elements.
 	 */
-<<<<<<< HEAD
-	public function contains_node( $token ) {
-		foreach ( $this->walk_up() as $item ) {
-			if ( $token->bookmark_name === $item->bookmark_name ) {
-=======
 	public function contains_node( WP_HTML_Token $token ): bool {
 		foreach ( $this->walk_up() as $item ) {
 			if ( $token === $item ) {
->>>>>>> 535c0c1 (initial commit)
 				return true;
 			}
 		}
@@ -194,11 +169,7 @@ class WP_HTML_Open_Elements {
 	 *
 	 * @return int How many node are in the stack of open elements.
 	 */
-<<<<<<< HEAD
-	public function count() {
-=======
 	public function count(): int {
->>>>>>> 535c0c1 (initial commit)
 		return count( $this->stack );
 	}
 
@@ -210,26 +181,13 @@ class WP_HTML_Open_Elements {
 	 *
 	 * @return WP_HTML_Token|null Last node in the stack of open elements, if one exists, otherwise null.
 	 */
-<<<<<<< HEAD
-	public function current_node() {
-=======
 	public function current_node(): ?WP_HTML_Token {
->>>>>>> 535c0c1 (initial commit)
 		$current_node = end( $this->stack );
 
 		return $current_node ? $current_node : null;
 	}
 
 	/**
-<<<<<<< HEAD
-	 * Returns whether an element is in a specific scope.
-	 *
-	 * ## HTML Support
-	 *
-	 * This function skips checking for the termination list because there
-	 * are no supported elements which appear in the termination list.
-	 *
-=======
 	 * Indicates if the current node is of a given type or name.
 	 *
 	 * It's possible to pass either a node type or a node name to this function.
@@ -274,7 +232,6 @@ class WP_HTML_Open_Elements {
 	/**
 	 * Returns whether an element is in a specific scope.
 	 *
->>>>>>> 535c0c1 (initial commit)
 	 * @since 6.4.0
 	 *
 	 * @see https://html.spec.whatwg.org/#has-an-element-in-the-specific-scope
@@ -283,11 +240,6 @@ class WP_HTML_Open_Elements {
 	 * @param string[] $termination_list List of elements that terminate the search.
 	 * @return bool Whether the element was found in a specific scope.
 	 */
-<<<<<<< HEAD
-	public function has_element_in_specific_scope( $tag_name, $termination_list ) {
-		foreach ( $this->walk_up() as $node ) {
-			if ( $node->node_name === $tag_name ) {
-=======
 	public function has_element_in_specific_scope( string $tag_name, $termination_list ): bool {
 		foreach ( $this->walk_up() as $node ) {
 			$namespaced_name = 'html' === $node->namespace
@@ -295,31 +247,17 @@ class WP_HTML_Open_Elements {
 				: "{$node->namespace} {$node->node_name}";
 
 			if ( $namespaced_name === $tag_name ) {
->>>>>>> 535c0c1 (initial commit)
 				return true;
 			}
 
 			if (
 				'(internal: H1 through H6 - do not use)' === $tag_name &&
-<<<<<<< HEAD
-				in_array( $node->node_name, array( 'H1', 'H2', 'H3', 'H4', 'H5', 'H6' ), true )
-=======
 				in_array( $namespaced_name, array( 'H1', 'H2', 'H3', 'H4', 'H5', 'H6' ), true )
->>>>>>> 535c0c1 (initial commit)
 			) {
 				return true;
 			}
 
-<<<<<<< HEAD
-			switch ( $node->node_name ) {
-				case 'HTML':
-					return false;
-			}
-
-			if ( in_array( $node->node_name, $termination_list, true ) ) {
-=======
 			if ( in_array( $namespaced_name, $termination_list, true ) ) {
->>>>>>> 535c0c1 (initial commit)
 				return false;
 			}
 		}
@@ -330,9 +268,6 @@ class WP_HTML_Open_Elements {
 	/**
 	 * Returns whether a particular element is in scope.
 	 *
-<<<<<<< HEAD
-	 * @since 6.4.0
-=======
 	 * > The stack of open elements is said to have a particular element in
 	 * > scope when it has that element in the specific scope consisting of
 	 * > the following element types:
@@ -358,27 +293,12 @@ class WP_HTML_Open_Elements {
 	 *
 	 * @since 6.4.0
 	 * @since 6.7.0 Full support.
->>>>>>> 535c0c1 (initial commit)
 	 *
 	 * @see https://html.spec.whatwg.org/#has-an-element-in-scope
 	 *
 	 * @param string $tag_name Name of tag to check.
 	 * @return bool Whether given element is in scope.
 	 */
-<<<<<<< HEAD
-	public function has_element_in_scope( $tag_name ) {
-		return $this->has_element_in_specific_scope(
-			$tag_name,
-			array(
-
-				/*
-				 * Because it's not currently possible to encounter
-				 * one of the termination elements, they don't need
-				 * to be listed here. If they were, they would be
-				 * unreachable and only waste CPU cycles while
-				 * scanning through HTML.
-				 */
-=======
 	public function has_element_in_scope( string $tag_name ): bool {
 		return $this->has_element_in_specific_scope(
 			$tag_name,
@@ -403,7 +323,6 @@ class WP_HTML_Open_Elements {
 				'svg FOREIGNOBJECT',
 				'svg DESC',
 				'svg TITLE',
->>>>>>> 535c0c1 (initial commit)
 			)
 		);
 	}
@@ -411,10 +330,6 @@ class WP_HTML_Open_Elements {
 	/**
 	 * Returns whether a particular element is in list item scope.
 	 *
-<<<<<<< HEAD
-	 * @since 6.4.0
-	 * @since 6.5.0 Implemented: no longer throws on every invocation.
-=======
 	 * > The stack of open elements is said to have a particular element
 	 * > in list item scope when it has that element in the specific scope
 	 * > consisting of the following element types:
@@ -426,22 +341,12 @@ class WP_HTML_Open_Elements {
 	 * @since 6.4.0
 	 * @since 6.5.0 Implemented: no longer throws on every invocation.
 	 * @since 6.7.0 Supports all required HTML elements.
->>>>>>> 535c0c1 (initial commit)
 	 *
 	 * @see https://html.spec.whatwg.org/#has-an-element-in-list-item-scope
 	 *
 	 * @param string $tag_name Name of tag to check.
 	 * @return bool Whether given element is in scope.
 	 */
-<<<<<<< HEAD
-	public function has_element_in_list_item_scope( $tag_name ) {
-		return $this->has_element_in_specific_scope(
-			$tag_name,
-			array(
-				// There are more elements that belong here which aren't currently supported.
-				'OL',
-				'UL',
-=======
 	public function has_element_in_list_item_scope( string $tag_name ): bool {
 		return $this->has_element_in_specific_scope(
 			$tag_name,
@@ -469,7 +374,6 @@ class WP_HTML_Open_Elements {
 				'svg FOREIGNOBJECT',
 				'svg DESC',
 				'svg TITLE',
->>>>>>> 535c0c1 (initial commit)
 			)
 		);
 	}
@@ -477,9 +381,6 @@ class WP_HTML_Open_Elements {
 	/**
 	 * Returns whether a particular element is in button scope.
 	 *
-<<<<<<< HEAD
-	 * @since 6.4.0
-=======
 	 * > The stack of open elements is said to have a particular element
 	 * > in button scope when it has that element in the specific scope
 	 * > consisting of the following element types:
@@ -489,17 +390,12 @@ class WP_HTML_Open_Elements {
 	 *
 	 * @since 6.4.0
 	 * @since 6.7.0 Supports all required HTML elements.
->>>>>>> 535c0c1 (initial commit)
 	 *
 	 * @see https://html.spec.whatwg.org/#has-an-element-in-button-scope
 	 *
 	 * @param string $tag_name Name of tag to check.
 	 * @return bool Whether given element is in scope.
 	 */
-<<<<<<< HEAD
-	public function has_element_in_button_scope( $tag_name ) {
-		return $this->has_element_in_specific_scope( $tag_name, array( 'BUTTON' ) );
-=======
 	public function has_element_in_button_scope( string $tag_name ): bool {
 		return $this->has_element_in_specific_scope(
 			$tag_name,
@@ -527,27 +423,11 @@ class WP_HTML_Open_Elements {
 				'svg TITLE',
 			)
 		);
->>>>>>> 535c0c1 (initial commit)
 	}
 
 	/**
 	 * Returns whether a particular element is in table scope.
 	 *
-<<<<<<< HEAD
-	 * @since 6.4.0
-	 *
-	 * @see https://html.spec.whatwg.org/#has-an-element-in-table-scope
-	 *
-	 * @throws WP_HTML_Unsupported_Exception Always until this function is implemented.
-	 *
-	 * @param string $tag_name Name of tag to check.
-	 * @return bool Whether given element is in scope.
-	 */
-	public function has_element_in_table_scope( $tag_name ) {
-		throw new WP_HTML_Unsupported_Exception( 'Cannot process elements depending on table scope.' );
-
-		return false; // The linter requires this unreachable code until the function is implemented and can return.
-=======
 	 * > The stack of open elements is said to have a particular element
 	 * > in table scope when it has that element in the specific scope
 	 * > consisting of the following element types:
@@ -573,27 +453,11 @@ class WP_HTML_Open_Elements {
 				'TEMPLATE',
 			)
 		);
->>>>>>> 535c0c1 (initial commit)
 	}
 
 	/**
 	 * Returns whether a particular element is in select scope.
 	 *
-<<<<<<< HEAD
-	 * @since 6.4.0
-	 *
-	 * @see https://html.spec.whatwg.org/#has-an-element-in-select-scope
-	 *
-	 * @throws WP_HTML_Unsupported_Exception Always until this function is implemented.
-	 *
-	 * @param string $tag_name Name of tag to check.
-	 * @return bool Whether given element is in scope.
-	 */
-	public function has_element_in_select_scope( $tag_name ) {
-		throw new WP_HTML_Unsupported_Exception( 'Cannot process elements depending on select scope.' );
-
-		return false; // The linter requires this unreachable code until the function is implemented and can return.
-=======
 	 * This test differs from the others like it, in that its rules are inverted.
 	 * Instead of arriving at a match when one of any tag in a termination group
 	 * is reached, this one terminates if any other tag is reached.
@@ -626,7 +490,6 @@ class WP_HTML_Open_Elements {
 		}
 
 		return false;
->>>>>>> 535c0c1 (initial commit)
 	}
 
 	/**
@@ -638,11 +501,7 @@ class WP_HTML_Open_Elements {
 	 *
 	 * @return bool Whether a P is in BUTTON scope.
 	 */
-<<<<<<< HEAD
-	public function has_p_in_button_scope() {
-=======
 	public function has_p_in_button_scope(): bool {
->>>>>>> 535c0c1 (initial commit)
 		return $this->has_p_in_button_scope;
 	}
 
@@ -655,11 +514,7 @@ class WP_HTML_Open_Elements {
 	 *
 	 * @return bool Whether a node was popped off of the stack.
 	 */
-<<<<<<< HEAD
-	public function pop() {
-=======
 	public function pop(): bool {
->>>>>>> 535c0c1 (initial commit)
 		$item = array_pop( $this->stack );
 		if ( null === $item ) {
 			return false;
@@ -675,31 +530,12 @@ class WP_HTML_Open_Elements {
 	}
 
 	/**
-<<<<<<< HEAD
-	 * Pops nodes off of the stack of open elements until one with the given tag name has been popped.
-=======
 	 * Pops nodes off of the stack of open elements until an HTML tag with the given name has been popped.
->>>>>>> 535c0c1 (initial commit)
 	 *
 	 * @since 6.4.0
 	 *
 	 * @see WP_HTML_Open_Elements::pop
 	 *
-<<<<<<< HEAD
-	 * @param string $tag_name Name of tag that needs to be popped off of the stack of open elements.
-	 * @return bool Whether a tag of the given name was found and popped off of the stack of open elements.
-	 */
-	public function pop_until( $tag_name ) {
-		foreach ( $this->walk_up() as $item ) {
-			if ( 'context-node' === $item->bookmark_name ) {
-				return true;
-			}
-
-			$this->pop();
-
-			if (
-				'(internal: H1 through H6 - do not use)' === $tag_name &&
-=======
 	 * @param string $html_tag_name Name of tag that needs to be popped off of the stack of open elements.
 	 * @return bool Whether a tag of the given name was found and popped off of the stack of open elements.
 	 */
@@ -713,17 +549,12 @@ class WP_HTML_Open_Elements {
 
 			if (
 				'(internal: H1 through H6 - do not use)' === $html_tag_name &&
->>>>>>> 535c0c1 (initial commit)
 				in_array( $item->node_name, array( 'H1', 'H2', 'H3', 'H4', 'H5', 'H6' ), true )
 			) {
 				return true;
 			}
 
-<<<<<<< HEAD
-			if ( $tag_name === $item->node_name ) {
-=======
 			if ( $html_tag_name === $item->node_name ) {
->>>>>>> 535c0c1 (initial commit)
 				return true;
 			}
 		}
@@ -740,11 +571,7 @@ class WP_HTML_Open_Elements {
 	 *
 	 * @param WP_HTML_Token $stack_item Item to add onto stack.
 	 */
-<<<<<<< HEAD
-	public function push( $stack_item ) {
-=======
 	public function push( WP_HTML_Token $stack_item ): void {
->>>>>>> 535c0c1 (initial commit)
 		$this->stack[] = $stack_item;
 		$this->after_element_push( $stack_item );
 	}
@@ -757,11 +584,7 @@ class WP_HTML_Open_Elements {
 	 * @param WP_HTML_Token $token The node to remove from the stack of open elements.
 	 * @return bool Whether the node was found and removed from the stack of open elements.
 	 */
-<<<<<<< HEAD
-	public function remove_node( $token ) {
-=======
 	public function remove_node( WP_HTML_Token $token ): bool {
->>>>>>> 535c0c1 (initial commit)
 		if ( 'context-node' === $token->bookmark_name ) {
 			return false;
 		}
@@ -828,16 +651,10 @@ class WP_HTML_Open_Elements {
 	 * @since 6.4.0
 	 * @since 6.5.0 Accepts $above_this_node to start traversal above a given node, if it exists.
 	 *
-<<<<<<< HEAD
-	 * @param ?WP_HTML_Token $above_this_node Start traversing above this node, if provided and if the node exists.
-	 */
-	public function walk_up( $above_this_node = null ) {
-=======
 	 * @param WP_HTML_Token|null $above_this_node Optional. Start traversing above this node,
 	 *                                            if provided and if the node exists.
 	 */
 	public function walk_up( ?WP_HTML_Token $above_this_node = null ) {
->>>>>>> 535c0c1 (initial commit)
 		$has_found_node = null === $above_this_node;
 
 		for ( $i = count( $this->stack ) - 1; $i >= 0; $i-- ) {
@@ -869,23 +686,15 @@ class WP_HTML_Open_Elements {
 	 *
 	 * @param WP_HTML_Token $item Element that was added to the stack of open elements.
 	 */
-<<<<<<< HEAD
-	public function after_element_push( $item ) {
-=======
 	public function after_element_push( WP_HTML_Token $item ): void {
 		$namespaced_name = 'html' === $item->namespace
 			? $item->node_name
 			: "{$item->namespace} {$item->node_name}";
 
->>>>>>> 535c0c1 (initial commit)
 		/*
 		 * When adding support for new elements, expand this switch to trap
 		 * cases where the precalculated value needs to change.
 		 */
-<<<<<<< HEAD
-		switch ( $item->node_name ) {
-			case 'BUTTON':
-=======
 		switch ( $namespaced_name ) {
 			case 'APPLET':
 			case 'BUTTON':
@@ -906,7 +715,6 @@ class WP_HTML_Open_Elements {
 			case 'svg FOREIGNOBJECT':
 			case 'svg DESC':
 			case 'svg TITLE':
->>>>>>> 535c0c1 (initial commit)
 				$this->has_p_in_button_scope = false;
 				break;
 
@@ -933,23 +741,12 @@ class WP_HTML_Open_Elements {
 	 *
 	 * @param WP_HTML_Token $item Element that was removed from the stack of open elements.
 	 */
-<<<<<<< HEAD
-	public function after_element_pop( $item ) {
-=======
 	public function after_element_pop( WP_HTML_Token $item ): void {
->>>>>>> 535c0c1 (initial commit)
 		/*
 		 * When adding support for new elements, expand this switch to trap
 		 * cases where the precalculated value needs to change.
 		 */
 		switch ( $item->node_name ) {
-<<<<<<< HEAD
-			case 'BUTTON':
-				$this->has_p_in_button_scope = $this->has_element_in_button_scope( 'P' );
-				break;
-
-			case 'P':
-=======
 			case 'APPLET':
 			case 'BUTTON':
 			case 'CAPTION':
@@ -970,7 +767,6 @@ class WP_HTML_Open_Elements {
 			case 'svg FOREIGNOBJECT':
 			case 'svg DESC':
 			case 'svg TITLE':
->>>>>>> 535c0c1 (initial commit)
 				$this->has_p_in_button_scope = $this->has_element_in_button_scope( 'P' );
 				break;
 		}
@@ -981,8 +777,6 @@ class WP_HTML_Open_Elements {
 	}
 
 	/**
-<<<<<<< HEAD
-=======
 	 * Clear the stack back to a table context.
 	 *
 	 * > When the steps above require the UA to clear the stack back to a table context, it means
@@ -1057,7 +851,6 @@ class WP_HTML_Open_Elements {
 	}
 
 	/**
->>>>>>> 535c0c1 (initial commit)
 	 * Wakeup magic method.
 	 *
 	 * @since 6.6.0

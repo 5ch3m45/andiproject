@@ -1,9 +1,6 @@
 {
 	"title": "Style variation name",
-<<<<<<< HEAD
-=======
 	"description": "Style variation description",
->>>>>>> 2b44096 (initial commit 2)
 	"settings": {
 		"typography": {
 				"fontSizes": [

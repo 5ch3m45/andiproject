@@ -35,47 +35,6 @@ class TokenList {
   /**
    * Constructs a new instance of TokenList.
    *
-<<<<<<< HEAD
-   * @param {string} initialValue Initial value to assign.
-   */
-  constructor(initialValue = '') {
-    this.value = initialValue;
-
-    // Disable reason: These are type hints on the class.
-    /* eslint-disable no-unused-expressions */
-    /** @type {string} */
-    this._currentValue;
-
-    /** @type {string[]} */
-    this._valueAsArray;
-    /* eslint-enable no-unused-expressions */
-  }
-
-  /**
-   * @param {Parameters<Array<string>['entries']>} args
-   */
-  entries(...args) {
-    return this._valueAsArray.entries(...args);
-  }
-
-  /**
-   * @param {Parameters<Array<string>['forEach']>} args
-   */
-  forEach(...args) {
-    return this._valueAsArray.forEach(...args);
-  }
-
-  /**
-   * @param {Parameters<Array<string>['keys']>} args
-   */
-  keys(...args) {
-    return this._valueAsArray.keys(...args);
-  }
-
-  /**
-   * @param {Parameters<Array<string>['values']>} args
-   */
-=======
    * @param initialValue Initial value to assign.
    */
   constructor(initialValue = '') {
@@ -92,7 +51,6 @@ class TokenList {
   keys(...args) {
     return this._valueAsArray.keys(...args);
   }
->>>>>>> 2b44096 (initial commit 2)
   values(...args) {
     return this._valueAsArray.values(...args);
   }
@@ -102,11 +60,7 @@ class TokenList {
    *
    * @see https://dom.spec.whatwg.org/#dom-domtokenlist-value
    *
-<<<<<<< HEAD
-   * @return {string} Token set as string.
-=======
    * @return Token set as string.
->>>>>>> 2b44096 (initial commit 2)
    */
   get value() {
     return this._currentValue;
@@ -117,11 +71,7 @@ class TokenList {
    *
    * @see https://dom.spec.whatwg.org/#dom-domtokenlist-value
    *
-<<<<<<< HEAD
-   * @param {string} value New token set as string.
-=======
    * @param value New token set as string.
->>>>>>> 2b44096 (initial commit 2)
    */
   set value(value) {
     value = String(value);
@@ -134,11 +84,7 @@ class TokenList {
    *
    * @see https://dom.spec.whatwg.org/#dom-domtokenlist-length
    *
-<<<<<<< HEAD
-   * @return {number} Number of tokens.
-=======
    * @return Number of tokens.
->>>>>>> 2b44096 (initial commit 2)
    */
   get length() {
     return this._valueAsArray.length;
@@ -150,11 +96,7 @@ class TokenList {
    * @see https://dom.spec.whatwg.org/#DOMTokenList-stringification-behavior
    * @see https://www.ecma-international.org/ecma-262/9.0/index.html#sec-tostring
    *
-<<<<<<< HEAD
-   * @return {string} Token set as string.
-=======
    * @return Token set as string.
->>>>>>> 2b44096 (initial commit 2)
    */
   toString() {
     return this.value;
@@ -165,11 +107,7 @@ class TokenList {
    *
    * @see https://dom.spec.whatwg.org/#domtokenlist
    *
-<<<<<<< HEAD
-   * @return {IterableIterator<string>} TokenList iterator.
-=======
    * @return TokenList iterator.
->>>>>>> 2b44096 (initial commit 2)
    */
   *[Symbol.iterator]() {
     return yield* this._valueAsArray;
@@ -180,15 +118,9 @@ class TokenList {
    *
    * @see https://dom.spec.whatwg.org/#dom-domtokenlist-item
    *
-<<<<<<< HEAD
-   * @param {number} index Index at which to return token.
-   *
-   * @return {string|undefined} Token at index.
-=======
    * @param index Index at which to return token.
    *
    * @return Token at index.
->>>>>>> 2b44096 (initial commit 2)
    */
   item(index) {
     return this._valueAsArray[index];
@@ -199,15 +131,9 @@ class TokenList {
    *
    * @see https://dom.spec.whatwg.org/#dom-domtokenlist-contains
    *
-<<<<<<< HEAD
-   * @param {string} item Token to test.
-   *
-   * @return {boolean} Whether token is present.
-=======
    * @param item Token to test.
    *
    * @return Whether token is present.
->>>>>>> 2b44096 (initial commit 2)
    */
   contains(item) {
     return this._valueAsArray.indexOf(item) !== -1;
@@ -218,11 +144,7 @@ class TokenList {
    *
    * @see https://dom.spec.whatwg.org/#dom-domtokenlist-add
    *
-<<<<<<< HEAD
-   * @param {...string} items Items to add.
-=======
    * @param items Items to add.
->>>>>>> 2b44096 (initial commit 2)
    */
   add(...items) {
     this.value += ' ' + items.join(' ');
@@ -233,11 +155,7 @@ class TokenList {
    *
    * @see https://dom.spec.whatwg.org/#dom-domtokenlist-remove
    *
-<<<<<<< HEAD
-   * @param {...string} items Items to remove.
-=======
    * @param items Items to remove.
->>>>>>> 2b44096 (initial commit 2)
    */
   remove(...items) {
     this.value = this._valueAsArray.filter(val => !items.includes(val)).join(' ');
@@ -251,17 +169,10 @@ class TokenList {
    *
    * @see https://dom.spec.whatwg.org/#dom-domtokenlist-toggle
    *
-<<<<<<< HEAD
-   * @param {string}  token   Token to toggle.
-   * @param {boolean} [force] Presence to force.
-   *
-   * @return {boolean} Whether token is present after toggle.
-=======
    * @param token   Token to toggle.
    * @param [force] Presence to force.
    *
    * @return Whether token is present after toggle.
->>>>>>> 2b44096 (initial commit 2)
    */
   toggle(token, force) {
     if (undefined === force) {
@@ -281,17 +192,10 @@ class TokenList {
    *
    * @see https://dom.spec.whatwg.org/#dom-domtokenlist-replace
    *
-<<<<<<< HEAD
-   * @param {string} token    Token to replace with `newToken`.
-   * @param {string} newToken Token to use in place of `token`.
-   *
-   * @return {boolean} Whether replacement occurred.
-=======
    * @param token    Token to replace with `newToken`.
    * @param newToken Token to use in place of `token`.
    *
    * @return Whether replacement occurred.
->>>>>>> 2b44096 (initial commit 2)
    */
   replace(token, newToken) {
     if (!this.contains(token)) {
@@ -302,25 +206,13 @@ class TokenList {
     return true;
   }
 
-<<<<<<< HEAD
-=======
   /* eslint-disable @typescript-eslint/no-unused-vars */
->>>>>>> 2b44096 (initial commit 2)
   /**
    * Returns true if `token` is in the associated attribute’s supported
    * tokens. Returns false otherwise.
    *
    * Always returns `true` in this implementation.
    *
-<<<<<<< HEAD
-   * @see https://dom.spec.whatwg.org/#dom-domtokenlist-supports
-   *
-   * @return {boolean} Whether token is supported.
-   */
-  supports() {
-    return true;
-  }
-=======
    * @param _token
    * @see https://dom.spec.whatwg.org/#dom-domtokenlist-supports
    *
@@ -330,7 +222,6 @@ class TokenList {
     return true;
   }
   /* eslint-enable @typescript-eslint/no-unused-vars */
->>>>>>> 2b44096 (initial commit 2)
 }
 
 (window.wp = window.wp || {}).tokenList = __webpack_exports__["default"];

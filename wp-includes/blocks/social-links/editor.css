@@ -79,8 +79,6 @@
 
 .wp-block-social-links .is-selected .wp-social-link__is-incomplete,.wp-social-link.wp-social-link__is-incomplete:focus,.wp-social-link.wp-social-link__is-incomplete:hover{
   opacity:1;
-<<<<<<< HEAD
-=======
 }
 
 .wp-block-social-links .block-list-appender{
@@ -98,5 +96,4 @@
 }
 .wp-block-social-links.has-huge-icon-size .block-editor-button-block-appender.components-button.components-button{
   padding:23px;
->>>>>>> 535c0c1 (initial commit)
 }

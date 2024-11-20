@@ -20,35 +20,13 @@
  *
  * The second filter, {@see 'plugins_api'}, allows a plugin to override the WordPress.org
  * Plugin Installation API entirely. If `$action` is 'query_plugins' or 'plugin_information',
-<<<<<<< HEAD
- * an object MUST be passed. If `$action` is 'hot_tags' or 'hot_categories', an array MUST
- * be passed.
-=======
  * an object MUST be passed. If `$action` is 'hot_tags', an array MUST be passed.
->>>>>>> 535c0c1 (initial commit)
  *
  * Finally, the third filter, {@see 'plugins_api_result'}, makes it possible to filter the
  * response object or array, depending on the `$action` type.
  *
  * Supported arguments per action:
  *
-<<<<<<< HEAD
- * | Argument Name        | query_plugins | plugin_information | hot_tags | hot_categories |
- * | -------------------- | :-----------: | :----------------: | :------: | :------------: |
- * | `$slug`              | No            |  Yes               | No       | No             |
- * | `$per_page`          | Yes           |  No                | No       | No             |
- * | `$page`              | Yes           |  No                | No       | No             |
- * | `$number`            | No            |  No                | Yes      | Yes            |
- * | `$search`            | Yes           |  No                | No       | No             |
- * | `$tag`               | Yes           |  No                | No       | No             |
- * | `$author`            | Yes           |  No                | No       | No             |
- * | `$user`              | Yes           |  No                | No       | No             |
- * | `$browse`            | Yes           |  No                | No       | No             |
- * | `$locale`            | Yes           |  Yes               | No       | No             |
- * | `$installed_plugins` | Yes           |  No                | No       | No             |
- * | `$is_ssl`            | Yes           |  Yes               | No       | No             |
- * | `$fields`            | Yes           |  Yes               | No       | No             |
-=======
  * | Argument Name        | query_plugins | plugin_information | hot_tags |
  * | -------------------- | :-----------: | :----------------: | :------: |
  * | `$slug`              | No            |  Yes               | No       |
@@ -64,16 +42,11 @@
  * | `$installed_plugins` | Yes           |  No                | No       |
  * | `$is_ssl`            | Yes           |  Yes               | No       |
  * | `$fields`            | Yes           |  Yes               | No       |
->>>>>>> 535c0c1 (initial commit)
  *
  * @since 2.7.0
  *
  * @param string       $action API action to perform: 'query_plugins', 'plugin_information',
-<<<<<<< HEAD
- *                             'hot_tags' or 'hot_categories'.
-=======
  *                             or 'hot_tags'.
->>>>>>> 535c0c1 (initial commit)
  * @param array|object $args   {
  *     Optional. Array or object of arguments to serialize for the Plugin Info API.
  *
@@ -117,10 +90,6 @@
  *         @type bool $banners           Whether to return the banner images links. Default false.
  *         @type bool $icons             Whether to return the icon links. Default false.
  *         @type bool $active_installs   Whether to return the number of active installations. Default false.
-<<<<<<< HEAD
- *         @type bool $group             Whether to return the assigned group. Default false.
-=======
->>>>>>> 535c0c1 (initial commit)
  *         @type bool $contributors      Whether to return the list of contributors. Default false.
  *     }
  * }
@@ -129,12 +98,6 @@
  *         for more information on the make-up of possible return values depending on the value of `$action`.
  */
 function plugins_api( $action, $args = array() ) {
-<<<<<<< HEAD
-	// Include an unmodified $wp_version.
-	require ABSPATH . WPINC . '/version.php';
-
-=======
->>>>>>> 535c0c1 (initial commit)
 	if ( is_array( $args ) ) {
 		$args = (object) $args;
 	}
@@ -150,11 +113,7 @@ function plugins_api( $action, $args = array() ) {
 	}
 
 	if ( ! isset( $args->wp_version ) ) {
-<<<<<<< HEAD
-		$args->wp_version = substr( $wp_version, 0, 3 ); // x.y
-=======
 		$args->wp_version = substr( wp_get_wp_version(), 0, 3 ); // x.y
->>>>>>> 535c0c1 (initial commit)
 	}
 
 	/**
@@ -175,11 +134,7 @@ function plugins_api( $action, $args = array() ) {
 	 * Returning a non-false value will effectively short-circuit the WordPress.org API request.
 	 *
 	 * If `$action` is 'query_plugins' or 'plugin_information', an object MUST be passed.
-<<<<<<< HEAD
-	 * If `$action` is 'hot_tags' or 'hot_categories', an array should be passed.
-=======
 	 * If `$action` is 'hot_tags', an array should be passed.
->>>>>>> 535c0c1 (initial commit)
 	 *
 	 * @since 2.7.0
 	 *
@@ -208,11 +163,7 @@ function plugins_api( $action, $args = array() ) {
 
 		$http_args = array(
 			'timeout'    => 15,
-<<<<<<< HEAD
-			'user-agent' => 'WordPress/' . $wp_version . '; ' . home_url( '/' ),
-=======
 			'user-agent' => 'WordPress/' . wp_get_wp_version() . '; ' . home_url( '/' ),
->>>>>>> 535c0c1 (initial commit)
 		);
 		$request   = wp_remote_get( $url, $http_args );
 

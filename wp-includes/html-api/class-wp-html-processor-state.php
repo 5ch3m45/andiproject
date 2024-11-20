@@ -48,8 +48,6 @@ class WP_HTML_Processor_State {
 	const INSERTION_MODE_INITIAL = 'insertion-mode-initial';
 
 	/**
-<<<<<<< HEAD
-=======
 	 * Before HTML insertion mode for full HTML parser.
 	 *
 	 * @since 6.7.0
@@ -110,7 +108,6 @@ class WP_HTML_Processor_State {
 	const INSERTION_MODE_AFTER_HEAD = 'insertion-mode-after-head';
 
 	/**
->>>>>>> 535c0c1 (initial commit)
 	 * In body insertion mode for full HTML parser.
 	 *
 	 * @since 6.4.0
@@ -123,8 +120,6 @@ class WP_HTML_Processor_State {
 	const INSERTION_MODE_IN_BODY = 'insertion-mode-in-body';
 
 	/**
-<<<<<<< HEAD
-=======
 	 * In table insertion mode for full HTML parser.
 	 *
 	 * @since 6.7.0
@@ -316,7 +311,6 @@ class WP_HTML_Processor_State {
 	public $stack_of_template_insertion_modes = array();
 
 	/**
->>>>>>> 535c0c1 (initial commit)
 	 * Tracks open elements while scanning HTML.
 	 *
 	 * This property is initialized in the constructor and never null.
@@ -327,11 +321,7 @@ class WP_HTML_Processor_State {
 	 *
 	 * @var WP_HTML_Open_Elements
 	 */
-<<<<<<< HEAD
-	public $stack_of_open_elements = null;
-=======
 	public $stack_of_open_elements;
->>>>>>> 535c0c1 (initial commit)
 
 	/**
 	 * Tracks open formatting elements, used to handle mis-nested formatting element tags.
@@ -344,11 +334,7 @@ class WP_HTML_Processor_State {
 	 *
 	 * @var WP_HTML_Active_Formatting_Elements
 	 */
-<<<<<<< HEAD
-	public $active_formatting_elements = null;
-=======
 	public $active_formatting_elements;
->>>>>>> 535c0c1 (initial commit)
 
 	/**
 	 * Refers to the currently-matched tag, if any.
@@ -382,8 +368,6 @@ class WP_HTML_Processor_State {
 	public $context_node = null;
 
 	/**
-<<<<<<< HEAD
-=======
 	 * The recognized encoding of the input byte stream.
 	 *
 	 * > The stream of code points that comprises the input to the tokenization
@@ -445,7 +429,6 @@ class WP_HTML_Processor_State {
 	public $form_element = null;
 
 	/**
->>>>>>> 535c0c1 (initial commit)
 	 * The frameset-ok flag indicates if a `FRAMESET` element is allowed in the current state.
 	 *
 	 * > The frameset-ok flag is set to "ok" when the parser is created. It is set to "not ok" after certain tokens are seen.

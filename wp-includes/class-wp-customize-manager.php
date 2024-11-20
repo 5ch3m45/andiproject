@@ -3334,13 +3334,6 @@ final class WP_Customize_Manager {
 			return null;
 		}
 
-<<<<<<< HEAD
-		return array(
-			'id'     => $lock_user->ID,
-			'name'   => $lock_user->display_name,
-			'avatar' => get_avatar_url( $lock_user->ID, array( 'size' => 128 ) ),
-		);
-=======
 		$user_details = array(
 			'id'   => $lock_user->ID,
 			'name' => $lock_user->display_name,
@@ -3351,7 +3344,6 @@ final class WP_Customize_Manager {
 		}
 
 		return $user_details;
->>>>>>> 535c0c1 (initial commit)
 	}
 
 	/**
@@ -4320,15 +4312,10 @@ final class WP_Customize_Manager {
 
 		<script type="text/html" id="tmpl-customize-changeset-locked-notification">
 			<li class="notice notice-{{ data.type || 'info' }} {{ data.containerClasses || '' }}" data-code="{{ data.code }}" data-type="{{ data.type }}">
-<<<<<<< HEAD
-				<div class="notification-message customize-changeset-locked-message">
-					<img class="customize-changeset-locked-avatar" src="{{ data.lockUser.avatar }}" alt="{{ data.lockUser.name }}" />
-=======
 				<div class="notification-message customize-changeset-locked-message {{ data.lockUser.avatar ? 'has-avatar' : '' }}">
 					<# if ( data.lockUser.avatar ) { #>
 						<img class="customize-changeset-locked-avatar" src="{{ data.lockUser.avatar }}" alt="{{ data.lockUser.name }}" />
 					<# } #>
->>>>>>> 535c0c1 (initial commit)
 					<p class="currently-editing">
 						<# if ( data.message ) { #>
 							{{{ data.message }}}
@@ -5223,16 +5210,10 @@ final class WP_Customize_Manager {
 				array(
 					'label'       => __( 'Site Icon' ),
 					'description' => sprintf(
-<<<<<<< HEAD
-						/* translators: %s: Site Icon size in pixels. */
-						'<p>' . __( 'The Site Icon is what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. It should be square and at least %s pixels.' ) . '</p>',
-						'<code>512 &times; 512</code>'
-=======
 						/* translators: 1: pixel value for icon size. 2: pixel value for icon size. */
 						'<p>' . __( 'The Site Icon is what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. It should be square and at least <code>%1$s by %2$s</code> pixels.' ) . '</p>',
 						512,
 						512
->>>>>>> 535c0c1 (initial commit)
 					),
 					'section'     => 'title_tagline',
 					'priority'    => 60,
@@ -6168,12 +6149,7 @@ final class WP_Customize_Manager {
 	 * This method exists because the partial object and context data are passed
 	 * into a partial's render_callback so we cannot use get_custom_logo() as
 	 * the render_callback directly since it expects a blog ID as the first
-<<<<<<< HEAD
-	 * argument. When WP no longer supports PHP 5.3, this method can be removed
-	 * in favor of an anonymous function.
-=======
 	 * argument.
->>>>>>> 535c0c1 (initial commit)
 	 *
 	 * @see WP_Customize_Manager::register_controls()
 	 *

@@ -114,11 +114,7 @@ class WP_Block {
 	 * @since 5.5.0
 	 *
 	 * @param array                  $block             {
-<<<<<<< HEAD
-	 *     A representative array of a single parsed block object. See WP_Block_Parser_Block.
-=======
 	 *     An associative array of a single parsed block object. See WP_Block_Parser_Block.
->>>>>>> 535c0c1 (initial commit)
 	 *
 	 *     @type string   $blockName    Name of block.
 	 *     @type array    $attrs        Attributes from block comment delimiters.
@@ -241,10 +237,7 @@ class WP_Block {
 	 *
 	 * @since 6.5.0
 	 * @since 6.6.0 Handle the `__default` attribute for pattern overrides.
-<<<<<<< HEAD
-=======
 	 * @since 6.7.0 Return any updated bindings metadata in the computed attributes.
->>>>>>> 535c0c1 (initial commit)
 	 *
 	 * @return array The computed block attributes for the provided block bindings.
 	 */
@@ -292,8 +285,6 @@ class WP_Block {
 					: array( 'source' => 'core/pattern-overrides' );
 			}
 			$bindings = $updated_bindings;
-<<<<<<< HEAD
-=======
 			/*
 			 * Update the bindings metadata of the computed attributes.
 			 * This ensures the block receives the expanded __default binding metadata when it renders.
@@ -302,7 +293,6 @@ class WP_Block {
 				$parsed_block['attrs']['metadata'],
 				array( 'bindings' => $bindings )
 			);
->>>>>>> 535c0c1 (initial commit)
 		}
 
 		foreach ( $bindings as $attribute_name => $block_binding ) {
@@ -320,8 +310,6 @@ class WP_Block {
 				continue;
 			}
 
-<<<<<<< HEAD
-=======
 			// Adds the necessary context defined by the source.
 			if ( ! empty( $block_binding_source->uses_context ) ) {
 				foreach ( $block_binding_source->uses_context as $context_name ) {
@@ -331,7 +319,6 @@ class WP_Block {
 				}
 			}
 
->>>>>>> 535c0c1 (initial commit)
 			$source_args  = ! empty( $block_binding['args'] ) && is_array( $block_binding['args'] ) ? $block_binding['args'] : array();
 			$source_value = $block_binding_source->get_value( $source_args, $this, $attribute_name );
 

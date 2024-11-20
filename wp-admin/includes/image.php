@@ -291,9 +291,6 @@ function wp_create_image_subsizes( $file, $attachment_id ) {
 		 * If the original image's dimensions are over the threshold,
 		 * scale the image and use it as the "full" size.
 		 */
-<<<<<<< HEAD
-		if ( $threshold && ( $image_meta['width'] > $threshold || $image_meta['height'] > $threshold ) ) {
-=======
 		$scale_down = false;
 		$convert    = false;
 
@@ -314,7 +311,6 @@ function wp_create_image_subsizes( $file, $attachment_id ) {
 		}
 
 		if ( $scale_down || $convert ) {
->>>>>>> 535c0c1 (initial commit)
 			$editor = wp_get_image_editor( $file );
 
 			if ( is_wp_error( $editor ) ) {
@@ -322,10 +318,6 @@ function wp_create_image_subsizes( $file, $attachment_id ) {
 				return $image_meta;
 			}
 
-<<<<<<< HEAD
-			// Resize the image.
-			$resized = $editor->resize( $threshold, $threshold );
-=======
 			if ( $scale_down ) {
 				// Resize the image. This will also convet it if needed.
 				$resized = $editor->resize( $threshold, $threshold );
@@ -334,17 +326,12 @@ function wp_create_image_subsizes( $file, $attachment_id ) {
 				$resized = true;
 			}
 
->>>>>>> 535c0c1 (initial commit)
 			$rotated = null;
 
 			// If there is EXIF data, rotate according to EXIF Orientation.
 			if ( ! is_wp_error( $resized ) && is_array( $exif_meta ) ) {
 				$resized = $editor->maybe_exif_rotate();
-<<<<<<< HEAD
-				$rotated = $resized;
-=======
 				$rotated = $resized; // bool true or WP_Error
->>>>>>> 535c0c1 (initial commit)
 			}
 
 			if ( ! is_wp_error( $resized ) ) {
@@ -352,9 +339,6 @@ function wp_create_image_subsizes( $file, $attachment_id ) {
 				 * Append "-scaled" to the image file name. It will look like "my_image-scaled.jpg".
 				 * This doesn't affect the sub-sizes names as they are generated from the original image (for best quality).
 				 */
-<<<<<<< HEAD
-				$saved = $editor->save( $editor->generate_filename( 'scaled' ) );
-=======
 				if ( $scale_down ) {
 					$saved = $editor->save( $editor->generate_filename( 'scaled' ) );
 				} elseif ( $convert ) {
@@ -372,7 +356,6 @@ function wp_create_image_subsizes( $file, $attachment_id ) {
 				} else {
 					$saved = $editor->save();
 				}
->>>>>>> 535c0c1 (initial commit)
 
 				if ( ! is_wp_error( $saved ) ) {
 					$image_meta = _wp_image_meta_replace_original( $saved, $file, $image_meta, $attachment_id );
@@ -601,10 +584,7 @@ function wp_copy_parent_attachment_properties( $cropped, $parent_attachment_id, 
  *
  * @since 2.1.0
  * @since 6.0.0 The `$filesize` value was added to the returned array.
-<<<<<<< HEAD
-=======
  * @since 6.7.0 The 'image/heic' mime type is supported.
->>>>>>> 535c0c1 (initial commit)
  *
  * @param int    $attachment_id Attachment ID to process.
  * @param string $file          Filepath of the attached image.
@@ -617,11 +597,7 @@ function wp_generate_attachment_metadata( $attachment_id, $file ) {
 	$support   = false;
 	$mime_type = get_post_mime_type( $attachment );
 
-<<<<<<< HEAD
-	if ( preg_match( '!^image/!', $mime_type ) && file_is_displayable_image( $file ) ) {
-=======
 	if ( 'image/heic' === $mime_type || ( preg_match( '!^image/!', $mime_type ) && file_is_displayable_image( $file ) ) ) {
->>>>>>> 535c0c1 (initial commit)
 		// Make thumbnails and other intermediate sizes.
 		$metadata = wp_create_image_subsizes( $file, $attachment_id );
 	} elseif ( wp_attachment_is( 'video', $attachment ) ) {

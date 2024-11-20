@@ -9,27 +9,12 @@
 	"attributes": {
 		"url": {
 			"type": "string",
-<<<<<<< HEAD
-			"__experimentalRole": "content"
-=======
 			"role": "content"
->>>>>>> 535c0c1 (initial commit)
 		},
 		"caption": {
 			"type": "rich-text",
 			"source": "rich-text",
 			"selector": "figcaption",
-<<<<<<< HEAD
-			"__experimentalRole": "content"
-		},
-		"type": {
-			"type": "string",
-			"__experimentalRole": "content"
-		},
-		"providerNameSlug": {
-			"type": "string",
-			"__experimentalRole": "content"
-=======
 			"role": "content"
 		},
 		"type": {
@@ -39,7 +24,6 @@
 		"providerNameSlug": {
 			"type": "string",
 			"role": "content"
->>>>>>> 535c0c1 (initial commit)
 		},
 		"allowResponsive": {
 			"type": "boolean",
@@ -48,20 +32,12 @@
 		"responsive": {
 			"type": "boolean",
 			"default": false,
-<<<<<<< HEAD
-			"__experimentalRole": "content"
-=======
 			"role": "content"
->>>>>>> 535c0c1 (initial commit)
 		},
 		"previewable": {
 			"type": "boolean",
 			"default": true,
-<<<<<<< HEAD
-			"__experimentalRole": "content"
-=======
 			"role": "content"
->>>>>>> 535c0c1 (initial commit)
 		}
 	},
 	"supports": {

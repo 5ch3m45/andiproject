@@ -11,21 +11,13 @@
 			"type": "rich-text",
 			"source": "rich-text",
 			"selector": "p",
-<<<<<<< HEAD
-			"__experimentalRole": "content"
-=======
 			"role": "content"
->>>>>>> 535c0c1 (initial commit)
 		},
 		"citation": {
 			"type": "rich-text",
 			"source": "rich-text",
 			"selector": "cite",
-<<<<<<< HEAD
-			"__experimentalRole": "content"
-=======
 			"role": "content"
->>>>>>> 535c0c1 (initial commit)
 		},
 		"textAlign": {
 			"type": "string"
@@ -34,8 +26,6 @@
 	"supports": {
 		"anchor": true,
 		"align": [ "left", "right", "wide", "full" ],
-<<<<<<< HEAD
-=======
 		"background": {
 			"backgroundImage": true,
 			"backgroundSize": true,
@@ -43,7 +33,6 @@
 				"backgroundImage": true
 			}
 		},
->>>>>>> 535c0c1 (initial commit)
 		"color": {
 			"gradients": true,
 			"background": true,
@@ -53,15 +42,12 @@
 				"text": true
 			}
 		},
-<<<<<<< HEAD
-=======
 		"dimensions": {
 			"minHeight": true,
 			"__experimentalDefaultControls": {
 				"minHeight": false
 			}
 		},
->>>>>>> 535c0c1 (initial commit)
 		"spacing": {
 			"margin": true,
 			"padding": true

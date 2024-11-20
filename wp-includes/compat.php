@@ -2,14 +2,11 @@
 /**
  * WordPress implementation for PHP functions either missing from older PHP versions or not included by default.
  *
-<<<<<<< HEAD
-=======
  * This file is loaded extremely early and the functions can be relied upon by drop-ins.
  * Ergo, please ensure you do not rely on external functions when writing code for this file.
  * Only use functions built into PHP or are defined in this file and have adequate testing
  * and error suppression to ensure the file will run correctly and not break websites.
  *
->>>>>>> 535c0c1 (initial commit)
  * @package PHP
  * @access private
  */
@@ -557,11 +554,8 @@ if ( ! defined( 'IMAGETYPE_AVIF' ) ) {
 if ( ! defined( 'IMG_AVIF' ) ) {
 	define( 'IMG_AVIF', IMAGETYPE_AVIF );
 }
-<<<<<<< HEAD
-=======
 
 // IMAGETYPE_HEIC constant is not yet defined in PHP as of PHP 8.3.
 if ( ! defined( 'IMAGETYPE_HEIC' ) ) {
 	define( 'IMAGETYPE_HEIC', 99 );
 }
->>>>>>> 535c0c1 (initial commit)

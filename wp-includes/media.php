@@ -1137,8 +1137,6 @@ function wp_get_attachment_image( $attachment_id, $size = 'thumbnail', $icon = f
 			}
 		}
 
-<<<<<<< HEAD
-=======
 		// Adds 'auto' to the sizes attribute if applicable.
 		if (
 			isset( $attr['loading'] ) &&
@@ -1149,7 +1147,6 @@ function wp_get_attachment_image( $attachment_id, $size = 'thumbnail', $icon = f
 			$attr['sizes'] = 'auto, ' . $attr['sizes'];
 		}
 
->>>>>>> 2b44096 (initial commit 2)
 		/**
 		 * Filters the list of attachment image attributes.
 		 *
@@ -1930,12 +1927,9 @@ function wp_filter_content_tags( $content, $context = null ) {
 			// Add loading optimization attributes if applicable.
 			$filtered_image = wp_img_tag_add_loading_optimization_attrs( $filtered_image, $context );
 
-<<<<<<< HEAD
-=======
 			// Adds 'auto' to the sizes attribute if applicable.
 			$filtered_image = wp_img_tag_add_auto_sizes( $filtered_image );
 
->>>>>>> 2b44096 (initial commit 2)
 			/**
 			 * Filters an img tag within the content for a given context.
 			 *
@@ -1983,8 +1977,6 @@ function wp_filter_content_tags( $content, $context = null ) {
 }
 
 /**
-<<<<<<< HEAD
-=======
  * Adds 'auto' to the sizes attribute to the image, if the image is lazy loaded and does not already include it.
  *
  * @since 6.7.0
@@ -2038,7 +2030,6 @@ function wp_sizes_attribute_includes_valid_auto( string $sizes_attr ): bool {
 }
 
 /**
->>>>>>> 2b44096 (initial commit 2)
  * Adds optimization attributes to an `img` HTML tag.
  *
  * @since 6.3.0
@@ -2048,10 +2039,7 @@ function wp_sizes_attribute_includes_valid_auto( string $sizes_attr ): bool {
  * @return string Converted `img` tag with optimization attributes added.
  */
 function wp_img_tag_add_loading_optimization_attrs( $image, $context ) {
-<<<<<<< HEAD
-=======
 	$src               = preg_match( '/ src=["\']?([^"\']*)/i', $image, $matche_src ) ? $matche_src[1] : null;
->>>>>>> 2b44096 (initial commit 2)
 	$width             = preg_match( '/ width=["\']([0-9]+)["\']/', $image, $match_width ) ? (int) $match_width[1] : null;
 	$height            = preg_match( '/ height=["\']([0-9]+)["\']/', $image, $match_height ) ? (int) $match_height[1] : null;
 	$loading_val       = preg_match( '/ loading=["\']([A-Za-z]+)["\']/', $image, $match_loading ) ? $match_loading[1] : null;
@@ -2066,10 +2054,7 @@ function wp_img_tag_add_loading_optimization_attrs( $image, $context ) {
 	$optimization_attrs = wp_get_loading_optimization_attributes(
 		'img',
 		array(
-<<<<<<< HEAD
-=======
 			'src'           => $src,
->>>>>>> 2b44096 (initial commit 2)
 			'width'         => $width,
 			'height'        => $height,
 			'loading'       => $loading_val,
@@ -4147,12 +4132,7 @@ function wp_get_image_editor( $path, $args = array() ) {
 
 	// Check and set the output mime type mapped to the input type.
 	if ( isset( $args['mime_type'] ) ) {
-<<<<<<< HEAD
-		/** This filter is documented in wp-includes/class-wp-image-editor.php */
-		$output_format = apply_filters( 'image_editor_output_format', array(), $path, $args['mime_type'] );
-=======
 		$output_format = wp_get_image_editor_output_format( $path, $args['mime_type'] );
->>>>>>> 2b44096 (initial commit 2)
 		if ( isset( $output_format[ $args['mime_type'] ] ) ) {
 			$args['output_mime_type'] = $output_format[ $args['mime_type'] ];
 		}
@@ -4211,9 +4191,6 @@ function _wp_image_editor_choose( $args = array() ) {
 	 *                                'WP_Image_Editor_Imagick', 'WP_Image_Editor_GD'.
 	 */
 	$implementations = apply_filters( 'wp_image_editors', array( 'WP_Image_Editor_Imagick', 'WP_Image_Editor_GD' ) );
-<<<<<<< HEAD
-	$supports_input  = false;
-=======
 
 	$editors = wp_cache_get( 'wp_image_editor_choose', 'image_editor' );
 
@@ -4230,7 +4207,6 @@ function _wp_image_editor_choose( $args = array() ) {
 
 	// Assume no support until a capable implementation is identified.
 	$editor = false;
->>>>>>> 2b44096 (initial commit 2)
 
 	foreach ( $implementations as $implementation ) {
 		if ( ! call_user_func( array( $implementation, 'test' ), $args ) ) {
@@ -4264,21 +4240,11 @@ function _wp_image_editor_choose( $args = array() ) {
 			 * This implementation supports the input type but not the output type.
 			 * Keep looking to see if we can find an implementation that supports both.
 			 */
-<<<<<<< HEAD
-			$supports_input = $implementation;
-=======
 			$editor = $implementation;
->>>>>>> 2b44096 (initial commit 2)
 			continue;
 		}
 
 		// Favor the implementation that supports both input and output mime types.
-<<<<<<< HEAD
-		return $implementation;
-	}
-
-	return $supports_input;
-=======
 		$editor = $implementation;
 		break;
 	}
@@ -4288,7 +4254,6 @@ function _wp_image_editor_choose( $args = array() ) {
 	wp_cache_set( 'wp_image_editor_choose', $editors, 'image_editor', DAY_IN_SECONDS );
 
 	return $editor;
->>>>>>> 2b44096 (initial commit 2)
 }
 
 /**
@@ -4346,14 +4311,11 @@ function wp_plupload_default_settings() {
 		$defaults['avif_upload_error'] = true;
 	}
 
-<<<<<<< HEAD
-=======
 	// Check if HEIC images can be edited.
 	if ( ! wp_image_editor_supports( array( 'mime_type' => 'image/heic' ) ) ) {
 		$defaults['heic_upload_error'] = true;
 	}
 
->>>>>>> 2b44096 (initial commit 2)
 	/**
 	 * Filters the Plupload default settings.
 	 *
@@ -5441,8 +5403,6 @@ function wp_maybe_generate_attachment_metadata( $attachment ) {
 function attachment_url_to_postid( $url ) {
 	global $wpdb;
 
-<<<<<<< HEAD
-=======
 	/**
 	 * Filters the attachment ID to allow short-circuit the function.
 	 *
@@ -5468,7 +5428,6 @@ function attachment_url_to_postid( $url ) {
 		return (int) $post_id;
 	}
 
->>>>>>> 2b44096 (initial commit 2)
 	$dir  = wp_get_upload_dir();
 	$path = $url;
 
@@ -5641,24 +5600,17 @@ function _wp_add_additional_image_sizes() {
  * Callback to enable showing of the user error when uploading .heic images.
  *
  * @since 5.5.0
-<<<<<<< HEAD
-=======
  * @since 6.7.0 The default behavior is to enable heic uploads as long as the server
  *              supports the format. The uploads are converted to JPEG's by default.
->>>>>>> 2b44096 (initial commit 2)
  *
  * @param array[] $plupload_settings The settings for Plupload.js.
  * @return array[] Modified settings for Plupload.js.
  */
 function wp_show_heic_upload_error( $plupload_settings ) {
-<<<<<<< HEAD
-	$plupload_settings['heic_upload_error'] = true;
-=======
 	// Check if HEIC images can be edited.
 	if ( ! wp_image_editor_supports( array( 'mime_type' => 'image/heic' ) ) ) {
 		$plupload_init['heic_upload_error'] = true;
 	}
->>>>>>> 2b44096 (initial commit 2)
 	return $plupload_settings;
 }
 
@@ -5675,13 +5627,7 @@ function wp_show_heic_upload_error( $plupload_settings ) {
  */
 function wp_getimagesize( $filename, ?array &$image_info = null ) {
 	// Don't silence errors when in debug mode, unless running unit tests.
-<<<<<<< HEAD
-	if ( defined( 'WP_DEBUG' ) && WP_DEBUG
-		&& ! defined( 'WP_RUN_CORE_TESTS' )
-	) {
-=======
 	if ( defined( 'WP_DEBUG' ) && WP_DEBUG && ! defined( 'WP_RUN_CORE_TESTS' ) ) {
->>>>>>> 2b44096 (initial commit 2)
 		if ( 2 === func_num_args() ) {
 			$info = getimagesize( $filename, $image_info );
 		} else {
@@ -5712,8 +5658,6 @@ function wp_getimagesize( $filename, ?array &$image_info = null ) {
 		return $info;
 	}
 
-<<<<<<< HEAD
-=======
 	$image_mime_type = wp_get_image_mime( $filename );
 
 	// Not an image?
@@ -5721,16 +5665,11 @@ function wp_getimagesize( $filename, ?array &$image_info = null ) {
 		return false;
 	}
 
->>>>>>> 2b44096 (initial commit 2)
 	/*
 	 * For PHP versions that don't support WebP images,
 	 * extract the image size info from the file headers.
 	 */
-<<<<<<< HEAD
-	if ( 'image/webp' === wp_get_image_mime( $filename ) ) {
-=======
 	if ( 'image/webp' === $image_mime_type ) {
->>>>>>> 2b44096 (initial commit 2)
 		$webp_info = wp_get_webp_info( $filename );
 		$width     = $webp_info['width'];
 		$height    = $webp_info['height'];
@@ -5752,11 +5691,7 @@ function wp_getimagesize( $filename, ?array &$image_info = null ) {
 	}
 
 	// For PHP versions that don't support AVIF images, extract the image size info from the file headers.
-<<<<<<< HEAD
-	if ( 'image/avif' === wp_get_image_mime( $filename ) ) {
-=======
 	if ( 'image/avif' === $image_mime_type ) {
->>>>>>> 2b44096 (initial commit 2)
 		$avif_info = wp_get_avif_info( $filename );
 
 		$width  = $avif_info['width'];
@@ -5778,8 +5713,6 @@ function wp_getimagesize( $filename, ?array &$image_info = null ) {
 		}
 	}
 
-<<<<<<< HEAD
-=======
 	// For PHP versions that don't support HEIC images, extract the size info using Imagick when available.
 	if ( wp_is_heic_image_mime_type( $image_mime_type ) ) {
 		$editor = wp_get_image_editor( $filename );
@@ -5805,7 +5738,6 @@ function wp_getimagesize( $filename, ?array &$image_info = null ) {
 		}
 	}
 
->>>>>>> 2b44096 (initial commit 2)
 	// The image could not be parsed.
 	return false;
 }
@@ -6289,8 +6221,6 @@ function wp_high_priority_element_flag( $value = null ) {
 
 	return $high_priority_element;
 }
-<<<<<<< HEAD
-=======
 
 /**
  * Determines the output format for the image editor.
@@ -6333,4 +6263,3 @@ function wp_get_image_editor_output_format( $filename, $mime_type ) {
 	 */
 	return apply_filters( 'image_editor_output_format', $output_format, $filename, $mime_type );
 }
->>>>>>> 2b44096 (initial commit 2)

@@ -636,9 +636,6 @@ class WP_REST_Server {
 			foreach ( $items as $item ) {
 				$attributes         = $item['attributes'];
 				$attributes['href'] = $item['href'];
-<<<<<<< HEAD
-				$data[ $rel ][]     = $attributes;
-=======
 
 				if ( 'self' !== $rel ) {
 					$data[ $rel ][] = $attributes;
@@ -651,7 +648,6 @@ class WP_REST_Server {
 				}
 
 				$data[ $rel ][] = $attributes;
->>>>>>> 2b44096 (initial commit 2)
 			}
 		}
 
@@ -659,8 +655,6 @@ class WP_REST_Server {
 	}
 
 	/**
-<<<<<<< HEAD
-=======
 	 * Gets the target links for a REST API Link.
 	 *
 	 * @since 6.7.0
@@ -712,7 +706,6 @@ class WP_REST_Server {
 	}
 
 	/**
->>>>>>> 2b44096 (initial commit 2)
 	 * Retrieves the CURIEs (compact URIs) used for relations.
 	 *
 	 * Extracts the links from a response into a structured hash, suitable for
@@ -1736,11 +1729,7 @@ class WP_REST_Server {
 			$single_request = new WP_REST_Request( isset( $args['method'] ) ? $args['method'] : 'POST', $parsed_url['path'] );
 
 			if ( ! empty( $parsed_url['query'] ) ) {
-<<<<<<< HEAD
-				$query_args = null; // Satisfy linter.
-=======
 				$query_args = array();
->>>>>>> 2b44096 (initial commit 2)
 				wp_parse_str( $parsed_url['query'], $query_args );
 				$single_request->set_query_params( $query_args );
 			}

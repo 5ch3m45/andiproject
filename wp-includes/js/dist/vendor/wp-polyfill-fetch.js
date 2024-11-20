@@ -499,10 +499,7 @@
 
   Response.error = function() {
     var response = new Response(null, {status: 200, statusText: ''});
-<<<<<<< HEAD
-=======
     response.ok = false;
->>>>>>> 2b44096 (initial commit 2)
     response.status = 0;
     response.type = 'error';
     return response
@@ -548,12 +545,6 @@
 
       xhr.onload = function() {
         var options = {
-<<<<<<< HEAD
-          status: xhr.status,
-          statusText: xhr.statusText,
-          headers: parseHeaders(xhr.getAllResponseHeaders() || '')
-        };
-=======
           statusText: xhr.statusText,
           headers: parseHeaders(xhr.getAllResponseHeaders() || '')
         };
@@ -564,7 +555,6 @@
         } else {
           options.status = xhr.status;
         }
->>>>>>> 2b44096 (initial commit 2)
         options.url = 'responseURL' in xhr ? xhr.responseURL : options.headers.get('X-Request-URL');
         var body = 'response' in xhr ? xhr.response : xhr.responseText;
         setTimeout(function() {
@@ -580,11 +570,7 @@
 
       xhr.ontimeout = function() {
         setTimeout(function() {
-<<<<<<< HEAD
-          reject(new TypeError('Network request failed'));
-=======
           reject(new TypeError('Network request timed out'));
->>>>>>> 2b44096 (initial commit 2)
         }, 0);
       };
 

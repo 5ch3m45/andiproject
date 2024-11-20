@@ -14,11 +14,6 @@
 		"level": {
 			"type": "number",
 			"default": 0
-<<<<<<< HEAD
-		}
-	},
-	"example": {},
-=======
 		},
 		"levelOptions": {
 			"type": "array",
@@ -31,7 +26,6 @@
 			"textAlign": "center"
 		}
 	},
->>>>>>> 535c0c1 (initial commit)
 	"supports": {
 		"align": [ "wide", "full" ],
 		"html": false,
@@ -59,21 +53,13 @@
 			"__experimentalFontStyle": true,
 			"__experimentalFontWeight": true,
 			"__experimentalLetterSpacing": true,
-<<<<<<< HEAD
-=======
 			"__experimentalWritingMode": true,
->>>>>>> 535c0c1 (initial commit)
 			"__experimentalDefaultControls": {
 				"fontSize": true
 			}
 		},
 		"interactivity": {
 			"clientNavigation": true
-<<<<<<< HEAD
-		}
-	},
-	"editorStyle": "wp-block-site-tagline-editor"
-=======
 		},
 		"__experimentalBorder": {
 			"radius": true,
@@ -84,5 +70,4 @@
 	},
 	"editorStyle": "wp-block-site-tagline-editor",
 	"style": "wp-block-site-tagline"
->>>>>>> 535c0c1 (initial commit)
 }

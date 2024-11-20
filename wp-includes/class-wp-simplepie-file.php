@@ -16,11 +16,7 @@
  * @since 2.8.0
  */
 #[AllowDynamicProperties]
-<<<<<<< HEAD
-class WP_SimplePie_File extends SimplePie_File {
-=======
 class WP_SimplePie_File extends SimplePie\File {
->>>>>>> 535c0c1 (initial commit)
 
 	/**
 	 * Timeout.
@@ -54,11 +50,7 @@ class WP_SimplePie_File extends SimplePie\File {
 		$this->headers   = $headers;
 		$this->useragent = $useragent;
 
-<<<<<<< HEAD
-		$this->method = SIMPLEPIE_FILE_SOURCE_REMOTE;
-=======
 		$this->method = SimplePie\SimplePie::FILE_SOURCE_REMOTE;
->>>>>>> 535c0c1 (initial commit)
 
 		if ( preg_match( '/^http(s)?:\/\//i', $url ) ) {
 			$args = array(
@@ -70,11 +62,7 @@ class WP_SimplePie_File extends SimplePie\File {
 				$args['headers'] = $this->headers;
 			}
 
-<<<<<<< HEAD
-			if ( SIMPLEPIE_USERAGENT !== $this->useragent ) { // Use default WP user agent unless custom has been specified.
-=======
 			if ( SimplePie\Misc::get_default_useragent() !== $this->useragent ) { // Use default WP user agent unless custom has been specified.
->>>>>>> 535c0c1 (initial commit)
 				$args['user-agent'] = $this->useragent;
 			}
 
@@ -95,11 +83,7 @@ class WP_SimplePie_File extends SimplePie\File {
 				 * The only exception to that is the `content-type` header, which should ignore
 				 * any previous values and only use the last one.
 				 *
-<<<<<<< HEAD
-				 * @see SimplePie_HTTP_Parser::new_line().
-=======
 				 * @see SimplePie\HTTP\Parser::new_line().
->>>>>>> 535c0c1 (initial commit)
 				 */
 				foreach ( $this->headers as $name => $value ) {
 					if ( ! is_array( $value ) ) {

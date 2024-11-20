@@ -1,26 +1,3 @@
-<<<<<<< HEAD
-.wp-block-video.wp-block-video.is-selected .components-placeholder{
-  background-color:#fff;
-  border:none;
-  border-radius:2px;
-  box-shadow:inset 0 0 0 1px #1e1e1e;
-  color:#1e1e1e;
-}
-.wp-block-video.wp-block-video.is-selected .components-placeholder>svg{
-  opacity:0;
-}
-.wp-block-video.wp-block-video.is-selected .components-placeholder .components-placeholder__illustration{
-  display:none;
-}
-.wp-block-video.wp-block-video.is-selected .components-placeholder:before{
-  opacity:0;
-}
-.wp-block-video.wp-block-video .components-button,.wp-block-video.wp-block-video .components-placeholder__instructions,.wp-block-video.wp-block-video .components-placeholder__label{
-  transition:none;
-}
-
-=======
->>>>>>> 535c0c1 (initial commit)
 .wp-block[data-align=center]>.wp-block-video{
   text-align:center;
 }
@@ -39,12 +16,6 @@
   top:50%;
 }
 
-<<<<<<< HEAD
-.editor-video-poster-control .components-base-control__label{
-  display:block;
-}
-=======
->>>>>>> 535c0c1 (initial commit)
 .editor-video-poster-control .components-button{
   margin-right:8px;
 }
@@ -71,20 +42,9 @@
 }
 
 .block-library-video-tracks-editor>.components-popover__content{
-<<<<<<< HEAD
-  padding:0;
-=======
->>>>>>> 535c0c1 (initial commit)
   width:360px;
 }
 
 .block-library-video-tracks-editor__add-tracks-container .components-menu-group__label,.block-library-video-tracks-editor__track-list .components-menu-group__label{
   padding:0;
-<<<<<<< HEAD
-}
-
-.block-library-video-tracks-editor__add-tracks-container,.block-library-video-tracks-editor__single-track-editor,.block-library-video-tracks-editor__track-list{
-  padding:12px;
-=======
->>>>>>> 535c0c1 (initial commit)
 }

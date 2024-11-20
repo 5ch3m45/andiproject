@@ -12,12 +12,9 @@
 		}
 	},
 	"usesContext": [ "postType", "postId" ],
-<<<<<<< HEAD
-=======
 	"example": {
 		"viewportWidth": 350
 	},
->>>>>>> 535c0c1 (initial commit)
 	"supports": {
 		"spacing": {
 			"margin": true,
@@ -46,10 +43,6 @@
 		},
 		"interactivity": {
 			"clientNavigation": true
-<<<<<<< HEAD
-		}
-	}
-=======
 		},
 		"__experimentalBorder": {
 			"radius": true,
@@ -65,5 +58,4 @@
 		}
 	},
 	"style": "wp-block-post-author-biography"
->>>>>>> 535c0c1 (initial commit)
 }

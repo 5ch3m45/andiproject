@@ -15,11 +15,7 @@
 			"type": "rich-text",
 			"source": "rich-text",
 			"selector": "p",
-<<<<<<< HEAD
-			"__experimentalRole": "content"
-=======
 			"role": "content"
->>>>>>> 535c0c1 (initial commit)
 		},
 		"dropCap": {
 			"type": "boolean",
@@ -37,15 +33,12 @@
 		"splitting": true,
 		"anchor": true,
 		"className": false,
-<<<<<<< HEAD
-=======
 		"__experimentalBorder": {
 			"color": true,
 			"radius": true,
 			"style": true,
 			"width": true
 		},
->>>>>>> 535c0c1 (initial commit)
 		"color": {
 			"gradients": true,
 			"link": true,

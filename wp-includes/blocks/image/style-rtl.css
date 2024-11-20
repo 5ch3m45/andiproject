@@ -1,17 +1,12 @@
-<<<<<<< HEAD
-=======
 .wp-block-image a{
   display:inline-block;
 }
->>>>>>> 535c0c1 (initial commit)
 .wp-block-image img{
   box-sizing:border-box;
   height:auto;
   max-width:100%;
   vertical-align:bottom;
 }
-<<<<<<< HEAD
-=======
 @media (prefers-reduced-motion:no-preference){
   .wp-block-image img.hide{
     visibility:hidden;
@@ -20,7 +15,6 @@
     animation:show-content-image .4s;
   }
 }
->>>>>>> 535c0c1 (initial commit)
 .wp-block-image[style*=border-radius] img,.wp-block-image[style*=border-radius]>a{
   border-radius:inherit;
 }
@@ -30,12 +24,9 @@
 .wp-block-image.aligncenter{
   text-align:center;
 }
-<<<<<<< HEAD
-=======
 .wp-block-image.alignfull a,.wp-block-image.alignwide a{
   width:100%;
 }
->>>>>>> 535c0c1 (initial commit)
 .wp-block-image.alignfull img,.wp-block-image.alignwide img{
   height:auto;
   width:100%;
@@ -253,8 +244,6 @@
   }
 }
 
-<<<<<<< HEAD
-=======
 @keyframes show-content-image{
   0%{
     visibility:hidden;
@@ -266,7 +255,6 @@
     visibility:visible;
   }
 }
->>>>>>> 535c0c1 (initial commit)
 @keyframes turn-on-visibility{
   0%{
     opacity:0;

@@ -88,30 +88,18 @@ $navigation_rest_route = rest_get_route_for_post_type_items(
 );
 
 $preload_paths = array(
-<<<<<<< HEAD
-	array( '/wp/v2/media', 'OPTIONS' ),
-	'/wp/v2/types?context=view',
-	'/wp/v2/types/wp_template?context=edit',
-	'/wp/v2/types/wp_template-part?context=edit',
-=======
 	array( rest_get_route_for_post_type_items( 'attachment' ), 'OPTIONS' ),
 	array( rest_get_route_for_post_type_items( 'page' ), 'OPTIONS' ),
 	'/wp/v2/types?context=view',
 	'/wp/v2/types/wp_template?context=edit',
 	'/wp/v2/types/wp_template_part?context=edit',
->>>>>>> 535c0c1 (initial commit)
 	'/wp/v2/templates?context=edit&per_page=-1',
 	'/wp/v2/template-parts?context=edit&per_page=-1',
 	'/wp/v2/themes?context=edit&status=active',
 	'/wp/v2/global-styles/' . $active_global_styles_id . '?context=edit',
-<<<<<<< HEAD
-	'/wp/v2/global-styles/' . $active_global_styles_id,
-	'/wp/v2/global-styles/themes/' . $active_theme,
-=======
 	array( '/wp/v2/global-styles/' . $active_global_styles_id, 'OPTIONS' ),
 	'/wp/v2/global-styles/themes/' . $active_theme . '?context=view',
 	'/wp/v2/global-styles/themes/' . $active_theme . '/variations?context=view',
->>>>>>> 535c0c1 (initial commit)
 	array( $navigation_rest_route, 'OPTIONS' ),
 	array(
 		add_query_arg(
@@ -148,8 +136,6 @@ wp_add_inline_script(
 	'wp.blocks.unstable__bootstrapServerSideBlockDefinitions(' . wp_json_encode( get_block_editor_server_block_settings() ) . ');'
 );
 
-<<<<<<< HEAD
-=======
 // Preload server-registered block bindings sources.
 $registered_sources = get_all_registered_block_bindings_sources();
 if ( ! empty( $registered_sources ) ) {
@@ -168,7 +154,6 @@ if ( ! empty( $registered_sources ) ) {
 	);
 }
 
->>>>>>> 535c0c1 (initial commit)
 wp_add_inline_script(
 	'wp-blocks',
 	sprintf( 'wp.blocks.setCategories( %s );', wp_json_encode( isset( $editor_settings['blockCategories'] ) ? $editor_settings['blockCategories'] : array() ) ),

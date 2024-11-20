@@ -709,10 +709,7 @@
 	color: #043959;
 	/* Only visible in Windows High Contrast mode */
 	outline: 2px solid transparent;
-<<<<<<< HEAD
-=======
 	z-index: 1;
->>>>>>> 535c0c1 (initial commit)
 }
 
 .media-router .active,
@@ -2535,12 +2532,8 @@
 		width: 230px;
 	}
 
-<<<<<<< HEAD
-	.options-general-php .crop-content.site-icon {
-=======
 	.options-general-php .crop-content.site-icon,
 	.wp-customizer:not(.mobile) .media-frame-content .crop-content.site-icon {
->>>>>>> 535c0c1 (initial commit)
 		margin-right: 262px;
 	}
 
@@ -2840,12 +2833,8 @@
 		position: fixed;
 	}
 
-<<<<<<< HEAD
-	.options-general-php .crop-content.site-icon {
-=======
 	.options-general-php .crop-content.site-icon,
 	.wp-customizer:not(.mobile) .media-frame-content .crop-content.site-icon {
->>>>>>> 535c0c1 (initial commit)
 		margin-right: 0;
 	}
 

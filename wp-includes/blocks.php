@@ -376,8 +376,6 @@ function get_block_metadata_i18n_schema() {
 }
 
 /**
-<<<<<<< HEAD
-=======
  * Registers a block metadata collection.
  *
  * This function allows core and third-party plugins to register their block metadata
@@ -394,7 +392,6 @@ function wp_register_block_metadata_collection( $path, $manifest ) {
 }
 
 /**
->>>>>>> 535c0c1 (initial commit)
  * Registers a block type from the metadata stored in the `block.json` file.
  *
  * @since 5.5.0
@@ -404,10 +401,7 @@ function wp_register_block_metadata_collection( $path, $manifest ) {
  * @since 6.3.0 Added `selectors` field.
  * @since 6.4.0 Added support for `blockHooks` field.
  * @since 6.5.0 Added support for `allowedBlocks`, `viewScriptModule`, and `viewStyle` fields.
-<<<<<<< HEAD
-=======
  * @since 6.7.0 Allow PHP filename as `variations` argument.
->>>>>>> 535c0c1 (initial commit)
  *
  * @param string $file_or_folder Path to the JSON file with metadata definition for
  *                               the block or path to the folder where the `block.json` file is located.
@@ -424,39 +418,11 @@ function register_block_type_from_metadata( $file_or_folder, $args = array() ) {
 	 * instead of reading a JSON file per-block, and then decoding from JSON to PHP.
 	 * Using a static variable ensures that the metadata is only read once per request.
 	 */
-<<<<<<< HEAD
-	static $core_blocks_meta;
-	if ( ! $core_blocks_meta ) {
-		$core_blocks_meta = require ABSPATH . WPINC . '/blocks/blocks-json.php';
-	}
-=======
->>>>>>> 535c0c1 (initial commit)
 
 	$metadata_file = ( ! str_ends_with( $file_or_folder, 'block.json' ) ) ?
 		trailingslashit( $file_or_folder ) . 'block.json' :
 		$file_or_folder;
 
-<<<<<<< HEAD
-	$is_core_block = str_starts_with( $file_or_folder, ABSPATH . WPINC );
-	// If the block is not a core block, the metadata file must exist.
-	$metadata_file_exists = $is_core_block || file_exists( $metadata_file );
-	if ( ! $metadata_file_exists && empty( $args['name'] ) ) {
-		return false;
-	}
-
-	// Try to get metadata from the static cache for core blocks.
-	$metadata = array();
-	if ( $is_core_block ) {
-		$core_block_name = str_replace( ABSPATH . WPINC . '/blocks/', '', $file_or_folder );
-		if ( ! empty( $core_blocks_meta[ $core_block_name ] ) ) {
-			$metadata = $core_blocks_meta[ $core_block_name ];
-		}
-	}
-
-	// If metadata is not found in the static cache, read it from the file.
-	if ( $metadata_file_exists && empty( $metadata ) ) {
-		$metadata = wp_json_file_decode( $metadata_file, array( 'associative' => true ) );
-=======
 	$is_core_block        = str_starts_with( $file_or_folder, ABSPATH . WPINC );
 	$metadata_file_exists = $is_core_block || file_exists( $metadata_file );
 	$registry_metadata    = WP_Block_Metadata_Registry::get_metadata( $file_or_folder );
@@ -467,7 +433,6 @@ function register_block_type_from_metadata( $file_or_folder, $args = array() ) {
 		$metadata = wp_json_file_decode( $metadata_file, array( 'associative' => true ) );
 	} else {
 		$metadata = array();
->>>>>>> 535c0c1 (initial commit)
 	}
 
 	if ( ! is_array( $metadata ) || ( empty( $metadata['name'] ) && empty( $args['name'] ) ) ) {
@@ -561,8 +526,6 @@ function register_block_type_from_metadata( $file_or_folder, $args = array() ) {
 		}
 	}
 
-<<<<<<< HEAD
-=======
 	// If `variations` is a string, it's the name of a PHP file that
 	// generates the variations.
 	if ( ! empty( $metadata['variations'] ) && is_string( $metadata['variations'] ) ) {
@@ -591,7 +554,6 @@ function register_block_type_from_metadata( $file_or_folder, $args = array() ) {
 		}
 	}
 
->>>>>>> 535c0c1 (initial commit)
 	$settings = array_merge( $settings, $args );
 
 	$script_fields = array(
@@ -1076,10 +1038,7 @@ function set_ignored_hooked_blocks_metadata( &$parsed_anchor_block, $relative_po
  * Runs the hooked blocks algorithm on the given content.
  *
  * @since 6.6.0
-<<<<<<< HEAD
-=======
  * @since 6.7.0 Injects the `theme` attribute into Template Part blocks, even if no hooked blocks are registered.
->>>>>>> 535c0c1 (initial commit)
  * @access private
  *
  * @param string                          $content  Serialized content.
@@ -1092,18 +1051,6 @@ function set_ignored_hooked_blocks_metadata( &$parsed_anchor_block, $relative_po
  */
 function apply_block_hooks_to_content( $content, $context, $callback = 'insert_hooked_blocks' ) {
 	$hooked_blocks = get_hooked_blocks();
-<<<<<<< HEAD
-	if ( empty( $hooked_blocks ) && ! has_filter( 'hooked_block_types' ) ) {
-		return $content;
-	}
-
-	$blocks = parse_blocks( $content );
-
-	$before_block_visitor = make_before_block_visitor( $hooked_blocks, $context, $callback );
-	$after_block_visitor  = make_after_block_visitor( $hooked_blocks, $context, $callback );
-
-	return traverse_and_serialize_blocks( $blocks, $before_block_visitor, $after_block_visitor );
-=======
 
 	$before_block_visitor = '_inject_theme_attribute_in_template_part_block';
 	$after_block_visitor  = null;
@@ -1183,7 +1130,6 @@ function apply_block_hooks_to_content( $content, $context, $callback = 'insert_h
 	remove_filter( 'hooked_block_types', $suppress_single_instance_blocks, PHP_INT_MAX );
 
 	return $content;
->>>>>>> 535c0c1 (initial commit)
 }
 
 /**
@@ -1202,8 +1148,6 @@ function remove_serialized_parent_block( $serialized_block ) {
 }
 
 /**
-<<<<<<< HEAD
-=======
  * Accepts the serialized markup of a block and its inner blocks, and returns serialized markup of the wrapper block.
  *
  * @since 6.7.0
@@ -1221,7 +1165,6 @@ function extract_serialized_parent_block( $serialized_block ) {
 }
 
 /**
->>>>>>> 535c0c1 (initial commit)
  * Updates the wp_postmeta with the list of ignored hooked blocks where the inner blocks are stored as post content.
  * Currently only supports `wp_navigation` post types.
  *
@@ -1271,14 +1214,10 @@ function update_ignored_hooked_blocks_postmeta( $post ) {
 		$post->post_content
 	);
 
-<<<<<<< HEAD
-	$serialized_block = apply_block_hooks_to_content( $markup, get_post( $post->ID ), 'set_ignored_hooked_blocks_metadata' );
-=======
 	$existing_post = get_post( $post->ID );
 	// Merge the existing post object with the updated post object to pass to the block hooks algorithm for context.
 	$context          = (object) array_merge( (array) $existing_post, (array) $post );
 	$serialized_block = apply_block_hooks_to_content( $markup, $context, 'set_ignored_hooked_blocks_metadata' );
->>>>>>> 535c0c1 (initial commit)
 	$root_block       = parse_blocks( $serialized_block )[0];
 
 	$ignored_hooked_blocks = isset( $root_block['attrs']['metadata']['ignoredHookedBlocks'] )
@@ -1291,15 +1230,11 @@ function update_ignored_hooked_blocks_postmeta( $post ) {
 			$existing_ignored_hooked_blocks = json_decode( $existing_ignored_hooked_blocks, true );
 			$ignored_hooked_blocks          = array_unique( array_merge( $ignored_hooked_blocks, $existing_ignored_hooked_blocks ) );
 		}
-<<<<<<< HEAD
-		update_post_meta( $post->ID, '_wp_ignored_hooked_blocks', json_encode( $ignored_hooked_blocks ) );
-=======
 
 		if ( ! isset( $post->meta_input ) ) {
 			$post->meta_input = array();
 		}
 		$post->meta_input['_wp_ignored_hooked_blocks'] = json_encode( $ignored_hooked_blocks );
->>>>>>> 535c0c1 (initial commit)
 	}
 
 	$post->post_content = remove_serialized_parent_block( $serialized_block );
@@ -1570,11 +1505,7 @@ function get_comment_delimited_block_content( $block_name, $block_attributes, $b
  * @since 5.3.1
  *
  * @param array $block {
-<<<<<<< HEAD
- *     A representative array of a single parsed block object. See WP_Block_Parser_Block.
-=======
  *     An associative array of a single parsed block object. See WP_Block_Parser_Block.
->>>>>>> 535c0c1 (initial commit)
  *
  *     @type string   $blockName    Name of block.
  *     @type array    $attrs        Attributes from block comment delimiters.
@@ -1615,11 +1546,7 @@ function serialize_block( $block ) {
  *     Array of block structures.
  *
  *     @type array ...$0 {
-<<<<<<< HEAD
- *         A representative array of a single parsed block object. See WP_Block_Parser_Block.
-=======
  *         An associative array of a single parsed block object. See WP_Block_Parser_Block.
->>>>>>> 535c0c1 (initial commit)
  *
  *         @type string   $blockName    Name of block.
  *         @type array    $attrs        Attributes from block comment delimiters.
@@ -1661,11 +1588,7 @@ function serialize_blocks( $blocks ) {
  *
  * @see serialize_block()
  *
-<<<<<<< HEAD
- * @param array    $block         A representative array of a single parsed block object. See WP_Block_Parser_Block.
-=======
  * @param array    $block         An associative array of a single parsed block object. See WP_Block_Parser_Block.
->>>>>>> 535c0c1 (initial commit)
  * @param callable $pre_callback  Callback to run on each block in the tree before it is traversed and serialized.
  *                                It is called with the following arguments: &$block, $parent_block, $previous_block.
  *                                Its string return value will be prepended to the serialized block markup.
@@ -1840,16 +1763,11 @@ function traverse_and_serialize_blocks( $blocks, $pre_callback = null, $post_cal
 	$result       = '';
 	$parent_block = null; // At the top level, there is no parent block to pass to the callbacks; yet the callbacks expect a reference.
 
-<<<<<<< HEAD
-	foreach ( $blocks as $index => $block ) {
-		if ( is_callable( $pre_callback ) ) {
-=======
 	$pre_callback_is_callable  = is_callable( $pre_callback );
 	$post_callback_is_callable = is_callable( $post_callback );
 
 	foreach ( $blocks as $index => $block ) {
 		if ( $pre_callback_is_callable ) {
->>>>>>> 535c0c1 (initial commit)
 			$prev = 0 === $index
 				? null
 				: $blocks[ $index - 1 ];
@@ -1860,11 +1778,7 @@ function traverse_and_serialize_blocks( $blocks, $pre_callback = null, $post_cal
 			);
 		}
 
-<<<<<<< HEAD
-		if ( is_callable( $post_callback ) ) {
-=======
 		if ( $post_callback_is_callable ) {
->>>>>>> 535c0c1 (initial commit)
 			$next = count( $blocks ) - 1 === $index
 				? null
 				: $blocks[ $index + 1 ];
@@ -2159,11 +2073,7 @@ function _excerpt_render_inner_blocks( $parsed_block, $allowed_blocks ) {
  * @global WP_Post $post The post to edit.
  *
  * @param array $parsed_block {
-<<<<<<< HEAD
- *     A representative array of the block being rendered. See WP_Block_Parser_Block.
-=======
  *     An associative array of the block being rendered. See WP_Block_Parser_Block.
->>>>>>> 535c0c1 (initial commit)
  *
  *     @type string   $blockName    Name of block.
  *     @type array    $attrs        Attributes from block comment delimiters.
@@ -2187,11 +2097,7 @@ function render_block( $parsed_block ) {
 	 *
 	 * @param string|null   $pre_render   The pre-rendered content. Default null.
 	 * @param array         $parsed_block {
-<<<<<<< HEAD
-	 *     A representative array of the block being rendered. See WP_Block_Parser_Block.
-=======
 	 *     An associative array of the block being rendered. See WP_Block_Parser_Block.
->>>>>>> 535c0c1 (initial commit)
 	 *
 	 *     @type string   $blockName    Name of block.
 	 *     @type array    $attrs        Attributes from block comment delimiters.
@@ -2217,11 +2123,7 @@ function render_block( $parsed_block ) {
 	 * @since 5.9.0 The `$parent_block` parameter was added.
 	 *
 	 * @param array         $parsed_block {
-<<<<<<< HEAD
-	 *     A representative array of the block being rendered. See WP_Block_Parser_Block.
-=======
 	 *     An associative array of the block being rendered. See WP_Block_Parser_Block.
->>>>>>> 535c0c1 (initial commit)
 	 *
 	 *     @type string   $blockName    Name of block.
 	 *     @type array    $attrs        Attributes from block comment delimiters.
@@ -2269,11 +2171,7 @@ function render_block( $parsed_block ) {
 	 *
 	 * @param array         $context      Default context.
 	 * @param array         $parsed_block {
-<<<<<<< HEAD
-	 *     A representative array of the block being rendered. See WP_Block_Parser_Block.
-=======
 	 *     An associative array of the block being rendered. See WP_Block_Parser_Block.
->>>>>>> 535c0c1 (initial commit)
 	 *
 	 *     @type string   $blockName    Name of block.
 	 *     @type array    $attrs        Attributes from block comment delimiters.
@@ -2302,11 +2200,7 @@ function render_block( $parsed_block ) {
  *     Array of block structures.
  *
  *     @type array ...$0 {
-<<<<<<< HEAD
- *         A representative array of a single parsed block object. See WP_Block_Parser_Block.
-=======
  *         An associative array of a single parsed block object. See WP_Block_Parser_Block.
->>>>>>> 535c0c1 (initial commit)
  *
  *         @type string   $blockName    Name of block.
  *         @type array    $attrs        Attributes from block comment delimiters.
@@ -2512,10 +2406,7 @@ function wp_migrate_old_typography_shape( $metadata ) {
  *
  * @since 5.8.0
  * @since 6.1.0 Added `query_loop_block_query_vars` filter and `parents` support in query.
-<<<<<<< HEAD
-=======
  * @since 6.7.0 Added support for the `format` property in query.
->>>>>>> 535c0c1 (initial commit)
  *
  * @param WP_Block $block Block instance.
  * @param int      $page  Current query's page.
@@ -2528,10 +2419,7 @@ function build_query_vars_from_query_block( $block, $page ) {
 		'order'        => 'DESC',
 		'orderby'      => 'date',
 		'post__not_in' => array(),
-<<<<<<< HEAD
-=======
 		'tax_query'    => array(),
->>>>>>> 535c0c1 (initial commit)
 	);
 
 	if ( isset( $block->context['query'] ) ) {
@@ -2581,40 +2469,21 @@ function build_query_vars_from_query_block( $block, $page ) {
 		}
 		// Migrate `categoryIds` and `tagIds` to `tax_query` for backwards compatibility.
 		if ( ! empty( $block->context['query']['categoryIds'] ) || ! empty( $block->context['query']['tagIds'] ) ) {
-<<<<<<< HEAD
-			$tax_query = array();
-			if ( ! empty( $block->context['query']['categoryIds'] ) ) {
-				$tax_query[] = array(
-=======
 			$tax_query_back_compat = array();
 			if ( ! empty( $block->context['query']['categoryIds'] ) ) {
 				$tax_query_back_compat[] = array(
->>>>>>> 535c0c1 (initial commit)
 					'taxonomy'         => 'category',
 					'terms'            => array_filter( array_map( 'intval', $block->context['query']['categoryIds'] ) ),
 					'include_children' => false,
 				);
 			}
 			if ( ! empty( $block->context['query']['tagIds'] ) ) {
-<<<<<<< HEAD
-				$tax_query[] = array(
-=======
 				$tax_query_back_compat[] = array(
->>>>>>> 535c0c1 (initial commit)
 					'taxonomy'         => 'post_tag',
 					'terms'            => array_filter( array_map( 'intval', $block->context['query']['tagIds'] ) ),
 					'include_children' => false,
 				);
 			}
-<<<<<<< HEAD
-			$query['tax_query'] = $tax_query;
-		}
-		if ( ! empty( $block->context['query']['taxQuery'] ) ) {
-			$query['tax_query'] = array();
-			foreach ( $block->context['query']['taxQuery'] as $taxonomy => $terms ) {
-				if ( is_taxonomy_viewable( $taxonomy ) && ! empty( $terms ) ) {
-					$query['tax_query'][] = array(
-=======
 			$query['tax_query'] = array_merge( $query['tax_query'], $tax_query_back_compat );
 		}
 		if ( ! empty( $block->context['query']['taxQuery'] ) ) {
@@ -2622,16 +2491,12 @@ function build_query_vars_from_query_block( $block, $page ) {
 			foreach ( $block->context['query']['taxQuery'] as $taxonomy => $terms ) {
 				if ( is_taxonomy_viewable( $taxonomy ) && ! empty( $terms ) ) {
 					$tax_query[] = array(
->>>>>>> 535c0c1 (initial commit)
 						'taxonomy'         => $taxonomy,
 						'terms'            => array_filter( array_map( 'intval', $terms ) ),
 						'include_children' => false,
 					);
 				}
 			}
-<<<<<<< HEAD
-		}
-=======
 			$query['tax_query'] = array_merge( $query['tax_query'], $tax_query );
 		}
 		if ( ! empty( $block->context['query']['format'] ) && is_array( $block->context['query']['format'] ) ) {
@@ -2701,7 +2566,6 @@ function build_query_vars_from_query_block( $block, $page ) {
 			}
 		}
 
->>>>>>> 535c0c1 (initial commit)
 		if (
 			isset( $block->context['query']['order'] ) &&
 				in_array( strtoupper( $block->context['query']['order'] ), array( 'ASC', 'DESC' ), true )
@@ -2846,14 +2710,6 @@ function build_comment_query_vars_from_block( $block ) {
 					$comment_args['paged'] = $max_num_pages;
 				}
 			}
-<<<<<<< HEAD
-			// Set the `cpage` query var to ensure the previous and next pagination links are correct
-			// when inheriting the Discussion Settings.
-			if ( 0 === $page && isset( $comment_args['paged'] ) && $comment_args['paged'] > 0 ) {
-				set_query_var( 'cpage', $comment_args['paged'] );
-			}
-=======
->>>>>>> 535c0c1 (initial commit)
 		}
 	}
 

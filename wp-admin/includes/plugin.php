@@ -2610,11 +2610,7 @@ function deactivated_plugins_notice() {
 
 	if ( false === $blog_deactivated_plugins ) {
 		// Option not in database, add an empty array to avoid extra DB queries on subsequent loads.
-<<<<<<< HEAD
-		update_option( 'wp_force_deactivated_plugins', array() );
-=======
 		update_option( 'wp_force_deactivated_plugins', array(), false );
->>>>>>> 535c0c1 (initial commit)
 	}
 
 	if ( is_multisite() ) {
@@ -2668,11 +2664,7 @@ function deactivated_plugins_notice() {
 	}
 
 	// Empty the options.
-<<<<<<< HEAD
-	update_option( 'wp_force_deactivated_plugins', array() );
-=======
 	update_option( 'wp_force_deactivated_plugins', array(), false );
->>>>>>> 535c0c1 (initial commit)
 	if ( is_multisite() ) {
 		update_site_option( 'wp_force_deactivated_plugins', array() );
 	}

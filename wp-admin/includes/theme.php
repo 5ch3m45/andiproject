@@ -493,12 +493,6 @@ function get_theme_feature_list( $api = true ) {
  *         for more information on the make-up of possible return objects depending on the value of `$action`.
  */
 function themes_api( $action, $args = array() ) {
-<<<<<<< HEAD
-	// Include an unmodified $wp_version.
-	require ABSPATH . WPINC . '/version.php';
-
-=======
->>>>>>> 535c0c1 (initial commit)
 	if ( is_array( $args ) ) {
 		$args = (object) $args;
 	}
@@ -514,11 +508,7 @@ function themes_api( $action, $args = array() ) {
 	}
 
 	if ( ! isset( $args->wp_version ) ) {
-<<<<<<< HEAD
-		$args->wp_version = substr( $wp_version, 0, 3 ); // x.y
-=======
 		$args->wp_version = substr( wp_get_wp_version(), 0, 3 ); // x.y
->>>>>>> 535c0c1 (initial commit)
 	}
 
 	/**
@@ -569,11 +559,7 @@ function themes_api( $action, $args = array() ) {
 
 		$http_args = array(
 			'timeout'    => 15,
-<<<<<<< HEAD
-			'user-agent' => 'WordPress/' . $wp_version . '; ' . home_url( '/' ),
-=======
 			'user-agent' => 'WordPress/' . wp_get_wp_version() . '; ' . home_url( '/' ),
->>>>>>> 535c0c1 (initial commit)
 		);
 		$request   = wp_remote_get( $url, $http_args );
 

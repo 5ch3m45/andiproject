@@ -60,10 +60,7 @@ class POP3 {
             settype($timeout,"integer");
             $this->TIMEOUT = $timeout;
             if(function_exists("set_time_limit")){
-<<<<<<< HEAD
-=======
                 // Extends POP3 request timeout to specified TIMEOUT property.
->>>>>>> 535c0c1 (initial commit)
                 set_time_limit($timeout);
             }
         }
@@ -79,10 +76,7 @@ class POP3 {
 
     function update_timer () {
         if(function_exists("set_time_limit")){
-<<<<<<< HEAD
-=======
             // Allows additional extension of POP3 request timeout to specified TIMEOUT property when update_timer is called.
->>>>>>> 535c0c1 (initial commit)
             set_time_limit($this->TIMEOUT);
         }
         return true;

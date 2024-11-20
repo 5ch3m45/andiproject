@@ -26,54 +26,34 @@
 			"source": "attribute",
 			"selector": "a",
 			"attribute": "href",
-<<<<<<< HEAD
-			"__experimentalRole": "content"
-=======
 			"role": "content"
->>>>>>> 535c0c1 (initial commit)
 		},
 		"title": {
 			"type": "string",
 			"source": "attribute",
 			"selector": "a,button",
 			"attribute": "title",
-<<<<<<< HEAD
-			"__experimentalRole": "content"
-=======
 			"role": "content"
->>>>>>> 535c0c1 (initial commit)
 		},
 		"text": {
 			"type": "rich-text",
 			"source": "rich-text",
 			"selector": "a,button",
-<<<<<<< HEAD
-			"__experimentalRole": "content"
-=======
 			"role": "content"
->>>>>>> 535c0c1 (initial commit)
 		},
 		"linkTarget": {
 			"type": "string",
 			"source": "attribute",
 			"selector": "a",
 			"attribute": "target",
-<<<<<<< HEAD
-			"__experimentalRole": "content"
-=======
 			"role": "content"
->>>>>>> 535c0c1 (initial commit)
 		},
 		"rel": {
 			"type": "string",
 			"source": "attribute",
 			"selector": "a",
 			"attribute": "rel",
-<<<<<<< HEAD
-			"__experimentalRole": "content"
-=======
 			"role": "content"
->>>>>>> 535c0c1 (initial commit)
 		},
 		"placeholder": {
 			"type": "string"
@@ -113,10 +93,7 @@
 			"__experimentalTextTransform": true,
 			"__experimentalTextDecoration": true,
 			"__experimentalLetterSpacing": true,
-<<<<<<< HEAD
-=======
 			"__experimentalWritingMode": true,
->>>>>>> 535c0c1 (initial commit)
 			"__experimentalDefaultControls": {
 				"fontSize": true
 			}

@@ -51,11 +51,7 @@ class WP_HTML_Active_Formatting_Elements {
 	 * @param WP_HTML_Token $token Look for this node in the stack.
 	 * @return bool Whether the referenced node is in the stack of active formatting elements.
 	 */
-<<<<<<< HEAD
-	public function contains_node( $token ) {
-=======
 	public function contains_node( WP_HTML_Token $token ) {
->>>>>>> 535c0c1 (initial commit)
 		foreach ( $this->walk_up() as $item ) {
 			if ( $token->bookmark_name === $item->bookmark_name ) {
 				return true;
@@ -91,8 +87,6 @@ class WP_HTML_Active_Formatting_Elements {
 	}
 
 	/**
-<<<<<<< HEAD
-=======
 	 * Inserts a "marker" at the end of the list of active formatting elements.
 	 *
 	 * > The markers are inserted when entering applet, object, marquee,
@@ -109,7 +103,6 @@ class WP_HTML_Active_Formatting_Elements {
 	}
 
 	/**
->>>>>>> 535c0c1 (initial commit)
 	 * Pushes a node onto the stack of active formatting elements.
 	 *
 	 * @since 6.4.0
@@ -118,11 +111,7 @@ class WP_HTML_Active_Formatting_Elements {
 	 *
 	 * @param WP_HTML_Token $token Push this node onto the stack.
 	 */
-<<<<<<< HEAD
-	public function push( $token ) {
-=======
 	public function push( WP_HTML_Token $token ) {
->>>>>>> 535c0c1 (initial commit)
 		/*
 		 * > If there are already three elements in the list of active formatting elements after the last marker,
 		 * > if any, or anywhere in the list if there are no markers, that have the same tag name, namespace, and
@@ -146,11 +135,7 @@ class WP_HTML_Active_Formatting_Elements {
 	 * @param WP_HTML_Token $token Remove this node from the stack, if it's there already.
 	 * @return bool Whether the node was found and removed from the stack of active formatting elements.
 	 */
-<<<<<<< HEAD
-	public function remove_node( $token ) {
-=======
 	public function remove_node( WP_HTML_Token $token ) {
->>>>>>> 535c0c1 (initial commit)
 		foreach ( $this->walk_up() as $position_from_end => $item ) {
 			if ( $token->bookmark_name !== $item->bookmark_name ) {
 				continue;
@@ -215,8 +200,6 @@ class WP_HTML_Active_Formatting_Elements {
 			yield $this->stack[ $i ];
 		}
 	}
-<<<<<<< HEAD
-=======
 
 	/**
 	 * Clears the list of active formatting elements up to the last marker.
@@ -243,5 +226,4 @@ class WP_HTML_Active_Formatting_Elements {
 			}
 		}
 	}
->>>>>>> 535c0c1 (initial commit)
 }

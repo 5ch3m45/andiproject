@@ -472,19 +472,13 @@ function closeOuterElement(endOffset) {
  */
 
 /**
-<<<<<<< HEAD
- * Object containing a React synthetic event.
-=======
  * Object containing a React ref object.
->>>>>>> 535c0c1 (initial commit)
  *
  * @template T
  * @typedef {import('react').RefObject<T>} RefObject<T>
  */
 
 /**
-<<<<<<< HEAD
-=======
  * Object containing a React ref callback.
  *
  * @template T
@@ -499,7 +493,6 @@ function closeOuterElement(endOffset) {
  */
 
 /**
->>>>>>> 535c0c1 (initial commit)
  * Object that provides utilities for dealing with React children.
  */
 
@@ -579,11 +572,7 @@ function closeOuterElement(endOffset) {
 
 
 /**
-<<<<<<< HEAD
- * @see https://reactjs.org/docs/react-api.html#reactmemo
-=======
  * @see https://react.dev/reference/react/memo
->>>>>>> 535c0c1 (initial commit)
  */
 
 
@@ -593,173 +582,97 @@ function closeOuterElement(endOffset) {
 
 
 /**
-<<<<<<< HEAD
- * @see https://reactjs.org/docs/hooks-reference.html#usecallback
-=======
  * @see https://react.dev/reference/react/useCallback
->>>>>>> 535c0c1 (initial commit)
  */
 
 
 /**
-<<<<<<< HEAD
- * @see https://reactjs.org/docs/hooks-reference.html#usecontext
-=======
  * @see https://react.dev/reference/react/useContext
->>>>>>> 535c0c1 (initial commit)
  */
 
 
 /**
-<<<<<<< HEAD
- * @see https://reactjs.org/docs/hooks-reference.html#usedebugvalue
-=======
  * @see https://react.dev/reference/react/useDebugValue
->>>>>>> 535c0c1 (initial commit)
  */
 
 
 /**
-<<<<<<< HEAD
- * @see https://reactjs.org/docs/hooks-reference.html#usedeferredvalue
-=======
  * @see https://react.dev/reference/react/useDeferredValue
->>>>>>> 535c0c1 (initial commit)
  */
 
 
 /**
-<<<<<<< HEAD
- * @see https://reactjs.org/docs/hooks-reference.html#useeffect
-=======
  * @see https://react.dev/reference/react/useEffect
->>>>>>> 535c0c1 (initial commit)
  */
 
 
 /**
-<<<<<<< HEAD
- * @see https://reactjs.org/docs/hooks-reference.html#useid
-=======
  * @see https://react.dev/reference/react/useId
->>>>>>> 535c0c1 (initial commit)
  */
 
 
 /**
-<<<<<<< HEAD
- * @see https://reactjs.org/docs/hooks-reference.html#useimperativehandle
-=======
  * @see https://react.dev/reference/react/useImperativeHandle
->>>>>>> 535c0c1 (initial commit)
  */
 
 
 /**
-<<<<<<< HEAD
- * @see https://reactjs.org/docs/hooks-reference.html#useinsertioneffect
-=======
  * @see https://react.dev/reference/react/useInsertionEffect
->>>>>>> 535c0c1 (initial commit)
  */
 
 
 /**
-<<<<<<< HEAD
- * @see https://reactjs.org/docs/hooks-reference.html#uselayouteffect
-=======
  * @see https://react.dev/reference/react/useLayoutEffect
->>>>>>> 535c0c1 (initial commit)
  */
 
 
 /**
-<<<<<<< HEAD
- * @see https://reactjs.org/docs/hooks-reference.html#usememo
-=======
  * @see https://react.dev/reference/react/useMemo
->>>>>>> 535c0c1 (initial commit)
  */
 
 
 /**
-<<<<<<< HEAD
- * @see https://reactjs.org/docs/hooks-reference.html#usereducer
-=======
  * @see https://react.dev/reference/react/useReducer
->>>>>>> 535c0c1 (initial commit)
  */
 
 
 /**
-<<<<<<< HEAD
- * @see https://reactjs.org/docs/hooks-reference.html#useref
-=======
  * @see https://react.dev/reference/react/useRef
->>>>>>> 535c0c1 (initial commit)
  */
 
 
 /**
-<<<<<<< HEAD
- * @see https://reactjs.org/docs/hooks-reference.html#usestate
-=======
  * @see https://react.dev/reference/react/useState
->>>>>>> 535c0c1 (initial commit)
  */
 
 
 /**
-<<<<<<< HEAD
- * @see https://reactjs.org/docs/hooks-reference.html#usesyncexternalstore
-=======
  * @see https://react.dev/reference/react/useSyncExternalStore
->>>>>>> 535c0c1 (initial commit)
  */
 
 
 /**
-<<<<<<< HEAD
- * @see https://reactjs.org/docs/hooks-reference.html#usetransition
-=======
  * @see https://react.dev/reference/react/useTransition
->>>>>>> 535c0c1 (initial commit)
  */
 
 
 /**
-<<<<<<< HEAD
- * @see https://reactjs.org/docs/react-api.html#starttransition
-=======
  * @see https://react.dev/reference/react/startTransition
->>>>>>> 535c0c1 (initial commit)
  */
 
 
 /**
-<<<<<<< HEAD
- * @see https://reactjs.org/docs/react-api.html#reactlazy
-=======
  * @see https://react.dev/reference/react/lazy
->>>>>>> 535c0c1 (initial commit)
  */
 
 
 /**
-<<<<<<< HEAD
- * @see https://reactjs.org/docs/react-api.html#reactsuspense
-=======
  * @see https://react.dev/reference/react/Suspense
->>>>>>> 535c0c1 (initial commit)
  */
 
 
 /**
-<<<<<<< HEAD
- * @see https://reactjs.org/docs/react-api.html#reactpurecomponent
-=======
  * @see https://react.dev/reference/react/PureComponent
->>>>>>> 535c0c1 (initial commit)
  */
 
 
@@ -989,11 +902,7 @@ LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
-<<<<<<< HEAD
-/* global Reflect, Promise, SuppressedError, Symbol */
-=======
 /* global Reflect, Promise, SuppressedError, Symbol, Iterator */
->>>>>>> 535c0c1 (initial commit)
 
 var extendStatics = function(d, b) {
   extendStatics = Object.setPrototypeOf ||
@@ -1104,13 +1013,8 @@ function __awaiter(thisArg, _arguments, P, generator) {
 }
 
 function __generator(thisArg, body) {
-<<<<<<< HEAD
-  var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-  return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-=======
   var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
   return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
->>>>>>> 535c0c1 (initial commit)
   function verb(n) { return function (v) { return step([n, v]); }; }
   function step(op) {
       if (f) throw new TypeError("Generator is already executing.");
@@ -1214,14 +1118,9 @@ function __await(v) {
 function __asyncGenerator(thisArg, _arguments, generator) {
   if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
   var g = generator.apply(thisArg, _arguments || []), i, q = [];
-<<<<<<< HEAD
-  return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
-  function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
-=======
   return i = Object.create((typeof AsyncIterator === "function" ? AsyncIterator : Object).prototype), verb("next"), verb("throw"), verb("return", awaitReturn), i[Symbol.asyncIterator] = function () { return this; }, i;
   function awaitReturn(f) { return function (v) { return Promise.resolve(v).then(f, reject); }; }
   function verb(n, f) { if (g[n]) { i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; if (f) i[n] = f(i[n]); } }
->>>>>>> 535c0c1 (initial commit)
   function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
   function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
   function fulfill(value) { resume("next", value); }
@@ -1287,18 +1186,6 @@ function __classPrivateFieldIn(state, receiver) {
 function __addDisposableResource(env, value, async) {
   if (value !== null && value !== void 0) {
     if (typeof value !== "object" && typeof value !== "function") throw new TypeError("Object expected.");
-<<<<<<< HEAD
-    var dispose;
-    if (async) {
-        if (!Symbol.asyncDispose) throw new TypeError("Symbol.asyncDispose is not defined.");
-        dispose = value[Symbol.asyncDispose];
-    }
-    if (dispose === void 0) {
-        if (!Symbol.dispose) throw new TypeError("Symbol.dispose is not defined.");
-        dispose = value[Symbol.dispose];
-    }
-    if (typeof dispose !== "function") throw new TypeError("Object not disposable.");
-=======
     var dispose, inner;
     if (async) {
       if (!Symbol.asyncDispose) throw new TypeError("Symbol.asyncDispose is not defined.");
@@ -1311,7 +1198,6 @@ function __addDisposableResource(env, value, async) {
     }
     if (typeof dispose !== "function") throw new TypeError("Object not disposable.");
     if (inner) dispose = function() { try { inner.call(this); } catch (e) { return Promise.reject(e); } };
->>>>>>> 535c0c1 (initial commit)
     env.stack.push({ value: value, dispose: dispose, async: async });
   }
   else if (async) {
@@ -1330,19 +1216,6 @@ function __disposeResources(env) {
     env.error = env.hasError ? new _SuppressedError(e, env.error, "An error was suppressed during disposal.") : e;
     env.hasError = true;
   }
-<<<<<<< HEAD
-  function next() {
-    while (env.stack.length) {
-      var rec = env.stack.pop();
-      try {
-        var result = rec.dispose && rec.dispose.call(rec.value);
-        if (rec.async) return Promise.resolve(result).then(next, function(e) { fail(e); return next(); });
-      }
-      catch (e) {
-          fail(e);
-      }
-    }
-=======
   var r, s = 0;
   function next() {
     while (r = env.stack.pop()) {
@@ -1359,7 +1232,6 @@ function __disposeResources(env) {
       }
     }
     if (s === 1) return env.hasError ? Promise.reject(env.error) : Promise.resolve();
->>>>>>> 535c0c1 (initial commit)
     if (env.hasError) throw env.error;
   }
   return next();

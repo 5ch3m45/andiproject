@@ -229,11 +229,7 @@ class WP_Font_Face {
 	private function get_style_element() {
 		$attributes = $this->generate_style_element_attributes();
 
-<<<<<<< HEAD
-		return "<style id='wp-fonts-local'{$attributes}>\n%s\n</style>\n";
-=======
 		return "<style class='wp-fonts-local'{$attributes}>\n%s\n</style>\n";
->>>>>>> 535c0c1 (initial commit)
 	}
 
 	/**

@@ -723,11 +723,7 @@ class WP_Posts_List_Table extends WP_List_Table {
 			 *
 			 * @since 2.5.0
 			 *
-<<<<<<< HEAD
-			 * @param string[] $post_columns An associative array of column headings.
-=======
 			 * @param string[] $posts_columns An associative array of column headings.
->>>>>>> 535c0c1 (initial commit)
 			 */
 			$posts_columns = apply_filters( 'manage_pages_columns', $posts_columns );
 		} else {
@@ -737,13 +733,8 @@ class WP_Posts_List_Table extends WP_List_Table {
 			 *
 			 * @since 1.5.0
 			 *
-<<<<<<< HEAD
-			 * @param string[] $post_columns An associative array of column headings.
-			 * @param string   $post_type    The post type slug.
-=======
 			 * @param string[] $posts_columns An associative array of column headings.
 			 * @param string   $post_type     The post type slug.
->>>>>>> 535c0c1 (initial commit)
 			 */
 			$posts_columns = apply_filters( 'manage_posts_columns', $posts_columns, $post_type );
 		}
@@ -760,11 +751,7 @@ class WP_Posts_List_Table extends WP_List_Table {
 		 *
 		 * @since 3.0.0
 		 *
-<<<<<<< HEAD
-		 * @param string[] $post_columns An associative array of column headings.
-=======
 		 * @param string[] $posts_columns An associative array of column headings.
->>>>>>> 535c0c1 (initial commit)
 		 */
 		return apply_filters( "manage_{$post_type}_posts_columns", $posts_columns );
 	}
@@ -803,10 +790,6 @@ class WP_Posts_List_Table extends WP_List_Table {
 	}
 
 	/**
-<<<<<<< HEAD
-	 * @global WP_Query $wp_query WordPress Query object.
-	 * @global int $per_page
-=======
 	 * Generates the list table rows.
 	 *
 	 * @since 3.1.0
@@ -814,7 +797,6 @@ class WP_Posts_List_Table extends WP_List_Table {
 	 * @global WP_Query $wp_query WordPress Query object.
 	 * @global int      $per_page
 	 *
->>>>>>> 535c0c1 (initial commit)
 	 * @param array $posts
 	 * @param int   $level
 	 */
@@ -1860,10 +1842,7 @@ class WP_Posts_List_Table extends WP_List_Table {
 
 							if ( $bulk ) {
 								$dropdown_args['show_option_no_change'] = __( '&mdash; No Change &mdash;' );
-<<<<<<< HEAD
-=======
 								$dropdown_args['id']                    = 'bulk_edit_post_parent';
->>>>>>> 535c0c1 (initial commit)
 							}
 
 							/**

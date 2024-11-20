@@ -72,11 +72,7 @@ class WP_Paused_Extensions_Storage {
 
 		$paused_extensions[ $this->type ][ $extension ] = $error;
 
-<<<<<<< HEAD
-		return update_option( $option_name, $paused_extensions );
-=======
 		return update_option( $option_name, $paused_extensions, false );
->>>>>>> 535c0c1 (initial commit)
 	}
 
 	/**
@@ -116,11 +112,7 @@ class WP_Paused_Extensions_Storage {
 			return delete_option( $option_name );
 		}
 
-<<<<<<< HEAD
-		return update_option( $option_name, $paused_extensions );
-=======
 		return update_option( $option_name, $paused_extensions, false );
->>>>>>> 535c0c1 (initial commit)
 	}
 
 	/**
@@ -198,11 +190,7 @@ class WP_Paused_Extensions_Storage {
 			return delete_option( $option_name );
 		}
 
-<<<<<<< HEAD
-		return update_option( $option_name, $paused_extensions );
-=======
 		return update_option( $option_name, $paused_extensions, false );
->>>>>>> 535c0c1 (initial commit)
 	}
 
 	/**

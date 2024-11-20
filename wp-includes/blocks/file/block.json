@@ -11,13 +11,10 @@
 		"id": {
 			"type": "number"
 		},
-<<<<<<< HEAD
-=======
 		"blob": {
 			"type": "string",
 			"role": "local"
 		},
->>>>>>> 535c0c1 (initial commit)
 		"href": {
 			"type": "string"
 		},
@@ -77,8 +74,6 @@
 				"link": true
 			}
 		},
-<<<<<<< HEAD
-=======
 		"__experimentalBorder": {
 			"radius": true,
 			"color": true,
@@ -91,7 +86,6 @@
 				"style": true
 			}
 		},
->>>>>>> 535c0c1 (initial commit)
 		"interactivity": true
 	},
 	"editorStyle": "wp-block-file-editor",

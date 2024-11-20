@@ -16,12 +16,6 @@
   }
 }
 
-<<<<<<< HEAD
-.edit-post-fullscreen-mode-close.components-button{
-  display:none;
-}
-=======
->>>>>>> 535c0c1 (initial commit)
 @media (min-width:782px){
   .edit-post-fullscreen-mode-close.components-button{
     align-items:center;
@@ -88,11 +82,6 @@
   content:none;
 }
 
-<<<<<<< HEAD
-.edit-post-layout__metaboxes{
-  clear:both;
-  flex-shrink:0;
-=======
 .edit-post-meta-boxes-main{
   background-color:#fff;
   display:flex;
@@ -195,7 +184,6 @@
 }
 .has-metaboxes .editor-visual-editor.is-iframed{
   isolation:isolate;
->>>>>>> 535c0c1 (initial commit)
 }
 
 .components-editor-notices__snackbar{
@@ -345,18 +333,6 @@ body.is-fullscreen-mode .edit-post-layout .components-editor-notices__snackbar{
 .edit-template-welcome-guide .components-button svg{
   fill:#fff;
 }
-<<<<<<< HEAD
-@keyframes edit-post__fade-in-animation{
-  0%{
-    opacity:0;
-  }
-  to{
-    opacity:1;
-  }
-}
-=======
-
->>>>>>> 535c0c1 (initial commit)
 body.js.block-editor-page{
   background:#fff;
 }

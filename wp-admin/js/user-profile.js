@@ -2,19 +2,12 @@
  * @output wp-admin/js/user-profile.js
  */
 
-<<<<<<< HEAD
-/* global ajaxurl, pwsL10n, userProfileL10n */
-=======
 /* global ajaxurl, pwsL10n, userProfileL10n, ClipboardJS */
->>>>>>> 535c0c1 (initial commit)
 (function($) {
 	var updateLock = false,
 		isSubmitting = false,
 		__ = wp.i18n.__,
-<<<<<<< HEAD
-=======
 		clipboard = new ClipboardJS( '.application-password-display .copy-button' ),
->>>>>>> 535c0c1 (initial commit)
 		$pass1Row,
 		$pass1,
 		$pass2,
@@ -26,12 +19,8 @@
 		currentPass,
 		$form,
 		originalFormContent,
-<<<<<<< HEAD
-		$passwordWrapper;
-=======
 		$passwordWrapper,
 		successTimeout;
->>>>>>> 535c0c1 (initial commit)
 
 	function generatePassword() {
 		if ( typeof zxcvbn !== 'function' ) {
@@ -359,8 +348,6 @@
 		}
 	}
 
-<<<<<<< HEAD
-=======
 	// Debug information copy section.
 	clipboard.on( 'success', function( e ) {
 		var triggerElement = $( e.trigger ),
@@ -382,7 +369,6 @@
 		wp.a11y.speak( __( 'Application password has been copied to your clipboard.' ) );
 	} );
 
->>>>>>> 535c0c1 (initial commit)
 	$( function() {
 		var $colorpicker, $stylesheet, user_id, current_user_id,
 			select       = $( '#display_name' ),

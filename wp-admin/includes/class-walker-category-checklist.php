@@ -107,13 +107,6 @@ class Walker_Category_Checklist extends Walker {
 				/** This filter is documented in wp-includes/category-template.php */
 				esc_html( apply_filters( 'the_category', $category->name, '', '' ) ) . '</div>';
 		} else {
-<<<<<<< HEAD
-			$is_selected = in_array( $category->term_id, $args['selected_cats'], true );
-			$is_disabled = ! empty( $args['disabled'] );
-
-			$output .= "\n<li id='{$taxonomy}-{$category->term_id}'$class>" .
-				'<label class="selectit"><input value="' . $category->term_id . '" type="checkbox" name="' . $name . '[]" id="in-' . $taxonomy . '-' . $category->term_id . '"' .
-=======
 			$is_selected         = in_array( $category->term_id, $args['selected_cats'], true );
 			$is_disabled         = ! empty( $args['disabled'] );
 			$li_element_id       = wp_unique_prefixed_id( "in-{$taxonomy}-{$category->term_id}-" );
@@ -121,7 +114,6 @@ class Walker_Category_Checklist extends Walker {
 
 			$output .= "\n<li id='" . esc_attr( $li_element_id ) . "'$class>" .
 				'<label class="selectit"><input value="' . $category->term_id . '" type="checkbox" name="' . $name . '[]" id="' . esc_attr( $checkbox_element_id ) . '"' .
->>>>>>> 535c0c1 (initial commit)
 				checked( $is_selected, true, false ) .
 				disabled( $is_disabled, true, false ) . ' /> ' .
 				/** This filter is documented in wp-includes/category-template.php */

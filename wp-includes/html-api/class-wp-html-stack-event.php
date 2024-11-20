@@ -74,11 +74,7 @@ class WP_HTML_Stack_Event {
 	 * @param string        $operation  One of self::PUSH or self::POP.
 	 * @param string        $provenance "virtual" or "real".
 	 */
-<<<<<<< HEAD
-	public function __construct( $token, $operation, $provenance ) {
-=======
 	public function __construct( WP_HTML_Token $token, string $operation, string $provenance ) {
->>>>>>> 535c0c1 (initial commit)
 		$this->token      = $token;
 		$this->operation  = $operation;
 		$this->provenance = $provenance;

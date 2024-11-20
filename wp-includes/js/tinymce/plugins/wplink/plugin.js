@@ -4,11 +4,7 @@
 		renderHtml: function() {
 			return (
 				'<div id="' + this._id + '" class="wp-link-preview">' +
-<<<<<<< HEAD
-					'<a href="' + this.url + '" target="_blank" rel="noopener" tabindex="-1">' + this.url + '</a>' +
-=======
 					'<a href="' + this.url + '" target="_blank" tabindex="-1">' + this.url + '</a>' +
->>>>>>> 2b44096 (initial commit 2)
 				'</div>'
 			);
 		},

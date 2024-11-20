@@ -3673,10 +3673,7 @@ function post_permalink( $post = 0 ) {
 function wp_get_http( $url, $file_path = false, $red = 1 ) {
 	_deprecated_function( __FUNCTION__, '4.4.0', 'WP_Http' );
 
-<<<<<<< HEAD
-=======
 	// Adds an additional 60 seconds to the script timeout to ensure the remote request has enough time.
->>>>>>> 535c0c1 (initial commit)
 	if ( function_exists( 'set_time_limit' ) ) {
 		@set_time_limit( 60 );
 	}
@@ -6006,11 +6003,7 @@ function wp_update_https_detection_errors() {
 	 */
 	$support_errors = apply_filters( 'pre_wp_update_https_detection_errors', null );
 	if ( is_wp_error( $support_errors ) ) {
-<<<<<<< HEAD
-		update_option( 'https_detection_errors', $support_errors->errors );
-=======
 		update_option( 'https_detection_errors', $support_errors->errors, false );
->>>>>>> 535c0c1 (initial commit)
 		return;
 	}
 
@@ -6318,8 +6311,6 @@ function wp_interactivity_process_directives_of_interactive_blocks( array $parse
 	_deprecated_function( __FUNCTION__, '6.6.0' );
 	return $parsed_block;
 }
-<<<<<<< HEAD
-=======
 
 /**
  * Gets the global styles custom CSS from theme.json.
@@ -6433,4 +6424,3 @@ function wp_create_block_style_variation_instance_name( $block, $variation ) {
 function current_user_can_for_blog( $blog_id, $capability, ...$args ) {
 	return current_user_can_for_site( $blog_id, $capability, ...$args );
 }
->>>>>>> 535c0c1 (initial commit)

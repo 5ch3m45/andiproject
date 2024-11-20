@@ -491,19 +491,6 @@ function wp_update_nav_menu_item( $menu_id = 0, $menu_item_db_id = 0, $menu_item
 		$args['menu-item-url'] = '';
 
 		$original_title = '';
-<<<<<<< HEAD
-		if ( 'taxonomy' === $args['menu-item-type'] ) {
-			$original_parent = get_term_field( 'parent', $args['menu-item-object-id'], $args['menu-item-object'], 'raw' );
-			$original_title  = get_term_field( 'name', $args['menu-item-object-id'], $args['menu-item-object'], 'raw' );
-		} elseif ( 'post_type' === $args['menu-item-type'] ) {
-
-			$original_object = get_post( $args['menu-item-object-id'] );
-			$original_parent = (int) $original_object->post_parent;
-			$original_title  = $original_object->post_title;
-		} elseif ( 'post_type_archive' === $args['menu-item-type'] ) {
-			$original_object = get_post_type_object( $args['menu-item-object'] );
-			if ( $original_object ) {
-=======
 
 		if ( 'taxonomy' === $args['menu-item-type'] ) {
 			$original_object = get_term( $args['menu-item-object-id'], $args['menu-item-object'] );
@@ -523,7 +510,6 @@ function wp_update_nav_menu_item( $menu_id = 0, $menu_item_db_id = 0, $menu_item
 			$original_object = get_post_type_object( $args['menu-item-object'] );
 
 			if ( $original_object instanceof WP_Post_Type ) {
->>>>>>> 2b44096 (initial commit 2)
 				$original_title = $original_object->labels->archives;
 			}
 		}

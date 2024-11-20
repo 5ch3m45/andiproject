@@ -75,15 +75,9 @@ function wp_image_editor( $post_id, $msg = false ) {
 			) ) {
 				$note_no_rotate = '';
 				?>
-<<<<<<< HEAD
-					<button type="button" class="imgedit-rleft button" onkeyup="imageEdit.browsePopup(this)" onclick="imageEdit.rotate( 90, <?php echo "$post_id, '$nonce'"; ?>, this)" onblur="imageEdit.monitorPopup()"><?php esc_html_e( 'Rotate 90&deg; left' ); ?></button>
-					<button type="button" class="imgedit-rright button" onkeyup="imageEdit.browsePopup(this)" onclick="imageEdit.rotate(-90, <?php echo "$post_id, '$nonce'"; ?>, this)" onblur="imageEdit.monitorPopup()"><?php esc_html_e( 'Rotate 90&deg; right' ); ?></button>
-					<button type="button" class="imgedit-rfull button" onkeyup="imageEdit.browsePopup(this)" onclick="imageEdit.rotate(180, <?php echo "$post_id, '$nonce'"; ?>, this)" onblur="imageEdit.monitorPopup()"><?php esc_html_e( 'Rotate 180&deg;' ); ?></button>
-=======
 					<button type="button" class="imgedit-rleft button" onkeydown="imageEdit.browsePopup(event, this)" onclick="imageEdit.rotate( 90, <?php echo "$post_id, '$nonce'"; ?>, this)" onblur="imageEdit.monitorPopup()"><?php esc_html_e( 'Rotate 90&deg; left' ); ?></button>
 					<button type="button" class="imgedit-rright button" onkeydown="imageEdit.browsePopup(event, this)" onclick="imageEdit.rotate(-90, <?php echo "$post_id, '$nonce'"; ?>, this)" onblur="imageEdit.monitorPopup()"><?php esc_html_e( 'Rotate 90&deg; right' ); ?></button>
 					<button type="button" class="imgedit-rfull button" onkeydown="imageEdit.browsePopup(event, this)" onclick="imageEdit.rotate(180, <?php echo "$post_id, '$nonce'"; ?>, this)" onblur="imageEdit.monitorPopup()"><?php esc_html_e( 'Rotate 180&deg;' ); ?></button>
->>>>>>> 535c0c1 (initial commit)
 				<?php
 			} else {
 				$note_no_rotate = '<p class="note-no-rotate"><em>' . __( 'Image rotation is not supported by your web host.' ) . '</em></p>';
@@ -94,13 +88,8 @@ function wp_image_editor( $post_id, $msg = false ) {
 			}
 			?>
 					<hr />
-<<<<<<< HEAD
-					<button type="button" onkeyup="imageEdit.browsePopup(this)" onclick="imageEdit.flip(1, <?php echo "$post_id, '$nonce'"; ?>, this)" onblur="imageEdit.monitorPopup()" class="imgedit-flipv button"><?php esc_html_e( 'Flip vertical' ); ?></button>
-					<button type="button" onkeyup="imageEdit.browsePopup(this)" onclick="imageEdit.flip(2, <?php echo "$post_id, '$nonce'"; ?>, this)" onblur="imageEdit.monitorPopup()" class="imgedit-fliph button"><?php esc_html_e( 'Flip horizontal' ); ?></button>
-=======
 					<button type="button" onkeydown="imageEdit.browsePopup(event, this)" onclick="imageEdit.flip(1, <?php echo "$post_id, '$nonce'"; ?>, this)" onblur="imageEdit.monitorPopup()" class="imgedit-flipv button"><?php esc_html_e( 'Flip vertical' ); ?></button>
 					<button type="button" onkeydown="imageEdit.browsePopup(event, this)" onclick="imageEdit.flip(2, <?php echo "$post_id, '$nonce'"; ?>, this)" onblur="imageEdit.monitorPopup()" class="imgedit-fliph button"><?php esc_html_e( 'Flip horizontal' ); ?></button>
->>>>>>> 535c0c1 (initial commit)
 					<?php echo $note_no_rotate; ?>
 				</div>
 			</div>
@@ -746,17 +735,10 @@ function image_edit_apply_changes( $image, $changes ) {
 					$w    = $size['width'];
 					$h    = $size['height'];
 
-<<<<<<< HEAD
-					$scale = 1 / _image_get_preview_ratio( $w, $h ); // Discard preview scaling.
-					$image->crop( (int) ( $sel->x * $scale ), (int) ( $sel->y * $scale ), (int) ( $sel->w * $scale ), (int) ( $sel->h * $scale ) );
-				} else {
-					$scale = 1 / _image_get_preview_ratio( imagesx( $image ), imagesy( $image ) ); // Discard preview scaling.
-=======
 					$scale = isset( $sel->r ) ? $sel->r : 1 / _image_get_preview_ratio( $w, $h ); // Discard preview scaling.
 					$image->crop( (int) ( $sel->x * $scale ), (int) ( $sel->y * $scale ), (int) ( $sel->w * $scale ), (int) ( $sel->h * $scale ) );
 				} else {
 					$scale = isset( $sel->r ) ? $sel->r : 1 / _image_get_preview_ratio( imagesx( $image ), imagesy( $image ) ); // Discard preview scaling.
->>>>>>> 535c0c1 (initial commit)
 					$image = _crop_image_resource( $image, $sel->x * $scale, $sel->y * $scale, $sel->w * $scale, $sel->h * $scale );
 				}
 				break;
@@ -844,16 +826,10 @@ function wp_restore_image( $post_id ) {
 				}
 			} elseif ( isset( $meta['width'], $meta['height'] ) ) {
 				$backup_sizes[ "full-$suffix" ] = array(
-<<<<<<< HEAD
-					'width'  => $meta['width'],
-					'height' => $meta['height'],
-					'file'   => $parts['basename'],
-=======
 					'width'    => $meta['width'],
 					'height'   => $meta['height'],
 					'filesize' => $meta['filesize'],
 					'file'     => $parts['basename'],
->>>>>>> 535c0c1 (initial commit)
 				);
 			}
 		}
@@ -864,8 +840,6 @@ function wp_restore_image( $post_id ) {
 		$meta['file']   = _wp_relative_upload_path( $restored_file );
 		$meta['width']  = $data['width'];
 		$meta['height'] = $data['height'];
-<<<<<<< HEAD
-=======
 		if ( isset( $data['filesize'] ) ) {
 			/*
 			 * Restore the original filesize if it was backed up.
@@ -874,7 +848,6 @@ function wp_restore_image( $post_id ) {
 			 */
 			$meta['filesize'] = $data['filesize'];
 		}
->>>>>>> 535c0c1 (initial commit)
 	}
 
 	foreach ( $default_sizes as $default_size ) {
@@ -1033,14 +1006,9 @@ function wp_save_image( $post_id ) {
 		}
 	}
 
-<<<<<<< HEAD
-	// Save the full-size file, also needed to create sub-sizes.
-	if ( ! wp_save_image_file( $new_path, $img, $post->post_mime_type, $post_id ) ) {
-=======
 	$saved_image = wp_save_image_file( $new_path, $img, $post->post_mime_type, $post_id );
 	// Save the full-size file, also needed to create sub-sizes.
 	if ( ! $saved_image ) {
->>>>>>> 535c0c1 (initial commit)
 		$return->error = esc_js( __( 'Unable to save the image.' ) );
 		return $return;
 	}
@@ -1060,16 +1028,10 @@ function wp_save_image( $post_id ) {
 
 		if ( $tag ) {
 			$backup_sizes[ $tag ] = array(
-<<<<<<< HEAD
-				'width'  => $meta['width'],
-				'height' => $meta['height'],
-				'file'   => $basename,
-=======
 				'width'    => $meta['width'],
 				'height'   => $meta['height'],
 				'filesize' => $meta['filesize'],
 				'file'     => $basename,
->>>>>>> 535c0c1 (initial commit)
 			);
 		}
 
@@ -1077,16 +1039,10 @@ function wp_save_image( $post_id ) {
 
 		$meta['file'] = _wp_relative_upload_path( $new_path );
 
-<<<<<<< HEAD
-		$size           = $img->get_size();
-		$meta['width']  = $size['width'];
-		$meta['height'] = $size['height'];
-=======
 		$size             = $img->get_size();
 		$meta['width']    = $size['width'];
 		$meta['height']   = $size['height'];
 		$meta['filesize'] = $saved_image['filesize'];
->>>>>>> 535c0c1 (initial commit)
 
 		if ( $success && ( 'nothumb' === $target || 'all' === $target ) ) {
 			$sizes = get_intermediate_image_sizes();

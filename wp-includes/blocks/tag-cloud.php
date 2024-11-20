@@ -29,10 +29,6 @@ function render_block_core_tag_cloud( $attributes ) {
 	);
 	$tag_cloud = wp_tag_cloud( $args );
 
-<<<<<<< HEAD
-	if ( ! $tag_cloud ) {
-		$tag_cloud = __( 'There&#8217;s no content to show here yet.' );
-=======
 	if ( empty( $tag_cloud ) ) {
 		// Display placeholder content when there are no tags only in editor.
 		if ( wp_is_serving_rest_request() ) {
@@ -40,7 +36,6 @@ function render_block_core_tag_cloud( $attributes ) {
 		} else {
 			return '';
 		}
->>>>>>> 535c0c1 (initial commit)
 	}
 
 	$wrapper_attributes = get_block_wrapper_attributes();

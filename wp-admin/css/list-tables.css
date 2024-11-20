@@ -319,10 +319,6 @@ table.fixed {
 
 .fixed .column-role,
 .fixed .column-posts {
-<<<<<<< HEAD
-	-webkit-hyphens: auto;
-=======
->>>>>>> 535c0c1 (initial commit)
 	hyphens: auto;
 }
 
@@ -1134,11 +1130,7 @@ tr.inline-edit-row td {
 	width: 75%;
 }
 
-<<<<<<< HEAD
-.inline-edit-row #post_parent,
-=======
 .inline-edit-row select[name="post_parent"],
->>>>>>> 535c0c1 (initial commit)
 .inline-edit-row select[name="page_template"] {
 	max-width: 80%;
 }

@@ -20,45 +20,22 @@ function render_block_core_cover( $attributes, $content ) {
 		return $content;
 	}
 
-<<<<<<< HEAD
-=======
 	$object_position = isset( $attributes['focalPoint'] )
 		? round( $attributes['focalPoint']['x'] * 100 ) . '% ' . round( $attributes['focalPoint']['y'] * 100 ) . '%'
 		: null;
 
->>>>>>> 535c0c1 (initial commit)
 	if ( ! ( $attributes['hasParallax'] || $attributes['isRepeated'] ) ) {
 		$attr = array(
 			'class'           => 'wp-block-cover__image-background',
 			'data-object-fit' => 'cover',
 		);
 
-<<<<<<< HEAD
-		if ( isset( $attributes['focalPoint'] ) ) {
-			$object_position              = round( $attributes['focalPoint']['x'] * 100 ) . '% ' . round( $attributes['focalPoint']['y'] * 100 ) . '%';
-			$attr['data-object-position'] = $object_position;
-			$attr['style']                = 'object-position: ' . $object_position;
-		}
-
-		$image = get_the_post_thumbnail( null, 'post-thumbnail', $attr );
-
-		/*
-		 * Inserts the featured image between the (1st) cover 'background' `span` and 'inner_container' `div`,
-		 * and removes eventual whitespace characters between the two (typically introduced at template level)
-		 */
-		$inner_container_start = '/<div\b[^>]+wp-block-cover__inner-container[\s|"][^>]*>/U';
-		if ( 1 === preg_match( $inner_container_start, $content, $matches, PREG_OFFSET_CAPTURE ) ) {
-			$offset  = $matches[0][1];
-			$content = substr( $content, 0, $offset ) . $image . substr( $content, $offset );
-		}
-=======
 		if ( $object_position ) {
 			$attr['data-object-position'] = $object_position;
 			$attr['style']                = 'object-position:' . $object_position . ';';
 		}
 
 		$image = get_the_post_thumbnail( null, 'post-thumbnail', $attr );
->>>>>>> 535c0c1 (initial commit)
 	} else {
 		if ( in_the_loop() ) {
 			update_post_thumbnail_cache();
@@ -68,17 +45,6 @@ function render_block_core_cover( $attributes, $content ) {
 			return $content;
 		}
 
-<<<<<<< HEAD
-		$processor = new WP_HTML_Tag_Processor( $content );
-		$processor->next_tag();
-
-		$styles         = $processor->get_attribute( 'style' );
-		$merged_styles  = ! empty( $styles ) ? $styles . ';' : '';
-		$merged_styles .= 'background-image:url(' . esc_url( $current_featured_image ) . ');';
-
-		$processor->set_attribute( 'style', $merged_styles );
-		$content = $processor->get_updated_html();
-=======
 		$current_thumbnail_id = get_post_thumbnail_id();
 
 		$processor = new WP_HTML_Tag_Processor( '<div></div>' );
@@ -114,7 +80,6 @@ function render_block_core_cover( $attributes, $content ) {
 	if ( 1 === preg_match( $inner_container_start, $content, $matches, PREG_OFFSET_CAPTURE ) ) {
 		$offset  = $matches[0][1];
 		$content = substr( $content, 0, $offset ) . $image . substr( $content, $offset );
->>>>>>> 535c0c1 (initial commit)
 	}
 
 	return $content;

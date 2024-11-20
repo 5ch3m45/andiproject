@@ -144,12 +144,8 @@
 		var settings,
 			$mediaGridWrap             = $( '#wp-media-grid' ),
 			copyAttachmentURLClipboard = new ClipboardJS( '.copy-attachment-url.media-library' ),
-<<<<<<< HEAD
-			copyAttachmentURLSuccessTimeout;
-=======
 			copyAttachmentURLSuccessTimeout,
 			previousSuccessElement = null;
->>>>>>> 535c0c1 (initial commit)
 
 		// Opens a manage media frame into the grid.
 		if ( $mediaGridWrap.length && window.wp && window.wp.media ) {
@@ -229,14 +225,11 @@
 			// Clear the selection and move focus back to the trigger.
 			event.clearSelection();
 
-<<<<<<< HEAD
-=======
 			// Checking if the previousSuccessElement is present, adding the hidden class to it.
 			if ( previousSuccessElement ) {
 				previousSuccessElement.addClass( 'hidden' );
 			}
 
->>>>>>> 535c0c1 (initial commit)
 			// Show success visual feedback.
 			clearTimeout( copyAttachmentURLSuccessTimeout );
 			successElement.removeClass( 'hidden' );
@@ -244,17 +237,12 @@
 			// Hide success visual feedback after 3 seconds since last success and unfocus the trigger.
 			copyAttachmentURLSuccessTimeout = setTimeout( function() {
 				successElement.addClass( 'hidden' );
-<<<<<<< HEAD
-			}, 3000 );
-
-=======
 				// No need to store the previous success element further.
 				previousSuccessElement = null;
 			}, 3000 );
 
 			previousSuccessElement = successElement;
 
->>>>>>> 535c0c1 (initial commit)
 			// Handle success audible feedback.
 			wp.a11y.speak( wp.i18n.__( 'The file URL has been copied to your clipboard' ) );
 		} );

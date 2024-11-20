@@ -112,10 +112,6 @@ function update_post_thumbnail_cache( $wp_query = null ) {
 
 	$thumb_ids = array();
 
-<<<<<<< HEAD
-	foreach ( $wp_query->posts as $post ) {
-		$id = get_post_thumbnail_id( $post->ID );
-=======
 	/*
 	 * $wp_query may contain an array of post objects or post IDs.
 	 *
@@ -135,7 +131,6 @@ function update_post_thumbnail_cache( $wp_query = null ) {
 
 	foreach ( $wp_query->posts as $post ) {
 		$id = get_post_thumbnail_id( $post );
->>>>>>> 2b44096 (initial commit 2)
 		if ( $id ) {
 			$thumb_ids[] = $id;
 		}

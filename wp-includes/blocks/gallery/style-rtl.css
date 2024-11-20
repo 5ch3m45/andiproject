@@ -133,20 +133,6 @@ figure.wp-block-gallery.has-nested-images{
   max-width:100% !important;
   width:auto;
 }
-<<<<<<< HEAD
-.wp-block-gallery.has-nested-images figure.wp-block-image figcaption{
-  background:linear-gradient(0deg, #000000b3, #0000004d 70%, #0000);
-  bottom:0;
-  box-sizing:border-box;
-  color:#fff;
-  font-size:13px;
-  margin-bottom:0;
-  max-height:60%;
-  overflow:auto;
-  padding:0 8px 8px;
-  position:absolute;
-  right:0;
-=======
 .wp-block-gallery.has-nested-images figure.wp-block-image figcaption,.wp-block-gallery.has-nested-images figure.wp-block-image:has(figcaption):before{
   bottom:0;
   left:0;
@@ -171,16 +157,11 @@ figure.wp-block-gallery.has-nested-images{
   margin:0;
   overflow:auto;
   padding:1em;
->>>>>>> 535c0c1 (initial commit)
   scrollbar-color:#0000 #0000;
   scrollbar-gutter:stable both-edges;
   scrollbar-width:thin;
   text-align:center;
-<<<<<<< HEAD
-  width:100%;
-=======
   text-shadow:0 0 1.5px #000;
->>>>>>> 535c0c1 (initial commit)
   will-change:transform;
 }
 .wp-block-gallery.has-nested-images figure.wp-block-image figcaption::-webkit-scrollbar{
@@ -226,13 +207,10 @@ figure.wp-block-gallery.has-nested-images{
   margin:0;
   padding:10px 10px 9px;
   position:relative;
-<<<<<<< HEAD
-=======
   text-shadow:none;
 }
 .wp-block-gallery.has-nested-images figure.wp-block-image.has-custom-border:before,.wp-block-gallery.has-nested-images figure.wp-block-image.is-style-rounded:before{
   content:none;
->>>>>>> 535c0c1 (initial commit)
 }
 .wp-block-gallery.has-nested-images figcaption{
   flex-basis:100%;

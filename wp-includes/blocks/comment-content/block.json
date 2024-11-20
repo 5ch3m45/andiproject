@@ -35,8 +35,6 @@
 				"fontSize": true
 			}
 		},
-<<<<<<< HEAD
-=======
 		"__experimentalBorder": {
 			"radius": true,
 			"color": true,
@@ -49,7 +47,6 @@
 				"style": true
 			}
 		},
->>>>>>> 535c0c1 (initial commit)
 		"spacing": {
 			"padding": [ "horizontal", "vertical" ],
 			"__experimentalDefaultControls": {
@@ -57,10 +54,6 @@
 			}
 		},
 		"html": false
-<<<<<<< HEAD
-	}
-=======
 	},
 	"style": "wp-block-comment-content"
->>>>>>> 535c0c1 (initial commit)
 }

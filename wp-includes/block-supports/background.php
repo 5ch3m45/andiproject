@@ -42,10 +42,7 @@ function wp_register_background_support( $block_type ) {
  * @since 6.4.0
  * @since 6.5.0 Added support for `backgroundPosition` and `backgroundRepeat` output.
  * @since 6.6.0 Removed requirement for `backgroundImage.source`. A file/url is the default.
-<<<<<<< HEAD
-=======
  * @since 6.7.0 Added support for `backgroundAttachment` output.
->>>>>>> 535c0c1 (initial commit)
  *
  * @access private
  *
@@ -66,19 +63,6 @@ function wp_render_background_support( $block_content, $block ) {
 		return $block_content;
 	}
 
-<<<<<<< HEAD
-	$background_styles                    = array();
-	$background_styles['backgroundImage'] = isset( $block_attributes['style']['background']['backgroundImage'] ) ? $block_attributes['style']['background']['backgroundImage'] : array();
-
-	if ( ! empty( $background_styles['backgroundImage'] ) ) {
-		$background_styles['backgroundSize']     = isset( $block_attributes['style']['background']['backgroundSize'] ) ? $block_attributes['style']['background']['backgroundSize'] : 'cover';
-		$background_styles['backgroundPosition'] = isset( $block_attributes['style']['background']['backgroundPosition'] ) ? $block_attributes['style']['background']['backgroundPosition'] : null;
-		$background_styles['backgroundRepeat']   = isset( $block_attributes['style']['background']['backgroundRepeat'] ) ? $block_attributes['style']['background']['backgroundRepeat'] : null;
-
-		// If the background size is set to `contain` and no position is set, set the position to `center`.
-		if ( 'contain' === $background_styles['backgroundSize'] && ! $background_styles['backgroundPosition'] ) {
-			$background_styles['backgroundPosition'] = 'center';
-=======
 	$background_styles                         = array();
 	$background_styles['backgroundImage']      = $block_attributes['style']['background']['backgroundImage'] ?? null;
 	$background_styles['backgroundSize']       = $block_attributes['style']['background']['backgroundSize'] ?? null;
@@ -92,7 +76,6 @@ function wp_render_background_support( $block_content, $block ) {
 		// If the background size is set to `contain` and no position is set, set the position to `center`.
 		if ( 'contain' === $background_styles['backgroundSize'] && ! $background_styles['backgroundPosition'] ) {
 			$background_styles['backgroundPosition'] = '50% 50%';
->>>>>>> 535c0c1 (initial commit)
 		}
 	}
 

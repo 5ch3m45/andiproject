@@ -112,8 +112,6 @@
 	"supports": {
 		"anchor": true,
 		"align": true,
-<<<<<<< HEAD
-=======
 		"__experimentalBorder": {
 			"radius": true,
 			"color": true,
@@ -124,7 +122,6 @@
 				"radius": true
 			}
 		},
->>>>>>> 535c0c1 (initial commit)
 		"html": false,
 		"units": [ "px", "em", "rem", "vh", "vw" ],
 		"spacing": {

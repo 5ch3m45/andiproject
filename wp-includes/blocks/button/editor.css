@@ -23,11 +23,4 @@
 
 div[data-type="core/button"]{
   display:table;
-<<<<<<< HEAD
-}
-
-.editor-styles-wrapper .wp-block-button[style*=text-decoration] .wp-block-button__link{
-  text-decoration:inherit;
-=======
->>>>>>> 535c0c1 (initial commit)
 }

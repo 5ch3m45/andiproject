@@ -21,19 +21,13 @@
  * operation and signify that the given HTML cannot be processed.
  *
  * @since 6.4.0
-<<<<<<< HEAD
-=======
  * @since 6.7.0 Gained contextual information for use in debugging parse failures.
->>>>>>> 535c0c1 (initial commit)
  *
  * @access private
  *
  * @see WP_HTML_Processor
  */
 class WP_HTML_Unsupported_Exception extends Exception {
-<<<<<<< HEAD
-
-=======
 	/**
 	 * Name of the matched token when the exception was raised,
 	 * if matched on a token.
@@ -118,5 +112,4 @@ class WP_HTML_Unsupported_Exception extends Exception {
 		$this->stack_of_open_elements     = $stack_of_open_elements;
 		$this->active_formatting_elements = $active_formatting_elements;
 	}
->>>>>>> 535c0c1 (initial commit)
 }

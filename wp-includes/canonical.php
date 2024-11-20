@@ -553,18 +553,6 @@ function redirect_canonical( $requested_url = null, $do_redirect = true ) {
 		$attachment_id        = get_query_var( 'attachment_id' );
 		$attachment_post      = get_post( $attachment_id );
 		$attachment_parent_id = $attachment_post ? $attachment_post->post_parent : 0;
-<<<<<<< HEAD
-
-		$attachment_url = wp_get_attachment_url( $attachment_id );
-		if ( $attachment_url !== $redirect_url ) {
-			/*
-			* If an attachment is attached to a post, it inherits the parent post's status. Fetch the
-			* parent post to check its status later.
-			*/
-			if ( $attachment_parent_id ) {
-				$redirect_obj = get_post( $attachment_parent_id );
-			}
-=======
 		$attachment_url       = wp_get_attachment_url( $attachment_id );
 
 		if ( $attachment_url !== $redirect_url ) {
@@ -576,7 +564,6 @@ function redirect_canonical( $requested_url = null, $do_redirect = true ) {
 				$redirect_obj = get_post( $attachment_parent_id );
 			}
 
->>>>>>> 535c0c1 (initial commit)
 			$redirect_url = $attachment_url;
 		}
 

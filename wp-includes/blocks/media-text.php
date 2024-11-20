@@ -29,8 +29,6 @@ function render_block_core_media_text( $attributes, $content ) {
 		return $content;
 	}
 
-<<<<<<< HEAD
-=======
 	$has_media_on_right = isset( $attributes['mediaPosition'] ) && 'right' === $attributes['mediaPosition'];
 	$image_fill         = isset( $attributes['imageFill'] ) && $attributes['imageFill'];
 	$focal_point        = isset( $attributes['focalPoint'] ) ? round( $attributes['focalPoint']['x'] * 100 ) . '% ' . round( $attributes['focalPoint']['y'] * 100 ) . '%' : '50% 50%';
@@ -52,19 +50,11 @@ function render_block_core_media_text( $attributes, $content ) {
 
 	$content = $block_tag_processor->get_updated_html();
 
->>>>>>> 535c0c1 (initial commit)
 	$media_tag_processor   = new WP_HTML_Tag_Processor( $content );
 	$wrapping_figure_query = array(
 		'tag_name'   => 'figure',
 		'class_name' => 'wp-block-media-text__media',
 	);
-<<<<<<< HEAD
-	$has_media_on_right    = isset( $attributes['mediaPosition'] ) && 'right' === $attributes['mediaPosition'];
-	$image_fill            = isset( $attributes['imageFill'] ) && $attributes['imageFill'];
-	$focal_point           = isset( $attributes['focalPoint'] ) ? round( $attributes['focalPoint']['x'] * 100 ) . '% ' . round( $attributes['focalPoint']['y'] * 100 ) . '%' : '50% 50%';
-	$unique_id             = 'wp-block-media-text__media-' . wp_unique_id();
-=======
->>>>>>> 535c0c1 (initial commit)
 
 	if ( $has_media_on_right ) {
 		// Loop through all the figure tags and set a bookmark on the last figure tag.
@@ -73,23 +63,6 @@ function render_block_core_media_text( $attributes, $content ) {
 		}
 		if ( $media_tag_processor->has_bookmark( 'last_figure' ) ) {
 			$media_tag_processor->seek( 'last_figure' );
-<<<<<<< HEAD
-			if ( $image_fill ) {
-				$media_tag_processor->set_attribute( 'style', 'background-image:url(' . esc_url( $current_featured_image ) . ');background-position:' . $focal_point . ';' );
-			} else {
-				// Insert a unique ID to identify the figure tag.
-				$media_tag_processor->set_attribute( 'id', $unique_id );
-			}
-		}
-	} else {
-		if ( $media_tag_processor->next_tag( $wrapping_figure_query ) ) {
-			if ( $image_fill ) {
-				$media_tag_processor->set_attribute( 'style', 'background-image:url(' . esc_url( $current_featured_image ) . ');background-position:' . $focal_point . ';' );
-			} else {
-				// Insert a unique ID to identify the figure tag.
-				$media_tag_processor->set_attribute( 'id', $unique_id );
-			}
-=======
 			// Insert a unique ID to identify the figure tag.
 			$media_tag_processor->set_attribute( 'id', $unique_id );
 		}
@@ -97,47 +70,11 @@ function render_block_core_media_text( $attributes, $content ) {
 		if ( $media_tag_processor->next_tag( $wrapping_figure_query ) ) {
 			// Insert a unique ID to identify the figure tag.
 			$media_tag_processor->set_attribute( 'id', $unique_id );
->>>>>>> 535c0c1 (initial commit)
 		}
 	}
 
 	$content = $media_tag_processor->get_updated_html();
 
-<<<<<<< HEAD
-	// If the image is not set to fill, add the image tag inside the figure tag,
-	// and update the image attributes in order to display the featured image.
-	if ( ! $image_fill ) {
-		$media_size_slug = isset( $attributes['mediaSizeSlug'] ) ? $attributes['mediaSizeSlug'] : 'full';
-		$image_tag       = '<img class="wp-block-media-text__featured_image">';
-		$content         = preg_replace(
-			'/(<figure\s+id="' . preg_quote( $unique_id, '/' ) . '"\s+class="wp-block-media-text__media"\s*>)/',
-			'$1' . $image_tag,
-			$content
-		);
-
-		$image_tag_processor = new WP_HTML_Tag_Processor( $content );
-		if ( $image_tag_processor->next_tag(
-			array(
-				'tag_name' => 'figure',
-				'id'       => $unique_id,
-			)
-		) ) {
-			// The ID is only used to ensure that the correct figure tag is selected,
-			// and can now be removed.
-			$image_tag_processor->remove_attribute( 'id' );
-			if ( $image_tag_processor->next_tag(
-				array(
-					'tag_name'   => 'img',
-					'class_name' => 'wp-block-media-text__featured_image',
-				)
-			) ) {
-				$image_tag_processor->set_attribute( 'src', esc_url( $current_featured_image ) );
-				$image_tag_processor->set_attribute( 'class', 'wp-image-' . get_post_thumbnail_id() . ' size-' . $media_size_slug );
-				$image_tag_processor->set_attribute( 'alt', trim( strip_tags( get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true ) ) ) );
-
-				$content = $image_tag_processor->get_updated_html();
-			}
-=======
 	// Add the image tag inside the figure tag, and update the image attributes
 	// in order to display the featured image.
 	$media_size_slug = isset( $attributes['mediaSizeSlug'] ) ? $attributes['mediaSizeSlug'] : 'full';
@@ -172,7 +109,6 @@ function render_block_core_media_text( $attributes, $content ) {
 			}
 
 			$content = $image_tag_processor->get_updated_html();
->>>>>>> 535c0c1 (initial commit)
 		}
 	}
 

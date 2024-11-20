@@ -199,23 +199,6 @@ const code_code = {
 const external_wp_components_namespaceObject = window["wp"]["components"];
 ;// CONCATENATED MODULE: external ["wp","element"]
 const external_wp_element_namespaceObject = window["wp"]["element"];
-<<<<<<< HEAD
-;// CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/keyboard-return.js
-/**
- * WordPress dependencies
- */
-
-
-const keyboardReturn = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.SVG, {
-  xmlns: "http://www.w3.org/2000/svg",
-  children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.Path, {
-    d: "m6.734 16.106 2.176-2.38-1.093-1.028-3.846 4.158 3.846 4.158 1.093-1.028-2.176-2.38h2.811c1.125 0 2.25.03 3.374 0 1.428-.001 3.362-.25 4.963-1.277 1.66-1.065 2.868-2.906 2.868-5.859 0-2.479-1.327-4.896-3.65-5.93-1.82-.813-3.044-.8-4.806-.788l-.567.002v1.5c.184 0 .368 0 .553-.002 1.82-.007 2.704-.014 4.21.657 1.854.827 2.76 2.657 2.76 4.561 0 2.472-.973 3.824-2.178 4.596-1.258.807-2.864 1.04-4.163 1.04h-.02c-1.115.03-2.229 0-3.344 0H6.734Z"
-  })
-});
-/* harmony default export */ const keyboard_return = (keyboardReturn);
-
-=======
->>>>>>> 535c0c1 (initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/format-library/build-module/image/index.js
 /**
  * WordPress dependencies
@@ -253,11 +236,6 @@ function InlineUI({
   contentRef
 }) {
   const {
-<<<<<<< HEAD
-    style
-  } = activeObjectAttributes;
-  const [width, setWidth] = (0,external_wp_element_namespaceObject.useState)(style?.replace(/\D/g, ''));
-=======
     style,
     alt
   } = activeObjectAttributes;
@@ -265,7 +243,6 @@ function InlineUI({
   const [editedWidth, setEditedWidth] = (0,external_wp_element_namespaceObject.useState)(width);
   const [editedAlt, setEditedAlt] = (0,external_wp_element_namespaceObject.useState)(alt);
   const hasChanged = editedWidth !== width || editedAlt !== alt;
->>>>>>> 535c0c1 (initial commit)
   const popoverAnchor = (0,external_wp_richText_namespaceObject.useAnchor)({
     editableContentElement: contentRef.current,
     settings: image_image
@@ -283,12 +260,8 @@ function InlineUI({
           type: image_name,
           attributes: {
             ...activeObjectAttributes,
-<<<<<<< HEAD
-            style: width ? `width: ${width}px;` : ''
-=======
             style: width ? `width: ${editedWidth}px;` : '',
             alt: editedAlt
->>>>>>> 535c0c1 (initial commit)
           }
         };
         onChange({
@@ -297,22 +270,6 @@ function InlineUI({
         });
         event.preventDefault();
       },
-<<<<<<< HEAD
-      children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_wp_components_namespaceObject.__experimentalHStack, {
-        alignment: "bottom",
-        spacing: "0",
-        children: [/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.__experimentalNumberControl, {
-          className: "block-editor-format-toolbar__image-container-value",
-          label: (0,external_wp_i18n_namespaceObject.__)('Width'),
-          value: width,
-          min: 1,
-          onChange: newWidth => setWidth(newWidth)
-        }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.Button, {
-          className: "block-editor-format-toolbar__image-container-button",
-          icon: keyboard_return,
-          label: (0,external_wp_i18n_namespaceObject.__)('Apply'),
-          type: "submit"
-=======
       children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_wp_components_namespaceObject.__experimentalVStack, {
         spacing: 4,
         children: [/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.__experimentalNumberControl, {
@@ -348,7 +305,6 @@ function InlineUI({
             size: "compact",
             children: (0,external_wp_i18n_namespaceObject.__)('Apply')
           })
->>>>>>> 535c0c1 (initial commit)
         })]
       })
     })
@@ -1040,8 +996,6 @@ function link_Edit({
           url: `mailto:${text}`
         }
       }));
-<<<<<<< HEAD
-=======
     } else if (!isActive && text && (0,external_wp_url_namespaceObject.isPhoneNumber)(text)) {
       onChange((0,external_wp_richText_namespaceObject.applyFormat)(value, {
         type: link_name,
@@ -1049,7 +1003,6 @@ function link_Edit({
           url: `tel:${text.replace(/\D/g, '')}`
         }
       }));
->>>>>>> 535c0c1 (initial commit)
     } else {
       if (target) {
         setOpenedBy({
@@ -1478,17 +1431,6 @@ function ColorPicker({
     } = select(external_wp_blockEditor_namespaceObject.store);
     return (_getSettings$colors = getSettings().colors) !== null && _getSettings$colors !== void 0 ? _getSettings$colors : [];
   }, []);
-<<<<<<< HEAD
-  const onColorChange = (0,external_wp_element_namespaceObject.useCallback)(color => {
-    onChange(setColors(value, name, colors, {
-      [property]: color
-    }));
-  }, [colors, onChange, property]);
-  const activeColors = (0,external_wp_element_namespaceObject.useMemo)(() => getActiveColors(value, name, colors), [name, value, colors]);
-  return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_blockEditor_namespaceObject.ColorPalette, {
-    value: activeColors[property],
-    onChange: onColorChange
-=======
   const activeColors = (0,external_wp_element_namespaceObject.useMemo)(() => getActiveColors(value, name, colors), [name, value, colors]);
   return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_blockEditor_namespaceObject.ColorPalette, {
     value: activeColors[property],
@@ -1497,7 +1439,6 @@ function ColorPicker({
         [property]: color
       }));
     }
->>>>>>> 535c0c1 (initial commit)
   });
 }
 function InlineColorUI({
@@ -1595,13 +1536,7 @@ function TextColorEdit({
 }) {
   const [allowCustomControl, colors = EMPTY_ARRAY] = (0,external_wp_blockEditor_namespaceObject.useSettings)('color.custom', 'color.palette');
   const [isAddingColor, setIsAddingColor] = (0,external_wp_element_namespaceObject.useState)(false);
-<<<<<<< HEAD
-  const enableIsAddingColor = (0,external_wp_element_namespaceObject.useCallback)(() => setIsAddingColor(true), [setIsAddingColor]);
-  const disableIsAddingColor = (0,external_wp_element_namespaceObject.useCallback)(() => setIsAddingColor(false), [setIsAddingColor]);
-  const colorIndicatorStyle = (0,external_wp_element_namespaceObject.useMemo)(() => fillComputedColors(contentRef.current, getActiveColors(value, text_color_name, colors)), [value, colors]);
-=======
   const colorIndicatorStyle = (0,external_wp_element_namespaceObject.useMemo)(() => fillComputedColors(contentRef.current, getActiveColors(value, text_color_name, colors)), [contentRef, value, colors]);
->>>>>>> 535c0c1 (initial commit)
   const hasColorsToChoose = colors.length || !allowCustomControl;
   if (!hasColorsToChoose && !isActive) {
     return null;
@@ -1617,19 +1552,11 @@ function TextColorEdit({
       title: text_color_title
       // If has no colors to choose but a color is active remove the color onClick.
       ,
-<<<<<<< HEAD
-      onClick: hasColorsToChoose ? enableIsAddingColor : () => onChange((0,external_wp_richText_namespaceObject.removeFormat)(value, text_color_name)),
-      role: "menuitemcheckbox"
-    }), isAddingColor && /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(InlineColorUI, {
-      name: text_color_name,
-      onClose: disableIsAddingColor,
-=======
       onClick: hasColorsToChoose ? () => setIsAddingColor(true) : () => onChange((0,external_wp_richText_namespaceObject.removeFormat)(value, text_color_name)),
       role: "menuitemcheckbox"
     }), isAddingColor && /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(InlineColorUI, {
       name: text_color_name,
       onClose: () => setIsAddingColor(false),
->>>>>>> 535c0c1 (initial commit)
       activeAttributes: activeAttributes,
       value: value,
       onChange: onChange,
@@ -1973,13 +1900,9 @@ function InlineLanguageUI({
     className: "block-editor-format-toolbar__language-popover",
     anchor: popoverAnchor,
     onClose: onClose,
-<<<<<<< HEAD
-    children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)("form", {
-=======
     children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_wp_components_namespaceObject.__experimentalVStack, {
       as: "form",
       spacing: 4,
->>>>>>> 535c0c1 (initial commit)
       className: "block-editor-format-toolbar__language-container-content",
       onSubmit: event => {
         event.preventDefault();
@@ -1993,21 +1916,15 @@ function InlineLanguageUI({
         onClose();
       },
       children: [/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.TextControl, {
-<<<<<<< HEAD
-=======
         __next40pxDefaultSize: true,
         __nextHasNoMarginBottom: true,
->>>>>>> 535c0c1 (initial commit)
         label: language_title,
         value: lang,
         onChange: val => setLang(val),
         help: (0,external_wp_i18n_namespaceObject.__)('A valid language attribute, like "en" or "fr".')
       }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.SelectControl, {
-<<<<<<< HEAD
-=======
         __next40pxDefaultSize: true,
         __nextHasNoMarginBottom: true,
->>>>>>> 535c0c1 (initial commit)
         label: (0,external_wp_i18n_namespaceObject.__)('Text direction'),
         value: dir,
         options: [{
@@ -2021,10 +1938,7 @@ function InlineLanguageUI({
       }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.__experimentalHStack, {
         alignment: "right",
         children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.Button, {
-<<<<<<< HEAD
-=======
           __next40pxDefaultSize: true,
->>>>>>> 535c0c1 (initial commit)
           variant: "primary",
           type: "submit",
           text: (0,external_wp_i18n_namespaceObject.__)('Apply')

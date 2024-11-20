@@ -346,25 +346,12 @@ class WP_Customize_Panel {
 	protected function render_template() {
 		?>
 		<li id="accordion-panel-{{ data.id }}" class="accordion-section control-section control-panel control-panel-{{ data.type }}">
-<<<<<<< HEAD
-			<h3 class="accordion-section-title" tabindex="0">
-				{{ data.title }}
-				<span class="screen-reader-text">
-					<?php
-					/* translators: Hidden accessibility text. */
-					_e( 'Press return or enter to open this panel' );
-					?>
-				</span>
-			</h3>
-			<ul class="accordion-sub-container control-panel-content"></ul>
-=======
 			<h3 class="accordion-section-title">
 				<button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="{{ data.id }}-content">
 					{{ data.title }}
 				</button>
 			</h3>
 			<ul class="accordion-sub-container control-panel-content" id="{{ data.id }}-content"></ul>
->>>>>>> 535c0c1 (initial commit)
 		</li>
 		<?php
 	}

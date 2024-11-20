@@ -14,14 +14,6 @@
  *
  * @param string       $type Type of translations. Accepts 'plugins', 'themes', 'core'.
  * @param array|object $args Translation API arguments. Optional.
-<<<<<<< HEAD
- * @return array|WP_Error On success an associative array of translations, WP_Error on failure.
- */
-function translations_api( $type, $args = null ) {
-	// Include an unmodified $wp_version.
-	require ABSPATH . WPINC . '/version.php';
-
-=======
  * @return array|WP_Error {
  *     On success an associative array of translations, WP_Error on failure.
  *
@@ -42,7 +34,6 @@ function translations_api( $type, $args = null ) {
  * }
  */
 function translations_api( $type, $args = null ) {
->>>>>>> 535c0c1 (initial commit)
 	if ( ! in_array( $type, array( 'plugins', 'themes', 'core' ), true ) ) {
 		return new WP_Error( 'invalid_type', __( 'Invalid translation type.' ) );
 	}
@@ -69,11 +60,7 @@ function translations_api( $type, $args = null ) {
 		$options = array(
 			'timeout' => 3,
 			'body'    => array(
-<<<<<<< HEAD
-				'wp_version' => $wp_version,
-=======
 				'wp_version' => wp_get_wp_version(),
->>>>>>> 535c0c1 (initial commit)
 				'locale'     => get_locale(),
 				'version'    => $args['version'], // Version of plugin, theme or core.
 			),
@@ -130,9 +117,6 @@ function translations_api( $type, $args = null ) {
 	 *
 	 * @since 4.0.0
 	 *
-<<<<<<< HEAD
-	 * @param array|WP_Error $res  Response as an associative array or WP_Error.
-=======
 	 * @param array|WP_Error $res  {
 	 *     On success an associative array of translations, WP_Error on failure.
 	 *
@@ -151,7 +135,6 @@ function translations_api( $type, $args = null ) {
 	 *         }
 	 *     }
 	 * }
->>>>>>> 535c0c1 (initial commit)
 	 * @param string         $type The type of translations being requested.
 	 * @param object         $args Translation API arguments.
 	 */
@@ -165,10 +148,6 @@ function translations_api( $type, $args = null ) {
  *
  * @see translations_api()
  *
-<<<<<<< HEAD
- * @return array[] Array of translations, each an array of data, keyed by the language. If the API response results
- *                 in an error, an empty array will be returned.
-=======
  * @return array {
  *     Array of translations keyed by the language code, each an associative array of data.
  *     If the API response results in an error, an empty array will be returned.
@@ -184,7 +163,6 @@ function translations_api( $type, $args = null ) {
  *         @type array    $strings      Array of translated strings used in the installation process.
  *     }
  * }
->>>>>>> 535c0c1 (initial commit)
  */
 function wp_get_available_translations() {
 	if ( ! wp_installing() ) {
@@ -194,25 +172,14 @@ function wp_get_available_translations() {
 		}
 	}
 
-<<<<<<< HEAD
-	// Include an unmodified $wp_version.
-	require ABSPATH . WPINC . '/version.php';
-
-	$api = translations_api( 'core', array( 'version' => $wp_version ) );
-=======
 	$api = translations_api( 'core', array( 'version' => wp_get_wp_version() ) );
->>>>>>> 535c0c1 (initial commit)
 
 	if ( is_wp_error( $api ) || empty( $api['translations'] ) ) {
 		return array();
 	}
 
 	$translations = array();
-<<<<<<< HEAD
-	// Key the array with the language code for now.
-=======
 	// Key the array with the language code.
->>>>>>> 535c0c1 (initial commit)
 	foreach ( $api['translations'] as $translation ) {
 		$translations[ $translation['language'] ] = $translation;
 	}

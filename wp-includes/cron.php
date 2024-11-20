@@ -1240,11 +1240,7 @@ function _set_cron_array( $cron, $wp_error = false ) {
 
 	$cron['version'] = 2;
 
-<<<<<<< HEAD
-	$result = update_option( 'cron', $cron );
-=======
 	$result = update_option( 'cron', $cron, true );
->>>>>>> 535c0c1 (initial commit)
 
 	if ( $wp_error && ! $result ) {
 		return new WP_Error(
@@ -1284,11 +1280,7 @@ function _upgrade_cron_array( $cron ) {
 
 	$new_cron['version'] = 2;
 
-<<<<<<< HEAD
-	update_option( 'cron', $new_cron );
-=======
 	update_option( 'cron', $new_cron, true );
->>>>>>> 535c0c1 (initial commit)
 
 	return $new_cron;
 }

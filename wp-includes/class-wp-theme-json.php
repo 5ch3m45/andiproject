@@ -226,10 +226,7 @@ class WP_Theme_JSON {
 	 * @since 6.4.0 Added `writing-mode` property.
 	 * @since 6.5.0 Added `aspect-ratio` property.
 	 * @since 6.6.0 Added `background-[image|position|repeat|size]` properties.
-<<<<<<< HEAD
-=======
 	 * @since 6.7.0 Added `background-attachment` property.
->>>>>>> 535c0c1 (initial commit)
 	 *
 	 * @var array
 	 */
@@ -241,10 +238,7 @@ class WP_Theme_JSON {
 		'background-position'               => array( 'background', 'backgroundPosition' ),
 		'background-repeat'                 => array( 'background', 'backgroundRepeat' ),
 		'background-size'                   => array( 'background', 'backgroundSize' ),
-<<<<<<< HEAD
-=======
 		'background-attachment'             => array( 'background', 'backgroundAttachment' ),
->>>>>>> 535c0c1 (initial commit)
 		'border-radius'                     => array( 'border', 'radius' ),
 		'border-top-left-radius'            => array( 'border', 'radius', 'topLeft' ),
 		'border-top-right-radius'           => array( 'border', 'radius', 'topRight' ),
@@ -528,18 +522,11 @@ class WP_Theme_JSON {
 	 */
 	const VALID_STYLES = array(
 		'background' => array(
-<<<<<<< HEAD
-			'backgroundImage'    => 'top',
-			'backgroundPosition' => 'top',
-			'backgroundRepeat'   => 'top',
-			'backgroundSize'     => 'top',
-=======
 			'backgroundImage'      => null,
 			'backgroundPosition'   => null,
 			'backgroundRepeat'     => null,
 			'backgroundSize'       => null,
 			'backgroundAttachment' => null,
->>>>>>> 535c0c1 (initial commit)
 		),
 		'border'     => array(
 			'color'  => null,
@@ -1439,15 +1426,12 @@ class WP_Theme_JSON {
 			$stylesheet .= $this->get_preset_classes( $setting_nodes, $origins );
 		}
 
-<<<<<<< HEAD
-=======
 		// Load the custom CSS last so it has the highest specificity.
 		if ( in_array( 'custom-css', $types, true ) ) {
 			// Add the global styles root CSS.
 			$stylesheet .= _wp_array_get( $this->theme_json, array( 'styles', 'css' ) );
 		}
 
->>>>>>> 535c0c1 (initial commit)
 		return $stylesheet;
 	}
 
@@ -1513,18 +1497,12 @@ class WP_Theme_JSON {
 	 * Returns the global styles custom CSS.
 	 *
 	 * @since 6.2.0
-<<<<<<< HEAD
-=======
 	 * @deprecated 6.7.0 Use {@see 'get_stylesheet'} instead.
->>>>>>> 535c0c1 (initial commit)
 	 *
 	 * @return string The global styles custom CSS.
 	 */
 	public function get_custom_css() {
-<<<<<<< HEAD
-=======
 		_deprecated_function( __METHOD__, '6.7.0', 'get_stylesheet' );
->>>>>>> 535c0c1 (initial commit)
 		// Add the global styles root CSS.
 		$stylesheet = isset( $this->theme_json['styles']['css'] ) ? $this->theme_json['styles']['css'] : '';
 
@@ -2317,11 +2295,7 @@ class WP_Theme_JSON {
 	 *
 	 *     array(
 	 *       'name'  => 'property_name',
-<<<<<<< HEAD
-	 *       'value' => 'property_value,
-=======
 	 *       'value' => 'property_value',
->>>>>>> 535c0c1 (initial commit)
 	 *     )
 	 *
 	 * @since 5.8.0
@@ -2329,10 +2303,7 @@ class WP_Theme_JSON {
 	 * @since 6.1.0 Added `$theme_json`, `$selector`, and `$use_root_padding` parameters.
 	 * @since 6.5.0 Output a `min-height: unset` rule when `aspect-ratio` is set.
 	 * @since 6.6.0 Pass current theme JSON settings to wp_get_typography_font_size_value(), and process background properties.
-<<<<<<< HEAD
-=======
 	 * @since 6.7.0 `ref` resolution of background properties, and assigning custom default values.
->>>>>>> 535c0c1 (initial commit)
 	 *
 	 * @param array   $styles Styles to process.
 	 * @param array   $settings Theme settings.
@@ -2343,25 +2314,6 @@ class WP_Theme_JSON {
 	 * @return array  Returns the modified $declarations.
 	 */
 	protected static function compute_style_properties( $styles, $settings = array(), $properties = null, $theme_json = null, $selector = null, $use_root_padding = null ) {
-<<<<<<< HEAD
-		if ( null === $properties ) {
-			$properties = static::PROPERTIES_METADATA;
-		}
-
-		$declarations = array();
-		if ( empty( $styles ) ) {
-			return $declarations;
-		}
-
-		$root_variable_duplicates = array();
-
-		foreach ( $properties as $css_property => $value_path ) {
-			$value = static::get_property_value( $styles, $value_path, $theme_json );
-
-			if ( str_starts_with( $css_property, '--wp--style--root--' ) && ( static::ROOT_BLOCK_SELECTOR !== $selector || ! $use_root_padding ) ) {
-				continue;
-			}
-=======
 		if ( empty( $styles ) ) {
 			return array();
 		}
@@ -2385,7 +2337,6 @@ class WP_Theme_JSON {
 
 			$value = static::get_property_value( $styles, $value_path, $theme_json );
 
->>>>>>> 535c0c1 (initial commit)
 			/*
 			 * Root-level padding styles don't currently support strings with CSS shorthand values.
 			 * This may change: https://github.com/WordPress/gutenberg/issues/40132.
@@ -2394,10 +2345,6 @@ class WP_Theme_JSON {
 				continue;
 			}
 
-<<<<<<< HEAD
-			if ( str_starts_with( $css_property, '--wp--style--root--' ) && $use_root_padding ) {
-				$root_variable_duplicates[] = substr( $css_property, strlen( '--wp--style--root--' ) );
-=======
 			if ( $is_root_style && $use_root_padding ) {
 				$root_variable_duplicates[] = substr( $css_property, $root_style_length );
 			}
@@ -2429,40 +2376,17 @@ class WP_Theme_JSON {
 			$has_missing_value = empty( $value ) && ! is_numeric( $value );
 			if ( $has_missing_value || is_array( $value ) ) {
 				continue;
->>>>>>> 535c0c1 (initial commit)
 			}
 
 			/*
 			 * Look up protected properties, keyed by value path.
 			 * Skip protected properties that are explicitly set to `null`.
 			 */
-<<<<<<< HEAD
-			if ( is_array( $value_path ) ) {
-				$path_string = implode( '.', $value_path );
-				if (
-					isset( static::PROTECTED_PROPERTIES[ $path_string ] ) &&
-					_wp_array_get( $settings, static::PROTECTED_PROPERTIES[ $path_string ], null ) === null
-				) {
-					continue;
-				}
-			}
-
-			// Processes background styles.
-			if ( 'background' === $value_path[0] && isset( $styles['background'] ) ) {
-				$background_styles = wp_style_engine_get_styles( array( 'background' => $styles['background'] ) );
-				$value             = isset( $background_styles['declarations'][ $css_property ] ) ? $background_styles['declarations'][ $css_property ] : $value;
-			}
-
-			// Skip if empty and not "0" or value represents array of longhand values.
-			$has_missing_value = empty( $value ) && ! is_numeric( $value );
-			if ( $has_missing_value || is_array( $value ) ) {
-=======
 			$path_string = implode( '.', $value_path );
 			if (
 				isset( static::PROTECTED_PROPERTIES[ $path_string ] ) &&
 				_wp_array_get( $settings, static::PROTECTED_PROPERTIES[ $path_string ], null ) === null
 			) {
->>>>>>> 535c0c1 (initial commit)
 				continue;
 			}
 
@@ -2519,10 +2443,7 @@ class WP_Theme_JSON {
 	 *              to the standard form "--wp--preset--color--secondary".
 	 *              This is already done by the sanitize method,
 	 *              so every property will be in the standard form.
-<<<<<<< HEAD
-=======
 	 * @since 6.7.0 Added support for background image refs.
->>>>>>> 535c0c1 (initial commit)
 	 *
 	 * @param array $styles Styles subtree.
 	 * @param array $path   Which property to process.
@@ -2539,28 +2460,18 @@ class WP_Theme_JSON {
 
 		/*
 		 * This converts references to a path to the value at that path
-<<<<<<< HEAD
-		 * where the values is an array with a "ref" key, pointing to a path.
-		 * For example: { "ref": "style.color.background" } => "#fff".
-=======
 		 * where the value is an array with a "ref" key, pointing to a path.
 		 * For example: { "ref": "style.color.background" } => "#fff".
 		 * In the case of backgroundImage, if both a ref and a URL are present in the value,
 		 * the URL takes precedence and the ref is ignored.
->>>>>>> 535c0c1 (initial commit)
 		 */
 		if ( is_array( $value ) && isset( $value['ref'] ) ) {
 			$value_path = explode( '.', $value['ref'] );
 			$ref_value  = _wp_array_get( $theme_json, $value_path );
-<<<<<<< HEAD
-			// Only use the ref value if we find anything.
-			if ( ! empty( $ref_value ) && is_string( $ref_value ) ) {
-=======
 			// Background Image refs can refer to a string or an array containing a URL string.
 			$ref_value_url = $ref_value['url'] ?? null;
 			// Only use the ref value if we find anything.
 			if ( ! empty( $ref_value ) && ( is_string( $ref_value ) || is_string( $ref_value_url ) ) ) {
->>>>>>> 535c0c1 (initial commit)
 				$value = $ref_value;
 			}
 
@@ -2783,85 +2694,25 @@ class WP_Theme_JSON {
 	 * @since 6.1.0
 	 * @since 6.3.0 Refactored and stabilized selectors API.
 	 * @since 6.6.0 Added optional selectors and options for generating block nodes.
-<<<<<<< HEAD
-=======
 	 * @since 6.7.0 Added $include_node_paths_only option.
->>>>>>> 535c0c1 (initial commit)
 	 *
 	 * @param array $theme_json The theme.json converted to an array.
 	 * @param array $selectors  Optional list of selectors per block.
 	 * @param array $options {
 	 *     Optional. An array of options for now used for internal purposes only (may change without notice).
 	 *
-<<<<<<< HEAD
-	 *     @type bool   $include_block_style_variations  Includes nodes for block style variations. Default false.
-=======
 	 *     @type bool $include_block_style_variations Include nodes for block style variations. Default false.
 	 *     @type bool $include_node_paths_only        Return only block nodes node paths. Default false.
->>>>>>> 535c0c1 (initial commit)
 	 * }
 	 * @return array The block nodes in theme.json.
 	 */
 	private static function get_block_nodes( $theme_json, $selectors = array(), $options = array() ) {
-<<<<<<< HEAD
-		$selectors = empty( $selectors ) ? static::get_blocks_metadata() : $selectors;
-		$nodes     = array();
-		if ( ! isset( $theme_json['styles'] ) ) {
-			return $nodes;
-		}
-
-		// Blocks.
-=======
 		$nodes = array();
 
->>>>>>> 535c0c1 (initial commit)
 		if ( ! isset( $theme_json['styles']['blocks'] ) ) {
 			return $nodes;
 		}
 
-<<<<<<< HEAD
-		foreach ( $theme_json['styles']['blocks'] as $name => $node ) {
-			$selector = null;
-			if ( isset( $selectors[ $name ]['selector'] ) ) {
-				$selector = $selectors[ $name ]['selector'];
-			}
-
-			$duotone_selector = null;
-			if ( isset( $selectors[ $name ]['duotone'] ) ) {
-				$duotone_selector = $selectors[ $name ]['duotone'];
-			}
-
-			$feature_selectors = null;
-			if ( isset( $selectors[ $name ]['selectors'] ) ) {
-				$feature_selectors = $selectors[ $name ]['selectors'];
-			}
-
-			$variation_selectors = array();
-			$include_variations  = $options['include_block_style_variations'] ?? false;
-			if ( $include_variations && isset( $node['variations'] ) ) {
-				foreach ( $node['variations'] as $variation => $node ) {
-					$variation_selectors[] = array(
-						'path'     => array( 'styles', 'blocks', $name, 'variations', $variation ),
-						'selector' => $selectors[ $name ]['styleVariations'][ $variation ],
-					);
-				}
-			}
-
-			$nodes[] = array(
-				'name'       => $name,
-				'path'       => array( 'styles', 'blocks', $name ),
-				'selector'   => $selector,
-				'selectors'  => $feature_selectors,
-				'duotone'    => $duotone_selector,
-				'features'   => $feature_selectors,
-				'variations' => $variation_selectors,
-			);
-
-			if ( isset( $theme_json['styles']['blocks'][ $name ]['elements'] ) ) {
-				foreach ( $theme_json['styles']['blocks'][ $name ]['elements'] as $element => $node ) {
-					$nodes[] = array(
-						'path'     => array( 'styles', 'blocks', $name, 'elements', $element ),
-=======
 		$include_variations      = $options['include_block_style_variations'] ?? false;
 		$include_node_paths_only = $options['include_node_paths_only'] ?? false;
 
@@ -2926,7 +2777,6 @@ class WP_Theme_JSON {
 
 					$nodes[] = array(
 						'path'     => $node_path,
->>>>>>> 535c0c1 (initial commit)
 						'selector' => $selectors[ $name ]['elements'][ $element ],
 					);
 
@@ -2934,10 +2784,6 @@ class WP_Theme_JSON {
 					if ( isset( static::VALID_ELEMENT_PSEUDO_SELECTORS[ $element ] ) ) {
 						foreach ( static::VALID_ELEMENT_PSEUDO_SELECTORS[ $element ] as $pseudo_selector ) {
 							if ( isset( $theme_json['styles']['blocks'][ $name ]['elements'][ $element ][ $pseudo_selector ] ) ) {
-<<<<<<< HEAD
-								$nodes[] = array(
-									'path'     => array( 'styles', 'blocks', $name, 'elements', $element ),
-=======
 								$node_path = array( 'styles', 'blocks', $name, 'elements', $element );
 								if ( $include_node_paths_only ) {
 									$nodes[] = array(
@@ -2948,7 +2794,6 @@ class WP_Theme_JSON {
 
 								$nodes[] = array(
 									'path'     => $node_path,
->>>>>>> 535c0c1 (initial commit)
 									'selector' => static::append_to_selector( $selectors[ $name ]['elements'][ $element ], $pseudo_selector ),
 								);
 							}
@@ -3170,11 +3015,7 @@ class WP_Theme_JSON {
 			}
 		}
 
-<<<<<<< HEAD
-		// 7. Generate and append any custom CSS rules pertaining to nested block style variations.
-=======
 		// 7. Generate and append any custom CSS rules.
->>>>>>> 535c0c1 (initial commit)
 		if ( isset( $node['css'] ) && ! $is_root_selector ) {
 			$block_rules .= $this->process_blocks_custom_css( $node['css'], $selector );
 		}
@@ -3296,10 +3137,7 @@ class WP_Theme_JSON {
 	 *
 	 * @since 5.8.0
 	 * @since 5.9.0 Duotone preset also has origins.
-<<<<<<< HEAD
-=======
 	 * @since 6.7.0 Replace background image objects during merge.
->>>>>>> 535c0c1 (initial commit)
 	 *
 	 * @param WP_Theme_JSON $incoming Data to merge.
 	 */
@@ -3423,8 +3261,6 @@ class WP_Theme_JSON {
 				}
 			}
 		}
-<<<<<<< HEAD
-=======
 
 		/*
 		 * Style values are merged at the leaf level, however
@@ -3448,7 +3284,6 @@ class WP_Theme_JSON {
 				_wp_array_set( $this->theme_json, $background_image_path, $content );
 			}
 		}
->>>>>>> 535c0c1 (initial commit)
 	}
 
 	/**

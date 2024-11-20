@@ -218,20 +218,6 @@ class Walker_Nav_Menu_Edit extends Walker_Nav_Menu {
 						<?php _e( 'Open link in a new tab' ); ?>
 					</label>
 				</p>
-<<<<<<< HEAD
-				<p class="field-css-classes description description-thin">
-					<label for="edit-menu-item-classes-<?php echo $item_id; ?>">
-						<?php _e( 'CSS Classes (optional)' ); ?><br />
-						<input type="text" id="edit-menu-item-classes-<?php echo $item_id; ?>" class="widefat code edit-menu-item-classes" name="menu-item-classes[<?php echo $item_id; ?>]" value="<?php echo esc_attr( implode( ' ', $menu_item->classes ) ); ?>" />
-					</label>
-				</p>
-				<p class="field-xfn description description-thin">
-					<label for="edit-menu-item-xfn-<?php echo $item_id; ?>">
-						<?php _e( 'Link Relationship (XFN)' ); ?><br />
-						<input type="text" id="edit-menu-item-xfn-<?php echo $item_id; ?>" class="widefat code edit-menu-item-xfn" name="menu-item-xfn[<?php echo $item_id; ?>]" value="<?php echo esc_attr( $menu_item->xfn ); ?>" />
-					</label>
-				</p>
-=======
 				<div class="description-group">
 					<p class="field-css-classes description description-thin">
 						<label for="edit-menu-item-classes-<?php echo $item_id; ?>">
@@ -246,7 +232,6 @@ class Walker_Nav_Menu_Edit extends Walker_Nav_Menu {
 						</label>
 					</p>
 				</div>
->>>>>>> 535c0c1 (initial commit)
 				<p class="field-description description description-wide">
 					<label for="edit-menu-item-description-<?php echo $item_id; ?>">
 						<?php _e( 'Description' ); ?><br />
@@ -257,8 +242,6 @@ class Walker_Nav_Menu_Edit extends Walker_Nav_Menu {
 
 				<?php
 				/**
-<<<<<<< HEAD
-=======
 				 * Update parent and order of menu item using select inputs.
 				 *
 				 * @since 6.7.0
@@ -284,7 +267,6 @@ class Walker_Nav_Menu_Edit extends Walker_Nav_Menu {
 
 				<?php
 				/**
->>>>>>> 535c0c1 (initial commit)
 				 * Fires just before the move buttons of a nav menu item in the menu editor.
 				 *
 				 * @since 5.4.0
@@ -365,8 +347,4 @@ class Walker_Nav_Menu_Edit extends Walker_Nav_Menu {
 		<?php
 		$output .= ob_get_clean();
 	}
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 535c0c1 (initial commit)

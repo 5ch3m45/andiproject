@@ -64,24 +64,6 @@
 }
 
 .block-directory-downloadable-block-list-item{
-<<<<<<< HEAD
-  display:grid;
-  grid-template-columns:auto 1fr;
-  height:auto;
-  padding:12px;
-  position:relative;
-  text-align:left;
-  width:100%;
-}
-.block-directory-downloadable-block-list-item:hover{
-  box-shadow:0 0 0 var(--wp-admin-border-width-focus) var(--wp-admin-theme-color);
-  outline:2px solid #0000;
-}
-.block-directory-downloadable-block-list-item.is-busy{
-  background:#0000;
-}
-.block-directory-downloadable-block-list-item.is-busy .block-directory-downloadable-block-list-item__author{
-=======
   appearance:none;
   background:none;
   border:0;
@@ -106,7 +88,6 @@
   outline:2px solid #0000;
 }
 .block-directory-downloadable-block-list-item.is-installing .block-directory-downloadable-block-list-item__author{
->>>>>>> 535c0c1 (initial commit)
   border:0;
   clip:rect(1px, 1px, 1px, 1px);
   clip-path:inset(50%);
@@ -118,12 +99,6 @@
   width:1px;
   word-wrap:normal !important;
 }
-<<<<<<< HEAD
-.block-directory-downloadable-block-list-item:disabled,.block-directory-downloadable-block-list-item[aria-disabled]{
-  opacity:1;
-}
-=======
->>>>>>> 535c0c1 (initial commit)
 
 .block-directory-downloadable-block-list-item__icon{
   align-self:flex-start;
@@ -141,12 +116,9 @@
   right:0;
   top:0;
 }
-<<<<<<< HEAD
-=======
 .is-installing .block-directory-downloadable-block-list-item__icon{
   margin-right:22px;
 }
->>>>>>> 535c0c1 (initial commit)
 
 .block-directory-block-ratings{
   display:block;
@@ -209,18 +181,6 @@
   margin:0 0 4px;
 }
 
-<<<<<<< HEAD
-.block-directory-downloadable-blocks-panel__description{
-  margin-top:0;
-}
-
-.block-directory-downloadable-blocks-panel button{
-  margin-top:4px;
-}
-
-.installed-blocks-pre-publish-panel__copy{
-=======
 .block-directory-downloadable-blocks-panel__description,.installed-blocks-pre-publish-panel__copy{
->>>>>>> 535c0c1 (initial commit)
   margin-top:0;
 }

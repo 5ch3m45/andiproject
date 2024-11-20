@@ -145,10 +145,6 @@ class WP_Http {
 	 *     @type int          $limit_response_size Size in bytes to limit the response to. Default null.
 	 *
 	 * }
-<<<<<<< HEAD
-	 * @return array|WP_Error Array containing 'headers', 'body', 'response', 'cookies', 'filename'.
-	 *                        A WP_Error instance upon error.
-=======
 	 * @return array|WP_Error {
 	 *     Array of response data, or a WP_Error instance upon error.
 	 *
@@ -164,7 +160,6 @@ class WP_Http {
 	 *     @type string|null                                       $filename      Optional. Filename of the response.
 	 *     @type WP_HTTP_Requests_Response|null                    $http_response Response object.
 	 * }
->>>>>>> 535c0c1 (initial commit)
 	 */
 	public function request( $url, $args = array() ) {
 		$defaults = array(

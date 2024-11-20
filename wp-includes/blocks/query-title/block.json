@@ -17,12 +17,9 @@
 			"type": "number",
 			"default": 1
 		},
-<<<<<<< HEAD
-=======
 		"levelOptions": {
 			"type": "array"
 		},
->>>>>>> 535c0c1 (initial commit)
 		"showPrefix": {
 			"type": "boolean",
 			"default": true
@@ -61,8 +58,6 @@
 		},
 		"interactivity": {
 			"clientNavigation": true
-<<<<<<< HEAD
-=======
 		},
 		"__experimentalBorder": {
 			"radius": true,
@@ -75,7 +70,6 @@
 				"width": true,
 				"style": true
 			}
->>>>>>> 535c0c1 (initial commit)
 		}
 	},
 	"style": "wp-block-query-title"

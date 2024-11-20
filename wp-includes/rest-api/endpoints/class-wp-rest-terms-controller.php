@@ -164,11 +164,7 @@ class WP_REST_Terms_Controller extends WP_REST_Controller {
 			return true;
 		}
 
-<<<<<<< HEAD
-		// Otherwise grant access if the post is readable by the logged in user.
-=======
 		// Otherwise grant access if the post is readable by the logged-in user.
->>>>>>> 2b44096 (initial commit 2)
 		if ( current_user_can( 'read_post', $post->ID ) ) {
 			return true;
 		}
@@ -466,11 +462,7 @@ class WP_REST_Terms_Controller extends WP_REST_Controller {
 	 * @since 4.7.0
 	 *
 	 * @param WP_REST_Request $request Full details about the request.
-<<<<<<< HEAD
-	 * @return true|WP_Error True if the request has access to create items, false or WP_Error object otherwise.
-=======
 	 * @return bool|WP_Error True if the request has access to create items, otherwise false or WP_Error object.
->>>>>>> 2b44096 (initial commit 2)
 	 */
 	public function create_item_permissions_check( $request ) {
 

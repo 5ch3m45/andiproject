@@ -572,8 +572,6 @@ class WP_Image_Editor_GD extends WP_Image_Editor {
 	}
 
 	/**
-<<<<<<< HEAD
-=======
 	 * Sets Image Compression quality on a 1-100% scale. Handles WebP lossless images.
 	 *
 	 * @since 6.7.0
@@ -606,7 +604,6 @@ class WP_Image_Editor_GD extends WP_Image_Editor {
 	}
 
 	/**
->>>>>>> 535c0c1 (initial commit)
 	 * Returns stream of current image.
 	 *
 	 * @since 3.5.0

@@ -490,8 +490,6 @@ class WP_Dependencies {
 
 		return true;
 	}
-<<<<<<< HEAD
-=======
 
 	/**
 	 * Get etag header for cache validation.
@@ -530,5 +528,4 @@ class WP_Dependencies {
 		 */
 		return 'W/"' . md5( $etag ) . '"';
 	}
->>>>>>> 535c0c1 (initial commit)
 }

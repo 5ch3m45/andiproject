@@ -58,12 +58,9 @@
 		}
 	},
 	"usesContext": [ "postId", "postType", "queryId" ],
-<<<<<<< HEAD
-=======
 	"example": {
 		"viewportWidth": 350
 	},
->>>>>>> 535c0c1 (initial commit)
 	"supports": {
 		"align": [ "left", "right", "center", "wide", "full" ],
 		"color": {

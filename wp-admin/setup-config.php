@@ -105,11 +105,7 @@ function setup_config_display_header( $body_classes = array() ) {
 <!DOCTYPE html>
 <html<?php echo $dir_attr; ?>>
 <head>
-<<<<<<< HEAD
-	<meta name="viewport" content="width=device-width" />
-=======
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
->>>>>>> 535c0c1 (initial commit)
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="robots" content="noindex,nofollow" />
 	<title><?php _e( 'WordPress &rsaquo; Setup Configuration File' ); ?></title>

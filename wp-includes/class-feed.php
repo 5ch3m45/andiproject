@@ -9,11 +9,7 @@
 
 _deprecated_file( basename( __FILE__ ), '4.7.0', 'fetch_feed()' );
 
-<<<<<<< HEAD
-if ( ! class_exists( 'SimplePie', false ) ) {
-=======
 if ( ! class_exists( 'SimplePie\SimplePie', false ) ) {
->>>>>>> 535c0c1 (initial commit)
 	require_once ABSPATH . WPINC . '/class-simplepie.php';
 }
 

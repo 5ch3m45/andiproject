@@ -17,10 +17,6 @@
 			"default": true
 		}
 	},
-<<<<<<< HEAD
-	"supports": {
-		"className": true,
-=======
 	"example": {
 		"viewportWidth": 350
 	},
@@ -32,7 +28,6 @@
 			"gradients": true,
 			"link": true
 		},
->>>>>>> 535c0c1 (initial commit)
 		"spacing": {
 			"margin": true,
 			"padding": true,
@@ -54,12 +49,6 @@
 				"fontSize": true
 			}
 		},
-<<<<<<< HEAD
-		"interactivity": {
-			"clientNavigation": true
-		}
-	}
-=======
 		"__experimentalBorder": {
 			"radius": true,
 			"color": true,
@@ -71,5 +60,4 @@
 		}
 	},
 	"style": "wp-block-loginout"
->>>>>>> 535c0c1 (initial commit)
 }

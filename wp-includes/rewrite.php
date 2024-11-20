@@ -244,11 +244,7 @@ function remove_permastruct( $name ) {
  *
  * @global WP_Rewrite $wp_rewrite WordPress rewrite component.
  *
-<<<<<<< HEAD
- * @param string   $feedname Feed name.
-=======
  * @param string   $feedname Feed name. Should not start with '_'.
->>>>>>> 2b44096 (initial commit 2)
  * @param callable $callback Callback to run on feed display.
  * @return string Feed action name.
  */

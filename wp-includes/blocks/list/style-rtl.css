@@ -2,10 +2,6 @@ ol,ul{
   box-sizing:border-box;
 }
 
-<<<<<<< HEAD
-:root :where(ul.has-background,ol.has-background){
-=======
 :root :where(.wp-block-list.has-background){
->>>>>>> 535c0c1 (initial commit)
   padding:1.25em 2.375em;
 }

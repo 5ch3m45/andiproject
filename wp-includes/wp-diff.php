@@ -15,11 +15,8 @@ if ( ! class_exists( 'Text_Diff', false ) ) {
 	require ABSPATH . WPINC . '/Text/Diff/Renderer.php';
 	/** Text_Diff_Renderer_inline class */
 	require ABSPATH . WPINC . '/Text/Diff/Renderer/inline.php';
-<<<<<<< HEAD
-=======
 	/** Text_Exception class */
 	require ABSPATH . WPINC . '/Text/Exception.php';
->>>>>>> 2b44096 (initial commit 2)
 }
 
 require ABSPATH . WPINC . '/class-wp-text-diff-renderer-table.php';

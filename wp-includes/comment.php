@@ -479,12 +479,8 @@ function delete_comment_meta( $comment_id, $meta_key, $meta_value = '' ) {
  * @return mixed An array of values if `$single` is false.
  *               The value of meta data field if `$single` is true.
  *               False for an invalid `$comment_id` (non-numeric, zero, or negative value).
-<<<<<<< HEAD
- *               An empty string if a valid but non-existing comment ID is passed.
-=======
  *               An empty array if a valid but non-existing comment ID is passed and `$single` is false.
  *               An empty string if a valid but non-existing comment ID is passed and `$single` is true.
->>>>>>> 535c0c1 (initial commit)
  */
 function get_comment_meta( $comment_id, $key = '', $single = false ) {
 	return get_metadata( 'comment', $comment_id, $key, $single );
@@ -777,63 +773,7 @@ function wp_allow_comment( $commentdata, $wp_error = false ) {
 		return new WP_Error( 'comment_flood', $comment_flood_message, 429 );
 	}
 
-<<<<<<< HEAD
-	if ( ! empty( $commentdata['user_id'] ) ) {
-		$user        = get_userdata( $commentdata['user_id'] );
-		$post_author = $wpdb->get_var(
-			$wpdb->prepare(
-				"SELECT post_author FROM $wpdb->posts WHERE ID = %d LIMIT 1",
-				$commentdata['comment_post_ID']
-			)
-		);
-	}
-
-	if ( isset( $user ) && ( $commentdata['user_id'] == $post_author || $user->has_cap( 'moderate_comments' ) ) ) {
-		// The author and the admins get respect.
-		$approved = 1;
-	} else {
-		// Everyone else's comments will be checked.
-		if ( check_comment(
-			$commentdata['comment_author'],
-			$commentdata['comment_author_email'],
-			$commentdata['comment_author_url'],
-			$commentdata['comment_content'],
-			$commentdata['comment_author_IP'],
-			$commentdata['comment_agent'],
-			$commentdata['comment_type']
-		) ) {
-			$approved = 1;
-		} else {
-			$approved = 0;
-		}
-
-		if ( wp_check_comment_disallowed_list(
-			$commentdata['comment_author'],
-			$commentdata['comment_author_email'],
-			$commentdata['comment_author_url'],
-			$commentdata['comment_content'],
-			$commentdata['comment_author_IP'],
-			$commentdata['comment_agent']
-		) ) {
-			$approved = EMPTY_TRASH_DAYS ? 'trash' : 'spam';
-		}
-	}
-
-	/**
-	 * Filters a comment's approval status before it is set.
-	 *
-	 * @since 2.1.0
-	 * @since 4.9.0 Returning a WP_Error value from the filter will short-circuit comment insertion
-	 *              and allow skipping further processing.
-	 *
-	 * @param int|string|WP_Error $approved    The approval status. Accepts 1, 0, 'spam', 'trash',
-	 *                                         or WP_Error.
-	 * @param array               $commentdata Comment data.
-	 */
-	return apply_filters( 'pre_comment_approved', $approved, $commentdata );
-=======
 	return wp_check_comment_data( $commentdata );
->>>>>>> 535c0c1 (initial commit)
 }
 
 /**
@@ -1301,8 +1241,6 @@ function wp_check_comment_data_max_lengths( $comment_data ) {
 }
 
 /**
-<<<<<<< HEAD
-=======
  * Checks whether comment data passes internal checks or has disallowed content.
  *
  * @since 6.7.0
@@ -1372,7 +1310,6 @@ function wp_check_comment_data( $comment_data ) {
 }
 
 /**
->>>>>>> 535c0c1 (initial commit)
  * Checks if a comment contains disallowed characters or words.
  *
  * @since 5.5.0
@@ -2357,11 +2294,6 @@ function wp_new_comment( $commentdata, $wp_error = false ) {
 		$commentdata['comment_type'] = 'comment';
 	}
 
-<<<<<<< HEAD
-	$commentdata = wp_filter_comment( $commentdata );
-
-	$commentdata['comment_approved'] = wp_allow_comment( $commentdata, $wp_error );
-=======
 	$commentdata['comment_approved'] = wp_allow_comment( $commentdata, $wp_error );
 
 	if ( is_wp_error( $commentdata['comment_approved'] ) ) {
@@ -2374,7 +2306,6 @@ function wp_new_comment( $commentdata, $wp_error = false ) {
 		// Validate the comment again after filters are applied to comment data.
 		$commentdata['comment_approved'] = wp_check_comment_data( $commentdata );
 	}
->>>>>>> 535c0c1 (initial commit)
 
 	if ( is_wp_error( $commentdata['comment_approved'] ) ) {
 		return $commentdata['comment_approved'];
@@ -3211,10 +3142,7 @@ function pingback( $content, $post ) {
 
 		if ( $pingback_server_url ) {
 			if ( function_exists( 'set_time_limit' ) ) {
-<<<<<<< HEAD
-=======
 				// Allows an additional 60 seconds for each pingback to complete.
->>>>>>> 535c0c1 (initial commit)
 				set_time_limit( 60 );
 			}
 
@@ -3864,11 +3792,7 @@ function wp_comments_personal_data_exporter( $email_address, $page = 1 ) {
 				case 'comment_link':
 					$value = get_comment_link( $comment->comment_ID );
 					$value = sprintf(
-<<<<<<< HEAD
-						'<a href="%s" target="_blank" rel="noopener">%s</a>',
-=======
 						'<a href="%s" target="_blank">%s</a>',
->>>>>>> 535c0c1 (initial commit)
 						esc_url( $value ),
 						esc_html( $value )
 					);

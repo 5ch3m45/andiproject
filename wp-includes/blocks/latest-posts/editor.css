@@ -6,16 +6,6 @@
   display:inline;
 }
 
-<<<<<<< HEAD
-.editor-latest-posts-image-alignment-control .components-base-control__label{
-  display:block;
-}
-.editor-latest-posts-image-alignment-control .components-toolbar{
-  border-radius:2px;
-}
-
-=======
->>>>>>> 535c0c1 (initial commit)
 :root :where(.wp-block-latest-posts){
   padding-left:2.5em;
 }

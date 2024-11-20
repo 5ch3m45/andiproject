@@ -216,11 +216,8 @@
 							checkboxes.prop( 'checked', false );
 							t.find( '.button-controls .select-all' ).prop( 'checked', false );
 							t.find( '.button-controls .spinner' ).removeClass( 'is-active' );
-<<<<<<< HEAD
-=======
 							t.updateParentDropdown();
 							t.updateOrderDropdown();
->>>>>>> 535c0c1 (initial commit)
 						});
 					});
 				},
@@ -293,8 +290,6 @@
 						});
 					});
 					return this;
-<<<<<<< HEAD
-=======
 				},
 				updateParentDropdown : function() {
 					return this.each(function(){
@@ -394,7 +389,6 @@
 						});
 						
 					});
->>>>>>> 535c0c1 (initial commit)
 				}
 			});
 		},
@@ -404,10 +398,6 @@
 		},
 
 		moveMenuItem : function( $this, dir ) {
-<<<<<<< HEAD
-
-=======
->>>>>>> 535c0c1 (initial commit)
 			var items, newItemPosition, newDepth,
 				menuItems = $( '#menu-to-edit li' ),
 				menuItemsCount = menuItems.length,
@@ -510,11 +500,8 @@
 			api.registerChange();
 			api.refreshKeyboardAccessibility();
 			api.refreshAdvancedAccessibility();
-<<<<<<< HEAD
-=======
 			thisItem.updateParentDropdown();
 			thisItem.updateOrderDropdown();
->>>>>>> 535c0c1 (initial commit)
 
 			if ( a11ySpeech ) {
 				wp.a11y.speak( a11ySpeech );
@@ -546,8 +533,6 @@
 					api.moveMenuItem( $( this ).parents( 'li.menu-item' ).find( 'a.item-edit' ), dir );
 				}
 			});
-<<<<<<< HEAD
-=======
 
 			// Set menu parents data for all menu items.
 			menu.updateParentDropdown();
@@ -665,7 +650,6 @@
 			api.refreshAdvancedAccessibility();
 			$this.trigger( 'focus' );
 			wp.a11y.speak( menus.orderUpdated, 'polite' );
->>>>>>> 535c0c1 (initial commit)
 		},
 
 		/**
@@ -972,11 +956,8 @@
 
 					api.refreshKeyboardAccessibility();
 					api.refreshAdvancedAccessibility();
-<<<<<<< HEAD
-=======
 					ui.item.updateParentDropdown();
 					ui.item.updateOrderDropdown();
->>>>>>> 535c0c1 (initial commit)
 					api.refreshAdvancedAccessibilityOfItem( ui.item.find( 'a.item-edit' ) );
 				},
 				change: function(e, ui) {
@@ -1228,11 +1209,8 @@
 					deletionSpeech = menus.itemsDeleted.replace( '%s', itemsPendingDeletion );
 					wp.a11y.speak( deletionSpeech, 'polite' );
 					that.disableBulkSelection();
-<<<<<<< HEAD
-=======
 					menus.updateParentDropdown();
 					menus.updateOrderDropdown();
->>>>>>> 535c0c1 (initial commit)
 				}
 			});
 		},
@@ -1772,11 +1750,8 @@
 					}
 					api.refreshAdvancedAccessibility();
 					wp.a11y.speak( menus.itemRemoved );
-<<<<<<< HEAD
-=======
 					menus.updateParentDropdown();
 					menus.updateOrderDropdown();
->>>>>>> 535c0c1 (initial commit)
 				});
 		},
 

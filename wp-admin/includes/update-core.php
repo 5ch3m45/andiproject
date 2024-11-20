@@ -2,13 +2,10 @@
 /**
  * WordPress core upgrade functionality.
  *
-<<<<<<< HEAD
-=======
  * Note: Newly introduced functions and methods cannot be used here.
  * All functions must be present in the previous version being upgraded from
  * as this file is used there too.
  *
->>>>>>> 535c0c1 (initial commit)
  * @package WordPress
  * @subpackage Administration
  * @since 2.7.0
@@ -744,12 +741,6 @@ $_old_files = array(
 	'wp-includes/blocks/query-title/editor.min.css',
 	'wp-includes/blocks/query-title/editor-rtl.css',
 	'wp-includes/blocks/query-title/editor-rtl.min.css',
-<<<<<<< HEAD
-	'wp-includes/blocks/tag-cloud/editor.css',
-	'wp-includes/blocks/tag-cloud/editor.min.css',
-	'wp-includes/blocks/tag-cloud/editor-rtl.css',
-	'wp-includes/blocks/tag-cloud/editor-rtl.min.css',
-=======
 	/*
 	 * Restored in WordPress 6.7
 	 *
@@ -758,7 +749,6 @@ $_old_files = array(
 	 * 'wp-includes/blocks/tag-cloud/editor-rtl.css',
 	 * 'wp-includes/blocks/tag-cloud/editor-rtl.min.css',
 	 */
->>>>>>> 535c0c1 (initial commit)
 	// 6.1
 	'wp-includes/blocks/post-comments.php',
 	'wp-includes/blocks/post-comments',
@@ -788,8 +778,6 @@ $_old_files = array(
 	'wp-includes/blocks/block/editor.min.css',
 	'wp-includes/blocks/block/editor-rtl.css',
 	'wp-includes/blocks/block/editor-rtl.min.css',
-<<<<<<< HEAD
-=======
 	/*
 	 * 6.7
 	 *
@@ -840,7 +828,6 @@ $_old_files = array(
 	'wp-includes/SimplePie/Net/',
 	'wp-includes/SimplePie/Parse/',
 	'wp-includes/SimplePie/XML/',
->>>>>>> 535c0c1 (initial commit)
 );
 
 /**
@@ -972,10 +959,7 @@ $_new_bundled_files = array(
 	'themes/twentytwentytwo/'   => '5.9',
 	'themes/twentytwentythree/' => '6.1',
 	'themes/twentytwentyfour/'  => '6.4',
-<<<<<<< HEAD
-=======
 	'themes/twentytwentyfive/'  => '6.7',
->>>>>>> 535c0c1 (initial commit)
 );
 
 /**
@@ -1037,10 +1021,7 @@ function update_core( $from, $to ) {
 	global $wp_filesystem, $_old_files, $_old_requests_files, $_new_bundled_files, $wpdb;
 
 	if ( function_exists( 'set_time_limit' ) ) {
-<<<<<<< HEAD
-=======
 		// Gives core update script time an additional 300 seconds(5 minutes) to finish updating large files or run on slower servers.
->>>>>>> 535c0c1 (initial commit)
 		set_time_limit( 300 );
 	}
 
@@ -1842,11 +1823,7 @@ function _upgrade_core_deactivate_incompatible_plugins() {
 		} else {
 			$deactivated_plugins = get_option( 'wp_force_deactivated_plugins', array() );
 			$deactivated_plugins = array_merge( $deactivated_plugins, $deactivated_gutenberg );
-<<<<<<< HEAD
-			update_option( 'wp_force_deactivated_plugins', $deactivated_plugins );
-=======
 			update_option( 'wp_force_deactivated_plugins', $deactivated_plugins, false );
->>>>>>> 535c0c1 (initial commit)
 		}
 		deactivate_plugins( array( 'gutenberg/gutenberg.php' ), true );
 	}

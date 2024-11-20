@@ -10,11 +10,7 @@
 	"attributes": {
 		"label": {
 			"type": "string",
-<<<<<<< HEAD
-			"__experimentalRole": "content"
-=======
 			"role": "content"
->>>>>>> 535c0c1 (initial commit)
 		},
 		"showLabel": {
 			"type": "boolean",
@@ -23,11 +19,7 @@
 		"placeholder": {
 			"type": "string",
 			"default": "",
-<<<<<<< HEAD
-			"__experimentalRole": "content"
-=======
 			"role": "content"
->>>>>>> 535c0c1 (initial commit)
 		},
 		"width": {
 			"type": "number"
@@ -37,11 +29,7 @@
 		},
 		"buttonText": {
 			"type": "string",
-<<<<<<< HEAD
-			"__experimentalRole": "content"
-=======
 			"role": "content"
->>>>>>> 535c0c1 (initial commit)
 		},
 		"buttonPosition": {
 			"type": "string",
@@ -97,12 +85,9 @@
 				"width": true
 			}
 		},
-<<<<<<< HEAD
-=======
 		"spacing": {
 			"margin": true
 		},
->>>>>>> 535c0c1 (initial commit)
 		"html": false
 	},
 	"editorStyle": "wp-block-search-editor",

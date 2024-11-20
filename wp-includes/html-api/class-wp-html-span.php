@@ -49,11 +49,7 @@ class WP_HTML_Span {
 	 * @param int $start  Byte offset into document where replacement span begins.
 	 * @param int $length Byte length of span.
 	 */
-<<<<<<< HEAD
-	public function __construct( $start, $length ) {
-=======
 	public function __construct( int $start, int $length ) {
->>>>>>> 535c0c1 (initial commit)
 		$this->start  = $start;
 		$this->length = $length;
 	}

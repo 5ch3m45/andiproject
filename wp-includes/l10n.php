@@ -983,10 +983,7 @@ function load_default_textdomain( $locale = null ) {
  *
  * @since 1.5.0
  * @since 4.6.0 The function now tries to load the .mo file from the languages directory first.
-<<<<<<< HEAD
-=======
  * @since 6.7.0 Translations are no longer immediately loaded, but handed off to the just-in-time loading mechanism.
->>>>>>> 2b44096 (initial commit 2)
  *
  * @param string       $domain          Unique identifier for retrieving translated strings
  * @param string|false $deprecated      Optional. Deprecated. Use the $plugin_rel_path parameter instead.
@@ -1003,26 +1000,6 @@ function load_plugin_textdomain( $domain, $deprecated = false, $plugin_rel_path 
 		return false;
 	}
 
-<<<<<<< HEAD
-	/**
-	 * Filters a plugin's locale.
-	 *
-	 * @since 3.0.0
-	 *
-	 * @param string $locale The plugin's current locale.
-	 * @param string $domain Text domain. Unique identifier for retrieving translated strings.
-	 */
-	$locale = apply_filters( 'plugin_locale', determine_locale(), $domain );
-
-	$mofile = $domain . '-' . $locale . '.mo';
-
-	// Try to load from the languages directory first.
-	if ( load_textdomain( $domain, WP_LANG_DIR . '/plugins/' . $mofile, $locale ) ) {
-		return true;
-	}
-
-=======
->>>>>>> 2b44096 (initial commit 2)
 	if ( false !== $plugin_rel_path ) {
 		$path = WP_PLUGIN_DIR . '/' . trim( $plugin_rel_path, '/' );
 	} elseif ( false !== $deprecated ) {
@@ -1034,11 +1011,7 @@ function load_plugin_textdomain( $domain, $deprecated = false, $plugin_rel_path 
 
 	$wp_textdomain_registry->set_custom_path( $domain, $path );
 
-<<<<<<< HEAD
-	return load_textdomain( $domain, $path . '/' . $mofile, $locale );
-=======
 	return true;
->>>>>>> 2b44096 (initial commit 2)
 }
 
 /**
@@ -1046,10 +1019,7 @@ function load_plugin_textdomain( $domain, $deprecated = false, $plugin_rel_path 
  *
  * @since 3.0.0
  * @since 4.6.0 The function now tries to load the .mo file from the languages directory first.
-<<<<<<< HEAD
-=======
  * @since 6.7.0 Translations are no longer immediately loaded, but handed off to the just-in-time loading mechanism.
->>>>>>> 2b44096 (initial commit 2)
  *
  * @global WP_Textdomain_Registry $wp_textdomain_registry WordPress Textdomain Registry.
  *
@@ -1066,28 +1036,11 @@ function load_muplugin_textdomain( $domain, $mu_plugin_rel_path = '' ) {
 		return false;
 	}
 
-<<<<<<< HEAD
-	/** This filter is documented in wp-includes/l10n.php */
-	$locale = apply_filters( 'plugin_locale', determine_locale(), $domain );
-
-	$mofile = $domain . '-' . $locale . '.mo';
-
-	// Try to load from the languages directory first.
-	if ( load_textdomain( $domain, WP_LANG_DIR . '/plugins/' . $mofile, $locale ) ) {
-		return true;
-	}
-
-=======
->>>>>>> 2b44096 (initial commit 2)
 	$path = WPMU_PLUGIN_DIR . '/' . ltrim( $mu_plugin_rel_path, '/' );
 
 	$wp_textdomain_registry->set_custom_path( $domain, $path );
 
-<<<<<<< HEAD
-	return load_textdomain( $domain, $path . '/' . $mofile, $locale );
-=======
 	return true;
->>>>>>> 2b44096 (initial commit 2)
 }
 
 /**
@@ -1100,10 +1053,7 @@ function load_muplugin_textdomain( $domain, $mu_plugin_rel_path = '' ) {
  *
  * @since 1.5.0
  * @since 4.6.0 The function now tries to load the .mo file from the languages directory first.
-<<<<<<< HEAD
-=======
  * @since 6.7.0 Translations are no longer immediately loaded, but handed off to the just-in-time loading mechanism.
->>>>>>> 2b44096 (initial commit 2)
  *
  * @global WP_Textdomain_Registry $wp_textdomain_registry WordPress Textdomain Registry.
  *
@@ -1120,37 +1070,13 @@ function load_theme_textdomain( $domain, $path = false ) {
 		return false;
 	}
 
-<<<<<<< HEAD
-	/**
-	 * Filters a theme's locale.
-	 *
-	 * @since 3.0.0
-	 *
-	 * @param string $locale The theme's current locale.
-	 * @param string $domain Text domain. Unique identifier for retrieving translated strings.
-	 */
-	$locale = apply_filters( 'theme_locale', determine_locale(), $domain );
-
-	$mofile = $domain . '-' . $locale . '.mo';
-
-	// Try to load from the languages directory first.
-	if ( load_textdomain( $domain, WP_LANG_DIR . '/themes/' . $mofile, $locale ) ) {
-		return true;
-	}
-
-=======
->>>>>>> 2b44096 (initial commit 2)
 	if ( ! $path ) {
 		$path = get_template_directory();
 	}
 
 	$wp_textdomain_registry->set_custom_path( $domain, $path );
 
-<<<<<<< HEAD
-	return load_textdomain( $domain, $path . '/' . $locale . '.mo', $locale );
-=======
 	return true;
->>>>>>> 2b44096 (initial commit 2)
 }
 
 /**
@@ -1225,10 +1151,7 @@ function load_script_textdomain( $handle, $domain = 'default', $path = '' ) {
 	$content_url = wp_parse_url( content_url() );
 	$plugins_url = wp_parse_url( plugins_url() );
 	$site_url    = wp_parse_url( site_url() );
-<<<<<<< HEAD
-=======
 	$theme_root  = get_theme_root();
->>>>>>> 2b44096 (initial commit 2)
 
 	// If the host is the same or it's a relative URL.
 	if (
@@ -1244,9 +1167,6 @@ function load_script_textdomain( $handle, $domain = 'default', $path = '' ) {
 		$relative = trim( $relative, '/' );
 		$relative = explode( '/', $relative );
 
-<<<<<<< HEAD
-		$languages_path = WP_LANG_DIR . '/plugins';
-=======
 		/*
 		 * Ensure correct languages path when using a custom `WP_PLUGIN_DIR` / `WP_PLUGIN_URL` configuration,
 		 * a custom theme root, and/or using Multisite with subdirectories.
@@ -1257,7 +1177,6 @@ function load_script_textdomain( $handle, $domain = 'default', $path = '' ) {
 		$dirname   = $theme_dir[0] === $relative[0] ? 'themes' : 'plugins';
 
 		$languages_path = WP_LANG_DIR . '/' . $dirname;
->>>>>>> 2b44096 (initial commit 2)
 
 		$relative = array_slice( $relative, 2 ); // Remove plugins/<plugin name> or themes/<theme name>.
 		$relative = implode( '/', $relative );
@@ -1423,8 +1342,6 @@ function _load_textdomain_just_in_time( $domain ) {
 	if ( ! $path ) {
 		return false;
 	}
-<<<<<<< HEAD
-=======
 
 	if ( ! doing_action( 'after_setup_theme' ) && ! did_action( 'after_setup_theme' ) ) {
 		_doing_it_wrong(
@@ -1439,7 +1356,6 @@ function _load_textdomain_just_in_time( $domain ) {
 		);
 	}
 
->>>>>>> 2b44096 (initial commit 2)
 	// Themes with their language directory outside of WP_LANG_DIR have a different file name.
 	$template_directory   = trailingslashit( get_template_directory() );
 	$stylesheet_directory = trailingslashit( get_stylesheet_directory() );
@@ -2055,8 +1971,6 @@ function wp_get_word_count_type() {
 
 	return $wp_locale->get_word_count_type();
 }
-<<<<<<< HEAD
-=======
 
 /**
  * Returns a boolean to indicate whether a translation exists for a given string with optional text domain and locale.
@@ -2071,4 +1985,3 @@ function wp_get_word_count_type() {
 function has_translation( string $singular, string $textdomain = 'default', ?string $locale = null ): bool {
 	return WP_Translation_Controller::get_instance()->has_translation( $singular, $textdomain, $locale );
 }
->>>>>>> 2b44096 (initial commit 2)

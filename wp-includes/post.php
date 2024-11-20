@@ -489,11 +489,7 @@ function create_initial_post_types() {
 			'revisions_rest_controller_class' => 'WP_REST_Global_Styles_Revisions_Controller',
 			'late_route_registration'         => true,
 			'capabilities'                    => array(
-<<<<<<< HEAD
-				'read'                   => 'edit_theme_options',
-=======
 				'read'                   => 'edit_posts',
->>>>>>> 2b44096 (initial commit 2)
 				'create_posts'           => 'edit_theme_options',
 				'edit_posts'             => 'edit_theme_options',
 				'edit_published_posts'   => 'edit_theme_options',
@@ -2026,11 +2022,7 @@ function _post_type_meta_capabilities( $capabilities = null ) {
  * - `name` - General name for the post type, usually plural. The same and overridden
  *          by `$post_type_object->label`. Default is 'Posts' / 'Pages'.
  * - `singular_name` - Name for one object of this post type. Default is 'Post' / 'Page'.
-<<<<<<< HEAD
- * - `add_new` - Label for adding a new item. Default is 'Add New Post' / 'Add New Page'.
-=======
  * - `add_new` - Label for adding a new item. Default is 'Add New' / 'Add New'.
->>>>>>> 2b44096 (initial commit 2)
  * - `add_new_item` - Label for adding a new singular item. Default is 'Add New Post' / 'Add New Page'.
  * - `edit_item` - Label for editing a singular item. Default is 'Edit Post' / 'Edit Page'.
  * - `new_item` - Label for the new item page title. Default is 'New Post' / 'New Page'.
@@ -2092,11 +2084,8 @@ function _post_type_meta_capabilities( $capabilities = null ) {
  * @since 6.4.0 Changed default values for the `add_new` label to include the type of content.
  *              This matches `add_new_item` and provides more context for better accessibility.
  * @since 6.6.0 Added the `template_name` label.
-<<<<<<< HEAD
-=======
  * @since 6.7.0 Restored pre-6.4.0 defaults for the `add_new` label and updated documentation.
  *              Updated core usage to reference `add_new_item`.
->>>>>>> 2b44096 (initial commit 2)
  *
  * @access private
  *
@@ -2620,12 +2609,8 @@ function delete_post_meta( $post_id, $meta_key, $meta_value = '' ) {
  * @return mixed An array of values if `$single` is false.
  *               The value of the meta field if `$single` is true.
  *               False for an invalid `$post_id` (non-numeric, zero, or negative value).
-<<<<<<< HEAD
- *               An empty string if a valid but non-existing post ID is passed.
-=======
  *               An empty array if a valid but non-existing post ID is passed and `$single` is false.
  *               An empty string if a valid but non-existing post ID is passed and `$single` is true.
->>>>>>> 2b44096 (initial commit 2)
  */
 function get_post_meta( $post_id, $key = '', $single = false ) {
 	return get_metadata( 'post', $post_id, $key, $single );
@@ -2913,9 +2898,6 @@ function sanitize_post_field( $field, $value, $post_id, $context = 'display' ) {
 			 * Filters the value of a specific post field to edit.
 			 *
 			 * The dynamic portion of the hook name, `$field`, refers to the post
-<<<<<<< HEAD
-			 * field name.
-=======
 			 * field name. Possible filter names include:
 			 *
 			 *  - `edit_post_author`
@@ -2933,7 +2915,6 @@ function sanitize_post_field( $field, $value, $post_id, $context = 'display' ) {
 			 *  - `edit_post_parent`
 			 *  - `edit_post_type`
 			 *  - `edit_post_mime_type`
->>>>>>> 2b44096 (initial commit 2)
 			 *
 			 * @since 2.3.0
 			 *
@@ -2945,10 +2926,6 @@ function sanitize_post_field( $field, $value, $post_id, $context = 'display' ) {
 			/**
 			 * Filters the value of a specific post field to edit.
 			 *
-<<<<<<< HEAD
-			 * The dynamic portion of the hook name, `$field_no_prefix`, refers to
-			 * the post field name.
-=======
 			 * Only applied to post fields with a name which is prefixed with `post_`.
 			 *
 			 * The dynamic portion of the hook name, `$field_no_prefix`, refers to the
@@ -2969,7 +2946,6 @@ function sanitize_post_field( $field, $value, $post_id, $context = 'display' ) {
 			 *  - `parent_edit_pre`
 			 *  - `type_edit_pre`
 			 *  - `mime_type_edit_pre`
->>>>>>> 2b44096 (initial commit 2)
 			 *
 			 * @since 2.3.0
 			 *
@@ -2978,8 +2954,6 @@ function sanitize_post_field( $field, $value, $post_id, $context = 'display' ) {
 			 */
 			$value = apply_filters( "{$field_no_prefix}_edit_pre", $value, $post_id );
 		} else {
-<<<<<<< HEAD
-=======
 			/**
 			 * Filters the value of a specific post field to edit.
 			 *
@@ -3002,7 +2976,6 @@ function sanitize_post_field( $field, $value, $post_id, $context = 'display' ) {
 			 * @param mixed $value   Value of the post field.
 			 * @param int   $post_id Post ID.
 			 */
->>>>>>> 2b44096 (initial commit 2)
 			$value = apply_filters( "edit_post_{$field}", $value, $post_id );
 		}
 
@@ -3021,10 +2994,6 @@ function sanitize_post_field( $field, $value, $post_id, $context = 'display' ) {
 			/**
 			 * Filters the value of a specific post field before saving.
 			 *
-<<<<<<< HEAD
-			 * The dynamic portion of the hook name, `$field`, refers to the post
-			 * field name.
-=======
 			 * Only applied to post fields with a name which is prefixed with `post_`.
 			 *
 			 * The dynamic portion of the hook name, `$field`, refers to the post
@@ -3045,7 +3014,6 @@ function sanitize_post_field( $field, $value, $post_id, $context = 'display' ) {
 			 *  - `pre_post_parent`
 			 *  - `pre_post_type`
 			 *  - `pre_post_mime_type`
->>>>>>> 2b44096 (initial commit 2)
 			 *
 			 * @since 2.3.0
 			 *
@@ -3056,10 +3024,6 @@ function sanitize_post_field( $field, $value, $post_id, $context = 'display' ) {
 			/**
 			 * Filters the value of a specific field before saving.
 			 *
-<<<<<<< HEAD
-			 * The dynamic portion of the hook name, `$field_no_prefix`, refers
-			 * to the post field name.
-=======
 			 * Only applied to post fields with a name which is prefixed with `post_`.
 			 *
 			 * The dynamic portion of the hook name, `$field_no_prefix`, refers to the
@@ -3080,7 +3044,6 @@ function sanitize_post_field( $field, $value, $post_id, $context = 'display' ) {
 			 *  - `parent_save_pre`
 			 *  - `type_save_pre`
 			 *  - `mime_type_save_pre`
->>>>>>> 2b44096 (initial commit 2)
 			 *
 			 * @since 2.3.0
 			 *
@@ -3088,8 +3051,6 @@ function sanitize_post_field( $field, $value, $post_id, $context = 'display' ) {
 			 */
 			$value = apply_filters( "{$field_no_prefix}_save_pre", $value );
 		} else {
-<<<<<<< HEAD
-=======
 			/**
 			 * Filters the value of a specific field before saving.
 			 *
@@ -3111,16 +3072,11 @@ function sanitize_post_field( $field, $value, $post_id, $context = 'display' ) {
 			 *
 			 * @param mixed $value Value of the post field.
 			 */
->>>>>>> 2b44096 (initial commit 2)
 			$value = apply_filters( "pre_post_{$field}", $value );
 
 			/**
 			 * Filters the value of a specific post field before saving.
 			 *
-<<<<<<< HEAD
-			 * The dynamic portion of the hook name, `$field`, refers to the post
-			 * field name.
-=======
 			 * Only applied to post fields with a name which is *not* prefixed with `post_`.
 			 *
 			 * The dynamic portion of the hook name, `$field`, refers to the post
@@ -3134,7 +3090,6 @@ function sanitize_post_field( $field, $value, $post_id, $context = 'display' ) {
 			 *  - `guid_pre`
 			 *  - `menu_order_pre`
 			 *  - `comment_count_pre`
->>>>>>> 2b44096 (initial commit 2)
 			 *
 			 * @since 2.3.0
 			 *
@@ -3150,10 +3105,6 @@ function sanitize_post_field( $field, $value, $post_id, $context = 'display' ) {
 			/**
 			 * Filters the value of a specific post field for display.
 			 *
-<<<<<<< HEAD
-			 * The dynamic portion of the hook name, `$field`, refers to the post
-			 * field name.
-=======
 			 * Only applied to post fields with a name which is prefixed with `post_`.
 			 *
 			 * The dynamic portion of the hook name, `$field`, refers to the post
@@ -3174,7 +3125,6 @@ function sanitize_post_field( $field, $value, $post_id, $context = 'display' ) {
 			 *  - `post_parent`
 			 *  - `post_type`
 			 *  - `post_mime_type`
->>>>>>> 2b44096 (initial commit 2)
 			 *
 			 * @since 2.3.0
 			 *
@@ -3186,8 +3136,6 @@ function sanitize_post_field( $field, $value, $post_id, $context = 'display' ) {
 			 */
 			$value = apply_filters( "{$field}", $value, $post_id, $context );
 		} else {
-<<<<<<< HEAD
-=======
 			/**
 			 * Filters the value of a specific post field for display.
 			 *
@@ -3213,7 +3161,6 @@ function sanitize_post_field( $field, $value, $post_id, $context = 'display' ) {
 			 *                        Accepts 'raw', 'edit', 'db', 'display',
 			 *                        'attribute', or 'js'. Default 'display'.
 			 */
->>>>>>> 2b44096 (initial commit 2)
 			$value = apply_filters( "post_{$field}", $value, $post_id, $context );
 		}
 
@@ -3228,10 +3175,6 @@ function sanitize_post_field( $field, $value, $post_id, $context = 'display' ) {
 	if ( in_array( $field, $int_fields, true ) ) {
 		$value = (int) $value;
 	}
-<<<<<<< HEAD
-
-=======
->>>>>>> 2b44096 (initial commit 2)
 	return $value;
 }
 
@@ -7055,11 +6998,7 @@ function wp_attachment_is( $type, $post = null ) {
 
 	switch ( $type ) {
 		case 'image':
-<<<<<<< HEAD
-			$image_exts = array( 'jpg', 'jpeg', 'jpe', 'gif', 'png', 'webp', 'avif' );
-=======
 			$image_exts = array( 'jpg', 'jpeg', 'jpe', 'gif', 'png', 'webp', 'avif', 'heic' );
->>>>>>> 2b44096 (initial commit 2)
 			return in_array( $ext, $image_exts, true );
 
 		case 'audio':
@@ -8023,14 +7962,10 @@ function wp_check_post_hierarchy_for_loops( $post_parent, $post_id ) {
  *
  * @param int|WP_Post $post         Post ID or post object where thumbnail should be attached.
  * @param int         $thumbnail_id Thumbnail to attach.
-<<<<<<< HEAD
- * @return int|bool True on success, false on failure.
-=======
  * @return int|bool Post meta ID if the key didn't exist (ie. this is the first time that
  *                  a thumbnail has been saved for the post), true on successful update,
  *                  false on failure or if the value passed is the same as the one that
  *                  is already in the database.
->>>>>>> 2b44096 (initial commit 2)
  */
 function set_post_thumbnail( $post, $thumbnail_id ) {
 	$post         = get_post( $post );

@@ -1114,11 +1114,7 @@ $( function() {
 		});
 	}
 
-<<<<<<< HEAD
-	$document.on( 'wp-updates-notice-added wp-plugin-install-error wp-plugin-update-error wp-plugin-delete-error wp-theme-install-error wp-theme-delete-error', makeNoticesDismissible );
-=======
 	$document.on( 'wp-updates-notice-added wp-plugin-install-error wp-plugin-update-error wp-plugin-delete-error wp-theme-install-error wp-theme-delete-error wp-notice-added', makeNoticesDismissible );
->>>>>>> 535c0c1 (initial commit)
 
 	// Init screen meta.
 	screenMeta.init();
@@ -1280,8 +1276,6 @@ $( function() {
 	// Marry the secondary "Change role to" controls to the primary controls:
 	marryControls( $('#new_role'), $('#changeit'), $('#new_role2'), $('#changeit2') );
 
-<<<<<<< HEAD
-=======
 	var addAdminNotice = function( data ) {
 		var $notice = $( data.selector ),
 			$headerEnd = $( '.wp-header-end' ),
@@ -1356,7 +1350,6 @@ $( function() {
 		wp.a11y.speak( errorMessage );
 	});
 
->>>>>>> 535c0c1 (initial commit)
 	/**
 	 * Shows row actions on focus of its parent container element or any other elements contained within.
 	 *

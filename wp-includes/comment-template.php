@@ -29,11 +29,7 @@ function get_comment_author( $comment_id = 0 ) {
 	} elseif ( is_scalar( $comment_id ) ) {
 		$comment_id = (string) $comment_id;
 	} else {
-<<<<<<< HEAD
-		$comment_id = '';
-=======
 		$comment_id = '0';
->>>>>>> 535c0c1 (initial commit)
 	}
 
 	if ( empty( $comment->comment_author ) ) {
@@ -237,9 +233,6 @@ function get_comment_author_email_link( $link_text = '', $before = '', $after = 
 function get_comment_author_link( $comment_id = 0 ) {
 	$comment = get_comment( $comment_id );
 
-<<<<<<< HEAD
-	$comment_id = ! empty( $comment->comment_ID ) ? $comment->comment_ID : (string) $comment_id;
-=======
 	if ( ! empty( $comment->comment_ID ) ) {
 		$comment_id = $comment->comment_ID;
 	} elseif ( is_scalar( $comment_id ) ) {
@@ -247,7 +240,6 @@ function get_comment_author_link( $comment_id = 0 ) {
 	} else {
 		$comment_id = '0';
 	}
->>>>>>> 535c0c1 (initial commit)
 
 	$comment_author_url = get_comment_author_url( $comment );
 	$comment_author     = get_comment_author( $comment );
@@ -572,11 +564,7 @@ function get_comment_class( $css_class = '', $comment_id = null, $post = null ) 
 	++$comment_alt;
 
 	// Alt for top-level comments.
-<<<<<<< HEAD
-	if ( 1 == $comment_depth ) {
-=======
 	if ( 1 === $comment_depth ) {
->>>>>>> 535c0c1 (initial commit)
 		if ( $comment_thread_alt % 2 ) {
 			$classes[] = 'thread-odd';
 			$classes[] = 'thread-alt';
@@ -826,15 +814,9 @@ function get_comment_link( $comment = null, $args = array() ) {
 
 		$cpage = $args['page'];
 
-<<<<<<< HEAD
-		if ( '' == $cpage ) {
-			if ( ! empty( $in_comment_loop ) ) {
-				$cpage = get_query_var( 'cpage' );
-=======
 		if ( '' === $cpage ) {
 			if ( ! empty( $in_comment_loop ) ) {
 				$cpage = (int) get_query_var( 'cpage' );
->>>>>>> 535c0c1 (initial commit)
 			} else {
 				// Requires a database hit, so we only do it when we can't figure out from context.
 				$cpage = get_page_of_comment( $comment->comment_ID, $args );
@@ -1623,11 +1605,7 @@ function comments_template( $file = '/comments.php', $separate_comments = false 
 
 	$overridden_cpage = false;
 
-<<<<<<< HEAD
-	if ( '' == get_query_var( 'cpage' ) && $wp_query->max_num_comment_pages > 1 ) {
-=======
 	if ( '' === get_query_var( 'cpage' ) && $wp_query->max_num_comment_pages > 1 ) {
->>>>>>> 535c0c1 (initial commit)
 		set_query_var( 'cpage', 'newest' === get_option( 'default_comments_page' ) ? get_comment_pages_count() : 1 );
 		$overridden_cpage = true;
 	}
@@ -1755,21 +1733,6 @@ function comments_popup_link( $zero = false, $one = false, $more = false, $css_c
  * @param array          $args {
  *     Optional. Override default arguments.
  *
-<<<<<<< HEAD
- *     @type string $add_below  The first part of the selector used to identify the comment to respond below.
- *                              The resulting value is passed as the first parameter to addComment.moveForm(),
- *                              concatenated as $add_below-$comment->comment_ID. Default 'comment'.
- *     @type string $respond_id The selector identifying the responding comment. Passed as the third parameter
- *                              to addComment.moveForm(), and appended to the link URL as a hash value.
- *                              Default 'respond'.
- *     @type string $reply_text The text of the Reply link. Default 'Reply'.
- *     @type string $login_text The text of the link to reply if logged out. Default 'Log in to Reply'.
- *     @type int    $max_depth  The max depth of the comment tree. Default 0.
- *     @type int    $depth      The depth of the new comment. Must be greater than 0 and less than the value
- *                              of the 'thread_comments_depth' option set in Settings > Discussion. Default 0.
- *     @type string $before     The text or HTML to add before the reply link. Default empty.
- *     @type string $after      The text or HTML to add after the reply link. Default empty.
-=======
  *     @type string $add_below          The first part of the selector used to identify the comment to respond below.
  *                                      The resulting value is passed as the first parameter to addComment.moveForm(),
  *                                      concatenated as $add_below-$comment->comment_ID. Default 'comment'.
@@ -1787,7 +1750,6 @@ function comments_popup_link( $zero = false, $one = false, $more = false, $css_c
  *                                      of the 'thread_comments_depth' option set in Settings > Discussion. Default 0.
  *     @type string $before             The text or HTML to add before the reply link. Default empty.
  *     @type string $after              The text or HTML to add after the reply link. Default empty.
->>>>>>> 535c0c1 (initial commit)
  * }
  * @param int|WP_Comment $comment Optional. Comment being replied to. Default current comment.
  * @param int|WP_Post    $post    Optional. Post ID or WP_Post object the comment is going to be displayed on.
@@ -1796,18 +1758,6 @@ function comments_popup_link( $zero = false, $one = false, $more = false, $css_c
  */
 function get_comment_reply_link( $args = array(), $comment = null, $post = null ) {
 	$defaults = array(
-<<<<<<< HEAD
-		'add_below'     => 'comment',
-		'respond_id'    => 'respond',
-		'reply_text'    => __( 'Reply' ),
-		/* translators: Comment reply button text. %s: Comment author name. */
-		'reply_to_text' => __( 'Reply to %s' ),
-		'login_text'    => __( 'Log in to Reply' ),
-		'max_depth'     => 0,
-		'depth'         => 0,
-		'before'        => '',
-		'after'         => '',
-=======
 		'add_below'          => 'comment',
 		'respond_id'         => 'respond',
 		'reply_text'         => __( 'Reply' ),
@@ -1819,7 +1769,6 @@ function get_comment_reply_link( $args = array(), $comment = null, $post = null 
 		'before'             => '',
 		'after'              => '',
 		'show_reply_to_text' => false,
->>>>>>> 535c0c1 (initial commit)
 	);
 
 	$args = wp_parse_args( $args, $defaults );
@@ -1885,10 +1834,6 @@ function get_comment_reply_link( $args = array(), $comment = null, $post = null 
 
 		$data_attribute_string = trim( $data_attribute_string );
 
-<<<<<<< HEAD
-		$link = sprintf(
-			"<a rel='nofollow' class='comment-reply-link' href='%s' %s aria-label='%s'>%s</a>",
-=======
 		$reply_text = $args['show_reply_to_text']
 			? sprintf( $args['reply_to_text'], get_comment_author( $comment ) )
 			: $args['reply_text'];
@@ -1897,7 +1842,6 @@ function get_comment_reply_link( $args = array(), $comment = null, $post = null 
 
 		$link = sprintf(
 			'<a rel="nofollow" class="comment-reply-link" href="%s" %s%s>%s</a>',
->>>>>>> 535c0c1 (initial commit)
 			esc_url(
 				add_query_arg(
 					array(
@@ -1909,13 +1853,8 @@ function get_comment_reply_link( $args = array(), $comment = null, $post = null 
 				)
 			) . '#' . $args['respond_id'],
 			$data_attribute_string,
-<<<<<<< HEAD
-			esc_attr( sprintf( $args['reply_to_text'], get_comment_author( $comment ) ) ),
-			$args['reply_text']
-=======
 			$aria_label ? ' aria-label="' . esc_attr( $aria_label ) . '"' : '',
 			$reply_text
->>>>>>> 535c0c1 (initial commit)
 		);
 	}
 
@@ -2161,17 +2100,6 @@ function comment_id_fields( $post = null ) {
  *
  * @global WP_Comment $comment Global comment object.
  *
-<<<<<<< HEAD
- * @param string|false      $no_reply_text  Optional. Text to display when not replying to a comment.
- *                                          Default false.
- * @param string|false      $reply_text     Optional. Text to display when replying to a comment.
- *                                          Default false. Accepts "%s" for the author of the comment
- *                                          being replied to.
- * @param bool              $link_to_parent Optional. Boolean to control making the author's name a link
- *                                          to their comment. Default true.
- * @param int|WP_Post|null  $post           Optional. The post that the comment form is being displayed for.
- *                                          Defaults to the current global post.
-=======
  * @param string|false     $no_reply_text  Optional. Text to display when not replying to a comment.
  *                                         Default false.
  * @param string|false     $reply_text     Optional. Text to display when replying to a comment.
@@ -2181,7 +2109,6 @@ function comment_id_fields( $post = null ) {
  *                                         to their comment. Default true.
  * @param int|WP_Post|null $post           Optional. The post that the comment form is being displayed for.
  *                                         Defaults to the current global post.
->>>>>>> 535c0c1 (initial commit)
  */
 function comment_form_title( $no_reply_text = false, $reply_text = false, $link_to_parent = true, $post = null ) {
 	global $comment;
@@ -2364,22 +2291,13 @@ function wp_list_comments( $args = array(), $comments = null ) {
 		 * perform a separate comment query and allow Walker_Comment to paginate.
 		 */
 		if ( $parsed_args['page'] || $parsed_args['per_page'] ) {
-<<<<<<< HEAD
-			$current_cpage = get_query_var( 'cpage' );
-=======
 			$current_cpage = (int) get_query_var( 'cpage' );
->>>>>>> 535c0c1 (initial commit)
 			if ( ! $current_cpage ) {
 				$current_cpage = 'newest' === get_option( 'default_comments_page' ) ? 1 : $wp_query->max_num_comment_pages;
 			}
 
-<<<<<<< HEAD
-			$current_per_page = get_query_var( 'comments_per_page' );
-			if ( $parsed_args['page'] != $current_cpage || $parsed_args['per_page'] != $current_per_page ) {
-=======
 			$current_per_page = (int) get_query_var( 'comments_per_page' );
 			if ( (int) $parsed_args['page'] !== $current_cpage || (int) $parsed_args['per_page'] !== $current_per_page ) {
->>>>>>> 535c0c1 (initial commit)
 				$comment_args = array(
 					'post_id' => get_the_ID(),
 					'orderby' => 'comment_date_gmt',
@@ -2430,17 +2348,6 @@ function wp_list_comments( $args = array(), $comments = null ) {
 
 			if ( $wp_query->max_num_comment_pages ) {
 				$default_comments_page = get_option( 'default_comments_page' );
-<<<<<<< HEAD
-				$cpage                 = get_query_var( 'cpage' );
-				if ( 'newest' === $default_comments_page ) {
-					$parsed_args['cpage'] = $cpage;
-
-					/*
-					* When first page shows oldest comments, post permalink is the same as
-					* the comment permalink.
-					*/
-				} elseif ( 1 == $cpage ) {
-=======
 				$cpage                 = (int) get_query_var( 'cpage' );
 
 				if ( 'newest' === $default_comments_page ) {
@@ -2450,7 +2357,6 @@ function wp_list_comments( $args = array(), $comments = null ) {
 					 * When the first page shows the oldest comments,
 					 * post permalink is the same as the comment permalink.
 					 */
->>>>>>> 535c0c1 (initial commit)
 					$parsed_args['cpage'] = '';
 				} else {
 					$parsed_args['cpage'] = $cpage;
@@ -2483,26 +2389,16 @@ function wp_list_comments( $args = array(), $comments = null ) {
 		if ( empty( $overridden_cpage ) ) {
 			$parsed_args['page'] = get_query_var( 'cpage' );
 		} else {
-<<<<<<< HEAD
-			$threaded            = ( -1 != $parsed_args['max_depth'] );
-=======
 			$threaded            = ( -1 !== (int) $parsed_args['max_depth'] );
->>>>>>> 535c0c1 (initial commit)
 			$parsed_args['page'] = ( 'newest' === get_option( 'default_comments_page' ) ) ? get_comment_pages_count( $_comments, $parsed_args['per_page'], $threaded ) : 1;
 			set_query_var( 'cpage', $parsed_args['page'] );
 		}
 	}
-<<<<<<< HEAD
-	// Validation check.
-	$parsed_args['page'] = (int) $parsed_args['page'];
-	if ( 0 == $parsed_args['page'] && 0 != $parsed_args['per_page'] ) {
-=======
 
 	// Validation check.
 	$parsed_args['page']     = (int) $parsed_args['page'];
 	$parsed_args['per_page'] = (int) $parsed_args['per_page'];
 	if ( 0 === $parsed_args['page'] && 0 !== $parsed_args['per_page'] ) {
->>>>>>> 535c0c1 (initial commit)
 		$parsed_args['page'] = 1;
 	}
 

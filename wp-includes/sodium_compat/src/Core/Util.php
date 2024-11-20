@@ -9,11 +9,8 @@ if (class_exists('ParagonIE_Sodium_Core_Util', false)) {
  */
 abstract class ParagonIE_Sodium_Core_Util
 {
-<<<<<<< HEAD
-=======
     const U32_MAX = 0xFFFFFFFF;
 
->>>>>>> 2b44096 (initial commit 2)
     /**
      * @param int $integer
      * @param int $size (16, 32, 64)
@@ -39,8 +36,6 @@ abstract class ParagonIE_Sodium_Core_Util
     }
 
     /**
-<<<<<<< HEAD
-=======
      * @param string $a
      * @param string $b
      * @return string
@@ -63,7 +58,6 @@ abstract class ParagonIE_Sodium_Core_Util
     }
 
     /**
->>>>>>> 2b44096 (initial commit 2)
      * Convert a binary string into a hexadecimal string without cache-timing
      * leaks
      *

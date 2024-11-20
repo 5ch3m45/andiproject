@@ -358,8 +358,6 @@ function _resolve_template_for_new_post( $wp_query ) {
 		$wp_query->set( 'post_status', 'auto-draft' );
 	}
 }
-<<<<<<< HEAD
-=======
 
 /**
  * Register a block template.
@@ -395,4 +393,3 @@ function register_block_template( $template_name, $args = array() ) {
 function unregister_block_template( $template_name ) {
 	return WP_Block_Templates_Registry::get_instance()->unregister( $template_name );
 }
->>>>>>> 535c0c1 (initial commit)

@@ -71,11 +71,7 @@ class WP_Application_Passwords {
 	 * @return array|WP_Error {
 	 *     Application password details, or a WP_Error instance if an error occurs.
 	 *
-<<<<<<< HEAD
-	 *     @type string $0 The unhashed generated application password.
-=======
 	 *     @type string $0 The generated application password in plain text.
->>>>>>> 535c0c1 (initial commit)
 	 *     @type array  $1 {
 	 *         The details about the created password.
 	 *
@@ -98,13 +94,6 @@ class WP_Application_Passwords {
 			return new WP_Error( 'application_password_empty_name', __( 'An application name is required to create an application password.' ), array( 'status' => 400 ) );
 		}
 
-<<<<<<< HEAD
-		if ( self::application_name_exists_for_user( $user_id, $args['name'] ) ) {
-			return new WP_Error( 'application_password_duplicate_name', __( 'Each application name should be unique.' ), array( 'status' => 409 ) );
-		}
-
-=======
->>>>>>> 535c0c1 (initial commit)
 		$new_password    = wp_generate_password( static::PW_LENGTH, false );
 		$hashed_password = wp_hash_password( $new_password );
 
@@ -148,11 +137,7 @@ class WP_Application_Passwords {
 		 *     @type null   $last_used Null.
 		 *     @type null   $last_ip   Null.
 		 * }
-<<<<<<< HEAD
-		 * @param string $new_password The unhashed generated application password.
-=======
 		 * @param string $new_password The generated application password in plain text.
->>>>>>> 535c0c1 (initial commit)
 		 * @param array  $args         {
 		 *     Arguments used to create the application password.
 		 *
@@ -172,11 +157,7 @@ class WP_Application_Passwords {
 	 *
 	 * @param int $user_id User ID.
 	 * @return array {
-<<<<<<< HEAD
-	 *     The list of app passwords.
-=======
 	 *     The list of application passwords.
->>>>>>> 535c0c1 (initial commit)
 	 *
 	 *     @type array ...$0 {
 	 *         @type string      $uuid      The unique identifier for the application password.
@@ -219,9 +200,6 @@ class WP_Application_Passwords {
 	 *
 	 * @param int    $user_id User ID.
 	 * @param string $uuid    The password's UUID.
-<<<<<<< HEAD
-	 * @return array|null The application password if found, null otherwise.
-=======
 	 * @return array|null {
 	 *     The application password if found, null otherwise.
 	 *
@@ -233,7 +211,6 @@ class WP_Application_Passwords {
 	 *     @type int|null    $last_used The Unix timestamp of the GMT date the application password was last used.
 	 *     @type string|null $last_ip   The IP address the application password was last used by.
 	 * }
->>>>>>> 535c0c1 (initial commit)
 	 */
 	public static function get_user_application_password( $user_id, $uuid ) {
 		$passwords = static::get_user_application_passwords( $user_id );
@@ -275,9 +252,6 @@ class WP_Application_Passwords {
 	 *
 	 * @param int    $user_id User ID.
 	 * @param string $uuid    The password's UUID.
-<<<<<<< HEAD
-	 * @param array  $update  Information about the application password to update.
-=======
 	 * @param array  $update  {
 	 *     Information about the application password to update.
 	 *
@@ -289,7 +263,6 @@ class WP_Application_Passwords {
 	 *     @type int|null    $last_used The Unix timestamp of the GMT date the application password was last used.
 	 *     @type string|null $last_ip   The IP address the application password was last used by.
 	 * }
->>>>>>> 535c0c1 (initial commit)
 	 * @return true|WP_Error True if successful, otherwise a WP_Error instance is returned on error.
 	 */
 	public static function update_application_password( $user_id, $uuid, $update = array() ) {
@@ -325,9 +298,6 @@ class WP_Application_Passwords {
 			 * @since 5.6.0
 			 *
 			 * @param int   $user_id The user ID.
-<<<<<<< HEAD
-			 * @param array $item    The updated app password details.
-=======
 			 * @param array $item    {
 			 *     The updated application password details.
 			 *
@@ -339,7 +309,6 @@ class WP_Application_Passwords {
 			 *     @type int|null    $last_used The Unix timestamp of the GMT date the application password was last used.
 			 *     @type string|null $last_ip   The IP address the application password was last used by.
 			 * }
->>>>>>> 535c0c1 (initial commit)
 			 * @param array $update  The information to update.
 			 */
 			do_action( 'wp_update_application_password', $user_id, $item, $update );
@@ -461,11 +430,6 @@ class WP_Application_Passwords {
 	 * @since 5.6.0
 	 *
 	 * @param int   $user_id   User ID.
-<<<<<<< HEAD
-	 * @param array $passwords Application passwords.
-	 *
-	 * @return bool
-=======
 	 * @param array $passwords {
 	 *     The list of application passwords.
 	 *
@@ -482,7 +446,6 @@ class WP_Application_Passwords {
 	 * @return int|bool User meta ID if the key didn't exist (ie. this is the first time that an application password
 	 *                  has been saved for the user), true on successful update, false on failure or if the value passed
 	 *                  is the same as the one that is already in the database.
->>>>>>> 535c0c1 (initial commit)
 	 */
 	protected static function set_user_application_passwords( $user_id, $passwords ) {
 		return update_user_meta( $user_id, static::USERMETA_KEY_APPLICATION_PASSWORDS, $passwords );

@@ -7,20 +7,6 @@
  *
  * <div class="accordion-container">
  *	<div class="accordion-section open">
-<<<<<<< HEAD
- *		<h3 class="accordion-section-title"></h3>
- *		<div class="accordion-section-content">
- *		</div>
- *	</div>
- *	<div class="accordion-section">
- *		<h3 class="accordion-section-title"></h3>
- *		<div class="accordion-section-content">
- *		</div>
- *	</div>
- *	<div class="accordion-section">
- *		<h3 class="accordion-section-title"></h3>
- *		<div class="accordion-section-content">
-=======
  *		<h3 class="accordion-section-title"><button type="button" aria-expanded="true" aria-controls="target-1"></button></h3>
  *		<div class="accordion-section-content" id="target">
  *		</div>
@@ -33,7 +19,6 @@
  *	<div class="accordion-section">
  *		<h3 class="accordion-section-title"><button type="button" aria-expanded="false" aria-controls="target-3"></button></h3>
  *		<div class="accordion-section-content" id="target-3">
->>>>>>> 535c0c1 (initial commit)
  *		</div>
  *	</div>
  * </div>
@@ -49,17 +34,7 @@
 	$( function () {
 
 		// Expand/Collapse accordion sections on click.
-<<<<<<< HEAD
-		$( '.accordion-container' ).on( 'click keydown', '.accordion-section-title', function( e ) {
-			if ( e.type === 'keydown' && 13 !== e.which ) { // "Return" key.
-				return;
-			}
-
-			e.preventDefault(); // Keep this AFTER the key filter above.
-
-=======
 		$( '.accordion-container' ).on( 'click', '.accordion-section-title button', function() {
->>>>>>> 535c0c1 (initial commit)
 			accordionSwitch( $( this ) );
 		});
 
@@ -73,10 +48,6 @@
 	 */
 	function accordionSwitch ( el ) {
 		var section = el.closest( '.accordion-section' ),
-<<<<<<< HEAD
-			sectionToggleControl = section.find( '[aria-expanded]' ).first(),
-=======
->>>>>>> 535c0c1 (initial commit)
 			container = section.closest( '.accordion-container' ),
 			siblings = container.find( '.open' ),
 			siblingsToggleControl = siblings.find( '[aria-expanded]' ).first(),
@@ -108,13 +79,8 @@
 		}, 150);
 
 		// If there's an element with an aria-expanded attribute, assume it's a toggle control and toggle the aria-expanded value.
-<<<<<<< HEAD
-		if ( sectionToggleControl ) {
-			sectionToggleControl.attr( 'aria-expanded', String( sectionToggleControl.attr( 'aria-expanded' ) === 'false' ) );
-=======
 		if ( el ) {
 			el.attr( 'aria-expanded', String( el.attr( 'aria-expanded' ) === 'false' ) );
->>>>>>> 535c0c1 (initial commit)
 		}
 	}
 

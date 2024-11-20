@@ -14,21 +14,13 @@
 			"selector": "blockquote",
 			"multiline": "p",
 			"default": "",
-<<<<<<< HEAD
-			"__experimentalRole": "content"
-=======
 			"role": "content"
->>>>>>> 535c0c1 (initial commit)
 		},
 		"citation": {
 			"type": "rich-text",
 			"source": "rich-text",
 			"selector": "cite",
-<<<<<<< HEAD
-			"__experimentalRole": "content"
-=======
 			"role": "content"
->>>>>>> 535c0c1 (initial commit)
 		},
 		"textAlign": {
 			"type": "string"
@@ -36,9 +28,6 @@
 	},
 	"supports": {
 		"anchor": true,
-<<<<<<< HEAD
-		"html": false,
-=======
 		"align": [ "left", "right", "wide", "full" ],
 		"html": false,
 		"background": {
@@ -66,7 +55,6 @@
 				"minHeight": false
 			}
 		},
->>>>>>> 535c0c1 (initial commit)
 		"__experimentalOnEnter": true,
 		"__experimentalOnMerge": true,
 		"typography": {
@@ -95,13 +83,9 @@
 			"allowEditing": false
 		},
 		"spacing": {
-<<<<<<< HEAD
-			"blockGap": true
-=======
 			"blockGap": true,
 			"padding": true,
 			"margin": true
->>>>>>> 535c0c1 (initial commit)
 		},
 		"interactivity": {
 			"clientNavigation": true

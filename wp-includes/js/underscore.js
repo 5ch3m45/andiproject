@@ -7,15 +7,6 @@
     exports.noConflict = function () { global._ = current; return exports; };
   }()));
 }(this, (function () {
-<<<<<<< HEAD
-  //     Underscore.js 1.13.6
-  //     https://underscorejs.org
-  //     (c) 2009-2022 Jeremy Ashkenas, Julian Gonggrijp, and DocumentCloud and Investigative Reporters & Editors
-  //     Underscore may be freely distributed under the MIT license.
-
-  // Current version.
-  var VERSION = '1.13.6';
-=======
   //     Underscore.js 1.13.7
   //     https://underscorejs.org
   //     (c) 2009-2024 Jeremy Ashkenas, Julian Gonggrijp, and DocumentCloud and Investigative Reporters & Editors
@@ -23,7 +14,6 @@
 
   // Current version.
   var VERSION = '1.13.7';
->>>>>>> 2b44096 (initial commit 2)
 
   // Establish the root object, `window` (`self`) in the browser, `global`
   // on the server, or `this` in some virtual machines. We use `self`
@@ -160,16 +150,11 @@
   // In IE 10 - Edge 13, `DataView` has string tag `'[object Object]'`.
   // In IE 11, the most common among them, this problem also applies to
   // `Map`, `WeakMap` and `Set`.
-<<<<<<< HEAD
-  var hasStringTagBug = (
-        supportsDataView && hasObjectTag(new DataView(new ArrayBuffer(8)))
-=======
   // Also, there are cases where an application can override the native
   // `DataView` object, in cases like that we can't use the constructor
   // safely and should just rely on alternate `DataView` checks
   var hasDataViewBug = (
         supportsDataView && (!/\[native code\]/.test(String(DataView)) || hasObjectTag(new DataView(new ArrayBuffer(8))))
->>>>>>> 2b44096 (initial commit 2)
       ),
       isIE11 = (typeof Map !== 'undefined' && hasObjectTag(new Map));
 
@@ -177,13 +162,6 @@
 
   // In IE 10 - Edge 13, we need a different heuristic
   // to determine whether an object is a `DataView`.
-<<<<<<< HEAD
-  function ie10IsDataView(obj) {
-    return obj != null && isFunction$1(obj.getInt8) && isArrayBuffer(obj.buffer);
-  }
-
-  var isDataView$1 = (hasStringTagBug ? ie10IsDataView : isDataView);
-=======
   // Also, in cases where the native `DataView` is
   // overridden we can't rely on the tag itself.
   function alternateIsDataView(obj) {
@@ -191,7 +169,6 @@
   }
 
   var isDataView$1 = (hasDataViewBug ? alternateIsDataView : isDataView);
->>>>>>> 2b44096 (initial commit 2)
 
   // Is a given value an array?
   // Delegates to ECMA5's native `Array.isArray`.
@@ -404,11 +381,7 @@
     var className = toString.call(a);
     if (className !== toString.call(b)) return false;
     // Work around a bug in IE 10 - Edge 13.
-<<<<<<< HEAD
-    if (hasStringTagBug && className == '[object Object]' && isDataView$1(a)) {
-=======
     if (hasDataViewBug && className == '[object Object]' && isDataView$1(a)) {
->>>>>>> 2b44096 (initial commit 2)
       if (!isDataView$1(b)) return false;
       className = tagDataView;
     }

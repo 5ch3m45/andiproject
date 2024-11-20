@@ -183,11 +183,7 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 	 *
 	 * @param bool    $required Whether the post requires a password check.
 	 * @param WP_Post $post     The post been password checked.
-<<<<<<< HEAD
-	 * @return bool Result of password check taking in to account REST API considerations.
-=======
 	 * @return bool Result of password check taking into account REST API considerations.
->>>>>>> 2b44096 (initial commit 2)
 	 */
 	public function check_password_required( $required, $post ) {
 		if ( ! $required ) {
@@ -341,10 +337,6 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 			}
 		}
 
-<<<<<<< HEAD
-		$args = $this->prepare_tax_query( $args, $request );
-
-=======
 		if (
 			isset( $registered['search_semantics'], $request['search_semantics'] )
 			&& 'exact' === $request['search_semantics']
@@ -407,7 +399,6 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 			}
 		}
 
->>>>>>> 2b44096 (initial commit 2)
 		// Force the post_type argument, since it's not a user input variable.
 		$args['post_type'] = $this->post_type;
 
@@ -566,15 +557,9 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 			);
 		}
 
-<<<<<<< HEAD
-		if ( $post && ! empty( $request['password'] ) ) {
-			// Check post password, and return error if invalid.
-			if ( ! hash_equals( $post->post_password, $request['password'] ) ) {
-=======
 		if ( $post && ! empty( $request->get_query_params()['password'] ) ) {
 			// Check post password, and return error if invalid.
 			if ( ! hash_equals( $post->post_password, $request->get_query_params()['password'] ) ) {
->>>>>>> 2b44096 (initial commit 2)
 				return new WP_Error(
 					'rest_post_incorrect_password',
 					__( 'Incorrect post password.' ),
@@ -1884,11 +1869,7 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 			 * with the site's timezone offset applied.
 			 */
 			if ( '0000-00-00 00:00:00' === $post->post_modified_gmt ) {
-<<<<<<< HEAD
-				$post_modified_gmt = gmdate( 'Y-m-d H:i:s', strtotime( $post->post_modified ) - ( get_option( 'gmt_offset' ) * HOUR_IN_SECONDS ) );
-=======
 				$post_modified_gmt = gmdate( 'Y-m-d H:i:s', strtotime( $post->post_modified ) - (int) ( (float) get_option( 'gmt_offset' ) * HOUR_IN_SECONDS ) );
->>>>>>> 2b44096 (initial commit 2)
 			} else {
 				$post_modified_gmt = $post->post_modified_gmt;
 			}
@@ -1923,18 +1904,12 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 		}
 		if ( rest_is_field_included( 'title.rendered', $fields ) ) {
 			add_filter( 'protected_title_format', array( $this, 'protected_title_format' ) );
-<<<<<<< HEAD
-=======
 			add_filter( 'private_title_format', array( $this, 'protected_title_format' ) );
->>>>>>> 2b44096 (initial commit 2)
 
 			$data['title']['rendered'] = get_the_title( $post->ID );
 
 			remove_filter( 'protected_title_format', array( $this, 'protected_title_format' ) );
-<<<<<<< HEAD
-=======
 			remove_filter( 'private_title_format', array( $this, 'protected_title_format' ) );
->>>>>>> 2b44096 (initial commit 2)
 		}
 
 		$has_password_filter = false;
@@ -2134,17 +2109,6 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 	}
 
 	/**
-<<<<<<< HEAD
-	 * Overwrites the default protected title format.
-	 *
-	 * By default, WordPress will show password protected posts with a title of
-	 * "Protected: %s", as the REST API communicates the protected status of a post
-	 * in a machine readable format, we remove the "Protected: " prefix.
-	 *
-	 * @since 4.7.0
-	 *
-	 * @return string Protected title format.
-=======
 	 * Overwrites the default protected and private title format.
 	 *
 	 * By default, WordPress will show password protected or private posts with a title of
@@ -2154,7 +2118,6 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 	 * @since 4.7.0
 	 *
 	 * @return string Title format.
->>>>>>> 2b44096 (initial commit 2)
 	 */
 	public function protected_title_format() {
 		return '%s';
@@ -2983,15 +2946,12 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 			);
 		}
 
-<<<<<<< HEAD
-=======
 		$query_params['search_semantics'] = array(
 			'description' => __( 'How to interpret the search input.' ),
 			'type'        => 'string',
 			'enum'        => array( 'exact' ),
 		);
 
->>>>>>> 2b44096 (initial commit 2)
 		$query_params['offset'] = array(
 			'description' => __( 'Offset the result set by a specific number of items.' ),
 			'type'        => 'integer',
@@ -3085,8 +3045,6 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 			);
 		}
 
-<<<<<<< HEAD
-=======
 		if ( post_type_supports( $this->post_type, 'post-formats' ) ) {
 			$query_params['format'] = array(
 				'description' => __( 'Limit result set to items assigned one or more given formats.' ),
@@ -3099,7 +3057,6 @@ class WP_REST_Posts_Controller extends WP_REST_Controller {
 			);
 		}
 
->>>>>>> 2b44096 (initial commit 2)
 		/**
 		 * Filters collection parameters for the posts controller.
 		 *

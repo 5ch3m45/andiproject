@@ -37,11 +37,7 @@ function list_core_update( $update ) {
 	global $wp_local_package, $wpdb;
 	static $first_pass = true;
 
-<<<<<<< HEAD
-	$wp_version     = get_bloginfo( 'version' );
-=======
 	$wp_version     = wp_get_wp_version();
->>>>>>> 535c0c1 (initial commit)
 	$version_string = sprintf( '%s&ndash;%s', $update->current, get_locale() );
 
 	if ( 'en_US' === $update->locale && 'en_US' === get_locale() ) {
@@ -397,11 +393,7 @@ function core_auto_updates_settings() {
 	);
 
 	if ( $upgrade_major ) {
-<<<<<<< HEAD
-		$wp_version = get_bloginfo( 'version' );
-=======
 		$wp_version = wp_get_wp_version();
->>>>>>> 535c0c1 (initial commit)
 		$updates    = get_core_updates();
 
 		if ( isset( $updates[0]->version ) && version_compare( $updates[0]->version, $wp_version, '>' ) ) {
@@ -468,11 +460,7 @@ function core_auto_updates_settings() {
  * @since 2.9.0
  */
 function list_plugin_updates() {
-<<<<<<< HEAD
-	$wp_version     = get_bloginfo( 'version' );
-=======
 	$wp_version     = wp_get_wp_version();
->>>>>>> 535c0c1 (initial commit)
 	$cur_wp_version = preg_replace( '/-.*$/', '', $wp_version );
 
 	require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
@@ -1108,20 +1096,12 @@ if ( 'upgrade-core' === $action ) {
 	$current           = get_site_transient( 'update_core' );
 
 	if ( $current && isset( $current->last_checked ) ) {
-<<<<<<< HEAD
-		$last_update_check = $current->last_checked + get_option( 'gmt_offset' ) * HOUR_IN_SECONDS;
-=======
 		$last_update_check = $current->last_checked + (int) ( (float) get_option( 'gmt_offset' ) * HOUR_IN_SECONDS );
->>>>>>> 535c0c1 (initial commit)
 	}
 
 	echo '<h2 class="wp-current-version">';
 	/* translators: Current version of WordPress. */
-<<<<<<< HEAD
-	printf( __( 'Current version: %s' ), get_bloginfo( 'version' ) );
-=======
 	printf( __( 'Current version: %s' ), esc_html( wp_get_wp_version() ) );
->>>>>>> 535c0c1 (initial commit)
 	echo '</h2>';
 
 	echo '<p class="update-last-checked">';

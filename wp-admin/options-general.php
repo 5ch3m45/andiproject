@@ -124,17 +124,11 @@ $tagline_description = sprintf(
 	$app_icon_alt_value     = '';
 	$browser_icon_alt_value = '';
 
-<<<<<<< HEAD
-	if ( $site_icon_id ) {
-		$img_alt            = get_post_meta( $site_icon_id, '_wp_attachment_image_alt', true );
-		$filename           = wp_basename( get_site_icon_url() );
-=======
 	$site_icon_url = get_site_icon_url();
 
 	if ( $site_icon_id ) {
 		$img_alt            = get_post_meta( $site_icon_id, '_wp_attachment_image_alt', true );
 		$filename           = wp_basename( $site_icon_url );
->>>>>>> 535c0c1 (initial commit)
 		$app_icon_alt_value = sprintf(
 			/* translators: %s: The selected image filename. */
 			__( 'App icon preview: The current image has no alternative text. The file name is: %s' ),
@@ -163,22 +157,6 @@ $tagline_description = sprintf(
 	}
 	?>
 
-<<<<<<< HEAD
-
-	<div id="site-icon-preview" class="site-icon-preview wp-clearfix settings-page-preview <?php echo esc_attr( $classes_for_wrapper ); ?>">
-		<div class="favicon-preview">
-			<img src="<?php echo esc_url( admin_url( 'images/' . ( is_rtl() ? 'browser-rtl.png' : 'browser.png' ) ) ); ?>" class="browser-preview" width="182" alt="">
-			<div class="favicon">
-				<img id="browser-icon-preview" src="<?php site_icon_url(); ?>" alt="<?php echo esc_attr( $browser_icon_alt_value ); ?>">
-			</div>
-			<span id="site-icon-preview-site-title" class="browser-title" aria-hidden="true"><?php bloginfo( 'name' ); ?></span>
-		</div>
-		<img id="app-icon-preview" class="app-icon-preview" src="<?php site_icon_url(); ?>" alt="<?php echo esc_attr( $app_icon_alt_value ); ?>">
-	</div>
-
-	<input type="hidden" name="site_icon" id="site_icon_hidden_field" value="<?php form_option( 'site_icon' ); ?>" />
-	<div class="action-buttons">
-=======
 	<style>
 	:root {
 		--site-icon-url: url( '<?php echo esc_url( $site_icon_url ); ?>' );
@@ -204,7 +182,6 @@ $tagline_description = sprintf(
 
 	<input type="hidden" name="site_icon" id="site_icon_hidden_field" value="<?php form_option( 'site_icon' ); ?>" />
 	<div class="site-icon-action-buttons">
->>>>>>> 535c0c1 (initial commit)
 		<button type="button"
 			id="choose-from-library-button"
 			type="button"
@@ -226,11 +203,7 @@ $tagline_description = sprintf(
 		<button
 			id="js-remove-site-icon"
 			type="button"
-<<<<<<< HEAD
-			<?php echo has_site_icon() ? 'class="button button-secondary reset"' : 'class="button button-secondary reset hidden"'; ?>
-=======
 			<?php echo has_site_icon() ? 'class="button button-secondary reset remove-site-icon"' : 'class="button button-secondary reset hidden"'; ?>
->>>>>>> 535c0c1 (initial commit)
 		>
 			<?php _e( 'Remove Site Icon' ); ?>
 		</button>
@@ -238,17 +211,12 @@ $tagline_description = sprintf(
 
 	<p class="description">
 		<?php
-<<<<<<< HEAD
-			/* translators: %s: Site Icon size in pixels. */
-			printf( __( 'The Site Icon is what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. It should be square and at least %s pixels.' ), '<code>512 &times; 512</code>' );
-=======
 			printf(
 				/* translators: 1: pixel value for icon size. 2: pixel value for icon size. */
 				__( 'The Site Icon is what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. It should be square and at least <code>%1$s by %2$s</code> pixels.' ),
 				512,
 				512
 			);
->>>>>>> 535c0c1 (initial commit)
 		?>
 	</p>
 

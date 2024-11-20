@@ -804,11 +804,8 @@ ul#add-to-blog-users {
 	padding: 9px 0;
 	line-height: 1.6;
 	max-width: 270px;
-<<<<<<< HEAD
-=======
 	border-radius: 4px;
 	background: #f0f0f1;
->>>>>>> 535c0c1 (initial commit)
 }
 
 .button-add-site-icon:focus,
@@ -816,21 +813,6 @@ ul#add-to-blog-users {
 	background: #fff;
 }
 
-<<<<<<< HEAD
-.site-icon-section .favicon-preview {
-	float: right;
-}
-.site-icon-section .app-icon-preview {
-	float: right;
-	margin: 0 20px;
-}
-
-.site-icon-section .site-icon-preview img {
-	max-width: 100%;
-}
-
-=======
->>>>>>> 535c0c1 (initial commit)
 .button-add-site-icon:focus {
 	background-color: #fff;
 	border-color: #3582c4;
@@ -1021,10 +1003,7 @@ table.form-table td .updated p {
 }
 
 .application-password-display input.code {
-<<<<<<< HEAD
-=======
 	margin-bottom: 6px;
->>>>>>> 535c0c1 (initial commit)
 	width: 19em;
 }
 

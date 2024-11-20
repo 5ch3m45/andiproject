@@ -81,8 +81,6 @@
 		},
 		"interactivity": {
 			"clientNavigation": true
-<<<<<<< HEAD
-=======
 		},
 		"__experimentalBorder": {
 			"radius": true,
@@ -95,7 +93,6 @@
 				"width": true,
 				"style": true
 			}
->>>>>>> 535c0c1 (initial commit)
 		}
 	},
 	"styles": [

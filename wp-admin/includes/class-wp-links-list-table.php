@@ -307,14 +307,11 @@ class WP_Links_List_Table extends WP_List_Table {
 		do_action( 'manage_link_custom_column', $column_name, $link->link_id );
 	}
 
-<<<<<<< HEAD
-=======
 	/**
 	 * Generates the list table rows.
 	 *
 	 * @since 3.1.0
 	 */
->>>>>>> 535c0c1 (initial commit)
 	public function display_rows() {
 		foreach ( $this->items as $link ) {
 			$link                = sanitize_bookmark( $link );

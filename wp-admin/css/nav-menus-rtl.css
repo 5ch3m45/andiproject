@@ -828,24 +828,6 @@ body.menu-max-depth-11 { min-width: 1280px !important; }
 	display: none;
 }
 
-<<<<<<< HEAD
-.menu-item-settings .description-thin,
-.menu-item-settings .description-wide {
-	margin-left: 10px;
-	float: right;
-}
-
-.description-thin {
-	width: calc(50% - 5px);
-}
-
-.menu-item-settings .description-thin + .description-thin {
-	margin-left: 0;
-}
-
-.description-wide {
-	width: 100%;
-=======
 .description-group {
 	display: flex;
 	column-gap: 10px;
@@ -853,7 +835,6 @@ body.menu-max-depth-11 { min-width: 1280px !important; }
 
 .description-group > * {
 	flex-grow: 1;
->>>>>>> 535c0c1 (initial commit)
 }
 
 .menu-item-actions {
@@ -962,12 +943,7 @@ body.menu-max-depth-11 { min-width: 1280px !important; }
 	}
 
 	.menu-item-bar .menu-item-handle,
-<<<<<<< HEAD
-	.menu-item-settings,
-	.description-wide {
-=======
 	.menu-item-settings {
->>>>>>> 535c0c1 (initial commit)
 		width: auto;
 	}
 
@@ -975,14 +951,8 @@ body.menu-max-depth-11 { min-width: 1280px !important; }
 		padding: 10px;
 	}
 
-<<<<<<< HEAD
-	.menu-item-settings .description-thin,
-	.menu-item-settings .description-wide {
-		width: 100%;
-=======
 	.menu-item-settings .description-group {
 		display: block;
->>>>>>> 535c0c1 (initial commit)
 	}
 
 	.menu-item-settings input {

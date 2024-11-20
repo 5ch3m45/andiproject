@@ -161,11 +161,7 @@ function wp_print_media_templates() {
 		__( '<a href="%1$s" %2$s>Learn how to describe the purpose of the image%3$s</a>. Leave empty if the image is purely decorative.' ),
 		/* translators: Localized tutorial, if one exists. W3C Web Accessibility Initiative link has list of existing translations. */
 		esc_url( __( 'https://www.w3.org/WAI/tutorials/images/decision-tree/' ) ),
-<<<<<<< HEAD
-		'target="_blank" rel="noopener"',
-=======
 		'target="_blank"',
->>>>>>> 2b44096 (initial commit 2)
 		sprintf(
 			'<span class="screen-reader-text"> %s</span>',
 			/* translators: Hidden accessibility text. */
@@ -609,17 +605,12 @@ function wp_print_media_templates() {
 					<div class="centered">
 						<# if ( data.image && data.image.src && data.image.src !== data.icon ) { #>
 							<img src="{{ data.image.src }}" class="thumbnail" draggable="false" alt="" />
-<<<<<<< HEAD
-						<# } else if ( data.sizes && data.sizes.medium ) { #>
-							<img src="{{ data.sizes.medium.url }}" class="thumbnail" draggable="false" alt="" />
-=======
 						<# } else if ( data.sizes ) { 
 								if ( data.sizes.medium ) { #>
 									<img src="{{ data.sizes.medium.url }}" class="thumbnail" draggable="false" alt="" />
 								<# } else { #>
 									<img src="{{ data.sizes.full.url }}" class="thumbnail" draggable="false" alt="" />
 								<# } #>
->>>>>>> 2b44096 (initial commit 2)
 						<# } else { #>
 							<img src="{{ data.icon }}" class="icon" draggable="false" alt="" />
 						<# } #>
@@ -1555,23 +1546,6 @@ function wp_print_media_templates() {
 	</script>
 
 	<?php // Template for the Site Icon preview, used for example in the Customizer. ?>
-<<<<<<< HEAD
-	<script type="text/html" id="tmpl-site-icon-preview">
-		<h2><?php _e( 'Preview' ); ?></h2>
-		<strong aria-hidden="true"><?php _e( 'As a browser icon' ); ?></strong>
-		<div class="favicon-preview">
-			<img src="<?php echo esc_url( admin_url( 'images/' . ( is_rtl() ? 'browser-rtl.png' : 'browser.png' ) ) ); ?>" class="browser-preview" width="182" height="" alt="" />
-
-			<div class="favicon">
-				<img id="preview-favicon" src="{{ data.url }}" alt="<?php esc_attr_e( 'Preview as a browser icon' ); ?>" />
-			</div>
-			<span class="browser-title" aria-hidden="true"><# print( '<?php echo esc_js( get_bloginfo( 'name' ) ); ?>' ) #></span>
-		</div>
-
-		<strong aria-hidden="true"><?php _e( 'As an app icon' ); ?></strong>
-		<div class="app-icon-preview">
-			<img id="preview-app-icon" src="{{ data.url }}" alt="<?php esc_attr_e( 'Preview as an app icon' ); ?>" />
-=======
 	<script type="text/html" id="tmpl-site-icon-preview-crop">
 		<style>
 			:root{
@@ -1597,7 +1571,6 @@ function wp_print_media_templates() {
 					</div>
 				</div>
 			</div>
->>>>>>> 2b44096 (initial commit 2)
 		</div>
 	</script>
 

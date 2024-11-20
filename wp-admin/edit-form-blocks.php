@@ -51,25 +51,12 @@ wp_enqueue_script( 'wp-edit-post' );
 
 $rest_path = rest_get_route_for_post( $post );
 
-<<<<<<< HEAD
-=======
 $active_theme = get_stylesheet();
 
->>>>>>> 535c0c1 (initial commit)
 // Preload common data.
 $preload_paths = array(
 	'/wp/v2/types?context=view',
 	'/wp/v2/taxonomies?context=view',
-<<<<<<< HEAD
-	add_query_arg(
-		array(
-			'context'  => 'edit',
-			'per_page' => -1,
-		),
-		rest_get_route_for_post_type_items( 'wp_block' )
-	),
-=======
->>>>>>> 535c0c1 (initial commit)
 	add_query_arg( 'context', 'edit', $rest_path ),
 	sprintf( '/wp/v2/types/%s?context=edit', $post_type ),
 	'/wp/v2/users/me',
@@ -80,15 +67,10 @@ $preload_paths = array(
 	sprintf( '%s/autosaves?context=edit', $rest_path ),
 	'/wp/v2/settings',
 	array( '/wp/v2/settings', 'OPTIONS' ),
-<<<<<<< HEAD
-	'/wp/v2/global-styles/themes/' . get_stylesheet(),
-	'/wp/v2/themes?context=edit&status=active',
-=======
 	'/wp/v2/global-styles/themes/' . $active_theme . '?context=view',
 	'/wp/v2/global-styles/themes/' . $active_theme . '/variations?context=view',
 	'/wp/v2/themes?context=edit&status=active',
 	array( '/wp/v2/global-styles/' . WP_Theme_JSON_Resolver::get_user_global_styles_post_id(), 'OPTIONS' ),
->>>>>>> 535c0c1 (initial commit)
 	'/wp/v2/global-styles/' . WP_Theme_JSON_Resolver::get_user_global_styles_post_id() . '?context=edit',
 );
 
@@ -128,8 +110,6 @@ wp_add_inline_script(
 	'wp.blocks.unstable__bootstrapServerSideBlockDefinitions(' . wp_json_encode( get_block_editor_server_block_settings() ) . ');'
 );
 
-<<<<<<< HEAD
-=======
 // Preload server-registered block bindings sources.
 $registered_sources = get_all_registered_block_bindings_sources();
 if ( ! empty( $registered_sources ) ) {
@@ -148,7 +128,6 @@ if ( ! empty( $registered_sources ) ) {
 	);
 }
 
->>>>>>> 535c0c1 (initial commit)
 // Get admin url for handling meta boxes.
 $meta_box_url = admin_url( 'post.php' );
 $meta_box_url = add_query_arg(
@@ -166,8 +145,6 @@ wp_add_inline_script(
 	'before'
 );
 
-<<<<<<< HEAD
-=======
 // Set Heartbeat interval to 10 seconds, used to refresh post locks.
 wp_add_inline_script(
 	'heartbeat',
@@ -177,7 +154,6 @@ wp_add_inline_script(
 	'after'
 );
 
->>>>>>> 535c0c1 (initial commit)
 /*
  * Get all available templates for the post/page attributes meta-box.
  * The "Default template" array element should only be added if the array is
@@ -207,18 +183,12 @@ if ( $user_id ) {
 	if ( $locked ) {
 		$user         = get_userdata( $user_id );
 		$user_details = array(
-<<<<<<< HEAD
-			'avatar' => get_avatar_url( $user_id, array( 'size' => 128 ) ),
-			'name'   => $user->display_name,
-		);
-=======
 			'name' => $user->display_name,
 		);
 
 		if ( get_option( 'show_avatars' ) ) {
 			$user_details['avatar'] = get_avatar_url( $user_id, array( 'size' => 128 ) );
 		}
->>>>>>> 535c0c1 (initial commit)
 	}
 
 	$lock_details = array(

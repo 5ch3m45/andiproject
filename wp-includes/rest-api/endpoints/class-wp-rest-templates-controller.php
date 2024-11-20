@@ -326,11 +326,7 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 	 * @return WP_REST_Response|WP_Error
 	 */
 	public function get_item( $request ) {
-<<<<<<< HEAD
-		if ( isset( $request['source'] ) && 'theme' === $request['source'] ) {
-=======
 		if ( isset( $request['source'] ) && ( 'theme' === $request['source'] || 'plugin' === $request['source'] ) ) {
->>>>>>> 2b44096 (initial commit 2)
 			$template = get_block_file_template( $request['id'], $this->post_type );
 		} else {
 			$template = get_block_template( $request['id'], $this->post_type );
@@ -672,15 +668,10 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 	 * @return WP_REST_Response Response object.
 	 */
 	public function prepare_item_for_response( $item, $request ) {
-<<<<<<< HEAD
-		// Resolve pattern blocks so they don't need to be resolved client-side
-		// in the editor, improving performance.
-=======
 		/*
 		 * Resolve pattern blocks so they don't need to be resolved client-side
 		 * in the editor, improving performance.
 		 */
->>>>>>> 2b44096 (initial commit 2)
 		$blocks        = parse_blocks( $item->content );
 		$blocks        = resolve_pattern_blocks( $blocks );
 		$item->content = serialize_blocks( $blocks );
@@ -785,8 +776,6 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 			$data['original_source'] = self::get_wp_templates_original_source_field( $template );
 		}
 
-<<<<<<< HEAD
-=======
 		if ( rest_is_field_included( 'plugin', $fields ) ) {
 			$registered_template = WP_Block_Templates_Registry::get_instance()->get_by_slug( $template->slug );
 			if ( $registered_template ) {
@@ -794,7 +783,6 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 			}
 		}
 
->>>>>>> 2b44096 (initial commit 2)
 		$context = ! empty( $request['context'] ) ? $request['context'] : 'view';
 		$data    = $this->add_additional_fields_to_object( $data, $request );
 		$data    = $this->filter_response_by_context( $data, $context );
@@ -827,13 +815,6 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 	 */
 	private static function get_wp_templates_original_source_field( $template_object ) {
 		if ( 'wp_template' === $template_object->type || 'wp_template_part' === $template_object->type ) {
-<<<<<<< HEAD
-			// Added by theme.
-			// Template originally provided by a theme, but customized by a user.
-			// Templates originally didn't have the 'origin' field so identify
-			// older customized templates by checking for no origin and a 'theme'
-			// or 'custom' source.
-=======
 			/*
 			 * Added by theme.
 			 * Template originally provided by a theme, but customized by a user.
@@ -841,7 +822,6 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 			 * older customized templates by checking for no origin and a 'theme'
 			 * or 'custom' source.
 			 */
->>>>>>> 2b44096 (initial commit 2)
 			if ( $template_object->has_theme_file &&
 			( 'theme' === $template_object->origin || (
 				empty( $template_object->origin ) && in_array(
@@ -858,16 +838,6 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 			}
 
 			// Added by plugin.
-<<<<<<< HEAD
-			if ( $template_object->has_theme_file && 'plugin' === $template_object->origin ) {
-				return 'plugin';
-			}
-
-			// Added by site.
-			// Template was created from scratch, but has no author. Author support
-			// was only added to templates in WordPress 5.9. Fallback to showing the
-			// site logo and title.
-=======
 			if ( 'plugin' === $template_object->origin ) {
 				return 'plugin';
 			}
@@ -878,7 +848,6 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 			 * was only added to templates in WordPress 5.9. Fallback to showing the
 			 * site logo and title.
 			 */
->>>>>>> 2b44096 (initial commit 2)
 			if ( empty( $template_object->has_theme_file ) && 'custom' === $template_object->source && empty( $template_object->author ) ) {
 				return 'site';
 			}
@@ -903,11 +872,6 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 				$theme_name = wp_get_theme( $template_object->theme )->get( 'Name' );
 				return empty( $theme_name ) ? $template_object->theme : $theme_name;
 			case 'plugin':
-<<<<<<< HEAD
-				$plugins = get_plugins();
-				$plugin  = $plugins[ plugin_basename( sanitize_text_field( $template_object->theme . '.php' ) ) ];
-				return empty( $plugin['Name'] ) ? $template_object->theme : $plugin['Name'];
-=======
 				if ( ! function_exists( 'get_plugins' ) || ! function_exists( 'get_plugin_data' ) ) {
 					require_once ABSPATH . 'wp-admin/includes/plugin.php';
 				}
@@ -943,7 +907,6 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 				return isset( $template_object->plugin ) ?
 					$template_object->plugin :
 					$template_object->theme;
->>>>>>> 2b44096 (initial commit 2)
 			case 'site':
 				return get_bloginfo( 'name' );
 			case 'user':
@@ -953,12 +916,9 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 				}
 				return $author->get( 'display_name' );
 		}
-<<<<<<< HEAD
-=======
 
 		// Fail-safe to return a string should the original source ever fall through.
 		return '';
->>>>>>> 2b44096 (initial commit 2)
 	}
 
 
@@ -1213,15 +1173,12 @@ class WP_REST_Templates_Controller extends WP_REST_Controller {
 				'context'     => array( 'embed', 'view', 'edit' ),
 				'readonly'    => true,
 			);
-<<<<<<< HEAD
-=======
 			$schema['properties']['plugin']    = array(
 				'type'        => 'string',
 				'description' => __( 'Plugin that registered the template.' ),
 				'readonly'    => true,
 				'context'     => array( 'view', 'edit', 'embed' ),
 			);
->>>>>>> 2b44096 (initial commit 2)
 		}
 
 		if ( 'wp_template_part' === $this->post_type ) {

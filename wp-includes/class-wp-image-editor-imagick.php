@@ -206,10 +206,7 @@ class WP_Image_Editor_Imagick extends WP_Image_Editor {
 			switch ( $this->mime_type ) {
 				case 'image/jpeg':
 					$this->image->setImageCompressionQuality( $quality );
-<<<<<<< HEAD
-=======
 					$this->image->setCompressionQuality( $quality );
->>>>>>> 535c0c1 (initial commit)
 					$this->image->setImageCompression( imagick::COMPRESSION_JPEG );
 					break;
 				case 'image/webp':
@@ -218,16 +215,6 @@ class WP_Image_Editor_Imagick extends WP_Image_Editor {
 					if ( 'lossless' === $webp_info['type'] ) {
 						// Use WebP lossless settings.
 						$this->image->setImageCompressionQuality( 100 );
-<<<<<<< HEAD
-						$this->image->setOption( 'webp:lossless', 'true' );
-					} else {
-						$this->image->setImageCompressionQuality( $quality );
-					}
-					break;
-				case 'image/avif':
-				default:
-					$this->image->setImageCompressionQuality( $quality );
-=======
 						$this->image->setCompressionQuality( 100 );
 						$this->image->setOption( 'webp:lossless', 'true' );
 						parent::set_quality( 100 );
@@ -245,7 +232,6 @@ class WP_Image_Editor_Imagick extends WP_Image_Editor {
 				default:
 					$this->image->setImageCompressionQuality( $quality );
 					$this->image->setCompressionQuality( $quality );
->>>>>>> 535c0c1 (initial commit)
 			}
 		} catch ( Exception $e ) {
 			return new WP_Error( 'image_quality_error', $e->getMessage() );
@@ -282,17 +268,10 @@ class WP_Image_Editor_Imagick extends WP_Image_Editor {
 		}
 
 		/*
-<<<<<<< HEAD
-		 * If we still don't have the image size, fall back to `wp_getimagesize`. This ensures AVIF images
-		 * are properly sized without affecting previous `getImageGeometry` behavior.
-		 */
-		if ( ( ! $width || ! $height ) && 'image/avif' === $this->mime_type ) {
-=======
 		 * If we still don't have the image size, fall back to `wp_getimagesize`. This ensures AVIF and HEIC images
 		 * are properly sized without affecting previous `getImageGeometry` behavior.
 		 */
 		if ( ( ! $width || ! $height ) && ( 'image/avif' === $this->mime_type || wp_is_heic_image_mime_type( $this->mime_type ) ) ) {
->>>>>>> 535c0c1 (initial commit)
 			$size   = wp_getimagesize( $this->file );
 			$width  = $size[0];
 			$height = $size[1];

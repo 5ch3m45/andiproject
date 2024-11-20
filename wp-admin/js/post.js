@@ -343,15 +343,9 @@ jQuery( function($) {
 		}
 	}).filter(':visible').find('.wp-tab-first').trigger( 'focus' );
 
-<<<<<<< HEAD
-	// Set the heartbeat interval to 15 seconds if post lock dialogs are enabled.
-	if ( wp.heartbeat && $('#post-lock-dialog').length ) {
-		wp.heartbeat.interval( 15 );
-=======
 	// Set the heartbeat interval to 10 seconds if post lock dialogs are enabled.
 	if ( wp.heartbeat && $('#post-lock-dialog').length ) {
 		wp.heartbeat.interval( 10 );
->>>>>>> 535c0c1 (initial commit)
 	}
 
 	// The form is being submitted by the user.
@@ -440,28 +434,6 @@ jQuery( function($) {
 		$previewField.val('');
 	});
 
-<<<<<<< HEAD
-	// This code is meant to allow tabbing from Title to Post content.
-	$('#title').on( 'keydown.editor-focus', function( event ) {
-		var editor;
-
-		if ( event.keyCode === 9 && ! event.ctrlKey && ! event.altKey && ! event.shiftKey ) {
-			editor = typeof tinymce != 'undefined' && tinymce.get('content');
-
-			if ( editor && ! editor.isHidden() ) {
-				editor.focus();
-			} else if ( $textarea.length ) {
-				$textarea.trigger( 'focus' );
-			} else {
-				return;
-			}
-
-			event.preventDefault();
-		}
-	});
-
-=======
->>>>>>> 535c0c1 (initial commit)
 	// Auto save new posts after a title is typed.
 	if ( $( '#auto_draft' ).val() ) {
 		$( '#title' ).on( 'blur', function() {

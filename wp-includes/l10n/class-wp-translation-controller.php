@@ -434,8 +434,6 @@ final class WP_Translation_Controller {
 
 		return $this->loaded_translations[ $locale ][ $textdomain ] ?? array();
 	}
-<<<<<<< HEAD
-=======
 
 	/**
 	 * Returns a boolean to indicate whether a translation exists for a given string with optional text domain and locale.
@@ -454,5 +452,4 @@ final class WP_Translation_Controller {
 
 		return false !== $this->locate_translation( $singular, $textdomain, $locale );
 	}
->>>>>>> 2b44096 (initial commit 2)
 }

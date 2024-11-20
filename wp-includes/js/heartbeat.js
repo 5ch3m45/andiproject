@@ -132,29 +132,17 @@
 				}
 
 				/*
-<<<<<<< HEAD
-				 * The interval can be from 15 to 120 seconds and can be set temporarily to 5 seconds.
-				 * It can be set in the initial options or changed later through JS and/or through PHP.
-=======
 				 * Logic check: the interval can be from 1 to 3600 seconds and can be set temporarily
 				 * to 5 seconds. It can be set in the initial options or changed later from JS
 				 * or from PHP through the AJAX responses.
->>>>>>> 2b44096 (initial commit 2)
 				 */
 				if ( options.interval ) {
 					settings.mainInterval = options.interval;
 
-<<<<<<< HEAD
-					if ( settings.mainInterval < 15 ) {
-						settings.mainInterval = 15;
-					} else if ( settings.mainInterval > 120 ) {
-						settings.mainInterval = 120;
-=======
 					if ( settings.mainInterval < 1 ) {
 						settings.mainInterval = 1;
 					} else if ( settings.mainInterval > 3600 ) {
 						settings.mainInterval = 3600;
->>>>>>> 2b44096 (initial commit 2)
 					}
 				}
 
@@ -734,17 +722,10 @@
 		 *
 		 * @memberOf wp.heartbeat.prototype
 		 *
-<<<<<<< HEAD
-		 * @param {string|number} speed Interval: 'fast' or 5, 15, 30, 60, 120.
-		 *                              Fast equals 5.
-		 * @param {string}        ticks Tells how many ticks before the interval reverts
-		 *                              back. Used with speed = 'fast' or 5.
-=======
 		 * @param {string|number} speed Interval: 'fast' or integer between 1 and 3600 (seconds).
 		 *                              Fast equals 5.
 		 * @param {number}        ticks Tells how many ticks before the interval reverts back.
 		 *                              Value must be between 1 and 30. Used with speed = 'fast' or 5.
->>>>>>> 2b44096 (initial commit 2)
 		 *
 		 * @return {number} Current interval in seconds.
 		 */
@@ -753,31 +734,6 @@
 				oldInterval = settings.tempInterval ? settings.tempInterval : settings.mainInterval;
 
 			if ( speed ) {
-<<<<<<< HEAD
-				switch ( speed ) {
-					case 'fast':
-					case 5:
-						newInterval = 5000;
-						break;
-					case 15:
-						newInterval = 15000;
-						break;
-					case 30:
-						newInterval = 30000;
-						break;
-					case 60:
-						newInterval = 60000;
-						break;
-					case 120:
-						newInterval = 120000;
-						break;
-					case 'long-polling':
-						// Allow long polling (experimental).
-						settings.mainInterval = 0;
-						return 0;
-					default:
-						newInterval = settings.originalInterval;
-=======
 				if ( 'fast' === speed ) {
 					// Special case, see below.
 					newInterval = 5000;
@@ -793,17 +749,13 @@
 					} else {
 						newInterval = settings.originalInterval;
 					}
->>>>>>> 2b44096 (initial commit 2)
 				}
 
 				if ( settings.minimalInterval && newInterval < settings.minimalInterval ) {
 					newInterval = settings.minimalInterval;
 				}
 
-<<<<<<< HEAD
-=======
 				// Special case, runs for a number of ticks then reverts to the previous interval.
->>>>>>> 2b44096 (initial commit 2)
 				if ( 5000 === newInterval ) {
 					ticks = parseInt( ticks, 10 ) || 30;
 					ticks = ticks < 1 || ticks > 30 ? 30 : ticks;

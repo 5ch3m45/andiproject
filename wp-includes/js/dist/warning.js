@@ -33,11 +33,6 @@ __webpack_require__.d(__webpack_exports__, {
 /**
  * Object map tracking messages which have been logged, for use in ensuring a
  * message is only logged once.
-<<<<<<< HEAD
- *
- * @type {Set<string>}
-=======
->>>>>>> 2b44096 (initial commit 2)
  */
 const logged = new Set();
 
@@ -54,11 +49,7 @@ function isDev() {
 /**
  * Shows a warning with `message` if environment is not `production`.
  *
-<<<<<<< HEAD
- * @param {string} message Message to show in the warning.
-=======
  * @param message Message to show in the warning.
->>>>>>> 2b44096 (initial commit 2)
  *
  * @example
  * ```js

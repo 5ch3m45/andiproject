@@ -705,20 +705,6 @@ class WP_Comments_List_Table extends WP_List_Table {
 
 		$output = '';
 
-<<<<<<< HEAD
-		$del_nonce     = esc_html( '_wpnonce=' . wp_create_nonce( "delete-comment_$comment->comment_ID" ) );
-		$approve_nonce = esc_html( '_wpnonce=' . wp_create_nonce( "approve-comment_$comment->comment_ID" ) );
-
-		$url = "comment.php?c=$comment->comment_ID";
-
-		$approve_url   = esc_url( $url . "&action=approvecomment&$approve_nonce" );
-		$unapprove_url = esc_url( $url . "&action=unapprovecomment&$approve_nonce" );
-		$spam_url      = esc_url( $url . "&action=spamcomment&$del_nonce" );
-		$unspam_url    = esc_url( $url . "&action=unspamcomment&$del_nonce" );
-		$trash_url     = esc_url( $url . "&action=trashcomment&$del_nonce" );
-		$untrash_url   = esc_url( $url . "&action=untrashcomment&$del_nonce" );
-		$delete_url    = esc_url( $url . "&action=deletecomment&$del_nonce" );
-=======
 		$approve_nonce = esc_html( '_wpnonce=' . wp_create_nonce( 'approve-comment_' . $comment->comment_ID ) );
 		$del_nonce     = esc_html( '_wpnonce=' . wp_create_nonce( 'delete-comment_' . $comment->comment_ID ) );
 
@@ -731,7 +717,6 @@ class WP_Comments_List_Table extends WP_List_Table {
 		$trash_url     = sprintf( $action_string, 'trashcomment', $del_nonce );
 		$untrash_url   = sprintf( $action_string, 'untrashcomment', $del_nonce );
 		$delete_url    = sprintf( $action_string, 'deletecomment', $del_nonce );
->>>>>>> 535c0c1 (initial commit)
 
 		// Preorder it: Approve | Reply | Quick Edit | Edit | Spam | Trash.
 		$actions = array(
@@ -752,11 +737,7 @@ class WP_Comments_List_Table extends WP_List_Table {
 			if ( 'approved' === $the_comment_status ) {
 				$actions['unapprove'] = sprintf(
 					'<a href="%s" data-wp-lists="%s" class="vim-u vim-destructive aria-button-if-js" aria-label="%s">%s</a>',
-<<<<<<< HEAD
-					$unapprove_url,
-=======
 					esc_url( $unapprove_url ),
->>>>>>> 535c0c1 (initial commit)
 					"delete:the-comment-list:comment-{$comment->comment_ID}:e7e7d3:action=dim-comment&amp;new=unapproved",
 					esc_attr__( 'Unapprove this comment' ),
 					__( 'Unapprove' )
@@ -764,11 +745,7 @@ class WP_Comments_List_Table extends WP_List_Table {
 			} elseif ( 'unapproved' === $the_comment_status ) {
 				$actions['approve'] = sprintf(
 					'<a href="%s" data-wp-lists="%s" class="vim-a vim-destructive aria-button-if-js" aria-label="%s">%s</a>',
-<<<<<<< HEAD
-					$approve_url,
-=======
 					esc_url( $approve_url ),
->>>>>>> 535c0c1 (initial commit)
 					"delete:the-comment-list:comment-{$comment->comment_ID}:e7e7d3:action=dim-comment&amp;new=approved",
 					esc_attr__( 'Approve this comment' ),
 					__( 'Approve' )
@@ -777,11 +754,7 @@ class WP_Comments_List_Table extends WP_List_Table {
 		} else {
 			$actions['approve'] = sprintf(
 				'<a href="%s" data-wp-lists="%s" class="vim-a aria-button-if-js" aria-label="%s">%s</a>',
-<<<<<<< HEAD
-				$approve_url,
-=======
 				esc_url( $approve_url ),
->>>>>>> 535c0c1 (initial commit)
 				"dim:the-comment-list:comment-{$comment->comment_ID}:unapproved:e7e7d3:e7e7d3:new=approved",
 				esc_attr__( 'Approve this comment' ),
 				__( 'Approve' )
@@ -789,11 +762,7 @@ class WP_Comments_List_Table extends WP_List_Table {
 
 			$actions['unapprove'] = sprintf(
 				'<a href="%s" data-wp-lists="%s" class="vim-u aria-button-if-js" aria-label="%s">%s</a>',
-<<<<<<< HEAD
-				$unapprove_url,
-=======
 				esc_url( $unapprove_url ),
->>>>>>> 535c0c1 (initial commit)
 				"dim:the-comment-list:comment-{$comment->comment_ID}:unapproved:e7e7d3:e7e7d3:new=unapproved",
 				esc_attr__( 'Unapprove this comment' ),
 				__( 'Unapprove' )
@@ -803,11 +772,7 @@ class WP_Comments_List_Table extends WP_List_Table {
 		if ( 'spam' !== $the_comment_status ) {
 			$actions['spam'] = sprintf(
 				'<a href="%s" data-wp-lists="%s" class="vim-s vim-destructive aria-button-if-js" aria-label="%s">%s</a>',
-<<<<<<< HEAD
-				$spam_url,
-=======
 				esc_url( $spam_url ),
->>>>>>> 535c0c1 (initial commit)
 				"delete:the-comment-list:comment-{$comment->comment_ID}::spam=1",
 				esc_attr__( 'Mark this comment as spam' ),
 				/* translators: "Mark as spam" link. */
@@ -816,11 +781,7 @@ class WP_Comments_List_Table extends WP_List_Table {
 		} elseif ( 'spam' === $the_comment_status ) {
 			$actions['unspam'] = sprintf(
 				'<a href="%s" data-wp-lists="%s" class="vim-z vim-destructive aria-button-if-js" aria-label="%s">%s</a>',
-<<<<<<< HEAD
-				$unspam_url,
-=======
 				esc_url( $unspam_url ),
->>>>>>> 535c0c1 (initial commit)
 				"delete:the-comment-list:comment-{$comment->comment_ID}:66cc66:unspam=1",
 				esc_attr__( 'Restore this comment from the spam' ),
 				_x( 'Not Spam', 'comment' )
@@ -830,11 +791,7 @@ class WP_Comments_List_Table extends WP_List_Table {
 		if ( 'trash' === $the_comment_status ) {
 			$actions['untrash'] = sprintf(
 				'<a href="%s" data-wp-lists="%s" class="vim-z vim-destructive aria-button-if-js" aria-label="%s">%s</a>',
-<<<<<<< HEAD
-				$untrash_url,
-=======
 				esc_url( $untrash_url ),
->>>>>>> 535c0c1 (initial commit)
 				"delete:the-comment-list:comment-{$comment->comment_ID}:66cc66:untrash=1",
 				esc_attr__( 'Restore this comment from the Trash' ),
 				__( 'Restore' )
@@ -844,11 +801,7 @@ class WP_Comments_List_Table extends WP_List_Table {
 		if ( 'spam' === $the_comment_status || 'trash' === $the_comment_status || ! EMPTY_TRASH_DAYS ) {
 			$actions['delete'] = sprintf(
 				'<a href="%s" data-wp-lists="%s" class="delete vim-d vim-destructive aria-button-if-js" aria-label="%s">%s</a>',
-<<<<<<< HEAD
-				$delete_url,
-=======
 				esc_url( $delete_url ),
->>>>>>> 535c0c1 (initial commit)
 				"delete:the-comment-list:comment-{$comment->comment_ID}::delete=1",
 				esc_attr__( 'Delete this comment permanently' ),
 				__( 'Delete Permanently' )
@@ -856,11 +809,7 @@ class WP_Comments_List_Table extends WP_List_Table {
 		} else {
 			$actions['trash'] = sprintf(
 				'<a href="%s" data-wp-lists="%s" class="delete vim-d vim-destructive aria-button-if-js" aria-label="%s">%s</a>',
-<<<<<<< HEAD
-				$trash_url,
-=======
 				esc_url( $trash_url ),
->>>>>>> 535c0c1 (initial commit)
 				"delete:the-comment-list:comment-{$comment->comment_ID}::trash=1",
 				esc_attr__( 'Move this comment to the Trash' ),
 				_x( 'Trash', 'verb' )
@@ -898,9 +847,6 @@ class WP_Comments_List_Table extends WP_List_Table {
 			);
 		}
 
-<<<<<<< HEAD
-		/** This filter is documented in wp-admin/includes/dashboard.php */
-=======
 		/**
 		 * Filters the action links displayed for each comment in the Comments list table.
 		 *
@@ -911,7 +857,6 @@ class WP_Comments_List_Table extends WP_List_Table {
 		 *                            'Delete', and 'Trash'.
 		 * @param WP_Comment $comment The comment object.
 		 */
->>>>>>> 535c0c1 (initial commit)
 		$actions = apply_filters( 'comment_row_actions', array_filter( $actions ), $comment );
 
 		$always_visible = false;

@@ -848,10 +848,7 @@ class WP_Theme_JSON_Resolver {
 	 * as the value of `_link` object in REST API responses.
 	 *
 	 * @since 6.6.0
-<<<<<<< HEAD
-=======
 	 * @since 6.7.0 Resolve relative paths in block styles.
->>>>>>> 535c0c1 (initial commit)
 	 *
 	 * @param WP_Theme_JSON $theme_json A theme json instance.
 	 * @return array An array of resolved paths.
@@ -864,24 +861,14 @@ class WP_Theme_JSON_Resolver {
 		}
 
 		$theme_json_data = $theme_json->get_raw_data();
-<<<<<<< HEAD
-
-		// Top level styles.
-		$background_image_url = isset( $theme_json_data['styles']['background']['backgroundImage']['url'] ) ? $theme_json_data['styles']['background']['backgroundImage']['url'] : null;
-
-=======
->>>>>>> 535c0c1 (initial commit)
 		/*
 		 * The same file convention when registering web fonts.
 		 * See: WP_Font_Face_Resolver::to_theme_file_uri.
 		 */
 		$placeholder = 'file:./';
-<<<<<<< HEAD
-=======
 
 		// Top level styles.
 		$background_image_url = $theme_json_data['styles']['background']['backgroundImage']['url'] ?? null;
->>>>>>> 535c0c1 (initial commit)
 		if (
 			isset( $background_image_url ) &&
 			is_string( $background_image_url ) &&
@@ -901,8 +888,6 @@ class WP_Theme_JSON_Resolver {
 			$resolved_theme_uris[] = $resolved_theme_uri;
 		}
 
-<<<<<<< HEAD
-=======
 		// Block styles.
 		if ( ! empty( $theme_json_data['styles']['blocks'] ) ) {
 			foreach ( $theme_json_data['styles']['blocks'] as $block_name => $block_styles ) {
@@ -930,7 +915,6 @@ class WP_Theme_JSON_Resolver {
 			}
 		}
 
->>>>>>> 535c0c1 (initial commit)
 		return $resolved_theme_uris;
 	}
 

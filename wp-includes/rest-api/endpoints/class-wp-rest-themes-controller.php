@@ -201,11 +201,7 @@ class WP_REST_Themes_Controller extends WP_REST_Controller {
 		$current_theme = wp_get_theme();
 		$status        = $request['status'];
 
-<<<<<<< HEAD
-		foreach ( $active_themes as $theme_name => $theme ) {
-=======
 		foreach ( $active_themes as $theme ) {
->>>>>>> 2b44096 (initial commit 2)
 			$theme_status = ( $this->is_same_theme( $theme, $current_theme ) ) ? 'active' : 'inactive';
 			if ( is_array( $status ) && ! in_array( $theme_status, $status, true ) ) {
 				continue;

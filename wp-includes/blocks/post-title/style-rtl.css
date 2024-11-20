@@ -2,10 +2,6 @@
   box-sizing:border-box;
   word-break:break-word;
 }
-<<<<<<< HEAD
-.wp-block-post-title a{
-  display:inline-block;
-=======
 .wp-block-post-title :where(a){
   display:inline-block;
   font-family:inherit;
@@ -15,5 +11,4 @@
   letter-spacing:inherit;
   line-height:inherit;
   text-decoration:inherit;
->>>>>>> 535c0c1 (initial commit)
 }

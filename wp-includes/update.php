@@ -31,33 +31,20 @@ function wp_version_check( $extra_stats = array(), $force_check = false ) {
 		return;
 	}
 
-<<<<<<< HEAD
-	// Include an unmodified $wp_version.
-	require ABSPATH . WPINC . '/version.php';
-=======
->>>>>>> 2b44096 (initial commit 2)
 	$php_version = PHP_VERSION;
 
 	$current      = get_site_transient( 'update_core' );
 	$translations = wp_get_installed_translations( 'core' );
 
 	// Invalidate the transient when $wp_version changes.
-<<<<<<< HEAD
-	if ( is_object( $current ) && $wp_version !== $current->version_checked ) {
-=======
 	if ( is_object( $current ) && wp_get_wp_version() !== $current->version_checked ) {
->>>>>>> 2b44096 (initial commit 2)
 		$current = false;
 	}
 
 	if ( ! is_object( $current ) ) {
 		$current                  = new stdClass();
 		$current->updates         = array();
-<<<<<<< HEAD
-		$current->version_checked = $wp_version;
-=======
 		$current->version_checked = wp_get_wp_version();
->>>>>>> 2b44096 (initial commit 2)
 	}
 
 	if ( ! empty( $extra_stats ) ) {
@@ -106,11 +93,7 @@ function wp_version_check( $extra_stats = array(), $force_check = false ) {
 	$extensions = get_loaded_extensions();
 	sort( $extensions, SORT_STRING | SORT_FLAG_CASE );
 	$query = array(
-<<<<<<< HEAD
-		'version'            => $wp_version,
-=======
 		'version'            => wp_get_wp_version(),
->>>>>>> 2b44096 (initial commit 2)
 		'php'                => $php_version,
 		'locale'             => $locale,
 		'mysql'              => $mysql_version,
@@ -132,42 +115,28 @@ function wp_version_check( $extra_stats = array(), $force_check = false ) {
 		// Filter to supported values.
 		$gd_info = array_filter( $gd_info );
 
-<<<<<<< HEAD
-		// Add data for GD WebP and AVIF support.
-=======
 		// Add data for GD WebP, AVIF, HEIC and JPEG XL support.
->>>>>>> 2b44096 (initial commit 2)
 		$query['image_support']['gd'] = array_keys(
 			array_filter(
 				array(
 					'webp' => isset( $gd_info['WebP Support'] ),
 					'avif' => isset( $gd_info['AVIF Support'] ),
-<<<<<<< HEAD
-=======
 					'heic' => isset( $gd_info['HEIC Support'] ),
 					'jxl'  => isset( $gd_info['JXL Support'] ),
->>>>>>> 2b44096 (initial commit 2)
 				)
 			)
 		);
 	}
 
 	if ( class_exists( 'Imagick' ) ) {
-<<<<<<< HEAD
-		// Add data for Imagick WebP and AVIF support.
-=======
 		// Add data for Imagick WebP, AVIF, HEIC and JPEG XL support.
->>>>>>> 2b44096 (initial commit 2)
 		$query['image_support']['imagick'] = array_keys(
 			array_filter(
 				array(
 					'webp' => ! empty( Imagick::queryFormats( 'WEBP' ) ),
 					'avif' => ! empty( Imagick::queryFormats( 'AVIF' ) ),
-<<<<<<< HEAD
-=======
 					'heic' => ! empty( Imagick::queryFormats( 'HEIC' ) ),
 					'jxl'  => ! empty( Imagick::queryFormats( 'JXL' ) ),
->>>>>>> 2b44096 (initial commit 2)
 				)
 			)
 		);
@@ -224,11 +193,7 @@ function wp_version_check( $extra_stats = array(), $force_check = false ) {
 
 	$options = array(
 		'timeout'    => $doing_cron ? 30 : 3,
-<<<<<<< HEAD
-		'user-agent' => 'WordPress/' . $wp_version . '; ' . home_url( '/' ),
-=======
 		'user-agent' => 'WordPress/' . wp_get_wp_version() . '; ' . home_url( '/' ),
->>>>>>> 2b44096 (initial commit 2)
 		'headers'    => array(
 			'wp_install' => $wp_install,
 			'wp_blog'    => home_url( '/' ),
@@ -303,11 +268,7 @@ function wp_version_check( $extra_stats = array(), $force_check = false ) {
 	$updates                  = new stdClass();
 	$updates->updates         = $offers;
 	$updates->last_checked    = time();
-<<<<<<< HEAD
-	$updates->version_checked = $wp_version;
-=======
 	$updates->version_checked = wp_get_wp_version();
->>>>>>> 2b44096 (initial commit 2)
 
 	if ( isset( $body['translations'] ) ) {
 		$updates->translations = $body['translations'];
@@ -356,12 +317,6 @@ function wp_update_plugins( $extra_stats = array() ) {
 		return;
 	}
 
-<<<<<<< HEAD
-	// Include an unmodified $wp_version.
-	require ABSPATH . WPINC . '/version.php';
-
-=======
->>>>>>> 2b44096 (initial commit 2)
 	// If running blog-side, bail unless we've not checked in the last 12 hours.
 	if ( ! function_exists( 'get_plugins' ) ) {
 		require_once ABSPATH . 'wp-admin/includes/plugin.php';
@@ -467,11 +422,7 @@ function wp_update_plugins( $extra_stats = array() ) {
 			'locale'       => wp_json_encode( $locales ),
 			'all'          => wp_json_encode( true ),
 		),
-<<<<<<< HEAD
-		'user-agent' => 'WordPress/' . $wp_version . '; ' . home_url( '/' ),
-=======
 		'user-agent' => 'WordPress/' . wp_get_wp_version() . '; ' . home_url( '/' ),
->>>>>>> 2b44096 (initial commit 2)
 	);
 
 	if ( $extra_stats ) {
@@ -638,12 +589,6 @@ function wp_update_themes( $extra_stats = array() ) {
 		return;
 	}
 
-<<<<<<< HEAD
-	// Include an unmodified $wp_version.
-	require ABSPATH . WPINC . '/version.php';
-
-=======
->>>>>>> 2b44096 (initial commit 2)
 	$installed_themes = wp_get_themes();
 	$translations     = wp_get_installed_translations( 'themes' );
 
@@ -756,11 +701,7 @@ function wp_update_themes( $extra_stats = array() ) {
 			'translations' => wp_json_encode( $translations ),
 			'locale'       => wp_json_encode( $locales ),
 		),
-<<<<<<< HEAD
-		'user-agent' => 'WordPress/' . $wp_version . '; ' . home_url( '/' ),
-=======
 		'user-agent' => 'WordPress/' . wp_get_wp_version() . '; ' . home_url( '/' ),
->>>>>>> 2b44096 (initial commit 2)
 	);
 
 	if ( $extra_stats ) {
@@ -1044,21 +985,11 @@ function wp_get_update_data() {
  * @global string $wp_version The WordPress version string.
  */
 function _maybe_update_core() {
-<<<<<<< HEAD
-	// Include an unmodified $wp_version.
-	require ABSPATH . WPINC . '/version.php';
-
-=======
->>>>>>> 2b44096 (initial commit 2)
 	$current = get_site_transient( 'update_core' );
 
 	if ( isset( $current->last_checked, $current->version_checked )
 		&& 12 * HOUR_IN_SECONDS > ( time() - $current->last_checked )
-<<<<<<< HEAD
-		&& $current->version_checked === $wp_version
-=======
 		&& wp_get_wp_version() === $current->version_checked
->>>>>>> 2b44096 (initial commit 2)
 	) {
 		return;
 	}
@@ -1172,11 +1103,6 @@ function wp_delete_all_temp_backups() {
  * @access private
  *
  * @global WP_Filesystem_Base $wp_filesystem WordPress filesystem subclass.
-<<<<<<< HEAD
- *
- * @return void|WP_Error Void on success, or a WP_Error object on failure.
-=======
->>>>>>> 2b44096 (initial commit 2)
  */
 function _wp_delete_all_temp_backups() {
 	global $wp_filesystem;
@@ -1190,17 +1116,6 @@ function _wp_delete_all_temp_backups() {
 	ob_end_clean();
 
 	if ( false === $credentials || ! WP_Filesystem( $credentials ) ) {
-<<<<<<< HEAD
-		return new WP_Error( 'fs_unavailable', __( 'Could not access filesystem.' ) );
-	}
-
-	if ( ! $wp_filesystem->wp_content_dir() ) {
-		return new WP_Error(
-			'fs_no_content_dir',
-			/* translators: %s: Directory name. */
-			sprintf( __( 'Unable to locate WordPress content directory (%s).' ), 'wp-content' )
-		);
-=======
 		wp_trigger_error( __FUNCTION__, __( 'Could not access filesystem.' ) );
 		return;
 	}
@@ -1212,7 +1127,6 @@ function _wp_delete_all_temp_backups() {
 			sprintf( __( 'Unable to locate WordPress content directory (%s).' ), 'wp-content' )
 		);
 		return;
->>>>>>> 2b44096 (initial commit 2)
 	}
 
 	$temp_backup_dir = $wp_filesystem->wp_content_dir() . 'upgrade-temp-backup/';

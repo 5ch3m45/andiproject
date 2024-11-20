@@ -90,27 +90,15 @@
   content:"";
   left:0;
   outline-color:var(--wp-admin-theme-color);
-<<<<<<< HEAD
-  outline-offset:calc((-1*var(--wp-admin-border-width-focus))/var(--wp-block-editor-iframe-zoom-out-scale, 1));
-  outline-style:solid;
-  outline-width:calc(var(--wp-admin-border-width-focus)/var(--wp-block-editor-iframe-zoom-out-scale, 1));
-=======
   outline-offset:calc(((-1*var(--wp-admin-border-width-focus))/var(--wp-block-editor-iframe-zoom-out-scale, 1))*1);
   outline-style:solid;
   outline-width:calc((var(--wp-admin-border-width-focus)/var(--wp-block-editor-iframe-zoom-out-scale, 1))*1);
->>>>>>> 535c0c1 (initial commit)
   pointer-events:none;
   position:absolute;
   right:0;
   top:0;
   z-index:1;
 }
-<<<<<<< HEAD
-.is-dark-theme .block-editor-block-list__layout .block-editor-block-list__block.is-highlighted:after,.is-dark-theme .block-editor-block-list__layout .block-editor-block-list__block.is-highlighted~.is-multi-selected:after,.is-dark-theme .block-editor-block-list__layout .block-editor-block-list__block:not([contenteditable=true]):focus:after,.is-dark-theme .block-editor-block-list__layout.is-navigate-mode .block-editor-block-list__block.is-selected:after{
-  outline-color:#fff;
-}
-=======
->>>>>>> 535c0c1 (initial commit)
 .block-editor-block-list__layout .is-block-moving-mode.block-editor-block-list__block.is-selected:after{
   border-radius:2px;
   border-top:4px solid #ccc;
@@ -185,10 +173,6 @@
 }
 .block-editor-block-list__layout .block-editor-block-list__block.has-warning:after{
   background-color:#fff6;
-<<<<<<< HEAD
-  border-radius:2px;
-=======
->>>>>>> 535c0c1 (initial commit)
   bottom:0;
   content:"";
   left:0;
@@ -212,34 +196,20 @@
   float:none;
 }
 
-<<<<<<< HEAD
-.is-outline-mode .block-editor-block-list__block:not(.remove-outline).is-selected{
-  cursor:default;
-}
-.is-outline-mode .block-editor-block-list__block:not(.remove-outline).is-selected.rich-text{
-  cursor:unset;
-=======
 .is-outline-mode .block-editor-block-list__block:not(.remove-outline).is-hovered,.is-outline-mode .block-editor-block-list__block:not(.remove-outline).is-selected{
   cursor:default;
 }
 .is-outline-mode .block-editor-block-list__block:not(.remove-outline).is-hovered .rich-text,.is-outline-mode .block-editor-block-list__block:not(.remove-outline).is-hovered.rich-text,.is-outline-mode .block-editor-block-list__block:not(.remove-outline).is-selected .rich-text,.is-outline-mode .block-editor-block-list__block:not(.remove-outline).is-selected.rich-text{
   cursor:auto;
->>>>>>> 535c0c1 (initial commit)
 }
 .is-outline-mode .block-editor-block-list__block:not(.remove-outline).is-hovered:not(.is-selected):after,.is-outline-mode .block-editor-block-list__block:not(.remove-outline):not(.rich-text):not([contenteditable=true]).is-selected:after{
   bottom:0;
   content:"";
   left:0;
   outline-color:var(--wp-admin-theme-color);
-<<<<<<< HEAD
-  outline-offset:calc((-1*var(--wp-admin-border-width-focus))/var(--wp-block-editor-iframe-zoom-out-scale, 1));
-  outline-style:solid;
-  outline-width:calc(var(--wp-admin-border-width-focus)/var(--wp-block-editor-iframe-zoom-out-scale, 1));
-=======
   outline-offset:calc(((-1*var(--wp-admin-border-width-focus))/var(--wp-block-editor-iframe-zoom-out-scale, 1))*1);
   outline-style:solid;
   outline-width:calc((var(--wp-admin-border-width-focus)/var(--wp-block-editor-iframe-zoom-out-scale, 1))*1);
->>>>>>> 535c0c1 (initial commit)
   pointer-events:none;
   position:absolute;
   right:0;
@@ -248,12 +218,6 @@
 .is-outline-mode .block-editor-block-list__block:not(.remove-outline).is-reusable.block-editor-block-list__block:not([contenteditable]):focus:after,.is-outline-mode .block-editor-block-list__block:not(.remove-outline).is-reusable.is-highlighted:after,.is-outline-mode .block-editor-block-list__block:not(.remove-outline).is-reusable.is-hovered:after,.is-outline-mode .block-editor-block-list__block:not(.remove-outline).is-reusable.is-selected:after,.is-outline-mode .block-editor-block-list__block:not(.remove-outline).wp-block-template-part.block-editor-block-list__block:not([contenteditable]):focus:after,.is-outline-mode .block-editor-block-list__block:not(.remove-outline).wp-block-template-part.is-highlighted:after,.is-outline-mode .block-editor-block-list__block:not(.remove-outline).wp-block-template-part.is-hovered:after,.is-outline-mode .block-editor-block-list__block:not(.remove-outline).wp-block-template-part.is-selected:after{
   outline-color:var(--wp-block-synced-color);
 }
-<<<<<<< HEAD
-.is-dark-theme .is-outline-mode .block-editor-block-list__block:not(.remove-outline).is-reusable.block-editor-block-list__block:not([contenteditable]):focus:after,.is-dark-theme .is-outline-mode .block-editor-block-list__block:not(.remove-outline).wp-block-template-part.block-editor-block-list__block:not([contenteditable]):focus:after{
-  outline-color:#fff;
-}
-=======
->>>>>>> 535c0c1 (initial commit)
 
 @keyframes block-editor-is-editable__animation{
   0%{
@@ -395,8 +359,6 @@
   margin-bottom:auto;
 }
 
-<<<<<<< HEAD
-=======
 .block-editor-block-list__zoom-out-separator{
   align-items:center;
   background:#ddd;
@@ -423,7 +385,6 @@
   max-width:none;
 }
 
->>>>>>> 535c0c1 (initial commit)
 .is-vertical .block-list-appender{
   margin-left:12px;
   margin-right:auto;
@@ -524,12 +485,6 @@
   justify-content:center;
   width:100%;
 }
-<<<<<<< HEAD
-.block-editor-button-block-appender.components-button.components-button{
-  padding:12px;
-}
-=======
->>>>>>> 535c0c1 (initial commit)
 .is-dark-theme .block-editor-button-block-appender{
   box-shadow:inset 0 0 0 1px #ffffffa6;
   color:#ffffffa6;
@@ -550,10 +505,6 @@
 }
 .block-editor-block-list__block:not(.is-selected)>.is-layout-constrained.wp-block-group__inner-container>.block-list-appender:only-child:after,.block-editor-block-list__block:not(.is-selected)>.is-layout-flow.wp-block-group__inner-container>.block-list-appender:only-child:after,.is-layout-constrained.block-editor-block-list__block:not(.is-selected)>.block-list-appender:only-child:after,.is-layout-flow.block-editor-block-list__block:not(.is-selected)>.block-list-appender:only-child:after{
   border:1px dashed;
-<<<<<<< HEAD
-  border-radius:2px;
-=======
->>>>>>> 535c0c1 (initial commit)
   bottom:0;
   content:"";
   left:0;
@@ -562,20 +513,6 @@
   right:0;
   top:0;
 }
-<<<<<<< HEAD
-.block-editor-block-list__block:not(.is-selected)>.is-layout-constrained.wp-block-group__inner-container>.block-list-appender:only-child:after:before,.block-editor-block-list__block:not(.is-selected)>.is-layout-flow.wp-block-group__inner-container>.block-list-appender:only-child:after:before,.is-layout-constrained.block-editor-block-list__block:not(.is-selected)>.block-list-appender:only-child:after:before,.is-layout-flow.block-editor-block-list__block:not(.is-selected)>.block-list-appender:only-child:after:before{
-  background:currentColor;
-  bottom:0;
-  content:"";
-  left:0;
-  opacity:.1;
-  pointer-events:none;
-  position:absolute;
-  right:0;
-  top:0;
-}
-=======
->>>>>>> 535c0c1 (initial commit)
 .block-editor-block-list__block:not(.is-selected)>.is-layout-constrained.wp-block-group__inner-container>.block-list-appender:only-child .block-editor-inserter,.block-editor-block-list__block:not(.is-selected)>.is-layout-flow.wp-block-group__inner-container>.block-list-appender:only-child .block-editor-inserter,.is-layout-constrained.block-editor-block-list__block:not(.is-selected)>.block-list-appender:only-child .block-editor-inserter,.is-layout-flow.block-editor-block-list__block:not(.is-selected)>.block-list-appender:only-child .block-editor-inserter{
   opacity:0;
 }
@@ -612,27 +549,15 @@
   outline:1px solid #0000;
 }
 .block-editor-default-block-appender .block-editor-default-block-appender__content{
-<<<<<<< HEAD
-  opacity:.62;
-}
-:where(.wp-site-blocks) .block-editor-default-block-appender>:first-child,:where(body .is-layout-constrained) .block-editor-default-block-appender>:first-child{
-  margin-block-end:0;
-  margin-block-start:0;
-=======
   margin-block-end:0;
   margin-block-start:0;
   opacity:.62;
->>>>>>> 535c0c1 (initial commit)
 }
 .block-editor-default-block-appender .components-drop-zone__content-icon{
   display:none;
 }
 .block-editor-default-block-appender .block-editor-inserter__toggle.components-button.has-icon{
   background:#1e1e1e;
-<<<<<<< HEAD
-  border-radius:2px;
-=======
->>>>>>> 535c0c1 (initial commit)
   color:#fff;
   height:24px;
   min-width:24px;
@@ -708,32 +633,9 @@
   position:relative;
 }
 
-<<<<<<< HEAD
-.block-editor-iframe__container{
-  height:100%;
-  overflow-x:hidden;
-  width:100%;
-}
-
-.block-editor-iframe__scale-container{
-  display:flex;
-  height:100%;
-  width:100%;
-}
-
-.block-editor-iframe__scale-container.is-zoomed-out{
-  margin-left:calc((var(--wp-block-editor-iframe-zoom-out-prev-container-width, 100vw) - var(--wp-block-editor-iframe-zoom-out-container-width, 100vw))*-1/2);
-  width:var(--wp-block-editor-iframe-zoom-out-prev-container-width, 100vw);
-}
-
-.block-editor-iframe__html{
-  transform-origin:top center;
-  transition:transform .3s;
-=======
 .block-editor-iframe__html{
   transform-origin:top center;
   transition:all .4s cubic-bezier(.46, .03, .52, .96),transform 0s,scale 0s,padding 0s;
->>>>>>> 535c0c1 (initial commit)
 }
 @media (prefers-reduced-motion:reduce){
   .block-editor-iframe__html{
@@ -741,21 +643,6 @@
     transition-duration:0s;
   }
 }
-<<<<<<< HEAD
-
-.block-editor-iframe__html.is-zoomed-out{
-  background-color:#ddd;
-  border:calc(var(--wp-block-editor-iframe-zoom-out-frame-size)/var(--wp-block-editor-iframe-zoom-out-scale)) solid #ddd;
-  margin-bottom:calc(var(--wp-block-editor-iframe-zoom-out-content-height)*(1 - var(--wp-block-editor-iframe-zoom-out-scale))*-1 + var(--wp-block-editor-iframe-zoom-out-frame-size)*2*-1 + -2px);
-  transform:scale(var(--wp-block-editor-iframe-zoom-out-scale));
-}
-.block-editor-iframe__html.is-zoomed-out body{
-  display:flex;
-  flex-direction:column;
-  min-height:calc((var(--wp-block-editor-iframe-zoom-out-inner-height) - 2*var(--wp-block-editor-iframe-zoom-out-frame-size))/var(--wp-block-editor-iframe-zoom-out-scale));
-}
-.block-editor-iframe__html.is-zoomed-out body>.is-root-container{
-=======
 .block-editor-iframe__html.zoom-out-animation{
   transition:all .4s cubic-bezier(.46, .03, .52, .96),transform 0s;
 }
@@ -778,17 +665,12 @@
   min-height:calc((var(--wp-block-editor-iframe-zoom-out-inner-height) - 2*var(--wp-block-editor-iframe-zoom-out-frame-size)/var(--wp-block-editor-iframe-zoom-out-scale))/var(--wp-block-editor-iframe-zoom-out-scale));
 }
 .block-editor-iframe__html.is-zoomed-out body>.is-root-container:not(.wp-block-post-content){
->>>>>>> 535c0c1 (initial commit)
   display:flex;
   flex:1;
   flex-direction:column;
   height:100%;
 }
-<<<<<<< HEAD
-.block-editor-iframe__html.is-zoomed-out body>.is-root-container>main{
-=======
 .block-editor-iframe__html.is-zoomed-out body>.is-root-container:not(.wp-block-post-content)>main{
->>>>>>> 535c0c1 (initial commit)
   flex:1;
 }
 
@@ -803,36 +685,14 @@
 }
 
 .block-editor-media-placeholder__url-input-form{
-<<<<<<< HEAD
-  display:flex;
-}
-.block-editor-media-placeholder__url-input-form input[type=url].block-editor-media-placeholder__url-input-field{
-  border:none;
-  border-radius:0;
-  flex-grow:1;
-  margin:2px;
-  min-width:200px;
-  width:100%;
-}
-@media (min-width:600px){
-  .block-editor-media-placeholder__url-input-form input[type=url].block-editor-media-placeholder__url-input-field{
-=======
   min-width:260px;
 }
 @media (min-width:600px){
   .block-editor-media-placeholder__url-input-form{
->>>>>>> 535c0c1 (initial commit)
     width:300px;
   }
 }
 
-<<<<<<< HEAD
-.block-editor-media-placeholder__url-input-submit-button{
-  flex-shrink:1;
-}
-
-=======
->>>>>>> 535c0c1 (initial commit)
 .block-editor-media-placeholder__cancel-button.is-link{
   display:block;
   margin:1em;
@@ -914,28 +774,14 @@ figcaption.block-editor-rich-text__editable [data-rich-text-placeholder]:before{
   display:flex;
   flex-direction:row;
   flex-wrap:wrap;
-<<<<<<< HEAD
-=======
   gap:12px;
->>>>>>> 535c0c1 (initial commit)
   justify-content:space-between;
   width:100%;
 }
 .block-editor-warning .block-editor-warning__actions{
   align-items:center;
   display:flex;
-<<<<<<< HEAD
-  margin-top:1em;
-}
-.block-editor-warning .block-editor-warning__action{
-  margin:0 8px 0 0;
-}
-
-.block-editor-warning__secondary{
-  margin:auto 0 auto 8px;
-=======
   gap:8px;
->>>>>>> 535c0c1 (initial commit)
 }
 
 .components-popover.block-editor-warning__dropdown{

@@ -1530,11 +1530,7 @@
 			}
 
 			// Expand/Collapse accordion sections on click.
-<<<<<<< HEAD
-			section.container.find( '.accordion-section-title, .customize-section-back' ).on( 'click keydown', function( event ) {
-=======
 			section.container.find( '.accordion-section-title button, .customize-section-back' ).on( 'click keydown', function( event ) {
->>>>>>> 535c0c1 (initial commit)
 				if ( api.utils.isKeydownButNotEnterEvent( event ) ) {
 					return;
 				}
@@ -1609,11 +1605,7 @@
 				content = section.contentContainer,
 				overlay = section.headContainer.closest( '.wp-full-overlay' ),
 				backBtn = content.find( '.customize-section-back' ),
-<<<<<<< HEAD
-				sectionTitle = section.headContainer.find( '.accordion-section-title' ).first(),
-=======
 				sectionTitle = section.headContainer.find( '.accordion-section-title button' ).first(),
->>>>>>> 535c0c1 (initial commit)
 				expand, panel;
 
 			if ( expanded && ! content.hasClass( 'open' ) ) {
@@ -1623,12 +1615,6 @@
 				} else {
 					expand = function() {
 						section._animateChangeExpanded( function() {
-<<<<<<< HEAD
-							sectionTitle.attr( 'tabindex', '-1' );
-							backBtn.attr( 'tabindex', '0' );
-
-=======
->>>>>>> 535c0c1 (initial commit)
 							backBtn.trigger( 'focus' );
 							content.css( 'top', '' );
 							container.scrollTop( 0 );
@@ -1674,11 +1660,6 @@
 					}
 				}
 				section._animateChangeExpanded( function() {
-<<<<<<< HEAD
-					backBtn.attr( 'tabindex', '-1' );
-					sectionTitle.attr( 'tabindex', '0' );
-=======
->>>>>>> 535c0c1 (initial commit)
 
 					sectionTitle.trigger( 'focus' );
 					content.css( 'top', '' );
@@ -2713,11 +2694,7 @@
 				container = section.headContainer.closest( '.wp-full-overlay-sidebar-content' ),
 				content = section.contentContainer,
 				backBtn = content.find( '.customize-section-back' ),
-<<<<<<< HEAD
-				sectionTitle = section.headContainer.find( '.accordion-section-title' ).first(),
-=======
 				sectionTitle = section.headContainer.find( '.accordion-section-title button' ).first(),
->>>>>>> 535c0c1 (initial commit)
 				body = $( document.body ),
 				expand, panel;
 
@@ -2737,12 +2714,6 @@
 				} else {
 					expand = function() {
 						section._animateChangeExpanded( function() {
-<<<<<<< HEAD
-							sectionTitle.attr( 'tabindex', '-1' );
-							backBtn.attr( 'tabindex', '0' );
-
-=======
->>>>>>> 535c0c1 (initial commit)
 							backBtn.trigger( 'focus' );
 							content.css( 'top', '' );
 							container.scrollTop( 0 );
@@ -2773,11 +2744,6 @@
 					}
 				}
 				section._animateChangeExpanded( function() {
-<<<<<<< HEAD
-					backBtn.attr( 'tabindex', '-1' );
-					sectionTitle.attr( 'tabindex', '0' );
-=======
->>>>>>> 535c0c1 (initial commit)
 
 					sectionTitle.trigger( 'focus' );
 					content.css( 'top', '' );
@@ -2867,11 +2833,7 @@
 			var meta, panel = this;
 
 			// Expand/Collapse accordion sections on click.
-<<<<<<< HEAD
-			panel.headContainer.find( '.accordion-section-title' ).on( 'click keydown', function( event ) {
-=======
 			panel.headContainer.find( '.accordion-section-title button' ).on( 'click keydown', function( event ) {
->>>>>>> 535c0c1 (initial commit)
 				if ( api.utils.isKeydownButNotEnterEvent( event ) ) {
 					return;
 				}
@@ -2975,11 +2937,7 @@
 				accordionSection = panel.contentContainer,
 				overlay = accordionSection.closest( '.wp-full-overlay' ),
 				container = accordionSection.closest( '.wp-full-overlay-sidebar-content' ),
-<<<<<<< HEAD
-				topPanel = panel.headContainer.find( '.accordion-section-title' ),
-=======
 				topPanel = panel.headContainer.find( '.accordion-section-title button' ),
->>>>>>> 535c0c1 (initial commit)
 				backBtn = accordionSection.find( '.customize-panel-back' ),
 				childSections = panel.sections(),
 				skipTransition;
@@ -3006,12 +2964,6 @@
 					} );
 				} else {
 					panel._animateChangeExpanded( function() {
-<<<<<<< HEAD
-						topPanel.attr( 'tabindex', '-1' );
-						backBtn.attr( 'tabindex', '0' );
-
-=======
->>>>>>> 535c0c1 (initial commit)
 						backBtn.trigger( 'focus' );
 						accordionSection.css( 'top', '' );
 						container.scrollTop( 0 );
@@ -3031,11 +2983,6 @@
 				skipTransition = accordionSection.hasClass( 'skip-transition' );
 				if ( ! skipTransition ) {
 					panel._animateChangeExpanded( function() {
-<<<<<<< HEAD
-						topPanel.attr( 'tabindex', '0' );
-						backBtn.attr( 'tabindex', '-1' );
-=======
->>>>>>> 535c0c1 (initial commit)
 
 						topPanel.focus();
 						accordionSection.css( 'top', '' );
@@ -4640,28 +4587,6 @@
 		 * @return {Object} Options
 		 */
 		calculateImageSelectOptions: function( attachment, controller ) {
-<<<<<<< HEAD
-			var control    = controller.get( 'control' ),
-				flexWidth  = !! parseInt( control.params.flex_width, 10 ),
-				flexHeight = !! parseInt( control.params.flex_height, 10 ),
-				realWidth  = attachment.get( 'width' ),
-				realHeight = attachment.get( 'height' ),
-				xInit = parseInt( control.params.width, 10 ),
-				yInit = parseInt( control.params.height, 10 ),
-				ratio = xInit / yInit,
-				xImg  = xInit,
-				yImg  = yInit,
-				x1, y1, imgSelectOptions;
-
-			controller.set( 'canSkipCrop', ! control.mustBeCropped( flexWidth, flexHeight, xInit, yInit, realWidth, realHeight ) );
-
-			if ( realWidth / realHeight > ratio ) {
-				yInit = realHeight;
-				xInit = yInit * ratio;
-			} else {
-				xInit = realWidth;
-				yInit = xInit / ratio;
-=======
 			var control       = controller.get( 'control' ),
 				flexWidth     = !! parseInt( control.params.flex_width, 10 ),
 				flexHeight    = !! parseInt( control.params.flex_height, 10 ),
@@ -4685,7 +4610,6 @@
 			} else {
 				xInit = realWidth;
 				yInit = xInit / requiredRatio;
->>>>>>> 535c0c1 (initial commit)
 			}
 
 			x1 = ( realWidth - xInit ) / 2;
@@ -4726,15 +4650,6 @@
 		/**
 		 * Return whether the image must be cropped, based on required dimensions.
 		 *
-<<<<<<< HEAD
-		 * @param {boolean} flexW
-		 * @param {boolean} flexH
-		 * @param {number}  dstW
-		 * @param {number}  dstH
-		 * @param {number}  imgW
-		 * @param {number}  imgH
-		 * @return {boolean}
-=======
 		 * @param {boolean} flexW Width is flexible.
 		 * @param {boolean} flexH Height is flexible.
 		 * @param {number}  dstW  Required width.
@@ -4742,7 +4657,6 @@
 		 * @param {number}  imgW  Provided image's width.
 		 * @param {number}  imgH  Provided image's height.
 		 * @return {boolean} Whether cropping is required.
->>>>>>> 535c0c1 (initial commit)
 		 */
 		mustBeCropped: function( flexW, flexH, dstW, dstH, imgW, imgH ) {
 			if ( true === flexW && true === flexH ) {
@@ -4769,8 +4683,6 @@
 		},
 
 		/**
-<<<<<<< HEAD
-=======
 		 * Check if the image's aspect ratio essentially matches the required aspect ratio.
 		 *
 		 * Floating point precision is low, so this allows a small tolerance. This
@@ -4790,7 +4702,6 @@
 		},
 
 		/**
->>>>>>> 535c0c1 (initial commit)
 		 * If cropping was skipped, apply the image data directly to the setting.
 		 */
 		onSkippedCrop: function() {

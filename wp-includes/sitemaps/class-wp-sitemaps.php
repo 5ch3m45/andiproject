@@ -75,10 +75,6 @@ class WP_Sitemaps {
 		$this->register_sitemaps();
 
 		// Add additional action callbacks.
-<<<<<<< HEAD
-		add_filter( 'pre_handle_404', array( $this, 'redirect_sitemapxml' ), 10, 2 );
-=======
->>>>>>> 2b44096 (initial commit 2)
 		add_filter( 'robots_txt', array( $this, 'add_robots' ), 0, 2 );
 	}
 
@@ -226,21 +222,15 @@ class WP_Sitemaps {
 	 * Redirects a URL to the wp-sitemap.xml
 	 *
 	 * @since 5.5.0
-<<<<<<< HEAD
-=======
 	 * @deprecated 6.7.0 Deprecated in favor of {@see WP_Rewrite::rewrite_rules()}
->>>>>>> 2b44096 (initial commit 2)
 	 *
 	 * @param bool     $bypass Pass-through of the pre_handle_404 filter value.
 	 * @param WP_Query $query  The WP_Query object.
 	 * @return bool Bypass value.
 	 */
 	public function redirect_sitemapxml( $bypass, $query ) {
-<<<<<<< HEAD
-=======
 		_deprecated_function( __FUNCTION__, '6.7.0' );
 
->>>>>>> 2b44096 (initial commit 2)
 		// If a plugin has already utilized the pre_handle_404 function, return without action to avoid conflicts.
 		if ( $bypass ) {
 			return $bypass;

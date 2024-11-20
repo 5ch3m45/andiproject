@@ -64,10 +64,6 @@
 		},
 		"interactivity": {
 			"clientNavigation": true
-<<<<<<< HEAD
-		}
-	},
-=======
 		},
 		"__experimentalBorder": {
 			"radius": true,
@@ -83,6 +79,5 @@
 		}
 	},
 	"editorStyle": "wp-block-post-author-editor",
->>>>>>> 535c0c1 (initial commit)
 	"style": "wp-block-post-author"
 }

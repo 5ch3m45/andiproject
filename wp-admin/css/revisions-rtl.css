@@ -459,12 +459,7 @@ div.revisions-controls > .wp-slider > .ui-slider-handle {
 	touch-action: none;
 }
 
-<<<<<<< HEAD
-.wp-slider .ui-slider-handle,
-.wp-slider .ui-slider-handle.focus {
-=======
 .wp-slider .ui-slider-handle {
->>>>>>> 535c0c1 (initial commit)
 	background: #f6f7f7;
 	border: 1px solid #c3c4c7;
 	box-shadow: 0 1px 0 #c3c4c7;
@@ -484,8 +479,6 @@ div.revisions-controls > .wp-slider > .ui-slider-handle {
 	transform: translateY(1px);
 }
 
-<<<<<<< HEAD
-=======
 .wp-slider .ui-slider-handle:focus,
 .wp-slider .ui-slider-handle.ui-state-focus {
 	background: #f0f0f1;
@@ -495,7 +488,6 @@ div.revisions-controls > .wp-slider > .ui-slider-handle {
 	outline: 2px solid transparent;
 }
 
->>>>>>> 535c0c1 (initial commit)
 .wp-slider .ui-slider-handle:before {
 	background: none;
 	position: absolute;

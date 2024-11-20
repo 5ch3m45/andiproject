@@ -37,8 +37,6 @@ class WP_Font_Face_Resolver {
 	}
 
 	/**
-<<<<<<< HEAD
-=======
 	 * Gets fonts defined in style variations.
 	 *
 	 * @since 6.7.0
@@ -71,7 +69,6 @@ class WP_Font_Face_Resolver {
 	}
 
 	/**
->>>>>>> 535c0c1 (initial commit)
 	 * Parse theme.json settings to extract font definitions with variations grouped by font-family.
 	 *
 	 * @since 6.4.0

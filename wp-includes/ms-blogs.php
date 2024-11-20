@@ -554,10 +554,7 @@ function switch_to_blog( $new_blog_id, $deprecated = null ) {
 						'blog-lookup',
 						'blog_meta',
 						'global-posts',
-<<<<<<< HEAD
-=======
 						'image_editor',
->>>>>>> 2b44096 (initial commit 2)
 						'networks',
 						'network-queries',
 						'sites',
@@ -652,10 +649,7 @@ function restore_current_blog() {
 						'blog-lookup',
 						'blog_meta',
 						'global-posts',
-<<<<<<< HEAD
-=======
 						'image_editor',
->>>>>>> 2b44096 (initial commit 2)
 						'networks',
 						'network-queries',
 						'sites',

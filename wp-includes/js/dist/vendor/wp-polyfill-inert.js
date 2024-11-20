@@ -15,11 +15,7 @@
 
   (function () {
     // Return early if we're not running inside of the browser.
-<<<<<<< HEAD
-    if (typeof window === 'undefined') {
-=======
     if (typeof window === 'undefined' || typeof Element === 'undefined') {
->>>>>>> 2b44096 (initial commit 2)
       return;
     }
 
@@ -34,11 +30,7 @@
     var matches = Element.prototype.matches || Element.prototype.msMatchesSelector;
 
     /** @type {string} */
-<<<<<<< HEAD
-    var _focusableElementsString = ['a[href]', 'area[href]', 'input:not([disabled])', 'select:not([disabled])', 'textarea:not([disabled])', 'button:not([disabled])', 'details', 'summary', 'iframe', 'object', 'embed', '[contenteditable]'].join(',');
-=======
     var _focusableElementsString = ['a[href]', 'area[href]', 'input:not([disabled])', 'select:not([disabled])', 'textarea:not([disabled])', 'button:not([disabled])', 'details', 'summary', 'iframe', 'object', 'embed', 'video', '[contenteditable]'].join(',');
->>>>>>> 2b44096 (initial commit 2)
 
     /**
      * `InertRoot` manages a single inert subtree, i.e. a DOM subtree whose root element has an `inert`

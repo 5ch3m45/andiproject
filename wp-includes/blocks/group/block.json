@@ -45,10 +45,7 @@
 				"text": true
 			}
 		},
-<<<<<<< HEAD
-=======
 		"shadow": true,
->>>>>>> 535c0c1 (initial commit)
 		"spacing": {
 			"margin": [ "top", "bottom" ],
 			"padding": true,

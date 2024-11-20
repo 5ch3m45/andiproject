@@ -2299,10 +2299,7 @@ __webpack_require__.d(__webpack_exports__, {
   useDebounce: () => (/* reexport */ useDebounce),
   useDebouncedInput: () => (/* reexport */ useDebouncedInput),
   useDisabled: () => (/* reexport */ useDisabled),
-<<<<<<< HEAD
-=======
   useEvent: () => (/* reexport */ useEvent),
->>>>>>> 535c0c1 (initial commit)
   useFocusOnMount: () => (/* reexport */ useFocusOnMount),
   useFocusReturn: () => (/* reexport */ use_focus_return),
   useFocusableIframe: () => (/* reexport */ useFocusableIframe),
@@ -2315,11 +2312,7 @@ __webpack_require__.d(__webpack_exports__, {
   usePrevious: () => (/* reexport */ usePrevious),
   useReducedMotion: () => (/* reexport */ use_reduced_motion),
   useRefEffect: () => (/* reexport */ useRefEffect),
-<<<<<<< HEAD
-  useResizeObserver: () => (/* reexport */ useResizeAware),
-=======
   useResizeObserver: () => (/* reexport */ use_resize_observer_useResizeObserver),
->>>>>>> 535c0c1 (initial commit)
   useStateWithHistory: () => (/* reexport */ useStateWithHistory),
   useThrottle: () => (/* reexport */ useThrottle),
   useViewportMatch: () => (/* reexport */ use_viewport_match),
@@ -2345,11 +2338,7 @@ LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
-<<<<<<< HEAD
-/* global Reflect, Promise, SuppressedError, Symbol */
-=======
 /* global Reflect, Promise, SuppressedError, Symbol, Iterator */
->>>>>>> 535c0c1 (initial commit)
 
 var extendStatics = function(d, b) {
   extendStatics = Object.setPrototypeOf ||
@@ -2460,13 +2449,8 @@ function __awaiter(thisArg, _arguments, P, generator) {
 }
 
 function __generator(thisArg, body) {
-<<<<<<< HEAD
-  var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-  return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-=======
   var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
   return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
->>>>>>> 535c0c1 (initial commit)
   function verb(n) { return function (v) { return step([n, v]); }; }
   function step(op) {
       if (f) throw new TypeError("Generator is already executing.");
@@ -2570,14 +2554,9 @@ function __await(v) {
 function __asyncGenerator(thisArg, _arguments, generator) {
   if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
   var g = generator.apply(thisArg, _arguments || []), i, q = [];
-<<<<<<< HEAD
-  return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
-  function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
-=======
   return i = Object.create((typeof AsyncIterator === "function" ? AsyncIterator : Object).prototype), verb("next"), verb("throw"), verb("return", awaitReturn), i[Symbol.asyncIterator] = function () { return this; }, i;
   function awaitReturn(f) { return function (v) { return Promise.resolve(v).then(f, reject); }; }
   function verb(n, f) { if (g[n]) { i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; if (f) i[n] = f(i[n]); } }
->>>>>>> 535c0c1 (initial commit)
   function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
   function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
   function fulfill(value) { resume("next", value); }
@@ -2643,18 +2622,6 @@ function __classPrivateFieldIn(state, receiver) {
 function __addDisposableResource(env, value, async) {
   if (value !== null && value !== void 0) {
     if (typeof value !== "object" && typeof value !== "function") throw new TypeError("Object expected.");
-<<<<<<< HEAD
-    var dispose;
-    if (async) {
-        if (!Symbol.asyncDispose) throw new TypeError("Symbol.asyncDispose is not defined.");
-        dispose = value[Symbol.asyncDispose];
-    }
-    if (dispose === void 0) {
-        if (!Symbol.dispose) throw new TypeError("Symbol.dispose is not defined.");
-        dispose = value[Symbol.dispose];
-    }
-    if (typeof dispose !== "function") throw new TypeError("Object not disposable.");
-=======
     var dispose, inner;
     if (async) {
       if (!Symbol.asyncDispose) throw new TypeError("Symbol.asyncDispose is not defined.");
@@ -2667,7 +2634,6 @@ function __addDisposableResource(env, value, async) {
     }
     if (typeof dispose !== "function") throw new TypeError("Object not disposable.");
     if (inner) dispose = function() { try { inner.call(this); } catch (e) { return Promise.reject(e); } };
->>>>>>> 535c0c1 (initial commit)
     env.stack.push({ value: value, dispose: dispose, async: async });
   }
   else if (async) {
@@ -2686,19 +2652,6 @@ function __disposeResources(env) {
     env.error = env.hasError ? new _SuppressedError(e, env.error, "An error was suppressed during disposal.") : e;
     env.hasError = true;
   }
-<<<<<<< HEAD
-  function next() {
-    while (env.stack.length) {
-      var rec = env.stack.pop();
-      try {
-        var result = rec.dispose && rec.dispose.call(rec.value);
-        if (rec.async) return Promise.resolve(result).then(next, function(e) { fail(e); return next(); });
-      }
-      catch (e) {
-          fail(e);
-      }
-    }
-=======
   var r, s = 0;
   function next() {
     while (r = env.stack.pop()) {
@@ -2715,7 +2668,6 @@ function __disposeResources(env) {
       }
     }
     if (s === 1) return env.hasError ? Promise.reject(env.error) : Promise.resolve();
->>>>>>> 535c0c1 (initial commit)
     if (env.hasError) throw env.error;
   }
   return next();
@@ -3600,12 +3552,7 @@ function useInstanceId(object, prefix, preferredId) {
 
 
 /**
-<<<<<<< HEAD
- * A Higher Order Component used to be provide a unique instance ID by
- * component.
-=======
  * A Higher Order Component used to provide a unique instance ID by component.
->>>>>>> 535c0c1 (initial commit)
  */
 const withInstanceId = createHigherOrderComponent(WrappedComponent => {
   return props => {
@@ -3760,21 +3707,12 @@ const external_wp_dom_namespaceObject = window["wp"]["dom"];
  * @return Ref callback.
  */
 function useRefEffect(callback, dependencies) {
-<<<<<<< HEAD
-  const cleanup = (0,external_wp_element_namespaceObject.useRef)();
-  return (0,external_wp_element_namespaceObject.useCallback)(node => {
-    if (node) {
-      cleanup.current = callback(node);
-    } else if (cleanup.current) {
-      cleanup.current();
-=======
   const cleanupRef = (0,external_wp_element_namespaceObject.useRef)();
   return (0,external_wp_element_namespaceObject.useCallback)(node => {
     if (node) {
       cleanupRef.current = callback(node);
     } else if (cleanupRef.current) {
       cleanupRef.current();
->>>>>>> 535c0c1 (initial commit)
     }
   }, dependencies);
 }
@@ -3905,11 +3843,7 @@ function useCopyOnClick(ref, text, timeout = 4000) {
   });
 
   /** @type {import('react').MutableRefObject<Clipboard | undefined>} */
-<<<<<<< HEAD
-  const clipboard = (0,external_wp_element_namespaceObject.useRef)();
-=======
   const clipboardRef = (0,external_wp_element_namespaceObject.useRef)();
->>>>>>> 535c0c1 (initial commit)
   const [hasCopied, setHasCopied] = (0,external_wp_element_namespaceObject.useState)(false);
   (0,external_wp_element_namespaceObject.useEffect)(() => {
     /** @type {number | undefined} */
@@ -3919,17 +3853,10 @@ function useCopyOnClick(ref, text, timeout = 4000) {
     }
 
     // Clipboard listens to click events.
-<<<<<<< HEAD
-    clipboard.current = new (clipboard_default())(ref.current, {
-      text: () => typeof text === 'function' ? text() : text
-    });
-    clipboard.current.on('success', ({
-=======
     clipboardRef.current = new (clipboard_default())(ref.current, {
       text: () => typeof text === 'function' ? text() : text
     });
     clipboardRef.current.on('success', ({
->>>>>>> 535c0c1 (initial commit)
       clearSelection,
       trigger
     }) => {
@@ -3949,13 +3876,8 @@ function useCopyOnClick(ref, text, timeout = 4000) {
       }
     });
     return () => {
-<<<<<<< HEAD
-      if (clipboard.current) {
-        clipboard.current.destroy();
-=======
       if (clipboardRef.current) {
         clipboardRef.current.destroy();
->>>>>>> 535c0c1 (initial commit)
       }
       clearTimeout(timeoutId);
     };
@@ -4083,11 +4005,7 @@ function useFocusOnMount(focusOnMount = 'firstElement') {
   };
 
   /** @type {import('react').MutableRefObject<ReturnType<setTimeout> | undefined>} */
-<<<<<<< HEAD
-  const timerId = (0,external_wp_element_namespaceObject.useRef)();
-=======
   const timerIdRef = (0,external_wp_element_namespaceObject.useRef)();
->>>>>>> 535c0c1 (initial commit)
   (0,external_wp_element_namespaceObject.useEffect)(() => {
     focusOnMountRef.current = focusOnMount;
   }, [focusOnMount]);
@@ -4099,21 +4017,6 @@ function useFocusOnMount(focusOnMount = 'firstElement') {
     if (node.contains((_node$ownerDocument$a = node.ownerDocument?.activeElement) !== null && _node$ownerDocument$a !== void 0 ? _node$ownerDocument$a : null)) {
       return;
     }
-<<<<<<< HEAD
-    if (focusOnMountRef.current === 'firstElement') {
-      timerId.current = setTimeout(() => {
-        const firstTabbable = external_wp_dom_namespaceObject.focus.tabbable.find(node)[0];
-        if (firstTabbable) {
-          setFocus(firstTabbable);
-        }
-      }, 0);
-      return;
-    }
-    setFocus(node);
-    return () => {
-      if (timerId.current) {
-        clearTimeout(timerId.current);
-=======
     if (focusOnMountRef.current !== 'firstElement') {
       setFocus(node);
       return;
@@ -4127,7 +4030,6 @@ function useFocusOnMount(focusOnMount = 'firstElement') {
     return () => {
       if (timerIdRef.current) {
         clearTimeout(timerIdRef.current);
->>>>>>> 535c0c1 (initial commit)
       }
     };
   }, []);
@@ -4258,31 +4160,18 @@ function isFocusNormalizedButton(eventTarget) {
  * wrapping element element to capture when focus moves outside that element.
  */
 function useFocusOutside(onFocusOutside) {
-<<<<<<< HEAD
-  const currentOnFocusOutside = (0,external_wp_element_namespaceObject.useRef)(onFocusOutside);
-  (0,external_wp_element_namespaceObject.useEffect)(() => {
-    currentOnFocusOutside.current = onFocusOutside;
-  }, [onFocusOutside]);
-  const preventBlurCheck = (0,external_wp_element_namespaceObject.useRef)(false);
-  const blurCheckTimeoutId = (0,external_wp_element_namespaceObject.useRef)();
-=======
   const currentOnFocusOutsideRef = (0,external_wp_element_namespaceObject.useRef)(onFocusOutside);
   (0,external_wp_element_namespaceObject.useEffect)(() => {
     currentOnFocusOutsideRef.current = onFocusOutside;
   }, [onFocusOutside]);
   const preventBlurCheckRef = (0,external_wp_element_namespaceObject.useRef)(false);
   const blurCheckTimeoutIdRef = (0,external_wp_element_namespaceObject.useRef)();
->>>>>>> 535c0c1 (initial commit)
 
   /**
    * Cancel a blur check timeout.
    */
   const cancelBlurCheck = (0,external_wp_element_namespaceObject.useCallback)(() => {
-<<<<<<< HEAD
-    clearTimeout(blurCheckTimeoutId.current);
-=======
     clearTimeout(blurCheckTimeoutIdRef.current);
->>>>>>> 535c0c1 (initial commit)
   }, []);
 
   // Cancel blur checks on unmount.
@@ -4314,15 +4203,9 @@ function useFocusOutside(onFocusOutside) {
     } = event;
     const isInteractionEnd = ['mouseup', 'touchend'].includes(type);
     if (isInteractionEnd) {
-<<<<<<< HEAD
-      preventBlurCheck.current = false;
-    } else if (isFocusNormalizedButton(target)) {
-      preventBlurCheck.current = true;
-=======
       preventBlurCheckRef.current = false;
     } else if (isFocusNormalizedButton(target)) {
       preventBlurCheckRef.current = true;
->>>>>>> 535c0c1 (initial commit)
     }
   }, []);
 
@@ -4339,11 +4222,7 @@ function useFocusOutside(onFocusOutside) {
     event.persist();
 
     // Skip blur check if clicking button. See `normalizeButtonFocus`.
-<<<<<<< HEAD
-    if (preventBlurCheck.current) {
-=======
     if (preventBlurCheckRef.current) {
->>>>>>> 535c0c1 (initial commit)
       return;
     }
 
@@ -4358,11 +4237,7 @@ function useFocusOutside(onFocusOutside) {
     if (ignoreForRelatedTarget && event.relatedTarget?.closest(ignoreForRelatedTarget)) {
       return;
     }
-<<<<<<< HEAD
-    blurCheckTimeoutId.current = setTimeout(() => {
-=======
     blurCheckTimeoutIdRef.current = setTimeout(() => {
->>>>>>> 535c0c1 (initial commit)
       // If document is not focused then focus should remain
       // inside the wrapped component and therefore we cancel
       // this blur event thereby leaving focus in place.
@@ -4371,13 +4246,8 @@ function useFocusOutside(onFocusOutside) {
         event.preventDefault();
         return;
       }
-<<<<<<< HEAD
-      if ('function' === typeof currentOnFocusOutside.current) {
-        currentOnFocusOutside.current(event);
-=======
       if ('function' === typeof currentOnFocusOutsideRef.current) {
         currentOnFocusOutsideRef.current(event);
->>>>>>> 535c0c1 (initial commit)
       }
     }, 0);
   }, []);
@@ -4464,19 +4334,6 @@ function assignRef(ref, value) {
  */
 function useMergeRefs(refs) {
   const element = (0,external_wp_element_namespaceObject.useRef)();
-<<<<<<< HEAD
-  const isAttached = (0,external_wp_element_namespaceObject.useRef)(false);
-  const didElementChange = (0,external_wp_element_namespaceObject.useRef)(false);
-  /* eslint-disable jsdoc/no-undefined-types */
-  /** @type {import('react').MutableRefObject<TRef[]>} */
-  /* eslint-enable jsdoc/no-undefined-types */
-  const previousRefs = (0,external_wp_element_namespaceObject.useRef)([]);
-  const currentRefs = (0,external_wp_element_namespaceObject.useRef)(refs);
-
-  // Update on render before the ref callback is called, so the ref callback
-  // always has access to the current refs.
-  currentRefs.current = refs;
-=======
   const isAttachedRef = (0,external_wp_element_namespaceObject.useRef)(false);
   const didElementChangeRef = (0,external_wp_element_namespaceObject.useRef)(false);
   /* eslint-disable jsdoc/no-undefined-types */
@@ -4488,42 +4345,27 @@ function useMergeRefs(refs) {
   // Update on render before the ref callback is called, so the ref callback
   // always has access to the current refs.
   currentRefsRef.current = refs;
->>>>>>> 535c0c1 (initial commit)
 
   // If any of the refs change, call the previous ref with `null` and the new
   // ref with the node, except when the element changes in the same cycle, in
   // which case the ref callbacks will already have been called.
   (0,external_wp_element_namespaceObject.useLayoutEffect)(() => {
-<<<<<<< HEAD
-    if (didElementChange.current === false && isAttached.current === true) {
-      refs.forEach((ref, index) => {
-        const previousRef = previousRefs.current[index];
-=======
     if (didElementChangeRef.current === false && isAttachedRef.current === true) {
       refs.forEach((ref, index) => {
         const previousRef = previousRefsRef.current[index];
->>>>>>> 535c0c1 (initial commit)
         if (ref !== previousRef) {
           assignRef(previousRef, null);
           assignRef(ref, element.current);
         }
       });
     }
-<<<<<<< HEAD
-    previousRefs.current = refs;
-=======
     previousRefsRef.current = refs;
->>>>>>> 535c0c1 (initial commit)
   }, refs);
 
   // No dependencies, must be reset after every render so ref callbacks are
   // correctly called after a ref change.
   (0,external_wp_element_namespaceObject.useLayoutEffect)(() => {
-<<<<<<< HEAD
-    didElementChange.current = false;
-=======
     didElementChangeRef.current = false;
->>>>>>> 535c0c1 (initial commit)
   });
 
   // There should be no dependencies so that `callback` is only called when
@@ -4532,21 +4374,12 @@ function useMergeRefs(refs) {
     // Update the element so it can be used when calling ref callbacks on a
     // dependency change.
     assignRef(element, value);
-<<<<<<< HEAD
-    didElementChange.current = true;
-    isAttached.current = value !== null;
-
-    // When an element changes, the current ref callback should be called
-    // with the new element and the previous one with `null`.
-    const refsToAssign = value ? currentRefs.current : previousRefs.current;
-=======
     didElementChangeRef.current = true;
     isAttachedRef.current = value !== null;
 
     // When an element changes, the current ref callback should be called
     // with the new element and the previous one with `null`.
     const refsToAssign = value ? currentRefsRef.current : previousRefsRef.current;
->>>>>>> 535c0c1 (initial commit)
 
     // Update the latest refs.
     for (const ref of refsToAssign) {
@@ -4705,8 +4538,6 @@ function useDisabled({
   }, [isDisabledProp]);
 }
 
-<<<<<<< HEAD
-=======
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-event/index.js
 /**
  * WordPress dependencies
@@ -4753,7 +4584,6 @@ callback) {
   return (0,external_wp_element_namespaceObject.useCallback)((...args) => ref.current?.(...args), []);
 }
 
->>>>>>> 535c0c1 (initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-isomorphic-layout-effect/index.js
 /**
  * WordPress dependencies
@@ -4888,15 +4718,9 @@ shortcuts, callback, {
   // This is important for performance considerations.
   target
 } = {}) {
-<<<<<<< HEAD
-  const currentCallback = (0,external_wp_element_namespaceObject.useRef)(callback);
-  (0,external_wp_element_namespaceObject.useEffect)(() => {
-    currentCallback.current = callback;
-=======
   const currentCallbackRef = (0,external_wp_element_namespaceObject.useRef)(callback);
   (0,external_wp_element_namespaceObject.useEffect)(() => {
     currentCallbackRef.current = callback;
->>>>>>> 535c0c1 (initial commit)
   }, [callback]);
   (0,external_wp_element_namespaceObject.useEffect)(() => {
     if (isDisabled) {
@@ -4926,11 +4750,7 @@ shortcuts, callback, {
       // @ts-ignore `bindGlobal` is an undocumented property
       mousetrap[bindFn](shortcut, ( /* eslint-disable jsdoc/valid-types */
       /** @type {[e: import('mousetrap').ExtendedKeyboardEvent, combo: string]} */...args) => /* eslint-enable jsdoc/valid-types */
-<<<<<<< HEAD
-      currentCallback.current(...args), eventName);
-=======
       currentCallbackRef.current(...args), eventName);
->>>>>>> 535c0c1 (initial commit)
     });
     return () => {
       mousetrap.reset();
@@ -5141,11 +4961,7 @@ function useStateWithHistory(initialValue) {
 
 
 /**
-<<<<<<< HEAD
- * @typedef {"huge" | "wide" | "large" | "medium" | "small" | "mobile"} WPBreakpoint
-=======
  * @typedef {"xhuge" | "huge" | "wide" | "xlarge" | "large" | "medium" | "small" | "mobile"} WPBreakpoint
->>>>>>> 535c0c1 (initial commit)
  */
 
 /**
@@ -5156,15 +4972,10 @@ function useStateWithHistory(initialValue) {
  * @type {Record<WPBreakpoint, number>}
  */
 const BREAKPOINTS = {
-<<<<<<< HEAD
-  huge: 1440,
-  wide: 1280,
-=======
   xhuge: 1920,
   huge: 1440,
   wide: 1280,
   xlarge: 1080,
->>>>>>> 535c0c1 (initial commit)
   large: 960,
   medium: 782,
   small: 600,
@@ -5223,9 +5034,6 @@ const useViewportMatch = (breakpoint, operator = '>=') => {
 useViewportMatch.__experimentalWidthProvider = ViewportMatchWidthContext.Provider;
 /* harmony default export */ const use_viewport_match = (useViewportMatch);
 
-<<<<<<< HEAD
-;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-resize-observer/index.js
-=======
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-resize-observer/use-resize-observer.js
 /**
  * WordPress dependencies
@@ -5271,7 +5079,6 @@ function useResizeObserver(callback, resizeObserverOptions = {}) {
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-resize-observer/legacy/index.js
->>>>>>> 535c0c1 (initial commit)
 /**
  * External dependencies
  */
@@ -5280,69 +5087,10 @@ function useResizeObserver(callback, resizeObserverOptions = {}) {
  * WordPress dependencies
  */
 
-<<<<<<< HEAD
-
-// This of course could've been more streamlined with internal state instead of
-// refs, but then host hooks / components could not opt out of renders.
-// This could've been exported to its own module, but the current build doesn't
-// seem to work with module imports and I had no more time to spend on this...
-function useResolvedElement(subscriber, refOrElement) {
-  const callbackRefElement = (0,external_wp_element_namespaceObject.useRef)(null);
-  const lastReportRef = (0,external_wp_element_namespaceObject.useRef)(null);
-  const cleanupRef = (0,external_wp_element_namespaceObject.useRef)();
-  const callSubscriber = (0,external_wp_element_namespaceObject.useCallback)(() => {
-    let element = null;
-    if (callbackRefElement.current) {
-      element = callbackRefElement.current;
-    } else if (refOrElement) {
-      if (refOrElement instanceof HTMLElement) {
-        element = refOrElement;
-      } else {
-        element = refOrElement.current;
-      }
-    }
-    if (lastReportRef.current && lastReportRef.current.element === element && lastReportRef.current.reporter === callSubscriber) {
-      return;
-    }
-    if (cleanupRef.current) {
-      cleanupRef.current();
-      // Making sure the cleanup is not called accidentally multiple times.
-      cleanupRef.current = null;
-    }
-    lastReportRef.current = {
-      reporter: callSubscriber,
-      element
-    };
-
-    // Only calling the subscriber, if there's an actual element to report.
-    if (element) {
-      cleanupRef.current = subscriber(element);
-    }
-  }, [refOrElement, subscriber]);
-
-  // On each render, we check whether a ref changed, or if we got a new raw
-  // element.
-  (0,external_wp_element_namespaceObject.useEffect)(() => {
-    // With this we're *technically* supporting cases where ref objects' current value changes, but only if there's a
-    // render accompanying that change as well.
-    // To guarantee we always have the right element, one must use the ref callback provided instead, but we support
-    // RefObjects to make the hook API more convenient in certain cases.
-    callSubscriber();
-  }, [callSubscriber]);
-  return (0,external_wp_element_namespaceObject.useCallback)(element => {
-    callbackRefElement.current = element;
-    callSubscriber();
-  }, [callSubscriber]);
-}
-
-// Declaring my own type here instead of using the one provided by TS (available since 4.2.2), because this way I'm not
-// forcing consumers to use a specific TS version.
-=======
 /**
  * Internal dependencies
  */
 
->>>>>>> 535c0c1 (initial commit)
 
 // We're only using the first element of the size sequences, until future versions of the spec solidify on how
 // exactly it'll be used for fragments in multi-column scenarios:
@@ -5369,117 +5117,6 @@ function useResolvedElement(subscriber, refOrElement) {
 // even though it seems we have access to results for all box types.
 // This also means that we get to keep the current api, being able to return a simple { width, height } pair,
 // regardless of box option.
-<<<<<<< HEAD
-const extractSize = (entry, boxProp, sizeType) => {
-  if (!entry[boxProp]) {
-    if (boxProp === 'contentBoxSize') {
-      // The dimensions in `contentBoxSize` and `contentRect` are equivalent according to the spec.
-      // See the 6th step in the description for the RO algorithm:
-      // https://drafts.csswg.org/resize-observer/#create-and-populate-resizeobserverentry-h
-      // > Set this.contentRect to logical this.contentBoxSize given target and observedBox of "content-box".
-      // In real browser implementations of course these objects differ, but the width/height values should be equivalent.
-      return entry.contentRect[sizeType === 'inlineSize' ? 'width' : 'height'];
-    }
-    return undefined;
-  }
-
-  // A couple bytes smaller than calling Array.isArray() and just as effective here.
-  return entry[boxProp][0] ? entry[boxProp][0][sizeType] :
-  // TS complains about this, because the RO entry type follows the spec and does not reflect Firefox's current
-  // behaviour of returning objects instead of arrays for `borderBoxSize` and `contentBoxSize`.
-  // @ts-ignore
-  entry[boxProp][sizeType];
-};
-function useResizeObserver(opts = {}) {
-  // Saving the callback as a ref. With this, I don't need to put onResize in the
-  // effect dep array, and just passing in an anonymous function without memoising
-  // will not reinstantiate the hook's ResizeObserver.
-  const onResize = opts.onResize;
-  const onResizeRef = (0,external_wp_element_namespaceObject.useRef)(undefined);
-  onResizeRef.current = onResize;
-  const round = opts.round || Math.round;
-
-  // Using a single instance throughout the hook's lifetime
-  const resizeObserverRef = (0,external_wp_element_namespaceObject.useRef)();
-  const [size, setSize] = (0,external_wp_element_namespaceObject.useState)({
-    width: undefined,
-    height: undefined
-  });
-
-  // In certain edge cases the RO might want to report a size change just after
-  // the component unmounted.
-  const didUnmount = (0,external_wp_element_namespaceObject.useRef)(false);
-  (0,external_wp_element_namespaceObject.useEffect)(() => {
-    didUnmount.current = false;
-    return () => {
-      didUnmount.current = true;
-    };
-  }, []);
-
-  // Using a ref to track the previous width / height to avoid unnecessary renders.
-  const previous = (0,external_wp_element_namespaceObject.useRef)({
-    width: undefined,
-    height: undefined
-  });
-
-  // This block is kinda like a useEffect, only it's called whenever a new
-  // element could be resolved based on the ref option. It also has a cleanup
-  // function.
-  const refCallback = useResolvedElement((0,external_wp_element_namespaceObject.useCallback)(element => {
-    // We only use a single Resize Observer instance, and we're instantiating it on demand, only once there's something to observe.
-    // This instance is also recreated when the `box` option changes, so that a new observation is fired if there was a previously observed element with a different box option.
-    if (!resizeObserverRef.current || resizeObserverRef.current.box !== opts.box || resizeObserverRef.current.round !== round) {
-      resizeObserverRef.current = {
-        box: opts.box,
-        round,
-        instance: new ResizeObserver(entries => {
-          const entry = entries[0];
-          let boxProp = 'borderBoxSize';
-          if (opts.box === 'border-box') {
-            boxProp = 'borderBoxSize';
-          } else {
-            boxProp = opts.box === 'device-pixel-content-box' ? 'devicePixelContentBoxSize' : 'contentBoxSize';
-          }
-          const reportedWidth = extractSize(entry, boxProp, 'inlineSize');
-          const reportedHeight = extractSize(entry, boxProp, 'blockSize');
-          const newWidth = reportedWidth ? round(reportedWidth) : undefined;
-          const newHeight = reportedHeight ? round(reportedHeight) : undefined;
-          if (previous.current.width !== newWidth || previous.current.height !== newHeight) {
-            const newSize = {
-              width: newWidth,
-              height: newHeight
-            };
-            previous.current.width = newWidth;
-            previous.current.height = newHeight;
-            if (onResizeRef.current) {
-              onResizeRef.current(newSize);
-            } else if (!didUnmount.current) {
-              setSize(newSize);
-            }
-          }
-        })
-      };
-    }
-    resizeObserverRef.current.instance.observe(element, {
-      box: opts.box
-    });
-    return () => {
-      if (resizeObserverRef.current) {
-        resizeObserverRef.current.instance.unobserve(element);
-      }
-    };
-  }, [opts.box, round]), opts.ref);
-  return (0,external_wp_element_namespaceObject.useMemo)(() => ({
-    ref: refCallback,
-    width: size.width,
-    height: size.height
-  }), [refCallback, size ? size.width : null, size ? size.height : null]);
-}
-
-/**
- * Hook which allows to listen the resize event of any target element when it changes sizes.
- * _Note: `useResizeObserver` will report `null` until after first render.
-=======
 const extractSize = entry => {
   let entrySize;
   if (!entry.contentBoxSize) {
@@ -5539,7 +5176,6 @@ const NULL_SIZE = {
 /**
  * Hook which allows to listen to the resize event of any target element when it changes size.
  * _Note: `useResizeObserver` will report `null` sizes until after first render.
->>>>>>> 535c0c1 (initial commit)
  *
  * @example
  *
@@ -5556,36 +5192,6 @@ const NULL_SIZE = {
  * };
  * ```
  */
-<<<<<<< HEAD
-function useResizeAware() {
-  const {
-    ref,
-    width,
-    height
-  } = useResizeObserver();
-  const sizes = (0,external_wp_element_namespaceObject.useMemo)(() => {
-    return {
-      width: width !== null && width !== void 0 ? width : null,
-      height: height !== null && height !== void 0 ? height : null
-    };
-  }, [width, height]);
-  const resizeListener = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)("div", {
-    style: {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      pointerEvents: 'none',
-      opacity: 0,
-      overflow: 'hidden',
-      zIndex: -1
-    },
-    "aria-hidden": "true",
-    ref: ref
-  });
-  return [resizeListener, sizes];
-=======
 function useLegacyResizeObserver() {
   const [size, setSize] = (0,external_wp_element_namespaceObject.useState)(NULL_SIZE);
 
@@ -5665,7 +5271,6 @@ function useLegacyResizeObserver() {
 
 function use_resize_observer_useResizeObserver(callback, options = {}) {
   return callback ? useResizeObserver(callback, options) : useLegacyResizeObserver();
->>>>>>> 535c0c1 (initial commit)
 }
 
 ;// CONCATENATED MODULE: external ["wp","priorityQueue"]
@@ -6071,10 +5676,6 @@ function useDropZone({
       // zone.
       // Note: This is not entirely reliable in Safari due to this bug
       // https://bugs.webkit.org/show_bug.cgi?id=66547
-<<<<<<< HEAD
-=======
-
->>>>>>> 535c0c1 (initial commit)
       if (isElementInZone(event.relatedTarget)) {
         return;
       }
@@ -6398,10 +5999,6 @@ function useObservableValue(map, name) {
 
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 535c0c1 (initial commit)
 })();
 
 (window.wp = window.wp || {}).compose = __webpack_exports__;

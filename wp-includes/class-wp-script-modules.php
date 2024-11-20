@@ -31,8 +31,6 @@ class WP_Script_Modules {
 	private $enqueued_before_registered = array();
 
 	/**
-<<<<<<< HEAD
-=======
 	 * Tracks whether the @wordpress/a11y script module is available.
 	 *
 	 * Some additional HTML is required on the page for the module to work. Track
@@ -44,7 +42,6 @@ class WP_Script_Modules {
 	private $a11y_available = false;
 
 	/**
->>>>>>> 535c0c1 (initial commit)
 	 * Registers the script module if no script module with that script module
 	 * identifier has already been registered.
 	 *
@@ -196,14 +193,11 @@ class WP_Script_Modules {
 		add_action( 'admin_print_footer_scripts', array( $this, 'print_import_map' ) );
 		add_action( 'admin_print_footer_scripts', array( $this, 'print_enqueued_script_modules' ) );
 		add_action( 'admin_print_footer_scripts', array( $this, 'print_script_module_preloads' ) );
-<<<<<<< HEAD
-=======
 
 		add_action( 'wp_footer', array( $this, 'print_script_module_data' ) );
 		add_action( 'admin_print_footer_scripts', array( $this, 'print_script_module_data' ) );
 		add_action( 'wp_footer', array( $this, 'print_a11y_script_module_html' ), 20 );
 		add_action( 'admin_print_footer_scripts', array( $this, 'print_a11y_script_module_html' ), 20 );
->>>>>>> 535c0c1 (initial commit)
 	}
 
 	/**
@@ -249,32 +243,10 @@ class WP_Script_Modules {
 	 * Prints the import map using a script tag with a type="importmap" attribute.
 	 *
 	 * @since 6.5.0
-<<<<<<< HEAD
-	 *
-	 * @global WP_Scripts $wp_scripts The WP_Scripts object for printing the polyfill.
-=======
->>>>>>> 535c0c1 (initial commit)
 	 */
 	public function print_import_map() {
 		$import_map = $this->get_import_map();
 		if ( ! empty( $import_map['imports'] ) ) {
-<<<<<<< HEAD
-			global $wp_scripts;
-			if ( isset( $wp_scripts ) ) {
-				wp_print_inline_script_tag(
-					wp_get_script_polyfill(
-						$wp_scripts,
-						array(
-							'HTMLScriptElement.supports && HTMLScriptElement.supports("importmap")' => 'wp-polyfill-importmap',
-						)
-					),
-					array(
-						'id' => 'wp-load-polyfill-importmap',
-					)
-				);
-			}
-=======
->>>>>>> 535c0c1 (initial commit)
 			wp_print_inline_script_tag(
 				wp_json_encode( $import_map, JSON_HEX_TAG | JSON_HEX_AMP ),
 				array(
@@ -391,8 +363,6 @@ class WP_Script_Modules {
 
 		return $src;
 	}
-<<<<<<< HEAD
-=======
 
 	/**
 	 * Print data associated with Script Modules.
@@ -530,5 +500,4 @@ class WP_Script_Modules {
 			. '<div id="a11y-speak-polite" class="a11y-speak-region" aria-live="polite" aria-relevant="additions text" aria-atomic="true"></div>'
 			. '</div>';
 	}
->>>>>>> 535c0c1 (initial commit)
 }

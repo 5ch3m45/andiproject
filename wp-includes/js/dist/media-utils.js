@@ -52,15 +52,11 @@ __webpack_require__.r(__webpack_exports__);
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
   MediaUpload: () => (/* reexport */ media_upload),
-<<<<<<< HEAD
-  uploadMedia: () => (/* reexport */ uploadMedia)
-=======
   transformAttachment: () => (/* reexport */ transformAttachment),
   uploadMedia: () => (/* reexport */ uploadMedia),
   validateFileSize: () => (/* reexport */ validateFileSize),
   validateMimeType: () => (/* reexport */ validateMimeType),
   validateMimeTypeForUser: () => (/* reexport */ validateMimeTypeForUser)
->>>>>>> 535c0c1 (initial commit)
 });
 
 ;// CONCATENATED MODULE: external ["wp","element"]
@@ -435,10 +431,7 @@ class MediaUpload extends external_wp_element_namespaceObject.Component {
     if (onClose) {
       onClose();
     }
-<<<<<<< HEAD
-=======
     this.frame.detach();
->>>>>>> 535c0c1 (initial commit)
   }
   updateCollection() {
     const frameContent = this.frame.content.get();
@@ -501,13 +494,6 @@ class MediaUpload extends external_wp_element_namespaceObject.Component {
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/media-utils/build-module/components/index.js
 
 
-<<<<<<< HEAD
-;// CONCATENATED MODULE: external ["wp","apiFetch"]
-const external_wp_apiFetch_namespaceObject = window["wp"]["apiFetch"];
-var external_wp_apiFetch_default = /*#__PURE__*/__webpack_require__.n(external_wp_apiFetch_namespaceObject);
-;// CONCATENATED MODULE: external ["wp","blob"]
-const external_wp_blob_namespaceObject = window["wp"]["blob"];
-=======
 ;// CONCATENATED MODULE: external ["wp","blob"]
 const external_wp_blob_namespaceObject = window["wp"]["blob"];
 ;// CONCATENATED MODULE: external ["wp","apiFetch"]
@@ -757,7 +743,6 @@ function validateFileSize(file, maxUploadFileSize) {
   }
 }
 
->>>>>>> 535c0c1 (initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/media-utils/build-module/utils/upload-media.js
 /**
  * WordPress dependencies
@@ -765,50 +750,6 @@ function validateFileSize(file, maxUploadFileSize) {
 
 
 
-<<<<<<< HEAD
-const noop = () => {};
-
-/**
- * Browsers may use unexpected mime types, and they differ from browser to browser.
- * This function computes a flexible array of mime types from the mime type structured provided by the server.
- * Converts { jpg|jpeg|jpe: "image/jpeg" } into [ "image/jpeg", "image/jpg", "image/jpeg", "image/jpe" ]
- * The computation of this array instead of directly using the object,
- * solves the problem in chrome where mp3 files have audio/mp3 as mime type instead of audio/mpeg.
- * https://bugs.chromium.org/p/chromium/issues/detail?id=227004
- *
- * @param {?Object} wpMimeTypesObject Mime type object received from the server.
- *                                    Extensions are keys separated by '|' and values are mime types associated with an extension.
- *
- * @return {?Array} An array of mime types or the parameter passed if it was "falsy".
- */
-function getMimeTypesArray(wpMimeTypesObject) {
-  if (!wpMimeTypesObject) {
-    return wpMimeTypesObject;
-  }
-  return Object.entries(wpMimeTypesObject).map(([extensionsString, mime]) => {
-    const [type] = mime.split('/');
-    const extensions = extensionsString.split('|');
-    return [mime, ...extensions.map(extension => `${type}/${extension}`)];
-  }).flat();
-}
-
-/**
- *	Media Upload is used by audio, image, gallery, video, and file blocks to
- *	handle uploading a media file when a file upload button is activated.
- *
- *	TODO: future enhancement to add an upload indicator.
- *
- * @param {Object}   $0                    Parameters object passed to the function.
- * @param {?Array}   $0.allowedTypes       Array with the types of media that can be uploaded, if unset all types are allowed.
- * @param {?Object}  $0.additionalData     Additional data to include in the request.
- * @param {Array}    $0.filesList          List of files.
- * @param {?number}  $0.maxUploadFileSize  Maximum upload size in bytes allowed for the site.
- * @param {Function} $0.onError            Function called when an error happens.
- * @param {Function} $0.onFileChange       Function called each time a file or a temporary representation of the file is available.
- * @param {?Object}  $0.wpAllowedMimeTypes List of allowed mime types and file extensions.
- */
-async function uploadMedia({
-=======
 /**
  * Internal dependencies
  */
@@ -834,71 +775,10 @@ async function uploadMedia({
  */
 function uploadMedia({
   wpAllowedMimeTypes,
->>>>>>> 535c0c1 (initial commit)
   allowedTypes,
   additionalData = {},
   filesList,
   maxUploadFileSize,
-<<<<<<< HEAD
-  onError = noop,
-  onFileChange,
-  wpAllowedMimeTypes = null
-}) {
-  // Cast filesList to array.
-  const files = [...filesList];
-  const filesSet = [];
-  const setAndUpdateFiles = (idx, value) => {
-    (0,external_wp_blob_namespaceObject.revokeBlobURL)(filesSet[idx]?.url);
-    filesSet[idx] = value;
-    onFileChange(filesSet.filter(Boolean));
-  };
-
-  // Allowed type specified by consumer.
-  const isAllowedType = fileType => {
-    if (!allowedTypes) {
-      return true;
-    }
-    return allowedTypes.some(allowedType => {
-      // If a complete mimetype is specified verify if it matches exactly the mime type of the file.
-      if (allowedType.includes('/')) {
-        return allowedType === fileType;
-      }
-      // Otherwise a general mime type is used and we should verify if the file mimetype starts with it.
-      return fileType.startsWith(`${allowedType}/`);
-    });
-  };
-
-  // Allowed types for the current WP_User.
-  const allowedMimeTypesForUser = getMimeTypesArray(wpAllowedMimeTypes);
-  const isAllowedMimeTypeForUser = fileType => {
-    return allowedMimeTypesForUser.includes(fileType);
-  };
-  const validFiles = [];
-  for (const mediaFile of files) {
-    // Verify if user is allowed to upload this mime type.
-    // Defer to the server when type not detected.
-    if (allowedMimeTypesForUser && mediaFile.type && !isAllowedMimeTypeForUser(mediaFile.type)) {
-      onError({
-        code: 'MIME_TYPE_NOT_ALLOWED_FOR_USER',
-        message: (0,external_wp_i18n_namespaceObject.sprintf)(
-        // translators: %s: file name.
-        (0,external_wp_i18n_namespaceObject.__)('%s: Sorry, you are not allowed to upload this file type.'), mediaFile.name),
-        file: mediaFile
-      });
-      continue;
-    }
-
-    // Check if the block supports this mime type.
-    // Defer to the server when type not detected.
-    if (mediaFile.type && !isAllowedType(mediaFile.type)) {
-      onError({
-        code: 'MIME_TYPE_NOT_SUPPORTED',
-        message: (0,external_wp_i18n_namespaceObject.sprintf)(
-        // translators: %s: file name.
-        (0,external_wp_i18n_namespaceObject.__)('%s: Sorry, this file type is not supported here.'), mediaFile.name),
-        file: mediaFile
-      });
-=======
   onError,
   onFileChange,
   signal
@@ -928,38 +808,14 @@ function uploadMedia({
       validateMimeType(mediaFile, allowedTypes);
     } catch (error) {
       onError?.(error);
->>>>>>> 535c0c1 (initial commit)
       continue;
     }
 
     // Verify if file is greater than the maximum file upload size allowed for the site.
-<<<<<<< HEAD
-    if (maxUploadFileSize && mediaFile.size > maxUploadFileSize) {
-      onError({
-        code: 'SIZE_ABOVE_LIMIT',
-        message: (0,external_wp_i18n_namespaceObject.sprintf)(
-        // translators: %s: file name.
-        (0,external_wp_i18n_namespaceObject.__)('%s: This file exceeds the maximum upload size for this site.'), mediaFile.name),
-        file: mediaFile
-      });
-      continue;
-    }
-
-    // Don't allow empty files to be uploaded.
-    if (mediaFile.size <= 0) {
-      onError({
-        code: 'EMPTY_FILE',
-        message: (0,external_wp_i18n_namespaceObject.sprintf)(
-        // translators: %s: file name.
-        (0,external_wp_i18n_namespaceObject.__)('%s: This file is empty.'), mediaFile.name),
-        file: mediaFile
-      });
-=======
     try {
       validateFileSize(mediaFile, maxUploadFileSize);
     } catch (error) {
       onError?.(error);
->>>>>>> 535c0c1 (initial commit)
       continue;
     }
     validFiles.push(mediaFile);
@@ -969,34 +825,6 @@ function uploadMedia({
     filesSet.push({
       url: (0,external_wp_blob_namespaceObject.createBlobURL)(mediaFile)
     });
-<<<<<<< HEAD
-    onFileChange(filesSet);
-  }
-  for (let idx = 0; idx < validFiles.length; ++idx) {
-    const mediaFile = validFiles[idx];
-    try {
-      var _savedMedia$caption$r;
-      const savedMedia = await createMediaFromFile(mediaFile, additionalData);
-      // eslint-disable-next-line camelcase
-      const {
-        alt_text,
-        source_url,
-        ...savedMediaProps
-      } = savedMedia;
-      const mediaObject = {
-        ...savedMediaProps,
-        alt: savedMedia.alt_text,
-        caption: (_savedMedia$caption$r = savedMedia.caption?.raw) !== null && _savedMedia$caption$r !== void 0 ? _savedMedia$caption$r : '',
-        title: savedMedia.title.raw,
-        url: savedMedia.source_url
-      };
-      setAndUpdateFiles(idx, mediaObject);
-    } catch (error) {
-      // Reset to empty on failure.
-      setAndUpdateFiles(idx, null);
-      let message;
-      if (error.message) {
-=======
     onFileChange?.(filesSet);
   }
   validFiles.map(async (file, index) => {
@@ -1008,47 +836,10 @@ function uploadMedia({
       setAndUpdateFiles(index, null);
       let message;
       if (error instanceof Error) {
->>>>>>> 535c0c1 (initial commit)
         message = error.message;
       } else {
         message = (0,external_wp_i18n_namespaceObject.sprintf)(
         // translators: %s: file name
-<<<<<<< HEAD
-        (0,external_wp_i18n_namespaceObject.__)('Error while uploading file %s to the media library.'), mediaFile.name);
-      }
-      onError({
-        code: 'GENERAL',
-        message,
-        file: mediaFile
-      });
-    }
-  }
-}
-
-/**
- * @param {File}    file           Media File to Save.
- * @param {?Object} additionalData Additional data to include in the request.
- *
- * @return {Promise} Media Object Promise.
- */
-function createMediaFromFile(file, additionalData) {
-  // Create upload payload.
-  const data = new window.FormData();
-  data.append('file', file, file.name || file.type.replace('/', '.'));
-  if (additionalData) {
-    Object.entries(additionalData).forEach(([key, value]) => data.append(key, value));
-  }
-  return external_wp_apiFetch_default()({
-    path: '/wp/v2/media',
-    body: data,
-    method: 'POST'
-  });
-}
-
-;// CONCATENATED MODULE: ./node_modules/@wordpress/media-utils/build-module/utils/index.js
-
-
-=======
         (0,external_wp_i18n_namespaceObject.__)('Error while uploading file %s to the media library.'), file.name);
       }
       onError?.(new UploadError({
@@ -1061,18 +852,14 @@ function createMediaFromFile(file, additionalData) {
   });
 }
 
->>>>>>> 535c0c1 (initial commit)
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/media-utils/build-module/index.js
 
 
 
-<<<<<<< HEAD
-=======
 
 
 
 
->>>>>>> 535c0c1 (initial commit)
 (window.wp = window.wp || {}).mediaUtils = __webpack_exports__;
 /******/ })()
 ;

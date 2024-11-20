@@ -51,8 +51,6 @@ wp_add_inline_script(
 	'wp.blocks.unstable__bootstrapServerSideBlockDefinitions(' . wp_json_encode( get_block_editor_server_block_settings() ) . ');'
 );
 
-<<<<<<< HEAD
-=======
 // Preload server-registered block bindings sources.
 $registered_sources = get_all_registered_block_bindings_sources();
 if ( ! empty( $registered_sources ) ) {
@@ -71,7 +69,6 @@ if ( ! empty( $registered_sources ) ) {
 	);
 }
 
->>>>>>> 535c0c1 (initial commit)
 wp_add_inline_script(
 	'wp-blocks',
 	sprintf( 'wp.blocks.setCategories( %s );', wp_json_encode( get_block_categories( $block_editor_context ) ) ),

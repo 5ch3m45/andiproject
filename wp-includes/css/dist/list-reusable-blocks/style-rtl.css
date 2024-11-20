@@ -20,13 +20,10 @@
   padding:10px;
 }
 
-<<<<<<< HEAD
-=======
 [class].list-reusable-blocks-import-dropdown__button{
   height:30px;
 }
 
->>>>>>> 535c0c1 (initial commit)
 .list-reusable-blocks-import-form__label{
   display:block;
   margin-bottom:10px;
@@ -34,10 +31,6 @@
 
 .list-reusable-blocks-import-form__button{
   float:left;
-<<<<<<< HEAD
-  margin-bottom:10px;
-=======
->>>>>>> 535c0c1 (initial commit)
   margin-top:10px;
 }
 
@@ -55,12 +48,6 @@
   position:relative;
   top:-3px;
 }
-<<<<<<< HEAD
-.list-reusable-blocks__container .components-button{
-  height:26px;
-}
-=======
->>>>>>> 535c0c1 (initial commit)
 
 body.admin-color-light{
   --wp-admin-theme-color:#0085ba;
