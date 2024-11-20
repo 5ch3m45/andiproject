@@ -917,6 +917,14 @@ a#remove-post-thumbnail:hover,
 	border: none;
 }
 
+<<<<<<< HEAD
+=======
+.application-password-display .success {
+    color: #007017;
+    margin-right: 0.5rem;
+}
+
+>>>>>>> 535c0c1 (initial commit)
 /*------------------------------------------------------------------------------
   3.0 - Actions
 ------------------------------------------------------------------------------*/
@@ -1181,6 +1189,20 @@ th.action-links {
 	overflow: hidden;
 }
 
+<<<<<<< HEAD
+=======
+.wp-filter .favorites-form .favorites-username {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.wp-filter .favorites-form .favorites-username input {
+	margin: 0;
+}
+
+>>>>>>> 535c0c1 (initial commit)
 .show-filters .filter-drawer,
 .show-favorites-form .favorites-form {
 	display: block;
@@ -1289,11 +1311,21 @@ th.action-links {
 }
 
 .filtered-by .tags {
+<<<<<<< HEAD
 	display: inline;
 }
 
 .filtered-by .tag {
 	margin: 0 5px;
+=======
+	display: flex;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.filtered-by .tag {
+>>>>>>> 535c0c1 (initial commit)
 	padding: 4px 8px;
 	border: 1px solid #dcdcde;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
@@ -1308,7 +1340,14 @@ th.action-links {
 }
 
 .filters-applied .filtered-by {
+<<<<<<< HEAD
 	display: block;
+=======
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 10px;
+>>>>>>> 535c0c1 (initial commit)
 }
 
 .filters-applied .filter-drawer {
@@ -2032,7 +2071,11 @@ p.auto-update-status {
 ------------------------------------------------------------------------------*/
 
 html.wp-toolbar {
+<<<<<<< HEAD
 	padding-top: 32px;
+=======
+	padding-top: var(--wp-admin--admin-bar--height);
+>>>>>>> 535c0c1 (initial commit)
 	box-sizing: border-box;
 	-ms-overflow-style: scrollbar; /* See ticket #48545 */
 }
@@ -2411,8 +2454,47 @@ h1.nav-tab-wrapper, /* Back-compat for pre-4.4 */
 
 /* Back-compat for nav-menus screen */
 .nav-menus-php .metabox-holder h3 {
+<<<<<<< HEAD
 	padding: 10px 14px 11px 10px;
 	line-height: 1.5;
+=======
+	padding: 0;
+}
+.nav-menus-php .metabox-holder .accordion-section-title button.accordion-trigger {
+	background: inherit;
+	color: #1d2327;
+	display: block;
+	position: relative;
+	text-align: right;
+	width: 100%;
+	outline: none;
+	border: 0;
+	padding: 10px 14px 11px 10px;
+	line-height: 1.5;
+	cursor: pointer;
+}
+.nav-menus-php .metabox-holder .accordion-section-title button.accordion-trigger:focus {
+	box-shadow: 0 0 0 2px #2271b1;
+	outline: 2px solid transparent;
+}
+.nav-menus-php .metabox-holder .accordion-section-title span.dashicons.dashicons-arrow-down {
+	position: absolute;
+	left: 10px;
+	right: auto;
+	color: #787c82;
+	border-radius: 50px;
+}
+.nav-menus-php .metabox-holder .accordion-section-title:hover span.dashicons.dashicons-arrow-down {
+	color: #1d2327;
+}
+.nav-menus-php .metabox-holder .accordion-section-title span.dashicons.dashicons-arrow-down::before {
+	position: relative;
+	right: -1px
+}
+
+.nav-menus-php .metabox-holder .accordion-section.open .accordion-section-title span.dashicons.dashicons-arrow-down {
+	transform: rotate(-180deg);
+>>>>>>> 535c0c1 (initial commit)
 }
 
 #templateside ul li a {
@@ -3502,9 +3584,15 @@ img {
 
 /* @todo: can we use a common class for these? */
 .nav-menus-php .item-edit:before,
+<<<<<<< HEAD
 .widget-top .widget-action .toggle-indicator:before,
 .control-section .accordion-section-title:after,
 .accordion-section-title:after {
+=======
+.wp-customizer .control-section .accordion-section-title:after,
+.wp-customizer .accordion-section-title:after,
+.widget-top .widget-action .toggle-indicator:before {
+>>>>>>> 535c0c1 (initial commit)
 	content: "\f140";
 	font: normal 20px/1 dashicons;
 	speak: never;
@@ -3522,8 +3610,12 @@ img {
 .handlediv,
 .postbox .handlediv.button-link,
 .item-edit,
+<<<<<<< HEAD
 .toggle-indicator,
 .accordion-section-title:after {
+=======
+.toggle-indicator {
+>>>>>>> 535c0c1 (initial commit)
 	color: #787c82;
 }
 
@@ -3539,8 +3631,12 @@ img {
 .postbox .handlediv.button-link:focus,
 .item-edit:hover,
 .item-edit:focus,
+<<<<<<< HEAD
 .sidebar-name:hover .toggle-indicator,
 .accordion-section-title:hover:after {
+=======
+.sidebar-name:hover .toggle-indicator {
+>>>>>>> 535c0c1 (initial commit)
 	color: #1d2327;
 	/* Only visible in Windows High Contrast mode */
 	outline: 2px solid transparent;
@@ -3552,6 +3648,7 @@ img {
 	outline: 2px solid transparent;
 }
 
+<<<<<<< HEAD
 .control-section .accordion-section-title:after,
 .accordion-section-title:after {
 	float: left;
@@ -3560,6 +3657,8 @@ img {
 }
 
 .control-section.open .accordion-section-title:after,
+=======
+>>>>>>> 535c0c1 (initial commit)
 #customize-info.open .accordion-section-title:after,
 .nav-menus-php .menu-item-edit-active .item-edit:before,
 .widget.open .widget-top .widget-action .toggle-indicator:before,
@@ -3841,7 +3940,11 @@ img {
 
 @media screen and (max-width: 782px) {
 	html.wp-toolbar {
+<<<<<<< HEAD
 		padding-top: 46px;
+=======
+		padding-top: var(--wp-admin--admin-bar--height);
+>>>>>>> 535c0c1 (initial commit)
 	}
 
 	.screen-reader-shortcut:focus {
@@ -3949,6 +4052,13 @@ img {
 		padding: 12px;
 	}
 
+<<<<<<< HEAD
+=======
+	.nav-menus-php .metabox-holder h3 {
+		padding: 0;
+	}
+
+>>>>>>> 535c0c1 (initial commit)
 	.postbox .handlediv {
 		margin-top: 3px;
 	}

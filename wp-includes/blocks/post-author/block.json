@@ -64,7 +64,25 @@
 		},
 		"interactivity": {
 			"clientNavigation": true
+<<<<<<< HEAD
 		}
 	},
+=======
+		},
+		"__experimentalBorder": {
+			"radius": true,
+			"color": true,
+			"width": true,
+			"style": true,
+			"__experimentalDefaultControls": {
+				"radius": true,
+				"color": true,
+				"width": true,
+				"style": true
+			}
+		}
+	},
+	"editorStyle": "wp-block-post-author-editor",
+>>>>>>> 535c0c1 (initial commit)
 	"style": "wp-block-post-author"
 }

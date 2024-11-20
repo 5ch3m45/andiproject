@@ -18,7 +18,11 @@
 			"type": "rich-text",
 			"source": "rich-text",
 			"selector": "figcaption",
+<<<<<<< HEAD
 			"__experimentalRole": "content"
+=======
+			"role": "content"
+>>>>>>> 535c0c1 (initial commit)
 		},
 		"controls": {
 			"type": "boolean",
@@ -29,7 +33,11 @@
 		},
 		"id": {
 			"type": "number",
+<<<<<<< HEAD
 			"__experimentalRole": "content"
+=======
+			"role": "content"
+>>>>>>> 535c0c1 (initial commit)
 		},
 		"loop": {
 			"type": "boolean",
@@ -56,12 +64,23 @@
 			"attribute": "preload",
 			"default": "metadata"
 		},
+<<<<<<< HEAD
+=======
+		"blob": {
+			"type": "string",
+			"role": "local"
+		},
+>>>>>>> 535c0c1 (initial commit)
 		"src": {
 			"type": "string",
 			"source": "attribute",
 			"selector": "video",
 			"attribute": "src",
+<<<<<<< HEAD
 			"__experimentalRole": "content"
+=======
+			"role": "content"
+>>>>>>> 535c0c1 (initial commit)
 		},
 		"playsInline": {
 			"type": "boolean",
@@ -70,7 +89,11 @@
 			"attribute": "playsinline"
 		},
 		"tracks": {
+<<<<<<< HEAD
 			"__experimentalRole": "content",
+=======
+			"role": "content",
+>>>>>>> 535c0c1 (initial commit)
 			"type": "array",
 			"items": {
 				"type": "object"

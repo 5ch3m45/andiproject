@@ -6,6 +6,7 @@
   display:inline;
 }
 
+<<<<<<< HEAD
 .editor-latest-posts-image-alignment-control .components-base-control__label{
   display:block;
 }
@@ -13,6 +14,8 @@
   border-radius:2px;
 }
 
+=======
+>>>>>>> 535c0c1 (initial commit)
 :root :where(.wp-block-latest-posts){
   padding-right:2.5em;
 }

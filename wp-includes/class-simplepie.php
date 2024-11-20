@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 if ( ! class_exists( 'SimplePie', false ) ) :
 
 // Load classes we will need.
@@ -15,15 +16,29 @@ require ABSPATH . WPINC . '/SimplePie/Parser.php';
 require ABSPATH . WPINC . '/SimplePie/Item.php';
 require ABSPATH . WPINC . '/SimplePie/Parse/Date.php';
 require ABSPATH . WPINC . '/SimplePie/Author.php';
+=======
+
+if ( class_exists( 'SimplePie', false ) ) {
+	return;
+}
+
+// Load and register the SimplePie native autoloaders.
+require ABSPATH . WPINC . '/SimplePie/autoloader.php';
+>>>>>>> 535c0c1 (initial commit)
 
 /**
  * WordPress autoloader for SimplePie.
  *
  * @since 3.5.0
+<<<<<<< HEAD
+=======
+ * @deprecated 6.7.0 Use `SimplePie_Autoloader` instead.
+>>>>>>> 535c0c1 (initial commit)
  *
  * @param string $class Class name.
  */
 function wp_simplepie_autoload( $class ) {
+<<<<<<< HEAD
 	if ( ! str_starts_with( $class, 'SimplePie_' ) )
 		return;
 
@@ -3353,3 +3368,7 @@ class SimplePie
 	}
 }
 endif;
+=======
+	_deprecated_function( __FUNCTION__, '6.7.0', 'SimplePie_Autoloader' );
+}
+>>>>>>> 535c0c1 (initial commit)

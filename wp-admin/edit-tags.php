@@ -321,8 +321,11 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 // Also used by the Edit Tag form.
 require_once ABSPATH . 'wp-admin/includes/edit-tag-messages.php';
 
+<<<<<<< HEAD
 $class = ( isset( $_REQUEST['error'] ) ) ? 'error' : 'updated';
 
+=======
+>>>>>>> 535c0c1 (initial commit)
 if ( is_plugin_active( 'wpcat2tag-importer/wpcat2tag-importer.php' ) ) {
 	$import_link = admin_url( 'admin.php?import=wpcat2tag' );
 } else {
@@ -349,7 +352,13 @@ if ( isset( $_REQUEST['s'] ) && strlen( $_REQUEST['s'] ) ) {
 <hr class="wp-header-end">
 
 <?php
+<<<<<<< HEAD
 if ( $message ) :
+=======
+$class = ( isset( $_REQUEST['error'] ) ) ? 'error' : 'updated';
+
+if ( $message ) {
+>>>>>>> 535c0c1 (initial commit)
 	wp_admin_notice(
 		$message,
 		array(
@@ -358,8 +367,14 @@ if ( $message ) :
 			'dismissible'        => true,
 		)
 	);
+<<<<<<< HEAD
 	$_SERVER['REQUEST_URI'] = remove_query_arg( array( 'message', 'error' ), $_SERVER['REQUEST_URI'] );
 endif;
+=======
+
+	$_SERVER['REQUEST_URI'] = remove_query_arg( array( 'message', 'error' ), $_SERVER['REQUEST_URI'] );
+}
+>>>>>>> 535c0c1 (initial commit)
 ?>
 <div id="ajax-response"></div>
 

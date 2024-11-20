@@ -124,9 +124,17 @@ $tagline_description = sprintf(
 	$app_icon_alt_value     = '';
 	$browser_icon_alt_value = '';
 
+<<<<<<< HEAD
 	if ( $site_icon_id ) {
 		$img_alt            = get_post_meta( $site_icon_id, '_wp_attachment_image_alt', true );
 		$filename           = wp_basename( get_site_icon_url() );
+=======
+	$site_icon_url = get_site_icon_url();
+
+	if ( $site_icon_id ) {
+		$img_alt            = get_post_meta( $site_icon_id, '_wp_attachment_image_alt', true );
+		$filename           = wp_basename( $site_icon_url );
+>>>>>>> 535c0c1 (initial commit)
 		$app_icon_alt_value = sprintf(
 			/* translators: %s: The selected image filename. */
 			__( 'App icon preview: The current image has no alternative text. The file name is: %s' ),
@@ -155,6 +163,7 @@ $tagline_description = sprintf(
 	}
 	?>
 
+<<<<<<< HEAD
 
 	<div id="site-icon-preview" class="site-icon-preview wp-clearfix settings-page-preview <?php echo esc_attr( $classes_for_wrapper ); ?>">
 		<div class="favicon-preview">
@@ -169,6 +178,33 @@ $tagline_description = sprintf(
 
 	<input type="hidden" name="site_icon" id="site_icon_hidden_field" value="<?php form_option( 'site_icon' ); ?>" />
 	<div class="action-buttons">
+=======
+	<style>
+	:root {
+		--site-icon-url: url( '<?php echo esc_url( $site_icon_url ); ?>' );
+	}
+	</style>
+
+	<div id="site-icon-preview" class="site-icon-preview settings <?php echo esc_attr( $classes_for_wrapper ); ?>">
+		<div class="direction-wrap">
+			<img id="app-icon-preview" src="<?php echo esc_url( $site_icon_url ); ?>" class="app-icon-preview" alt="<?php echo esc_attr( $app_icon_alt_value ); ?>" />
+			<div class="site-icon-preview-browser">
+				<svg role="img" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg" class="browser-buttons"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 20a6 6 0 1 1 12 0 6 6 0 0 1-12 0Zm18 0a6 6 0 1 1 12 0 6 6 0 0 1-12 0Zm24-6a6 6 0 1 0 0 12 6 6 0 0 0 0-12Z" /></svg>
+				<div class="site-icon-preview-tab">
+					<img id="browser-icon-preview" src="<?php echo esc_url( $site_icon_url ); ?>" class="browser-icon-preview" alt="<?php echo esc_attr( $browser_icon_alt_value ); ?>" />
+					<div class="site-icon-preview-site-title" id="site-icon-preview-site-title" aria-hidden="true"><?php bloginfo( 'name' ); ?></div>
+						<svg role="img" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg" class="close-button">
+							<path d="M12 13.0607L15.7123 16.773L16.773 15.7123L13.0607 12L16.773 8.28772L15.7123 7.22706L12 10.9394L8.28771 7.22705L7.22705 8.28771L10.9394 12L7.22706 15.7123L8.28772 16.773L12 13.0607Z" />
+						</svg>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<input type="hidden" name="site_icon" id="site_icon_hidden_field" value="<?php form_option( 'site_icon' ); ?>" />
+	<div class="site-icon-action-buttons">
+>>>>>>> 535c0c1 (initial commit)
 		<button type="button"
 			id="choose-from-library-button"
 			type="button"
@@ -190,7 +226,11 @@ $tagline_description = sprintf(
 		<button
 			id="js-remove-site-icon"
 			type="button"
+<<<<<<< HEAD
 			<?php echo has_site_icon() ? 'class="button button-secondary reset"' : 'class="button button-secondary reset hidden"'; ?>
+=======
+			<?php echo has_site_icon() ? 'class="button button-secondary reset remove-site-icon"' : 'class="button button-secondary reset hidden"'; ?>
+>>>>>>> 535c0c1 (initial commit)
 		>
 			<?php _e( 'Remove Site Icon' ); ?>
 		</button>
@@ -198,8 +238,17 @@ $tagline_description = sprintf(
 
 	<p class="description">
 		<?php
+<<<<<<< HEAD
 			/* translators: %s: Site Icon size in pixels. */
 			printf( __( 'The Site Icon is what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. It should be square and at least %s pixels.' ), '<code>512 &times; 512</code>' );
+=======
+			printf(
+				/* translators: 1: pixel value for icon size. 2: pixel value for icon size. */
+				__( 'The Site Icon is what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. It should be square and at least <code>%1$s by %2$s</code> pixels.' ),
+				512,
+				512
+			);
+>>>>>>> 535c0c1 (initial commit)
 		?>
 	</p>
 

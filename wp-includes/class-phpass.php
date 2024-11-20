@@ -10,7 +10,11 @@
 #
 # Portable PHP password hashing framework.
 #
+<<<<<<< HEAD
 # Version 0.5 / WordPress.
+=======
+# Version 0.5.4 / WordPress.
+>>>>>>> 535c0c1 (initial commit)
 #
 # Written by Solar Designer <solar at openwall.com> in 2004-2006 and placed in
 # the public domain.  Revised in subsequent years, still public domain.
@@ -51,15 +55,27 @@ class PasswordHash {
 	{
 		$this->itoa64 = './0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 
+<<<<<<< HEAD
 		if ($iteration_count_log2 < 4 || $iteration_count_log2 > 31)
 			$iteration_count_log2 = 8;
+=======
+		if ($iteration_count_log2 < 4 || $iteration_count_log2 > 31) {
+			$iteration_count_log2 = 8;
+		}
+>>>>>>> 535c0c1 (initial commit)
 		$this->iteration_count_log2 = $iteration_count_log2;
 
 		$this->portable_hashes = $portable_hashes;
 
 		$this->random_state = microtime();
+<<<<<<< HEAD
 		if (function_exists('getmypid'))
 			$this->random_state .= getmypid();
+=======
+		if (function_exists('getmypid')) {
+			$this->random_state .= getmypid();
+		}
+>>>>>>> 535c0c1 (initial commit)
 	}
 
 	function PasswordHash($iteration_count_log2, $portable_hashes)
@@ -96,6 +112,7 @@ class PasswordHash {
 		do {
 			$value = ord($input[$i++]);
 			$output .= $this->itoa64[$value & 0x3f];
+<<<<<<< HEAD
 			if ($i < $count)
 				$value |= ord($input[$i]) << 8;
 			$output .= $this->itoa64[($value >> 6) & 0x3f];
@@ -106,6 +123,22 @@ class PasswordHash {
 			$output .= $this->itoa64[($value >> 12) & 0x3f];
 			if ($i++ >= $count)
 				break;
+=======
+			if ($i < $count) {
+				$value |= ord($input[$i]) << 8;
+			}
+			$output .= $this->itoa64[($value >> 6) & 0x3f];
+			if ($i++ >= $count) {
+				break;
+			}
+			if ($i < $count) {
+				$value |= ord($input[$i]) << 16;
+			}
+			$output .= $this->itoa64[($value >> 12) & 0x3f];
+			if ($i++ >= $count) {
+				break;
+			}
+>>>>>>> 535c0c1 (initial commit)
 			$output .= $this->itoa64[($value >> 18) & 0x3f];
 		} while ($i < $count);
 
@@ -115,8 +148,13 @@ class PasswordHash {
 	function gensalt_private($input)
 	{
 		$output = '$P$';
+<<<<<<< HEAD
 		$output .= $this->itoa64[min($this->iteration_count_log2 +
 			((PHP_VERSION >= '5') ? 5 : 3), 30)];
+=======
+		$output .= $this->itoa64[min($this->iteration_count_log2 + 5,
+		    30)];
+>>>>>>> 535c0c1 (initial commit)
 		$output .= $this->encode64($input, 6);
 
 		return $output;
@@ -125,6 +163,7 @@ class PasswordHash {
 	function crypt_private($password, $setting)
 	{
 		$output = '*0';
+<<<<<<< HEAD
 		if (substr($setting, 0, 2) === $output)
 			$output = '*1';
 
@@ -136,12 +175,34 @@ class PasswordHash {
 		$count_log2 = strpos($this->itoa64, $setting[3]);
 		if ($count_log2 < 7 || $count_log2 > 30)
 			return $output;
+=======
+		if (substr($setting, 0, 2) === $output) {
+			$output = '*1';
+		}
+
+		$id = substr($setting, 0, 3);
+		# We use "$P$", phpBB3 uses "$H$" for the same thing
+		if ($id !== '$P$' && $id !== '$H$') {
+			return $output;
+		}
+
+		$count_log2 = strpos($this->itoa64, $setting[3]);
+		if ($count_log2 < 7 || $count_log2 > 30) {
+			return $output;
+		}
+>>>>>>> 535c0c1 (initial commit)
 
 		$count = 1 << $count_log2;
 
 		$salt = substr($setting, 4, 8);
+<<<<<<< HEAD
 		if (strlen($salt) !== 8)
 			return $output;
+=======
+		if (strlen($salt) !== 8) {
+			return $output;
+		}
+>>>>>>> 535c0c1 (initial commit)
 
 		# We were kind of forced to use MD5 here since it's the only
 		# cryptographic primitive that was available in all versions
@@ -174,7 +235,11 @@ class PasswordHash {
 
 		$output = '$2a$';
 		$output .= chr((int)(ord('0') + $this->iteration_count_log2 / 10));
+<<<<<<< HEAD
 		$output .= chr((ord('0') + $this->iteration_count_log2 % 10));
+=======
+		$output .= chr(ord('0') + $this->iteration_count_log2 % 10);
+>>>>>>> 535c0c1 (initial commit)
 		$output .= '$';
 
 		$i = 0;
@@ -213,6 +278,7 @@ class PasswordHash {
 			$random = $this->get_random_bytes(16);
 			$hash =
 			    crypt($password, $this->gensalt_blowfish($random));
+<<<<<<< HEAD
 			if (strlen($hash) === 60)
 				return $hash;
 		}
@@ -224,6 +290,22 @@ class PasswordHash {
 		    $this->gensalt_private($random));
 		if (strlen($hash) === 34)
 			return $hash;
+=======
+			if (strlen($hash) === 60) {
+				return $hash;
+			}
+		}
+
+		if (strlen($random) < 6) {
+			$random = $this->get_random_bytes(6);
+		}
+		$hash =
+		    $this->crypt_private($password,
+		    $this->gensalt_private($random));
+		if (strlen($hash) === 34) {
+			return $hash;
+		}
+>>>>>>> 535c0c1 (initial commit)
 
 		# Returning '*' on error is safe here, but would _not_ be safe
 		# in a crypt(3)-like function used _both_ for generating new
@@ -238,8 +320,14 @@ class PasswordHash {
 		}
 
 		$hash = $this->crypt_private($password, $stored_hash);
+<<<<<<< HEAD
 		if ($hash[0] === '*')
 			$hash = crypt($password, $stored_hash);
+=======
+		if ($hash[0] === '*') {
+			$hash = crypt($password, $stored_hash);
+		}
+>>>>>>> 535c0c1 (initial commit)
 
 		# This is not constant-time.  In order to keep the code simple,
 		# for timing safety we currently rely on the salts being

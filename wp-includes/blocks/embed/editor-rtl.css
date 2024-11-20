@@ -7,6 +7,12 @@
   display:flex;
   justify-content:center;
 }
+<<<<<<< HEAD
+=======
+.wp-block-embed .wp-block-embed__placeholder-input{
+  flex:1 1 auto;
+}
+>>>>>>> 535c0c1 (initial commit)
 .wp-block-embed .components-placeholder__error{
   word-break:break-word;
 }

@@ -172,3 +172,7 @@ add_filter( 'list_pages', '_wp_privacy_settings_filter_draft_page_titles', 10, 2
 
 // Font management.
 add_action( 'admin_print_styles', 'wp_print_font_faces', 50 );
+<<<<<<< HEAD
+=======
+add_action( 'admin_print_styles', 'wp_print_font_faces_from_style_variations', 50 );
+>>>>>>> 535c0c1 (initial commit)

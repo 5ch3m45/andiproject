@@ -542,8 +542,14 @@
 	background: transparent;
 }
 
+<<<<<<< HEAD
 #available-menu-items .accordion-section-title button {
 	display: block;
+=======
+#available-menu-items .accordion-section-title button .toggle-indicator {
+	display: flex;
+	align-items: center;
+>>>>>>> 535c0c1 (initial commit)
 	width: 28px;
 	height: 35px;
 	position: absolute;

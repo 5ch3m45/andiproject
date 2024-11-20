@@ -75,7 +75,11 @@ if ( ! function_exists( 'wp_install' ) ) :
 		update_option( 'blog_public', $is_public );
 
 		// Freshness of site - in the future, this could get more specific about actions taken, perhaps.
+<<<<<<< HEAD
 		update_option( 'fresh_site', 1 );
+=======
+		update_option( 'fresh_site', 1, false );
+>>>>>>> 535c0c1 (initial commit)
 
 		if ( $language ) {
 			update_option( 'WPLANG', $language );
@@ -278,7 +282,12 @@ if ( ! function_exists( 'wp_install_defaults' ) ) :
 To get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard.
 Commenter avatars come from <a href="%s">Gravatar</a>.'
 			),
+<<<<<<< HEAD
 			esc_url( __( 'https://en.gravatar.com/' ) )
+=======
+			/* translators: The localized Gravatar URL. */
+			esc_url( __( 'https://gravatar.com/' ) )
+>>>>>>> 535c0c1 (initial commit)
 		);
 		$wpdb->insert(
 			$wpdb->comments,
@@ -459,7 +468,11 @@ Commenter avatars come from <a href="%s">Gravatar</a>.'
 			 * Delete any caps that snuck into the previously active blog. (Hardcoded to blog 1 for now.)
 			 * TODO: Get previous_blog_id.
 			 */
+<<<<<<< HEAD
 			if ( ! is_super_admin( $user_id ) && 1 != $user_id ) {
+=======
+			if ( ! is_super_admin( $user_id ) && 1 !== $user_id ) {
+>>>>>>> 535c0c1 (initial commit)
 				$wpdb->delete(
 					$wpdb->usermeta,
 					array(
@@ -638,16 +651,28 @@ if ( ! function_exists( 'wp_upgrade' ) ) :
 	 *
 	 * @since 2.1.0
 	 *
+<<<<<<< HEAD
 	 * @global int  $wp_current_db_version The old (current) database version.
 	 * @global int  $wp_db_version         The new database version.
+=======
+	 * @global int $wp_current_db_version The old (current) database version.
+	 * @global int $wp_db_version         The new database version.
+>>>>>>> 535c0c1 (initial commit)
 	 */
 	function wp_upgrade() {
 		global $wp_current_db_version, $wp_db_version;
 
+<<<<<<< HEAD
 		$wp_current_db_version = __get_option( 'db_version' );
 
 		// We are up to date. Nothing to do.
 		if ( $wp_db_version == $wp_current_db_version ) {
+=======
+		$wp_current_db_version = (int) __get_option( 'db_version' );
+
+		// We are up to date. Nothing to do.
+		if ( $wp_db_version === $wp_current_db_version ) {
+>>>>>>> 535c0c1 (initial commit)
 			return;
 		}
 
@@ -699,10 +724,17 @@ endif;
 function upgrade_all() {
 	global $wp_current_db_version, $wp_db_version;
 
+<<<<<<< HEAD
 	$wp_current_db_version = __get_option( 'db_version' );
 
 	// We are up to date. Nothing to do.
 	if ( $wp_db_version == $wp_current_db_version ) {
+=======
+	$wp_current_db_version = (int) __get_option( 'db_version' );
+
+	// We are up to date. Nothing to do.
+	if ( $wp_db_version === $wp_current_db_version ) {
+>>>>>>> 535c0c1 (initial commit)
 		return;
 	}
 
@@ -862,6 +894,12 @@ function upgrade_all() {
 		upgrade_650();
 	}
 
+<<<<<<< HEAD
+=======
+	if ( $wp_current_db_version < 58975 ) {
+		upgrade_670();
+	}
+>>>>>>> 535c0c1 (initial commit)
 	maybe_disable_link_manager();
 
 	maybe_disable_automattic_widgets();
@@ -922,7 +960,11 @@ function upgrade_100() {
 		foreach ( $allposts as $post ) {
 			// Check to see if it's already been imported.
 			$cat = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $wpdb->post2cat WHERE post_id = %d AND category_id = %d", $post->ID, $post->post_category ) );
+<<<<<<< HEAD
 			if ( ! $cat && 0 != $post->post_category ) { // If there's no result.
+=======
+			if ( ! $cat && 0 !== (int) $post->post_category ) { // If there's no result.
+>>>>>>> 535c0c1 (initial commit)
 				$wpdb->insert(
 					$wpdb->post2cat,
 					array(
@@ -988,9 +1030,15 @@ function upgrade_110() {
 
 	$time_difference = $all_options->time_difference;
 
+<<<<<<< HEAD
 		$server_time = time() + gmdate( 'Z' );
 	$weblogger_time  = $server_time + $time_difference * HOUR_IN_SECONDS;
 	$gmt_time        = time();
+=======
+	$server_time    = time() + gmdate( 'Z' );
+	$weblogger_time = $server_time + $time_difference * HOUR_IN_SECONDS;
+	$gmt_time       = time();
+>>>>>>> 535c0c1 (initial commit)
 
 	$diff_gmt_server       = ( $gmt_time - $server_time ) / HOUR_IN_SECONDS;
 	$diff_weblogger_server = ( $weblogger_time - $server_time ) / HOUR_IN_SECONDS;
@@ -1095,7 +1143,11 @@ function upgrade_130() {
 	// Some versions have multiple duplicate option_name rows with the same values.
 	$options = $wpdb->get_results( "SELECT option_name, COUNT(option_name) AS dupes FROM `$wpdb->options` GROUP BY option_name" );
 	foreach ( $options as $option ) {
+<<<<<<< HEAD
 		if ( 1 != $option->dupes ) { // Could this be done in the query?
+=======
+		if ( $option->dupes > 1 ) { // Could this be done in the query?
+>>>>>>> 535c0c1 (initial commit)
 			$limit    = $option->dupes - 1;
 			$dupe_ids = $wpdb->get_col( $wpdb->prepare( "SELECT option_id FROM $wpdb->options WHERE option_name = %s LIMIT %d", $option->option_name, $limit ) );
 			if ( $dupe_ids ) {
@@ -1445,7 +1497,11 @@ function upgrade_230() {
 		$links = $wpdb->get_results( "SELECT link_id, link_category FROM $wpdb->links" );
 		if ( ! empty( $links ) ) {
 			foreach ( $links as $link ) {
+<<<<<<< HEAD
 				if ( 0 == $link->link_category ) {
+=======
+				if ( 0 === (int) $link->link_category ) {
+>>>>>>> 535c0c1 (initial commit)
 					continue;
 				}
 				if ( ! isset( $link_cat_id_map[ $link->link_category ] ) ) {
@@ -1670,7 +1726,11 @@ function upgrade_290() {
 		 * Previously, setting depth to 1 would redundantly disable threading,
 		 * but now 2 is the minimum depth to avoid confusion.
 		 */
+<<<<<<< HEAD
 		if ( get_option( 'thread_comments_depth' ) == '1' ) {
+=======
+		if ( 1 === (int) get_option( 'thread_comments_depth' ) ) {
+>>>>>>> 535c0c1 (initial commit)
 			update_option( 'thread_comments_depth', 2 );
 			update_option( 'thread_comments', 0 );
 		}
@@ -1843,7 +1903,11 @@ function upgrade_340() {
 		if ( 'yes' === $wpdb->get_var( "SELECT autoload FROM $wpdb->options WHERE option_name = 'uninstall_plugins'" ) ) {
 			$uninstall_plugins = get_option( 'uninstall_plugins' );
 			delete_option( 'uninstall_plugins' );
+<<<<<<< HEAD
 			add_option( 'uninstall_plugins', $uninstall_plugins, null, 'no' );
+=======
+			add_option( 'uninstall_plugins', $uninstall_plugins, null, false );
+>>>>>>> 535c0c1 (initial commit)
 		}
 	}
 }
@@ -2339,7 +2403,11 @@ function upgrade_630() {
 			$can_compress_scripts = get_option( 'can_compress_scripts', false );
 			if ( false !== $can_compress_scripts ) {
 				delete_option( 'can_compress_scripts' );
+<<<<<<< HEAD
 				add_option( 'can_compress_scripts', $can_compress_scripts, '', 'yes' );
+=======
+				add_option( 'can_compress_scripts', $can_compress_scripts, '', true );
+>>>>>>> 535c0c1 (initial commit)
 			}
 		}
 	}
@@ -2392,11 +2460,48 @@ function upgrade_650() {
 			)
 		);
 
+<<<<<<< HEAD
 		$autoload = array_fill_keys( $theme_mods_options, 'no' );
 		wp_set_option_autoload_values( $autoload );
 	}
 }
 
+=======
+		$autoload = array_fill_keys( $theme_mods_options, false );
+		wp_set_option_autoload_values( $autoload );
+	}
+}
+/**
+ * Executes changes made in WordPress 6.7.0.
+ *
+ * @ignore
+ * @since 6.7.0
+ *
+ * @global int  $wp_current_db_version The old (current) database version.
+ */
+function upgrade_670() {
+	global $wp_current_db_version;
+
+	if ( $wp_current_db_version < 58975 ) {
+		$options = array(
+			'recently_activated',
+			'_wp_suggested_policy_text_has_changed',
+			'dashboard_widget_options',
+			'ftp_credentials',
+			'adminhash',
+			'nav_menu_options',
+			'wp_force_deactivated_plugins',
+			'delete_blog_hash',
+			'allowedthemes',
+			'recovery_keys',
+			'https_detection_errors',
+			'fresh_site',
+		);
+
+		wp_set_options_autoload( $options, false );
+	}
+}
+>>>>>>> 535c0c1 (initial commit)
 /**
  * Executes network-level upgrade routines.
  *
@@ -2518,7 +2623,11 @@ function upgrade_network() {
 			$upgrade = false;
 			$indexes = $wpdb->get_results( "SHOW INDEXES FROM $wpdb->signups" );
 			foreach ( $indexes as $index ) {
+<<<<<<< HEAD
 				if ( 'domain_path' === $index->Key_name && 'domain' === $index->Column_name && 140 != $index->Sub_part ) {
+=======
+				if ( 'domain_path' === $index->Key_name && 'domain' === $index->Column_name && '140' !== $index->Sub_part ) {
+>>>>>>> 535c0c1 (initial commit)
 					$upgrade = true;
 					break;
 				}
@@ -3088,7 +3197,11 @@ function dbDelta( $queries = '', $execute = true ) { // phpcs:ignore WordPress.N
 				$fieldtype_base = strtok( $fieldtype_without_parentheses, ' ' );
 
 				// Is actual field type different from the field type in query?
+<<<<<<< HEAD
 				if ( $tablefield->Type != $fieldtype ) {
+=======
+				if ( $tablefield->Type !== $fieldtype ) {
+>>>>>>> 535c0c1 (initial commit)
 					$do_change = true;
 					if ( in_array( $fieldtype_lowercased, $text_fields, true ) && in_array( $tablefield_type_lowercased, $text_fields, true ) ) {
 						if ( array_search( $fieldtype_lowercased, $text_fields, true ) < array_search( $tablefield_type_lowercased, $text_fields, true ) ) {
@@ -3128,7 +3241,11 @@ function dbDelta( $queries = '', $execute = true ) { // phpcs:ignore WordPress.N
 				// Get the default value from the array.
 				if ( preg_match( "| DEFAULT '(.*?)'|i", $cfields[ $tablefield_field_lowercased ], $matches ) ) {
 					$default_value = $matches[1];
+<<<<<<< HEAD
 					if ( $tablefield->Default != $default_value ) {
+=======
+					if ( $tablefield->Default !== $default_value ) {
+>>>>>>> 535c0c1 (initial commit)
 						// Add a query to change the column's default value
 						$cqueries[] = "ALTER TABLE {$table} ALTER COLUMN `{$tablefield->Field}` SET DEFAULT '{$default_value}'";
 
@@ -3167,7 +3284,11 @@ function dbDelta( $queries = '', $execute = true ) { // phpcs:ignore WordPress.N
 					'fieldname' => $tableindex->Column_name,
 					'subpart'   => $tableindex->Sub_part,
 				);
+<<<<<<< HEAD
 				$index_ary[ $keyname ]['unique']     = ( 0 == $tableindex->Non_unique ) ? true : false;
+=======
+				$index_ary[ $keyname ]['unique']     = ( '0' === $tableindex->Non_unique ) ? true : false;
+>>>>>>> 535c0c1 (initial commit)
 				$index_ary[ $keyname ]['index_type'] = $tableindex->Index_type;
 			}
 
@@ -3519,7 +3640,11 @@ function make_site_theme() {
 
 	// Make the new site theme active.
 	$current_template = __get_option( 'template' );
+<<<<<<< HEAD
 	if ( WP_DEFAULT_THEME == $current_template ) {
+=======
+	if ( WP_DEFAULT_THEME === $current_template ) {
+>>>>>>> 535c0c1 (initial commit)
 		update_option( 'template', $template );
 		update_option( 'stylesheet', $template );
 	}

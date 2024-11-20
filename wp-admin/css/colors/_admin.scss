@@ -115,20 +115,33 @@ textarea:focus {
 	.button:hover,
 	.button.focus,
 	.button:focus {
+<<<<<<< HEAD
 		border-color: darken( #7e8993, 5% );
 		color: darken( #32373c, 5% );
+=======
+		border-color: color.adjust(#7e8993, $lightness: -5%);
+		color: color.adjust(#32373c, $lightness: -5%);
+>>>>>>> 535c0c1 (initial commit)
 	}
 
 	.button.focus,
 	.button:focus {
 		border-color: #7e8993;
+<<<<<<< HEAD
 		color: darken( #32373c, 5% );
+=======
+		color: color.adjust(#32373c, $lightness: -5%);
+>>>>>>> 535c0c1 (initial commit)
 		box-shadow: 0 0 0 1px #32373c;
 	}
 
 	.button:active {
 		border-color: #7e8993;
+<<<<<<< HEAD
 		color: darken( #32373c, 5% );
+=======
+		color: color.adjust(#32373c, $lightness: -5%);
+>>>>>>> 535c0c1 (initial commit)
 		box-shadow: none;
 	}
 
@@ -136,7 +149,11 @@ textarea:focus {
 	.button.active:focus,
 	.button.active:hover {
 		border-color: $button-color;
+<<<<<<< HEAD
 		color: darken( #32373c, 5% );
+=======
+		color: color.adjust(#32373c, $lightness: -5%);
+>>>>>>> 535c0c1 (initial commit)
 		box-shadow: inset 0 2px 5px -3px $button-color;
 	}
 
@@ -154,16 +171,27 @@ textarea:focus {
 		.button.hover,
 		.button:hover,
 		.button-secondary:hover{
+<<<<<<< HEAD
 			border-color: darken($highlight-color, 10);
 			color: darken($highlight-color, 10);
+=======
+			border-color: color.adjust($highlight-color, $lightness: -10%);
+			color: color.adjust($highlight-color, $lightness: -10%);
+>>>>>>> 535c0c1 (initial commit)
 		}
 
 		.button.focus,
 		.button:focus,
 		.button-secondary:focus {
+<<<<<<< HEAD
 			border-color: lighten($highlight-color, 10);
 			color: darken($highlight-color, 20);;
 			box-shadow: 0 0 0 1px lighten($highlight-color, 10);
+=======
+			border-color: color.adjust($highlight-color, $lightness: 10%);
+			color: color.adjust($highlight-color, $lightness: -20%);
+			box-shadow: 0 0 0 1px color.adjust($highlight-color, $lightness: 10%);
+>>>>>>> 535c0c1 (initial commit)
 		}
 
 		.button-primary {
@@ -225,6 +253,7 @@ textarea:focus {
 	}
 
 	.wrap .page-title-action:hover {
+<<<<<<< HEAD
 		color: darken($highlight-color, 10);
 		border-color: darken($highlight-color, 10);
 	}
@@ -233,6 +262,16 @@ textarea:focus {
 		border-color: lighten($highlight-color, 10);
 		color: darken($highlight-color, 20);;
 		box-shadow: 0 0 0 1px lighten($highlight-color, 10);
+=======
+		color: color.adjust($highlight-color, $lightness: -10%);
+		border-color: color.adjust($highlight-color, $lightness: -10%);
+	}
+
+	.wrap .page-title-action:focus {
+		border-color: color.adjust($highlight-color, $lightness: 10%);
+		color: color.adjust($highlight-color, $lightness: -20%);
+		box-shadow: 0 0 0 1px color.adjust($highlight-color, $lightness: 10%);
+>>>>>>> 535c0c1 (initial commit)
 	}
 }
 
@@ -539,7 +578,11 @@ ul#adminmenu > li.current > a.current:after {
 
 .wp-pointer .wp-pointer-content h3 {
 	background-color: $highlight-color;
+<<<<<<< HEAD
 	border-color: darken( $highlight-color, 5% );
+=======
+	border-color: color.adjust($highlight-color, $lightness: -5%);
+>>>>>>> 535c0c1 (initial commit)
 }
 
 .wp-pointer .wp-pointer-content h3:before {
@@ -632,7 +675,11 @@ body.more-filters-opened .more-filters:focus:before {
 
 .nav-menus-php .item-edit:focus:before {
 	box-shadow:
+<<<<<<< HEAD
 		0 0 0 1px lighten($button-color, 10),
+=======
+		0 0 0 1px color.adjust($button-color, $lightness: 10%),
+>>>>>>> 535c0c1 (initial commit)
 		0 0 2px 1px $button-color;
 }
 
@@ -711,7 +758,11 @@ div#wp-responsive-toggle a:before {
 	#customize-save-button-wrapper .save:focus,
 	#publish-settings:focus {
 		box-shadow:
+<<<<<<< HEAD
 			0 0 0 1px lighten($button-color, 10),
+=======
+			0 0 0 1px color.adjust($button-color, $lightness: 10%),
+>>>>>>> 535c0c1 (initial commit)
 			0 0 2px 1px $button-color;
 	}
 
@@ -772,7 +823,11 @@ div#wp-responsive-toggle a:before {
 	.wp-full-overlay .collapse-sidebar:hover .collapse-sidebar-arrow,
 	.wp-full-overlay .collapse-sidebar:focus .collapse-sidebar-arrow {
 		box-shadow:
+<<<<<<< HEAD
 			0 0 0 1px lighten($button-color, 10),
+=======
+			0 0 0 1px color.adjust($button-color, $lightness: 10%),
+>>>>>>> 535c0c1 (initial commit)
 			0 0 2px 1px $button-color;
 	}
 

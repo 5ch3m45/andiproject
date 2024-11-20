@@ -2,11 +2,24 @@
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
 	"name": "core/categories",
+<<<<<<< HEAD
 	"title": "Categories List",
 	"category": "widgets",
 	"description": "Display a list of all categories.",
 	"textdomain": "default",
 	"attributes": {
+=======
+	"title": "Terms List",
+	"category": "widgets",
+	"description": "Display a list of all terms of a given taxonomy.",
+	"keywords": [ "categories" ],
+	"textdomain": "default",
+	"attributes": {
+		"taxonomy": {
+			"type": "string",
+			"default": "category"
+		},
+>>>>>>> 535c0c1 (initial commit)
 		"displayAsDropdown": {
 			"type": "boolean",
 			"default": false
@@ -26,8 +39,22 @@
 		"showEmpty": {
 			"type": "boolean",
 			"default": false
+<<<<<<< HEAD
 		}
 	},
+=======
+		},
+		"label": {
+			"type": "string",
+			"role": "content"
+		},
+		"showLabel": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"usesContext": [ "enhancedPagination" ],
+>>>>>>> 535c0c1 (initial commit)
 	"supports": {
 		"align": true,
 		"html": false,
@@ -54,6 +81,21 @@
 		},
 		"interactivity": {
 			"clientNavigation": true
+<<<<<<< HEAD
+=======
+		},
+		"__experimentalBorder": {
+			"radius": true,
+			"color": true,
+			"width": true,
+			"style": true,
+			"__experimentalDefaultControls": {
+				"radius": true,
+				"color": true,
+				"width": true,
+				"style": true
+			}
+>>>>>>> 535c0c1 (initial commit)
 		}
 	},
 	"editorStyle": "wp-block-categories-editor",

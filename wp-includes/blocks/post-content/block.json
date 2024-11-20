@@ -7,15 +7,40 @@
 	"description": "Displays the contents of a post or page.",
 	"textdomain": "default",
 	"usesContext": [ "postId", "postType", "queryId" ],
+<<<<<<< HEAD
+=======
+	"example": {
+		"viewportWidth": 350
+	},
+>>>>>>> 535c0c1 (initial commit)
 	"supports": {
 		"align": [ "wide", "full" ],
 		"html": false,
 		"layout": true,
+<<<<<<< HEAD
+=======
+		"background": {
+			"backgroundImage": true,
+			"backgroundSize": true,
+			"__experimentalDefaultControls": {
+				"backgroundImage": true
+			}
+		},
+>>>>>>> 535c0c1 (initial commit)
 		"dimensions": {
 			"minHeight": true
 		},
 		"spacing": {
+<<<<<<< HEAD
 			"blockGap": true
+=======
+			"blockGap": true,
+			"padding": true,
+			"__experimentalDefaultControls": {
+				"margin": false,
+				"padding": false
+			}
+>>>>>>> 535c0c1 (initial commit)
 		},
 		"color": {
 			"gradients": true,
@@ -39,5 +64,9 @@
 			}
 		}
 	},
+<<<<<<< HEAD
+=======
+	"style": "wp-block-post-content",
+>>>>>>> 535c0c1 (initial commit)
 	"editorStyle": "wp-block-post-content-editor"
 }

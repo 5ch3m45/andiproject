@@ -21,10 +21,17 @@ _deprecated_file(
  * @since 2.8.0
  */
 #[AllowDynamicProperties]
+<<<<<<< HEAD
 class WP_Feed_Cache extends SimplePie_Cache {
 
 	/**
 	 * Creates a new SimplePie_Cache object.
+=======
+class WP_Feed_Cache extends SimplePie\Cache {
+
+	/**
+	 * Creates a new SimplePie\Cache object.
+>>>>>>> 535c0c1 (initial commit)
 	 *
 	 * @since 2.8.0
 	 *

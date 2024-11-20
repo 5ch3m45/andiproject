@@ -224,7 +224,11 @@ p {
 	margin: 1.1em 0;
 }
 
+<<<<<<< HEAD
 .login h1.admin-email__heading {
+=======
+.login .admin-email__heading {
+>>>>>>> 535c0c1 (initial commit)
 	border-bottom: 1px #f0f0f1 solid;
 	color: #50575e;
 	font-weight: normal;
@@ -269,11 +273,19 @@ p {
 	vertical-align: baseline;
 }
 
+<<<<<<< HEAD
 .login h1 {
 	text-align: center;
 }
 
 .login h1 a {
+=======
+.login .wp-login-logo {
+	text-align: center;
+}
+
+.login .wp-login-logo a {
+>>>>>>> 535c0c1 (initial commit)
 	background-image: url(../images/w-logo-blue.png?ver=20131202);
 	background-image: none, url(../images/wordpress-logo.svg?ver=20131107);
 	background-size: 84px;
@@ -323,13 +335,21 @@ p {
 
 .login #nav a:hover,
 .login #backtoblog a:hover,
+<<<<<<< HEAD
 .login h1 a:hover {
+=======
+.login .wp-login-logo a:hover {
+>>>>>>> 535c0c1 (initial commit)
 	color: #135e96;
 }
 
 .login #nav a:focus,
 .login #backtoblog a:focus,
+<<<<<<< HEAD
 .login h1 a:focus {
+=======
+.login .wp-login-logo a:focus {
+>>>>>>> 535c0c1 (initial commit)
 	color: #043959;
 }
 
@@ -390,7 +410,11 @@ body.interim-login {
 	margin: 5px auto 20px;
 }
 
+<<<<<<< HEAD
 .interim-login.login h1 a {
+=======
+.interim-login.login .wp-login-logo a {
+>>>>>>> 535c0c1 (initial commit)
 	width: auto;
 }
 

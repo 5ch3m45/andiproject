@@ -595,6 +595,7 @@ window.wp = window.wp || {};
 		initialize: function() {
 			_.bindAll( this, 'setWidth' );
 
+<<<<<<< HEAD
 			// Add the button view.
 			this.views.add( new revisions.view.Buttons({
 				model: this.model
@@ -602,6 +603,15 @@ window.wp = window.wp || {};
 
 			// Add the checkbox view.
 			this.views.add( new revisions.view.Checkbox({
+=======
+			// Add the checkbox view.
+			this.views.add( new revisions.view.Checkbox({
+				model: this.model
+			}) );
+
+			// Add the button view.
+			this.views.add( new revisions.view.Buttons({
+>>>>>>> 535c0c1 (initial commit)
 				model: this.model
 			}) );
 
@@ -628,6 +638,12 @@ window.wp = window.wp || {};
 				model: tooltip
 			}) );
 
+<<<<<<< HEAD
+=======
+			// Add the visually hidden slider help view.
+			this.views.add( new revisions.view.SliderHelp() );
+
+>>>>>>> 535c0c1 (initial commit)
 			// Add the slider view.
 			this.views.add( new revisions.view.Slider({
 				model: slider
@@ -804,6 +820,15 @@ window.wp = window.wp || {};
 		}
 	});
 
+<<<<<<< HEAD
+=======
+	// The slider visually hidden help view.
+ 	revisions.view.SliderHelp = wp.Backbone.View.extend({
+		className: 'revisions-slider-hidden-help',
+		template:  wp.template( 'revisions-slider-hidden-help' )
+	});
+   
+>>>>>>> 535c0c1 (initial commit)
 	// The tooltip view.
 	// Encapsulates the tooltip.
 	revisions.view.Tooltip = wp.Backbone.View.extend({
@@ -957,6 +982,23 @@ window.wp = window.wp || {};
 			this.applySliderSettings();
 		},
 
+<<<<<<< HEAD
+=======
+		accessibilityHelper: function() {
+			var handles = $( '.ui-slider-handle' );
+			handles.first().attr( {
+					role: 'button',
+					'aria-labelledby': 'diff-title-from diff-title-author',
+					'aria-describedby': 'revisions-slider-hidden-help',
+			} );
+			handles.last().attr( {
+					role: 'button',
+					'aria-labelledby': 'diff-title-to diff-title-author',
+					'aria-describedby': 'revisions-slider-hidden-help',
+			} );
+		},
+
+>>>>>>> 535c0c1 (initial commit)
 		mouseMove: function( e ) {
 			var zoneCount         = this.model.revisions.length - 1,       // One fewer zone than models.
 				sliderFrom        = this.$el.allOffsets()[this.direction], // "From" edge of slider.
@@ -996,9 +1038,18 @@ window.wp = window.wp || {};
 				handles.last()
 					.toggleClass( 'from-handle', !! isRtl )
 					.toggleClass( 'to-handle', ! isRtl );
+<<<<<<< HEAD
 			} else {
 				handles.removeClass('from-handle to-handle');
 			}
+=======
+				this.accessibilityHelper();
+			} else {
+				handles.removeClass('from-handle to-handle');
+				this.accessibilityHelper();
+			}
+
+>>>>>>> 535c0c1 (initial commit)
 		},
 
 		start: function( event, ui ) {

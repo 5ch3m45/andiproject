@@ -9,12 +9,23 @@
 	"keywords": [ "img", "photo", "picture" ],
 	"textdomain": "default",
 	"attributes": {
+<<<<<<< HEAD
+=======
+		"blob": {
+			"type": "string",
+			"role": "local"
+		},
+>>>>>>> 535c0c1 (initial commit)
 		"url": {
 			"type": "string",
 			"source": "attribute",
 			"selector": "img",
 			"attribute": "src",
+<<<<<<< HEAD
 			"__experimentalRole": "content"
+=======
+			"role": "content"
+>>>>>>> 535c0c1 (initial commit)
 		},
 		"alt": {
 			"type": "string",
@@ -22,13 +33,21 @@
 			"selector": "img",
 			"attribute": "alt",
 			"default": "",
+<<<<<<< HEAD
 			"__experimentalRole": "content"
+=======
+			"role": "content"
+>>>>>>> 535c0c1 (initial commit)
 		},
 		"caption": {
 			"type": "rich-text",
 			"source": "rich-text",
 			"selector": "figcaption",
+<<<<<<< HEAD
 			"__experimentalRole": "content"
+=======
+			"role": "content"
+>>>>>>> 535c0c1 (initial commit)
 		},
 		"lightbox": {
 			"type": "object",
@@ -41,14 +60,22 @@
 			"source": "attribute",
 			"selector": "img",
 			"attribute": "title",
+<<<<<<< HEAD
 			"__experimentalRole": "content"
+=======
+			"role": "content"
+>>>>>>> 535c0c1 (initial commit)
 		},
 		"href": {
 			"type": "string",
 			"source": "attribute",
 			"selector": "figure > a",
 			"attribute": "href",
+<<<<<<< HEAD
 			"__experimentalRole": "content"
+=======
+			"role": "content"
+>>>>>>> 535c0c1 (initial commit)
 		},
 		"rel": {
 			"type": "string",
@@ -64,7 +91,11 @@
 		},
 		"id": {
 			"type": "number",
+<<<<<<< HEAD
 			"__experimentalRole": "content"
+=======
+			"role": "content"
+>>>>>>> 535c0c1 (initial commit)
 		},
 		"width": {
 			"type": "string"
@@ -102,6 +133,12 @@
 		"filter": {
 			"duotone": true
 		},
+<<<<<<< HEAD
+=======
+		"spacing": {
+			"margin": true
+		},
+>>>>>>> 535c0c1 (initial commit)
 		"__experimentalBorder": {
 			"color": true,
 			"radius": true,

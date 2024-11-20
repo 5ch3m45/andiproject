@@ -1,0 +1,846 @@
+/*------------------------------------*\
+    #. CSS Variables
+\*------------------------------------*/
+:root {
+  --akfe-primary: var(--wp--preset--color--primary);
+  --akfe-primary-rgb: var(--wp--preset--color--primary-rgb);
+  --akfe-secondary: var(--wp--preset--color--bg-light);
+  --akfe-success: var(--wp--preset--color--success);
+  --akfe-info: var(--wp--preset--color--info);
+  --akfe-warning: var(--wp--preset--color--warning);
+  --akfe-danger: var(--wp--preset--color--danger);
+  --akfe-dark: var(--wp--preset--color--dark);
+  --akfe-white: var(--wp--preset--color--base-2);
+  --akfe-facebook: var(--wp--preset--color--facebook);
+  --akfe-twitter: var(--wp--preset--color--twitter);
+  --akfe-youtube: var(--wp--preset--color--youtube);
+  --akfe-instagram: var(--wp--preset--color--instagram);
+  --akfe-linkedin: var(--wp--preset--color--linkedin);
+  --akfe-pinterest: var(--wp--preset--color--pinterest);
+  --akfe-github: var(--wp--preset--color--github);
+  --akfe-whatsapp: var(--wp--preset--color--whatsapp);
+  --akfe-snapchat: var(--wp--preset--color--snapchat);
+  --akfe-tiktok: var(--wp--preset--color--tiktok);
+  --akfe-reddit: var(--wp--preset--color--reddit);
+  --akfe-tumblr: var(--wp--preset--color--tumblr);
+  --akfe-vk: var(--wp--preset--color--vk);
+  --akfe-text-gray: var(--wp--preset--color--gray);
+  --akfe-text-body: var(--wp--preset--color--body);
+  --akfe-text-light: var(--wp--preset--color--light);
+  --akfe-text-lighter: var(--wp--preset--color--lighter);
+  --akfe-text-lightest: var(--wp--preset--color--light-gray);
+  --akfe-bg-default: var(--wp--preset--color--bg-normal);
+  --akfe-bg-light: var(--wp--preset--color--bg-light);
+  --akfe-bg-lighter: var(--wp--preset--color--bg-lighter);
+  --akfe-bg-lightest: var(--wp--preset--color--bg-section);
+  --akfe-border-white: var(--wp--preset--color--base-2);
+  --akfe-border-default: var(--wp--preset--color--border-color);
+  --akfe-border-light:var(--wp--preset--color--border-light);
+  --akfe-border-lighter: var(--wp--preset--color--border-gray);
+  --akfe-border-lightest: var(--wp--preset--color--border-gray);
+  --akfe-border-deep: var(--wp--preset--color--border-gray);
+  --akfe-font-family-body: var(--wp--preset--font-family--body);
+  --directorist-color-primary: var(--wp--preset--color--primary);
+  --directorist-color-primary-rgb: var(--wp--preset--color--primary-rgb);
+  --directorist-color-secondary: var(--wp--preset--color--bg-light);
+  --directorist-color-dark:var(--wp--preset--color--dark);
+  --directorist-color-btn-primary-bg:var(--wp--preset--color--primary);
+  --directorist-color-btn-primary-border:var(--wp--preset--color--primary);
+  --directorist-color-btn-primary-rgb:var(--wp--preset--color--primary-rgb);
+  --directorist-color-dark-rgb: 0, 0, 0;
+  --directorist-color-success: var(--wp--preset--color--success);
+  --directorist-color-success-rgb: 40, 168, 0;
+  --directorist-color-info: var(--wp--preset--color--info);
+  --directorist-color-info-rgb: 44, 153, 255;
+  --directorist-color-warning: var(--wp--preset--color--warning);
+  --directorist-color-warning-rgb: 242, 129, 0;
+  --directorist-color-danger: var(--wp--preset--color--danger);
+  --directorist-color-danger-rgb: 248, 7, 24;
+  --directorist-color-white: var(--wp--preset--color--base-2);
+  --directorist-color-body: var(--wp--preset--color--body);
+  --directorist-color-gray: var(--wp--preset--color--border-gray);
+  --directorist-color-light: var(--wp--preset--color--border-light);
+  --directorist-color-bg-gray: var(--wp--preset--color--bg-normal);
+  --directorist-color-bg-light-gray: var(--wp--preset--color--bg-light);
+  --directorist-color-bg-light: var(--wp--preset--color--bg-lighter);
+  --directorist-color-placeholder: var(--wp--preset--color--light);
+  --directorist-color-border: var(--wp--preset--color--border-light);
+  --directorist-color-border-gray: var(--wp--preset--color--border-color);
+  --directorist-color-open-badge: var(--wp--preset--color--success);
+  --directorist-color-closed-badge: var(--wp--preset--color--danger);
+  --directorist-color-featured-badge: var(--wp--preset--color--warning);
+  --directorist-color-popular-badge: var(--wp--preset--color--danger);
+  --directorist-color-new-badge: var(--wp--preset--color--info);
+  --directorist-color-marker-icon: var(--wp--preset--color--white);
+  --directorist-color-marker-shape: var(--wp--preset--color--primary);
+  --directorist-color-marker-shape-rgb:var(--directorist-color-primary-rgb);
+  --directorist-color-popular-badge: var(--wp--preset--color--primary);
+  --directorist-color-star:var(--wp--preset--color--warning);
+  --wp--preset--color--base:var(--wp--preset--color--white);
+  --wp--preset--color--contrast:var(--wp--preset--color--body);
+}
+
+.elementor-page,
+[class^=elementor-kit] {
+  --e-global-color-primary: var(--wp--preset--color--primary);
+  --e-global-color-secondary: var(--wp--preset--color--secondary);
+  --e-global-color-text: var(--wp--preset--color--body);
+  --e-global-typography-primary-font-family: var(--wp--preset--font-family--global);
+  --e-global-typography-text-font-family: var(--wp--preset--font-family--global);
+}
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/* Sections
+     ========================================================================== */
+/**
+   * Remove the margin in all browsers.
+   */
+body {
+  margin: 0;
+}
+
+/**
+   * Render the `main` element consistently in IE.
+   */
+main {
+  display: block;
+}
+
+/**
+   * Correct the font size and margin on `h1` elements within `section` and
+   * `article` contexts in Chrome, Firefox, and Safari.
+   */
+/* h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+  } */
+/* Grouping content
+     ========================================================================== */
+/**
+   * 1. Add the correct box sizing in Firefox.
+   * 2. Show the overflow in Edge and IE.
+   */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+     ========================================================================== */
+/**
+   * Remove the gray background on active links in IE 10.
+   */
+a {
+  background-color: transparent;
+  text-decoration: none;
+  outline: none;
+}
+
+/**
+   * 1. Remove the bottom border in Chrome 57-
+   * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+   */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: none;
+  /* 2 */
+  text-decoration: none dotted;
+  /* 2 */
+}
+
+/**
+   * Add the correct font weight in Chrome, Edge, and Safari.
+   */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+   * Add the correct font size in all browsers.
+   */
+small {
+  font-size: 80%;
+}
+
+/**
+   * Prevent `sub` and `sup` elements from affecting the line height in
+   * all browsers.
+   */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+     ========================================================================== */
+/**
+   * Remove the border on images inside links in IE 10.
+   */
+img {
+  border-style: none;
+}
+
+/* Forms
+     ========================================================================== */
+/**
+   * 1. Change the font styles in all browsers.
+   * 2. Remove the margin in Firefox and Safari.
+   */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+   * Show the overflow in IE.
+   * 1. Show the overflow in Edge.
+   */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+   * Remove the inheritance of text transform in Edge, Firefox, and IE.
+   * 1. Remove the inheritance of text transform in Firefox.
+   */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+   * Correct the inability to style clickable types in iOS and Safari.
+   */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+/**
+   * Remove the inner border and padding in Firefox.
+   */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+   * Restore the focus styles unset by the previous rule.
+   */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+   * Correct the padding in Firefox.
+   */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+   * 1. Correct the text wrapping in Edge and IE.
+   * 2. Correct the color inheritance from `fieldset` elements in IE.
+   * 3. Remove the padding so developers are not caught out when they zero out
+   *    `fieldset` elements in all browsers.
+   */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+   * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+   */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+   * Remove the default vertical scrollbar in IE 10+.
+   */
+textarea {
+  overflow: auto;
+}
+
+/**
+   * 1. Add the correct box sizing in IE 10.
+   * 2. Remove the padding in IE 10.
+   */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+   * Correct the cursor style of increment and decrement buttons in Chrome.
+   */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+   * 1. Correct the odd appearance in Chrome and Safari.
+   * 2. Correct the outline style in Safari.
+   */
+[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+   * Remove the inner padding in Chrome and Safari on macOS.
+   */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+   * 1. Correct the inability to style clickable types in iOS and Safari.
+   * 2. Change font properties to `inherit` in Safari.
+   */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+     ========================================================================== */
+/*
+   * Add the correct display in Edge, IE 10+, and Firefox.
+   */
+details {
+  display: block;
+}
+
+/*
+   * Add the correct display in all browsers.
+   */
+summary {
+  display: list-item;
+}
+
+/* Misc
+     ========================================================================== */
+/**
+   * Add the correct display in IE 10+.
+   */
+template {
+  display: none;
+}
+
+/**
+   * Add the correct display in IE 10.
+   */
+[hidden] {
+  display: none;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+}
+
+label {
+  display: inline-block;
+}
+
+p {
+  line-height: 1.75;
+}
+
+/* Heading */
+.elementor-heading-title {
+  font-family: var(--wp--preset--font-family--global);
+}
+
+h1,
+h1.elementor-heading-title {
+  line-height: 1.26667;
+}
+
+h2,
+h2.elementor-heading-title {
+  line-height: 1.25;
+}
+
+h3,
+h3.elementor-heading-title {
+  line-height: 1.22727;
+}
+
+h4,
+h4.elementor-heading-title {
+  line-height: 1.25;
+}
+
+h5,
+h5.elementor-heading-title {
+  line-height: 1.27778;
+}
+
+h6,
+h6.elementor-heading-title {
+  line-height: 1.375;
+}
+
+/* BEM Element and Modifier */
+/* Author */
+.directorist-single-contents-area {
+  margin-top: 0;
+  padding: 30px 0 50px;
+}
+
+/* Subscribe */
+.theme-subscription-box {
+  position: relative;
+  background: var(--wp--preset--color--subscribe-bg);
+  border: 1px solid var(--wp--preset--color--subscribe-border);
+  border-radius: var(--wp--custom--border-radius--subscribe-radius);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.theme-subscription-box__input {
+  width: 100%;
+  display: flex;
+}
+.theme-subscription-box__input input {
+  min-height: 48px;
+  padding: 0 70px 0 20px;
+  border-radius: unset;
+  border: none;
+  background: unset;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.theme-subscription-box__input input:focus {
+  outline: none;
+}
+.theme-subscription-box__input input::placeholder {
+  font-size: 14px;
+}
+.theme-subscription-box__submit {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  overflow: hidden;
+}
+.theme-subscription-box__submit button {
+  min-height: 48px;
+  padding: 0 13px;
+  border: 0 none;
+  background-color: var(--wp--preset--color--primary);
+  border-radius: unset;
+  transition: 0.3s;
+}
+.theme-subscription-box__submit button i {
+  position: relative;
+  color: var(--wp--preset--color--white);
+  font-size: 22px;
+}
+.theme-subscription-box__submit button i:after {
+  content: "";
+  display: block;
+  width: 23px;
+  height: 23px;
+  background: currentColor;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-image: url(./../../assets/images/send.svg);
+  transition: 0.3s;
+}
+
+/* Search Form */
+@media only screen and (max-width: 575px) {
+  .directorist-search-form-action__modal__btn-advanced {
+    background: var(--wp--preset--color--white);
+    padding: 14px;
+    border-radius: 10px;
+  }
+}
+.directorist-search-popup-block__button {
+  cursor: pointer;
+}
+.directorist-search-popup-block__button .directorist-icon-mask:after {
+  background-color: var(--wp--preset--color--light);
+}
+
+.directorist-search-popup-block__overlay.show,
+.directorist-account-block-logged-mode__overlay.show {
+  z-index: 2 !important;
+}
+
+/* Block Header */
+header .wp-block-navigation .has-child .wp-block-navigation__submenu-container {
+  padding: 10px 20px 10px 10px !important;
+  border-radius: 6px !important;
+  border: 1px solid var(--wp--preset--color--border-color) !important;
+}
+@media only screen and (max-width: 600px) {
+  header .wp-block-navigation .has-child .wp-block-navigation__submenu-container {
+    padding: 15px 20px 15px 15px !important;
+    margin-top: 15px;
+  }
+  header .wp-block-navigation .has-child .wp-block-navigation__submenu-container .wp-block-navigation-item:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+header .wp-block-navigation .wp-block-navigation.wp-block-navigation__container > .wp-block-navigation-item {
+  padding: 10px 0 !important;
+}
+@media only screen and (max-width: 600px) {
+  header .wp-block-navigation .wp-block-navigation.wp-block-navigation__container > .wp-block-navigation-item {
+    padding: 0 !important;
+  }
+}
+header .wp-block-navigation .wp-block-navigation .wp-block-navigation-item.current-menu-item > a {
+  color: var(--wp--preset--color--primary) !important;
+}
+header .wp-block-navigation .wp-block-navigation .wp-block-navigation-item.current-menu-item > a + button {
+  color: var(--wp--preset--color--primary);
+}
+header .wp-block-navigation .wp-block-navigation .wp-block-navigation-item:focus > a, header .wp-block-navigation .wp-block-navigation .wp-block-navigation-item:hover > a {
+  color: var(--wp--preset--color--primary) !important;
+}
+header .wp-block-navigation .wp-block-navigation .wp-block-navigation-item:focus > a + button, header .wp-block-navigation .wp-block-navigation .wp-block-navigation-item:hover > a + button {
+  color: var(--wp--preset--color--primary);
+}
+header .wp-block-navigation .wp-block-navigation-item__content.wp-block-navigation-item__content {
+  color: var(--wp--preset--color--body);
+}
+header .wp-block-navigation .wp-block-navigation-item__content.wp-block-navigation-item__content.current-menu-ancestor {
+  color: var(--wp--preset--color--primary);
+}
+header .wp-block-navigation .wp-block-navigation-item__content.wp-block-navigation-item__content.current-menu-ancestor + button {
+  color: var(--wp--preset--color--primary);
+}
+header .wp-block-navigation .wp-block-navigation-item__content.wp-block-navigation-item__content + button {
+  color: var(--wp--preset--color--body);
+}
+@media only screen and (max-width: 781.99px) {
+  header .wp-block-site-logo {
+    text-align: center;
+  }
+  header .wp-block-navigation ul {
+    justify-content: center;
+  }
+  header .header-icons .wp-block-group {
+    justify-content: center !important;
+  }
+  header .wp-block-navigation {
+    justify-content: center !important;
+  }
+}
+
+header.wp-block-template-part {
+  box-shadow: var(--wp--preset--shadow--small-shadow);
+  position: relative;
+  z-index: 3;
+}
+
+/* Footer Menu link */
+.wp-block-navigation .wp-block-navigation-item a:hover {
+  color: var(--wp--preset--color--primary);
+}
+
+/* Block Button */
+:root :where(.wp-element-button, .wp-block-button__link) {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+/* Additional Css */
+:where(.wp-site-blocks *:focus) {
+  outline-width: 2px;
+  outline-style: solid;
+}
+
+footer.wp-block-template-part {
+  margin-block-start: 0;
+}
+
+:root :where(.wp-site-blocks) > * {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.wp-block-post-content {
+  margin-top: 0;
+}
+
+.wp-block-navigation a:where(:not(.wp-element-button)):hover {
+  text-decoration: none;
+}
+
+:where(.wp-site-blocks *:focus) {
+  outline-width: 1px;
+  outline-style: dotted;
+}
+
+.wp-block-social-link {
+  border-radius: var(--wp--custom--border-radius--large);
+}
+
+.wp-block-social-link a {
+  padding: 10px;
+}
+
+.wp-block-social-links .wp-social-link svg {
+  height: 0.8em;
+  width: 0.8em;
+}
+
+form.wpcf7-form p label {
+  color: var(--wp--preset--color--dark);
+}
+form.wpcf7-form p .form-control {
+  width: 100%;
+  min-height: 36px;
+  border-radius: 4px;
+  border: 1px solid var(--wp--preset--color--border-color);
+  margin-top: 8px;
+  padding: 0 20px;
+}
+
+form .wpcf7-submit {
+  padding: 15px 30px;
+  color: var(--wp--preset--color--white);
+  background-color: var(--wp--preset--color--primary);
+  border: 1px solid var(--wp--preset--color--primary);
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+/* --- Legacy widget minimums style support --- */
+.widget.widget_block {
+  background-color: var(--wp--preset--color--base-2);
+  border-radius: 4px;
+  border: 1px solid var(--wp--preset--color--border-color);
+  border-color: var(--wp--preset--color--border-color);
+  margin-bottom: 30px;
+}
+.widget.widget_block:empty {
+  display: none;
+}
+.widget.widget_block ol,
+.widget.widget_block ul {
+  margin-top: 0;
+  list-style: none;
+}
+.widget.widget_block ol li,
+.widget.widget_block ul li {
+  color: var(--wp--preset--color--gray);
+  font-size: var(--wp--preset--font-size--small);
+}
+.widget.widget_block ol li a,
+.widget.widget_block ul li a {
+  color: var(--wp--preset--color--gray);
+  font-size: var(--wp--preset--font-size--small);
+}
+.widget.widget_block ol li a:hover,
+.widget.widget_block ul li a:hover {
+  color: var(--wp--preset--color--primary);
+}
+.widget.widget_block ol li:only-child,
+.widget.widget_block ul li:only-child {
+  margin-bottom: 0;
+}
+.widget.widget_block ol li:not(:last-child),
+.widget.widget_block ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.widget.widget_block ol li:last-child,
+.widget.widget_block ul li:last-child {
+  margin-bottom: 0;
+}
+.widget.widget_block > form,
+.widget.widget_block > p,
+.widget.widget_block > ol,
+.widget.widget_block > ul {
+  padding: 20px 30px !important;
+  margin-top: 0;
+  list-style: none;
+}
+.widget.widget_block > form:only-child,
+.widget.widget_block > p:only-child,
+.widget.widget_block > ol:only-child,
+.widget.widget_block > ul:only-child {
+  margin-bottom: 0;
+}
+.widget.widget_block > form:empty,
+.widget.widget_block > p:empty,
+.widget.widget_block > ol:empty,
+.widget.widget_block > ul:empty {
+  padding: 0 !important;
+  display: none;
+}
+.widget.widget_block .wp-block-heading {
+  padding: 15px 25px;
+  border-bottom: 1px solid var(--wp--preset--color--border-color);
+  color: var(--wp--preset--color--dark);
+  font-size: var(--wp--preset--font-size--large);
+}
+.widget.widget_block .wp-block-heading + ol,
+.widget.widget_block .wp-block-heading + ul,
+.widget.widget_block .wp-block-heading + div {
+  margin-top: 0;
+  padding: 20px 25px;
+  list-style: none;
+}
+.widget.widget_block .wp-block-heading + ol li,
+.widget.widget_block .wp-block-heading + ul li,
+.widget.widget_block .wp-block-heading + div li {
+  color: var(--wp--preset--color--gray);
+  font-size: var(--wp--preset--font-size--small);
+}
+.widget.widget_block .wp-block-heading + ol li a,
+.widget.widget_block .wp-block-heading + ul li a,
+.widget.widget_block .wp-block-heading + div li a {
+  color: var(--wp--preset--color--gray);
+  font-size: var(--wp--preset--font-size--small);
+}
+.widget.widget_block .wp-block-heading + ol li a:hover,
+.widget.widget_block .wp-block-heading + ul li a:hover,
+.widget.widget_block .wp-block-heading + div li a:hover {
+  color: var(--wp--preset--color--primary);
+}
+.widget.widget_block .wp-block-heading + ol li:only-child,
+.widget.widget_block .wp-block-heading + ul li:only-child,
+.widget.widget_block .wp-block-heading + div li:only-child {
+  margin-bottom: 0;
+}
+.widget.widget_block .wp-block-heading + ol li:not(:last-child),
+.widget.widget_block .wp-block-heading + ul li:not(:last-child),
+.widget.widget_block .wp-block-heading + div li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.widget.widget_block .wp-block-heading + ol li:last-child,
+.widget.widget_block .wp-block-heading + ul li:last-child,
+.widget.widget_block .wp-block-heading + div li:last-child {
+  margin-bottom: 0;
+}
+.widget.widget_block .wp-block-heading + ol a:hover,
+.widget.widget_block .wp-block-heading + ul a:hover,
+.widget.widget_block .wp-block-heading + div a:hover {
+  color: var(--wp--preset--color--primary);
+}
+.widget.widget_block.widget_media_image {
+  padding: 20px 30px;
+}
+.widget.widget_block.widget_media_image img {
+  width: 100%;
+}
+.widget.widget_block.widget_calendar > .wp-block-calendar {
+  padding: 20px 30px;
+}
+
+/*# sourceMappingURL=style.css.map */

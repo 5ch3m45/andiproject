@@ -43,17 +43,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   isBlobURL: () => (/* binding */ isBlobURL),
 /* harmony export */   revokeBlobURL: () => (/* binding */ revokeBlobURL)
 /* harmony export */ });
+<<<<<<< HEAD
 /**
  * @type {Record<string, File|undefined>}
  */
+=======
+/* wp:polyfill */
+>>>>>>> 535c0c1 (initial commit)
 const cache = {};
 
 /**
  * Create a blob URL from a file.
  *
+<<<<<<< HEAD
  * @param {File} file The file to create a blob URL for.
  *
  * @return {string} The blob URL.
+=======
+ * @param file The file to create a blob URL for.
+ *
+ * @return The blob URL.
+>>>>>>> 535c0c1 (initial commit)
  */
 function createBlobURL(file) {
   const url = window.URL.createObjectURL(file);
@@ -66,9 +76,15 @@ function createBlobURL(file) {
  * `createBlobURL` and not removed by `revokeBlobURL`, otherwise it will return
  * `undefined`.
  *
+<<<<<<< HEAD
  * @param {string} url The blob URL.
  *
  * @return {File|undefined} The file for the blob URL.
+=======
+ * @param url The blob URL.
+ *
+ * @return The file for the blob URL.
+>>>>>>> 535c0c1 (initial commit)
  */
 function getBlobByURL(url) {
   return cache[url];
@@ -79,9 +95,15 @@ function getBlobByURL(url) {
  * `createBlobURL` and not removed by `revokeBlobURL`, otherwise it will return
  * `undefined`.
  *
+<<<<<<< HEAD
  * @param {string} url The blob URL.
  *
  * @return {string|undefined} The blob type.
+=======
+ * @param url The blob URL.
+ *
+ * @return The blob type.
+>>>>>>> 535c0c1 (initial commit)
  */
 function getBlobTypeByURL(url) {
   return getBlobByURL(url)?.type.split('/')[0]; // 0: media type , 1: file extension eg ( type: 'image/jpeg' ).
@@ -90,7 +112,11 @@ function getBlobTypeByURL(url) {
 /**
  * Remove the resource and file cache from memory.
  *
+<<<<<<< HEAD
  * @param {string} url The blob URL.
+=======
+ * @param url The blob URL.
+>>>>>>> 535c0c1 (initial commit)
  */
 function revokeBlobURL(url) {
   if (cache[url]) {
@@ -102,9 +128,15 @@ function revokeBlobURL(url) {
 /**
  * Check whether a url is a blob url.
  *
+<<<<<<< HEAD
  * @param {string|undefined} url The URL.
  *
  * @return {boolean} Is the url a blob url?
+=======
+ * @param url The URL.
+ *
+ * @return Is the url a blob url?
+>>>>>>> 535c0c1 (initial commit)
  */
 function isBlobURL(url) {
   if (!url || !url.indexOf) {
@@ -132,9 +164,15 @@ function isBlobURL(url) {
  * 	downloadBlob( filename, fileContent, 'application/json' );
  * ```
  *
+<<<<<<< HEAD
  * @param {string}   filename    File name.
  * @param {BlobPart} content     File content (BufferSource | Blob | string).
  * @param {string}   contentType (Optional) File mime type. Default is `''`.
+=======
+ * @param filename    File name.
+ * @param content     File content (BufferSource | Blob | string).
+ * @param contentType (Optional) File mime type. Default is `''`.
+>>>>>>> 535c0c1 (initial commit)
  */
 function downloadBlob(filename, content, contentType = '') {
   if (!filename || !content) {

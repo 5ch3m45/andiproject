@@ -8,11 +8,16 @@ window.wp = window.wp || {};
 
 wp.svgPainter = ( function( $, window, document, undefined ) {
 	'use strict';
+<<<<<<< HEAD
 	var selector, base64, painter,
+=======
+	var selector, painter,
+>>>>>>> 535c0c1 (initial commit)
 		colorscheme = {},
 		elements = [];
 
 	$( function() {
+<<<<<<< HEAD
 		// Detection for browser SVG capability.
 		if ( document.implementation.hasFeature( 'http://www.w3.org/TR/SVG11/feature#Image', '1.1' ) ) {
 			$( document.body ).removeClass( 'no-svg' ).addClass( 'svg' );
@@ -117,14 +122,25 @@ wp.svgPainter = ( function( $, window, document, undefined ) {
 		};
 	})();
 
+=======
+		wp.svgPainter.init();
+	});
+
+>>>>>>> 535c0c1 (initial commit)
 	return {
 		init: function() {
 			painter = this;
 			selector = $( '#adminmenu .wp-menu-image, #wpadminbar .ab-item' );
 
+<<<<<<< HEAD
 			this.setColors();
 			this.findElements();
 			this.paint();
+=======
+			painter.setColors();
+			painter.findElements();
+			painter.paint();
+>>>>>>> 535c0c1 (initial commit)
 		},
 
 		setColors: function( colors ) {
@@ -201,11 +217,15 @@ wp.svgPainter = ( function( $, window, document, undefined ) {
 				}
 
 				try {
+<<<<<<< HEAD
 					if ( 'atob' in window ) {
 						xml = window.atob( encoded[1] );
 					} else {
 						xml = base64.atob( encoded[1] );
 					}
+=======
+					xml = window.atob( encoded[1] );
+>>>>>>> 535c0c1 (initial commit)
 				} catch ( error ) {}
 
 				if ( xml ) {
@@ -218,11 +238,15 @@ wp.svgPainter = ( function( $, window, document, undefined ) {
 					// Replace `fill` properties in `<style>` tags.
 					xml = xml.replace( /fill:.*?;/g, 'fill: ' + color + ';');
 
+<<<<<<< HEAD
 					if ( 'btoa' in window ) {
 						xml = window.btoa( xml );
 					} else {
 						xml = base64.btoa( xml );
 					}
+=======
+					xml = window.btoa( xml );
+>>>>>>> 535c0c1 (initial commit)
 
 					$element.data( 'wp-ui-svg-' + color, xml );
 				} else {

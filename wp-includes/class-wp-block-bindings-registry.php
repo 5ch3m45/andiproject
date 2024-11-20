@@ -189,6 +189,7 @@ final class WP_Block_Bindings_Registry {
 
 		$this->sources[ $source_name ] = $source;
 
+<<<<<<< HEAD
 		// Adds `uses_context` defined by block bindings sources.
 		add_filter(
 			'get_block_type_uses_context',
@@ -203,6 +204,8 @@ final class WP_Block_Bindings_Registry {
 			2
 		);
 
+=======
+>>>>>>> 535c0c1 (initial commit)
 		return $source;
 	}
 

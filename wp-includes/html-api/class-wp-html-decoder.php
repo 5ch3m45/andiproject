@@ -31,7 +31,11 @@ class WP_HTML_Decoder {
 	 *                                 Default 'case-sensitive'.
 	 * @return bool Whether the attribute value starts with the given string.
 	 */
+<<<<<<< HEAD
 	public static function attribute_starts_with( $haystack, $search_text, $case_sensitivity = 'case-sensitive' ) {
+=======
+	public static function attribute_starts_with( $haystack, $search_text, $case_sensitivity = 'case-sensitive' ): bool {
+>>>>>>> 535c0c1 (initial commit)
 		$search_length = strlen( $search_text );
 		$loose_case    = 'ascii-case-insensitive' === $case_sensitivity;
 		$haystack_end  = strlen( $haystack );
@@ -90,7 +94,11 @@ class WP_HTML_Decoder {
 	 * @param string $text Text containing raw and non-decoded text node to decode.
 	 * @return string Decoded UTF-8 value of given text node.
 	 */
+<<<<<<< HEAD
 	public static function decode_text_node( $text ) {
+=======
+	public static function decode_text_node( $text ): string {
+>>>>>>> 535c0c1 (initial commit)
 		return static::decode( 'data', $text );
 	}
 
@@ -110,7 +118,11 @@ class WP_HTML_Decoder {
 	 * @param string $text Text containing raw and non-decoded attribute value to decode.
 	 * @return string Decoded UTF-8 value of given attribute value.
 	 */
+<<<<<<< HEAD
 	public static function decode_attribute( $text ) {
+=======
+	public static function decode_attribute( $text ): string {
+>>>>>>> 535c0c1 (initial commit)
 		return static::decode( 'attribute', $text );
 	}
 
@@ -133,7 +145,11 @@ class WP_HTML_Decoder {
 	 * @param string $text    Text document containing span of text to decode.
 	 * @return string Decoded UTF-8 string.
 	 */
+<<<<<<< HEAD
 	public static function decode( $context, $text ) {
+=======
+	public static function decode( $context, $text ): string {
+>>>>>>> 535c0c1 (initial commit)
 		$decoded = '';
 		$end     = strlen( $text );
 		$at      = 0;
@@ -141,7 +157,11 @@ class WP_HTML_Decoder {
 
 		while ( $at < $end ) {
 			$next_character_reference_at = strpos( $text, '&', $at );
+<<<<<<< HEAD
 			if ( false === $next_character_reference_at || $next_character_reference_at >= $end ) {
+=======
+			if ( false === $next_character_reference_at ) {
+>>>>>>> 535c0c1 (initial commit)
 				break;
 			}
 
@@ -196,6 +216,11 @@ class WP_HTML_Decoder {
 	 *
 	 * @since 6.6.0
 	 *
+<<<<<<< HEAD
+=======
+	 * @global WP_Token_Map $html5_named_character_references Mappings for HTML5 named character references.
+	 *
+>>>>>>> 535c0c1 (initial commit)
 	 * @param string $context            `attribute` for decoding attribute values, `data` otherwise.
 	 * @param string $text               Text document containing span of text to decode.
 	 * @param int    $at                 Optional. Byte offset into text where span begins, defaults to the beginning (0).
@@ -421,7 +446,11 @@ class WP_HTML_Decoder {
 	 * @param int $code_point Which code point to convert.
 	 * @return string Converted code point, or `�` if invalid.
 	 */
+<<<<<<< HEAD
 	public static function code_point_to_utf8_bytes( $code_point ) {
+=======
+	public static function code_point_to_utf8_bytes( $code_point ): string {
+>>>>>>> 535c0c1 (initial commit)
 		// Pre-check to ensure a valid code point.
 		if (
 			$code_point <= 0 ||
@@ -436,6 +465,7 @@ class WP_HTML_Decoder {
 		}
 
 		if ( $code_point <= 0x7FF ) {
+<<<<<<< HEAD
 			$byte1 = ( $code_point >> 6 ) | 0xC0;
 			$byte2 = $code_point & 0x3F | 0x80;
 
@@ -457,5 +487,28 @@ class WP_HTML_Decoder {
 		$byte4 = $code_point & 0x3F | 0x80;
 
 		return pack( 'CCCC', $byte1, $byte2, $byte3, $byte4 );
+=======
+			$byte1 = chr( ( $code_point >> 6 ) | 0xC0 );
+			$byte2 = chr( $code_point & 0x3F | 0x80 );
+
+			return "{$byte1}{$byte2}";
+		}
+
+		if ( $code_point <= 0xFFFF ) {
+			$byte1 = chr( ( $code_point >> 12 ) | 0xE0 );
+			$byte2 = chr( ( $code_point >> 6 ) & 0x3F | 0x80 );
+			$byte3 = chr( $code_point & 0x3F | 0x80 );
+
+			return "{$byte1}{$byte2}{$byte3}";
+		}
+
+		// Any values above U+10FFFF are eliminated above in the pre-check.
+		$byte1 = chr( ( $code_point >> 18 ) | 0xF0 );
+		$byte2 = chr( ( $code_point >> 12 ) & 0x3F | 0x80 );
+		$byte3 = chr( ( $code_point >> 6 ) & 0x3F | 0x80 );
+		$byte4 = chr( $code_point & 0x3F | 0x80 );
+
+		return "{$byte1}{$byte2}{$byte3}{$byte4}";
+>>>>>>> 535c0c1 (initial commit)
 	}
 }

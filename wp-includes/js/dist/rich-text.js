@@ -948,6 +948,12 @@ function toTree({
     }
     if (shouldInsertPadding && i === text.length) {
       append(getParent(pointer), ZWNBSP);
+<<<<<<< HEAD
+=======
+
+      // We CANNOT use CSS to add a placeholder with pseudo elements on
+      // the main block wrappers because that could clash with theme CSS.
+>>>>>>> 535c0c1 (initial commit)
       if (placeholder && text.length === 0) {
         append(getParent(pointer), {
           type: 'span',
@@ -3716,6 +3722,7 @@ function useRichText({
   }
 
   // Internal values are updated synchronously, unlike props and state.
+<<<<<<< HEAD
   const _value = (0,external_wp_element_namespaceObject.useRef)(value);
   const record = (0,external_wp_element_namespaceObject.useRef)();
   function setRecordFromProps() {
@@ -3723,10 +3730,20 @@ function useRichText({
     record.current = value;
     if (!(value instanceof RichTextData)) {
       record.current = value ? RichTextData.fromHTMLString(value, {
+=======
+  const _valueRef = (0,external_wp_element_namespaceObject.useRef)(value);
+  const recordRef = (0,external_wp_element_namespaceObject.useRef)();
+  function setRecordFromProps() {
+    _valueRef.current = value;
+    recordRef.current = value;
+    if (!(value instanceof RichTextData)) {
+      recordRef.current = value ? RichTextData.fromHTMLString(value, {
+>>>>>>> 535c0c1 (initial commit)
         preserveWhiteSpace
       }) : RichTextData.empty();
     }
     // To do: make rich text internally work with RichTextData.
+<<<<<<< HEAD
     record.current = {
       text: record.current.text,
       formats: record.current.formats,
@@ -3750,6 +3767,31 @@ function useRichText({
     hadSelectionUpdate.current = isSelected;
     record.current = {
       ...record.current,
+=======
+    recordRef.current = {
+      text: recordRef.current.text,
+      formats: recordRef.current.formats,
+      replacements: recordRef.current.replacements
+    };
+    if (disableFormats) {
+      recordRef.current.formats = Array(value.length);
+      recordRef.current.replacements = Array(value.length);
+    }
+    if (__unstableAfterParse) {
+      recordRef.current.formats = __unstableAfterParse(recordRef.current);
+    }
+    recordRef.current.start = selectionStart;
+    recordRef.current.end = selectionEnd;
+  }
+  const hadSelectionUpdateRef = (0,external_wp_element_namespaceObject.useRef)(false);
+  if (!recordRef.current) {
+    hadSelectionUpdateRef.current = isSelected;
+    setRecordFromProps();
+  } else if (selectionStart !== recordRef.current.start || selectionEnd !== recordRef.current.end) {
+    hadSelectionUpdateRef.current = isSelected;
+    recordRef.current = {
+      ...recordRef.current,
+>>>>>>> 535c0c1 (initial commit)
       start: selectionStart,
       end: selectionEnd,
       activeFormats: undefined
@@ -3763,10 +3805,17 @@ function useRichText({
    * @param {Object} newRecord The record to sync and apply.
    */
   function handleChange(newRecord) {
+<<<<<<< HEAD
     record.current = newRecord;
     applyRecord(newRecord);
     if (disableFormats) {
       _value.current = newRecord.text;
+=======
+    recordRef.current = newRecord;
+    applyRecord(newRecord);
+    if (disableFormats) {
+      _valueRef.current = newRecord.text;
+>>>>>>> 535c0c1 (initial commit)
     } else {
       const newFormats = __unstableBeforeSerialize ? __unstableBeforeSerialize(newRecord) : newRecord.formats;
       newRecord = {
@@ -3774,12 +3823,20 @@ function useRichText({
         formats: newFormats
       };
       if (typeof value === 'string') {
+<<<<<<< HEAD
         _value.current = toHTMLString({
+=======
+        _valueRef.current = toHTMLString({
+>>>>>>> 535c0c1 (initial commit)
           value: newRecord,
           preserveWhiteSpace
         });
       } else {
+<<<<<<< HEAD
         _value.current = new RichTextData(newRecord);
+=======
+        _valueRef.current = new RichTextData(newRecord);
+>>>>>>> 535c0c1 (initial commit)
       }
     }
     const {
@@ -3787,14 +3844,22 @@ function useRichText({
       end,
       formats,
       text
+<<<<<<< HEAD
     } = record.current;
+=======
+    } = recordRef.current;
+>>>>>>> 535c0c1 (initial commit)
 
     // Selection must be updated first, so it is recorded in history when
     // the content change happens.
     // We batch both calls to only attempt to rerender once.
     registry.batch(() => {
       onSelectionChange(start, end);
+<<<<<<< HEAD
       onChange(_value.current, {
+=======
+      onChange(_valueRef.current, {
+>>>>>>> 535c0c1 (initial commit)
         __unstableFormats: formats,
         __unstableText: text
       });
@@ -3803,6 +3868,7 @@ function useRichText({
   }
   function applyFromProps() {
     setRecordFromProps();
+<<<<<<< HEAD
     applyRecord(record.current);
   }
   const didMount = (0,external_wp_element_namespaceObject.useRef)(false);
@@ -3810,6 +3876,15 @@ function useRichText({
   // Value updates must happen synchonously to avoid overwriting newer values.
   (0,external_wp_element_namespaceObject.useLayoutEffect)(() => {
     if (didMount.current && value !== _value.current) {
+=======
+    applyRecord(recordRef.current);
+  }
+  const didMountRef = (0,external_wp_element_namespaceObject.useRef)(false);
+
+  // Value updates must happen synchonously to avoid overwriting newer values.
+  (0,external_wp_element_namespaceObject.useLayoutEffect)(() => {
+    if (didMountRef.current && value !== _valueRef.current) {
+>>>>>>> 535c0c1 (initial commit)
       applyFromProps();
       forceRender();
     }
@@ -3817,12 +3892,17 @@ function useRichText({
 
   // Value updates must happen synchonously to avoid overwriting newer values.
   (0,external_wp_element_namespaceObject.useLayoutEffect)(() => {
+<<<<<<< HEAD
     if (!hadSelectionUpdate.current) {
+=======
+    if (!hadSelectionUpdateRef.current) {
+>>>>>>> 535c0c1 (initial commit)
       return;
     }
     if (ref.current.ownerDocument.activeElement !== ref.current) {
       ref.current.focus();
     }
+<<<<<<< HEAD
     applyRecord(record.current);
     hadSelectionUpdate.current = false;
   }, [hadSelectionUpdate.current]);
@@ -3830,6 +3910,15 @@ function useRichText({
     record
   }), useEventListeners({
     record,
+=======
+    applyRecord(recordRef.current);
+    hadSelectionUpdateRef.current = false;
+  }, [hadSelectionUpdateRef.current]);
+  const mergedRefs = (0,external_wp_compose_namespaceObject.useMergeRefs)([ref, useDefaultStyle(), useBoundaryStyle({
+    record: recordRef
+  }), useEventListeners({
+    record: recordRef,
+>>>>>>> 535c0c1 (initial commit)
     handleChange,
     applyRecord,
     createRecord,
@@ -3838,16 +3927,27 @@ function useRichText({
     forceRender
   }), (0,external_wp_compose_namespaceObject.useRefEffect)(() => {
     applyFromProps();
+<<<<<<< HEAD
     didMount.current = true;
   }, [placeholder, ...__unstableDependencies])]);
   return {
     value: record.current,
+=======
+    didMountRef.current = true;
+  }, [placeholder, ...__unstableDependencies])]);
+  return {
+    value: recordRef.current,
+>>>>>>> 535c0c1 (initial commit)
     // A function to get the most recent value so event handlers in
     // useRichText implementations have access to it. For example when
     // listening to input events, we internally update the state, but this
     // state is not yet available to the input event handler because React
     // may re-render asynchronously.
+<<<<<<< HEAD
     getValue: () => record.current,
+=======
+    getValue: () => recordRef.current,
+>>>>>>> 535c0c1 (initial commit)
     onChange: handleChange,
     ref: mergedRefs
   };

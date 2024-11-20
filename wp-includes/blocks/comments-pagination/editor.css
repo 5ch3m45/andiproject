@@ -2,10 +2,17 @@
   justify-content:center;
 }
 
+<<<<<<< HEAD
 .editor-styles-wrapper .wp-block-comments-pagination{
   max-width:100%;
 }
 .editor-styles-wrapper .wp-block-comments-pagination.block-editor-block-list__layout{
+=======
+:where(.editor-styles-wrapper) .wp-block-comments-pagination{
+  max-width:100%;
+}
+:where(.editor-styles-wrapper) .wp-block-comments-pagination.block-editor-block-list__layout{
+>>>>>>> 535c0c1 (initial commit)
   margin:0;
 }
 

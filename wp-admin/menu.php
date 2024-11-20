@@ -169,7 +169,11 @@ foreach ( array_merge( $builtin, $types ) as $ptype ) {
 
 	$menu[ $ptype_menu_position ] = array( esc_attr( $ptype_obj->labels->menu_name ), $ptype_obj->cap->edit_posts, $ptype_file, '', $menu_class, $ptype_menu_id, $menu_icon );
 	$submenu[ $ptype_file ][5]    = array( $ptype_obj->labels->all_items, $ptype_obj->cap->edit_posts, $ptype_file );
+<<<<<<< HEAD
 	$submenu[ $ptype_file ][10]   = array( $ptype_obj->labels->add_new, $ptype_obj->cap->create_posts, $post_new_file );
+=======
+	$submenu[ $ptype_file ][10]   = array( $ptype_obj->labels->add_new_item, $ptype_obj->cap->create_posts, $post_new_file );
+>>>>>>> 535c0c1 (initial commit)
 
 	$i = 15;
 	foreach ( get_taxonomies( array(), 'objects' ) as $tax ) {

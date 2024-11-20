@@ -318,7 +318,10 @@ abstract class WP_Image_Editor {
 				$quality = 86;
 				break;
 			case 'image/jpeg':
+<<<<<<< HEAD
 			case 'image/avif':
+=======
+>>>>>>> 535c0c1 (initial commit)
 			default:
 				$quality = $this->default_quality;
 		}
@@ -366,6 +369,7 @@ abstract class WP_Image_Editor {
 			$new_ext   = $file_ext;
 		}
 
+<<<<<<< HEAD
 		/**
 		 * Filters the image editor output format mapping.
 		 *
@@ -386,6 +390,9 @@ abstract class WP_Image_Editor {
 		 * @param string $mime_type The source image mime type.
 		 */
 		$output_format = apply_filters( 'image_editor_output_format', array(), $filename, $mime_type );
+=======
+		$output_format = wp_get_image_editor_output_format( $filename, $mime_type );
+>>>>>>> 535c0c1 (initial commit)
 
 		if ( isset( $output_format[ $mime_type ] )
 			&& $this->supports_mime_type( $output_format[ $mime_type ] )

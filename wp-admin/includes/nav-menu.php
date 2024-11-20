@@ -1484,7 +1484,11 @@ function wp_nav_menu_update_menu_items( $nav_menu_selected_id, $nav_menu_selecte
 		wp_get_nav_menus( array( 'fields' => 'ids' ) )
 	);
 
+<<<<<<< HEAD
 	update_option( 'nav_menu_options', $nav_menu_option );
+=======
+	update_option( 'nav_menu_options', $nav_menu_option, false );
+>>>>>>> 535c0c1 (initial commit)
 
 	wp_defer_term_counting( false );
 

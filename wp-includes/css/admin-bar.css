@@ -97,6 +97,11 @@ html:lang(he-il) .rtl #wpadminbar * {
 	min-width: 600px; /* match the min-width of the body in wp-admin/css/common.css */
 	z-index: 99999;
 	background: #1d2327;
+<<<<<<< HEAD
+=======
+	/* Only visible in Windows High Contrast mode */
+	outline: 1px solid transparent;
+>>>>>>> 535c0c1 (initial commit)
 }
 
 #wpadminbar .ab-sub-wrapper,
@@ -195,6 +200,11 @@ html:lang(he-il) .rtl #wpadminbar * {
 #wpadminbar.nojs li:hover > .ab-sub-wrapper,
 #wpadminbar li.hover > .ab-sub-wrapper {
 	display: block;
+<<<<<<< HEAD
+=======
+	/* Only visible in Windows High Contrast mode */
+	outline: 1px solid transparent;
+>>>>>>> 535c0c1 (initial commit)
 }
 
 #wpadminbar .menupop li:hover > .ab-sub-wrapper,
@@ -906,7 +916,11 @@ html:lang(he-il) .rtl #wpadminbar * {
 	/* New Content */
 	#wpadminbar #wp-admin-bar-new-content .ab-icon:before {
 		top: 0;
+<<<<<<< HEAD
 		line-height: 1.33333333;
+=======
+		line-height: 1.26;
+>>>>>>> 535c0c1 (initial commit)
 		height: 46px !important;
 		text-align: center;
 		width: 52px;
@@ -1010,7 +1024,10 @@ html:lang(he-il) .rtl #wpadminbar * {
 	/* Override default min-width so dropdown lists aren't stretched
 		to 100% viewport width at responsive sizes. */
 	#wpadminbar .ab-top-menu > .menupop > .ab-sub-wrapper {
+<<<<<<< HEAD
 		min-width: -moz-fit-content;
+=======
+>>>>>>> 535c0c1 (initial commit)
 		min-width: fit-content;
 	}
 

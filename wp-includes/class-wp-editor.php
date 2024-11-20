@@ -188,10 +188,19 @@ final class _WP_Editors {
 				if ( 'html' !== $default_editor ) {
 					$default_editor = 'tinymce';
 				}
+<<<<<<< HEAD
 
 				$buttons .= '<button type="button" id="' . $editor_id_attr . '-tmce" class="wp-switch-editor switch-tmce"' .
 					' data-wp-editor-id="' . $editor_id_attr . '">' . _x( 'Visual', 'Name for the Visual editor tab' ) . "</button>\n";
 				$buttons .= '<button type="button" id="' . $editor_id_attr . '-html" class="wp-switch-editor switch-html"' .
+=======
+				$tmce_active = ( 'html' === $default_editor ) ? ' aria-pressed="true"' : '';
+				$html_active = ( 'html' === $default_editor ) ? '' : ' aria-pressed="true"';
+
+				$buttons .= '<button type="button" id="' . $editor_id_attr . '-tmce"' . $html_active . ' class="wp-switch-editor switch-tmce"' .
+					' data-wp-editor-id="' . $editor_id_attr . '">' . _x( 'Visual', 'Name for the Visual editor tab' ) . "</button>\n";
+				$buttons .= '<button type="button" id="' . $editor_id_attr . '-html"' . $tmce_active . ' class="wp-switch-editor switch-html"' .
+>>>>>>> 535c0c1 (initial commit)
 					' data-wp-editor-id="' . $editor_id_attr . '">' . _x( 'Text', 'Name for the Text editor tab (formerly HTML)' ) . "</button>\n";
 			} else {
 				$default_editor = 'tinymce';
@@ -1113,7 +1122,10 @@ final class _WP_Editors {
 			'end_container_on_empty_block' => true,
 			'wpeditimage_html5_captions'   => true,
 			'wp_lang_attr'                 => get_bloginfo( 'language' ),
+<<<<<<< HEAD
 			'wp_keep_scroll_position'      => false,
+=======
+>>>>>>> 535c0c1 (initial commit)
 			'wp_shortcut_labels'           => wp_json_encode( $shortcut_labels ),
 		);
 

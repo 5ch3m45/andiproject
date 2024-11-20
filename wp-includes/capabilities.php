@@ -33,6 +33,10 @@
  * @since 5.7.0 Added the `create_app_password`, `list_app_passwords`, `read_app_password`,
  *              `edit_app_password`, `delete_app_passwords`, `delete_app_password`,
  *              and `update_https` capabilities.
+<<<<<<< HEAD
+=======
+ * @since 6.7.0 Added the `edit_block_binding` capability.
+>>>>>>> 535c0c1 (initial commit)
  *
  * @global array $post_type_meta_caps Used to get post type meta capabilities.
  *
@@ -47,7 +51,11 @@ function map_meta_cap( $cap, $user_id, ...$args ) {
 	switch ( $cap ) {
 		case 'remove_user':
 			// In multisite the user must be a super admin to remove themselves.
+<<<<<<< HEAD
 			if ( isset( $args[0] ) && $user_id == $args[0] && ! is_super_admin( $user_id ) ) {
+=======
+			if ( isset( $args[0] ) && $user_id === (int) $args[0] && ! is_super_admin( $user_id ) ) {
+>>>>>>> 535c0c1 (initial commit)
 				$caps[] = 'do_not_allow';
 			} else {
 				$caps[] = 'remove_users';
@@ -60,7 +68,11 @@ function map_meta_cap( $cap, $user_id, ...$args ) {
 		case 'edit_user':
 		case 'edit_users':
 			// Allow user to edit themselves.
+<<<<<<< HEAD
 			if ( 'edit_user' === $cap && isset( $args[0] ) && $user_id == $args[0] ) {
+=======
+			if ( 'edit_user' === $cap && isset( $args[0] ) && $user_id === (int) $args[0] ) {
+>>>>>>> 535c0c1 (initial commit)
 				break;
 			}
 
@@ -103,7 +115,13 @@ function map_meta_cap( $cap, $user_id, ...$args ) {
 				break;
 			}
 
+<<<<<<< HEAD
 			if ( ( get_option( 'page_for_posts' ) == $post->ID ) || ( get_option( 'page_on_front' ) == $post->ID ) ) {
+=======
+			if ( (int) get_option( 'page_for_posts' ) === $post->ID
+				|| (int) get_option( 'page_on_front' ) === $post->ID
+			) {
+>>>>>>> 535c0c1 (initial commit)
 				$caps[] = 'manage_options';
 				break;
 			}
@@ -137,7 +155,11 @@ function map_meta_cap( $cap, $user_id, ...$args ) {
 			}
 
 			// If the post author is set and the user is the author...
+<<<<<<< HEAD
 			if ( $post->post_author && $user_id == $post->post_author ) {
+=======
+			if ( $post->post_author && $user_id === (int) $post->post_author ) {
+>>>>>>> 535c0c1 (initial commit)
 				// If the post is published or scheduled...
 				if ( in_array( $post->post_status, array( 'publish', 'future' ), true ) ) {
 					$caps[] = $post_type->cap->delete_published_posts;
@@ -240,7 +262,11 @@ function map_meta_cap( $cap, $user_id, ...$args ) {
 			}
 
 			// If the post author is set and the user is the author...
+<<<<<<< HEAD
 			if ( $post->post_author && $user_id == $post->post_author ) {
+=======
+			if ( $post->post_author && $user_id === (int) $post->post_author ) {
+>>>>>>> 535c0c1 (initial commit)
 				// If the post is published or scheduled...
 				if ( in_array( $post->post_status, array( 'publish', 'future' ), true ) ) {
 					$caps[] = $post_type->cap->edit_published_posts;
@@ -362,7 +388,11 @@ function map_meta_cap( $cap, $user_id, ...$args ) {
 				break;
 			}
 
+<<<<<<< HEAD
 			if ( $post->post_author && $user_id == $post->post_author ) {
+=======
+			if ( $post->post_author && $user_id === (int) $post->post_author ) {
+>>>>>>> 535c0c1 (initial commit)
 				$caps[] = $post_type->cap->read;
 			} elseif ( $status_obj->private ) {
 				$caps[] = $post_type->cap->read_private_posts;
@@ -730,8 +760,13 @@ function map_meta_cap( $cap, $user_id, ...$args ) {
 			}
 
 			if ( 'delete_term' === $cap
+<<<<<<< HEAD
 				&& ( get_option( 'default_' . $term->taxonomy ) == $term->term_id
 					|| get_option( 'default_term_' . $term->taxonomy ) == $term->term_id )
+=======
+				&& ( (int) get_option( 'default_' . $term->taxonomy ) === $term->term_id
+					|| (int) get_option( 'default_term_' . $term->taxonomy ) === $term->term_id )
+>>>>>>> 535c0c1 (initial commit)
 			) {
 				$caps[] = 'do_not_allow';
 				break;
@@ -799,6 +834,40 @@ function map_meta_cap( $cap, $user_id, ...$args ) {
 		case 'delete_app_password':
 			$caps = map_meta_cap( 'edit_user', $user_id, $args[0] );
 			break;
+<<<<<<< HEAD
+=======
+		case 'edit_block_binding':
+			$block_editor_context = $args[0];
+			if ( isset( $block_editor_context->post ) ) {
+				$object_id = $block_editor_context->post->ID;
+			}
+			/*
+			 * If the post ID is null, check if the context is the site editor.
+			 * Fall back to the edit_theme_options in that case.
+			 */
+			if ( ! isset( $object_id ) ) {
+				if ( ! isset( $block_editor_context->name ) || 'core/edit-site' !== $block_editor_context->name ) {
+					$caps[] = 'do_not_allow';
+					break;
+				}
+				$caps = map_meta_cap( 'edit_theme_options', $user_id );
+				break;
+			}
+
+			$object_subtype = get_object_subtype( 'post', (int) $object_id );
+			if ( empty( $object_subtype ) ) {
+				$caps[] = 'do_not_allow';
+				break;
+			}
+			$post_type_object = get_post_type_object( $object_subtype );
+			// Initialize empty array if it doesn't exist.
+			if ( ! isset( $post_type_object->capabilities ) ) {
+				$post_type_object->capabilities = array();
+			}
+			$post_type_capabilities = get_post_type_capabilities( $post_type_object );
+			$caps                   = map_meta_cap( $post_type_capabilities->edit_post, $user_id, $object_id );
+			break;
+>>>>>>> 535c0c1 (initial commit)
 		default:
 			// Handle meta capabilities for custom post types.
 			global $post_type_meta_caps;
@@ -884,6 +953,7 @@ function current_user_can( $capability, ...$args ) {
  * capabilities such as `edit_post` and `edit_user` are capabilities used by the `map_meta_cap()` function to
  * map to primitive capabilities that a user or role has, such as `edit_posts` and `edit_others_posts`.
  *
+<<<<<<< HEAD
  * Example usage:
  *
  *     current_user_can_for_blog( $blog_id, 'edit_posts' );
@@ -896,12 +966,30 @@ function current_user_can( $capability, ...$args ) {
  * @since 5.8.0 Wraps current_user_can() after switching to blog.
  *
  * @param int    $blog_id    Site ID.
+=======
+ * This function replaces the current_user_can_for_blog() function.
+ *
+ * Example usage:
+ *
+ *     current_user_can_for_site( $site_id, 'edit_posts' );
+ *     current_user_can_for_site( $site_id, 'edit_post', $post->ID );
+ *     current_user_can_for_site( $site_id, 'edit_post_meta', $post->ID, $meta_key );
+ *
+ * @since 6.7.0
+ *
+ * @param int    $site_id    Site ID.
+>>>>>>> 535c0c1 (initial commit)
  * @param string $capability Capability name.
  * @param mixed  ...$args    Optional further parameters, typically starting with an object ID.
  * @return bool Whether the user has the given capability.
  */
+<<<<<<< HEAD
 function current_user_can_for_blog( $blog_id, $capability, ...$args ) {
 	$switched = is_multisite() ? switch_to_blog( $blog_id ) : false;
+=======
+function current_user_can_for_site( $site_id, $capability, ...$args ) {
+	$switched = is_multisite() ? switch_to_blog( $site_id ) : false;
+>>>>>>> 535c0c1 (initial commit)
 
 	$can = current_user_can( $capability, ...$args );
 
@@ -986,6 +1074,57 @@ function user_can( $user, $capability, ...$args ) {
 }
 
 /**
+<<<<<<< HEAD
+=======
+ * Returns whether a particular user has the specified capability for a given site.
+ *
+ * This function also accepts an ID of an object to check against if the capability is a meta capability. Meta
+ * capabilities such as `edit_post` and `edit_user` are capabilities used by the `map_meta_cap()` function to
+ * map to primitive capabilities that a user or role has, such as `edit_posts` and `edit_others_posts`.
+ *
+ * Example usage:
+ *
+ *     user_can_for_site( $user->ID, $site_id, 'edit_posts' );
+ *     user_can_for_site( $user->ID, $site_id, 'edit_post', $post->ID );
+ *     user_can_for_site( $user->ID, $site_id, 'edit_post_meta', $post->ID, $meta_key );
+ *
+ * @since 6.7.0
+ *
+ * @param int|WP_User $user       User ID or object.
+ * @param int         $site_id    Site ID.
+ * @param string      $capability Capability name.
+ * @param mixed       ...$args    Optional further parameters, typically starting with an object ID.
+ * @return bool Whether the user has the given capability.
+ */
+function user_can_for_site( $user, $site_id, $capability, ...$args ) {
+	if ( ! is_object( $user ) ) {
+		$user = get_userdata( $user );
+	}
+
+	if ( empty( $user ) ) {
+		// User is logged out, create anonymous user object.
+		$user = new WP_User( 0 );
+		$user->init( new stdClass() );
+	}
+
+	// Check if the blog ID is valid.
+	if ( ! is_numeric( $site_id ) || $site_id <= 0 ) {
+		return false;
+	}
+
+	$switched = is_multisite() ? switch_to_blog( $site_id ) : false;
+
+	$can = user_can( $user->ID, $capability, ...$args );
+
+	if ( $switched ) {
+		restore_current_blog();
+	}
+
+	return $can;
+}
+
+/**
+>>>>>>> 535c0c1 (initial commit)
  * Retrieves the global WP_Roles instance and instantiates it if necessary.
  *
  * @since 4.3.0

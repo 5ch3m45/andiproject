@@ -6,4 +6,11 @@
 }
 [data-align=center] .wp-block-categories{
   text-align:center;
+<<<<<<< HEAD
+=======
+}
+
+.wp-block-categories__indentation{
+  padding-right:16px;
+>>>>>>> 535c0c1 (initial commit)
 }

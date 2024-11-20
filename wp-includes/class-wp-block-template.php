@@ -132,6 +132,17 @@ class WP_Block_Template {
 	public $author;
 
 	/**
+<<<<<<< HEAD
+=======
+	 * Plugin.
+	 *
+	 * @since 6.7.0
+	 * @var string|null
+	 */
+	public $plugin;
+
+	/**
+>>>>>>> 535c0c1 (initial commit)
 	 * Post types.
 	 *
 	 * @since 5.9.0

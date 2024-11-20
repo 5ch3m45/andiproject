@@ -38,7 +38,11 @@ nocache_headers();
 if ( get_option( 'db_upgraded' ) ) {
 
 	flush_rewrite_rules();
+<<<<<<< HEAD
 	update_option( 'db_upgraded', false );
+=======
+	update_option( 'db_upgraded', false, true );
+>>>>>>> 535c0c1 (initial commit)
 
 	/**
 	 * Fires on the next page load after a successful DB upgrade.

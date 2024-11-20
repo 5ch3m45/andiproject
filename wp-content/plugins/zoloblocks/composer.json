@@ -1,0 +1,14 @@
+{
+	"name": "zolo/zoloblocks",
+	"type": "project",
+	"autoload": {
+		"psr-4": {
+			"Zolo\\": "includes"
+		}
+	},
+	"authors": [
+		{
+			"name": "Zolo"
+		}
+	]
+}

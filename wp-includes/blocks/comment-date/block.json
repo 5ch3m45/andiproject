@@ -47,6 +47,24 @@
 		},
 		"interactivity": {
 			"clientNavigation": true
+<<<<<<< HEAD
 		}
 	}
+=======
+		},
+		"__experimentalBorder": {
+			"radius": true,
+			"color": true,
+			"width": true,
+			"style": true,
+			"__experimentalDefaultControls": {
+				"radius": true,
+				"color": true,
+				"width": true,
+				"style": true
+			}
+		}
+	},
+	"style": "wp-block-comment-date"
+>>>>>>> 535c0c1 (initial commit)
 }

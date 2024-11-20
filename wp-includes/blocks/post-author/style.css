@@ -1,4 +1,8 @@
 .wp-block-post-author{
+<<<<<<< HEAD
+=======
+  box-sizing:border-box;
+>>>>>>> 535c0c1 (initial commit)
   display:flex;
   flex-wrap:wrap;
 }

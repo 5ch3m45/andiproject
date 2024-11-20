@@ -24,6 +24,7 @@
 }
 .wp-block-group.is-layout-flex.block-editor-block-list__block>.block-list-appender:only-child:after{
   border:1px dashed;
+<<<<<<< HEAD
   border-radius:2px;
   content:"";
   display:flex;
@@ -42,6 +43,14 @@
   right:0;
   top:0;
 }
+=======
+  content:"";
+  display:flex;
+  flex:1 0 40px;
+  min-height:38px;
+  pointer-events:none;
+}
+>>>>>>> 535c0c1 (initial commit)
 .wp-block-group.is-layout-flex.block-editor-block-list__block>.block-list-appender:only-child .block-editor-button-block-appender,.wp-block-group.is-layout-flex.block-editor-block-list__block>.block-list-appender:only-child .block-editor-inserter{
   pointer-events:all;
 }

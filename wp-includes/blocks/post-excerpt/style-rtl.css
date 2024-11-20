@@ -1,4 +1,8 @@
 :where(.wp-block-post-excerpt){
+<<<<<<< HEAD
+=======
+  box-sizing:border-box;
+>>>>>>> 535c0c1 (initial commit)
   margin-bottom:var(--wp--style--block-gap);
   margin-top:var(--wp--style--block-gap);
 }

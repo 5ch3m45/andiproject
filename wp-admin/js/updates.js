@@ -142,6 +142,18 @@
 	wp.updates.searchTerm = '';
 
 	/**
+<<<<<<< HEAD
+=======
+	 * Minimum number of characters before an ajax search is fired.
+	 *
+	 * @since 6.7.0
+	 *
+	 * @type {number}
+	 */
+	wp.updates.searchMinCharacters = 2;
+
+	/**
+>>>>>>> 535c0c1 (initial commit)
 	 * Whether filesystem credentials need to be requested from the user.
 	 *
 	 * @since 4.2.0
@@ -2823,6 +2835,7 @@
 
 			// Bail if there were no items selected.
 			if ( ! itemsSelected.length ) {
+<<<<<<< HEAD
 				event.preventDefault();
 				$( 'html, body' ).animate( { scrollTop: 0 } );
 
@@ -2831,6 +2844,9 @@
 					className: 'notice-error is-dismissible',
 					message:   __( 'Please select at least one item to perform this action on.' )
 				} );
+=======
+				bulkAction = false;
+>>>>>>> 535c0c1 (initial commit)
 			}
 
 			// Determine the type of request we're dealing with.
@@ -2977,6 +2993,18 @@
 			$pluginInstallSearch.attr( 'aria-describedby', 'live-search-desc' );
 		}
 
+<<<<<<< HEAD
+=======
+		// Track the previous search string length.
+		var previousSearchStringLength = 0;
+		wp.updates.shouldSearch = function( searchStringLength ) {
+			var shouldSearch = searchStringLength >= wp.updates.searchMinCharacters ||
+				previousSearchStringLength > wp.updates.searchMinCharacters;
+			previousSearchStringLength = searchStringLength;
+			return shouldSearch;
+		};
+
+>>>>>>> 535c0c1 (initial commit)
 		/**
 		 * Handles changes to the plugin search box on the new-plugin page,
 		 * searching the repository dynamically.
@@ -2984,7 +3012,12 @@
 		 * @since 4.6.0
 		 */
 		$pluginInstallSearch.on( 'keyup input', _.debounce( function( event, eventtype ) {
+<<<<<<< HEAD
 			var $searchTab = $( '.plugin-install-search' ), data, searchLocation;
+=======
+			var $searchTab = $( '.plugin-install-search' ), data, searchLocation,
+				searchStringLength = $pluginInstallSearch.val().length;
+>>>>>>> 535c0c1 (initial commit)
 
 			data = {
 				_ajax_nonce: wp.updates.ajaxNonce,
@@ -2995,6 +3028,17 @@
 			};
 			searchLocation = location.href.split( '?' )[ 0 ] + '?' + $.param( _.omit( data, [ '_ajax_nonce', 'pagenow' ] ) );
 
+<<<<<<< HEAD
+=======
+			// Set the autocomplete attribute, turning off autocomplete 1 character before ajax search kicks in.
+			if ( wp.updates.shouldSearch( searchStringLength ) ) {
+				$pluginInstallSearch.attr( 'autocomplete', 'off' );
+			} else {
+				$pluginInstallSearch.attr( 'autocomplete', 'on' );
+				return;
+			}
+
+>>>>>>> 535c0c1 (initial commit)
 			// Clear on escape.
 			if ( 'keyup' === event.type && 27 === event.which ) {
 				event.target.value = '';
@@ -3054,6 +3098,10 @@
 
 		if ( $pluginSearch.length ) {
 			$pluginSearch.attr( 'aria-describedby', 'live-search-desc' );
+<<<<<<< HEAD
+=======
+
+>>>>>>> 535c0c1 (initial commit)
 		}
 
 		/**
@@ -3069,7 +3117,20 @@
 				pagenow:       pagenow,
 				plugin_status: 'all'
 			},
+<<<<<<< HEAD
 			queryArgs;
+=======
+			queryArgs,
+			searchStringLength = $pluginSearch.val().length;
+
+			// Set the autocomplete attribute, turning off autocomplete 1 character before ajax search kicks in.
+			if ( wp.updates.shouldSearch( searchStringLength ) ) {
+				$pluginSearch.attr( 'autocomplete', 'off' );
+			} else {
+				$pluginSearch.attr( 'autocomplete', 'on' );
+				return;
+			}
+>>>>>>> 535c0c1 (initial commit)
 
 			// Clear on escape.
 			if ( 'keyup' === event.type && 27 === event.which ) {

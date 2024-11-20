@@ -17,24 +17,39 @@ class Custom_Image_Header {
 	/**
 	 * Callback for administration header.
 	 *
+<<<<<<< HEAD
 	 * @var callable
 	 * @since 2.1.0
+=======
+	 * @since 2.1.0
+	 * @var callable
+>>>>>>> 535c0c1 (initial commit)
 	 */
 	public $admin_header_callback;
 
 	/**
 	 * Callback for header div.
 	 *
+<<<<<<< HEAD
 	 * @var callable
 	 * @since 3.0.0
+=======
+	 * @since 3.0.0
+	 * @var callable
+>>>>>>> 535c0c1 (initial commit)
 	 */
 	public $admin_image_div_callback;
 
 	/**
 	 * Holds default headers.
 	 *
+<<<<<<< HEAD
 	 * @var array
 	 * @since 3.0.0
+=======
+	 * @since 3.0.0
+	 * @var array
+>>>>>>> 535c0c1 (initial commit)
 	 */
 	public $default_headers = array();
 

@@ -15,12 +15,22 @@
 			"type": "rich-text",
 			"source": "rich-text",
 			"selector": "h1,h2,h3,h4,h5,h6",
+<<<<<<< HEAD
 			"__experimentalRole": "content"
+=======
+			"role": "content"
+>>>>>>> 535c0c1 (initial commit)
 		},
 		"level": {
 			"type": "number",
 			"default": 2
 		},
+<<<<<<< HEAD
+=======
+		"levelOptions": {
+			"type": "array"
+		},
+>>>>>>> 535c0c1 (initial commit)
 		"placeholder": {
 			"type": "string"
 		}
@@ -30,6 +40,21 @@
 		"anchor": true,
 		"className": true,
 		"splitting": true,
+<<<<<<< HEAD
+=======
+		"__experimentalBorder": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true,
+			"__experimentalDefaultControls": {
+				"color": true,
+				"radius": true,
+				"style": true,
+				"width": true
+			}
+		},
+>>>>>>> 535c0c1 (initial commit)
 		"color": {
 			"gradients": true,
 			"link": true,

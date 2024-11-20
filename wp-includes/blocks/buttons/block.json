@@ -13,8 +13,21 @@
 		"align": [ "wide", "full" ],
 		"html": false,
 		"__experimentalExposeControlsToChildren": true,
+<<<<<<< HEAD
 		"spacing": {
 			"blockGap": true,
+=======
+		"color": {
+			"gradients": true,
+			"text": false,
+			"__experimentalDefaultControls": {
+				"background": true
+			}
+		},
+		"spacing": {
+			"blockGap": [ "horizontal", "vertical" ],
+			"padding": true,
+>>>>>>> 535c0c1 (initial commit)
 			"margin": [ "top", "bottom" ],
 			"__experimentalDefaultControls": {
 				"blockGap": true
@@ -33,6 +46,21 @@
 				"fontSize": true
 			}
 		},
+<<<<<<< HEAD
+=======
+		"__experimentalBorder": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true,
+			"__experimentalDefaultControls": {
+				"color": true,
+				"radius": true,
+				"style": true,
+				"width": true
+			}
+		},
+>>>>>>> 535c0c1 (initial commit)
 		"layout": {
 			"allowSwitching": false,
 			"allowInheriting": false,

@@ -1,7 +1,16 @@
+<<<<<<< HEAD
+=======
+@use "sass:color";
+
+>>>>>>> 535c0c1 (initial commit)
 $scheme-name: "sunrise";
 $base-color: #cf4944;
 $highlight-color: #dd823b;
 $notification-color: #ccaf0b;
+<<<<<<< HEAD
 $menu-submenu-focus-text: lighten( $highlight-color, 35% );
+=======
+$menu-submenu-focus-text: color.adjust($highlight-color, $lightness: 35%);
+>>>>>>> 535c0c1 (initial commit)
 
 @import "../_admin.scss";

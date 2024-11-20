@@ -62,7 +62,11 @@ function render_block_core_rss( $attributes ) {
 			if ( is_object( $author ) ) {
 				$author = $author->get_name();
 				$author = '<span class="wp-block-rss__item-author">' . sprintf(
+<<<<<<< HEAD
 					/* translators: %s: the author. */
+=======
+					/* translators: byline. %s: author. */
+>>>>>>> 535c0c1 (initial commit)
 					__( 'by %s' ),
 					esc_html( strip_tags( $author ) )
 				) . '</span>';

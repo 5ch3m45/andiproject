@@ -86,6 +86,13 @@ class AtomParser {
 
     var $feed;
     var $current;
+<<<<<<< HEAD
+=======
+    var $map_attrs_func;
+    var $map_xmlns_func;
+    var $error;
+    var $content;
+>>>>>>> 535c0c1 (initial commit)
 
 	/**
 	 * PHP5 constructor.
@@ -153,6 +160,7 @@ class AtomParser {
         }
 
         $parser = xml_parser_create_ns();
+<<<<<<< HEAD
         xml_set_object($parser, $this);
         xml_set_element_handler($parser, "start_element", "end_element");
         xml_parser_set_option($parser,XML_OPTION_CASE_FOLDING,0);
@@ -161,6 +169,15 @@ class AtomParser {
         xml_set_default_handler($parser, "_default");
         xml_set_start_namespace_decl_handler($parser, "start_ns");
         xml_set_end_namespace_decl_handler($parser, "end_ns");
+=======
+        xml_set_element_handler($parser, array($this, "start_element"), array($this, "end_element"));
+        xml_parser_set_option($parser,XML_OPTION_CASE_FOLDING,0);
+        xml_parser_set_option($parser,XML_OPTION_SKIP_WHITE,0);
+        xml_set_character_data_handler($parser, array($this, "cdata"));
+        xml_set_default_handler($parser, array($this, "_default"));
+        xml_set_start_namespace_decl_handler($parser, array($this, "start_ns"));
+        xml_set_end_namespace_decl_handler($parser, array($this, "end_ns"));
+>>>>>>> 535c0c1 (initial commit)
 
         $this->content = '';
 

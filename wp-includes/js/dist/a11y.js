@@ -52,15 +52,50 @@ __webpack_require__.r(__webpack_exports__);
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
   setup: () => (/* binding */ setup),
+<<<<<<< HEAD
   speak: () => (/* binding */ speak)
+=======
+  speak: () => (/* reexport */ speak)
+>>>>>>> 535c0c1 (initial commit)
 });
 
 ;// CONCATENATED MODULE: external ["wp","domReady"]
 const external_wp_domReady_namespaceObject = window["wp"]["domReady"];
 var external_wp_domReady_default = /*#__PURE__*/__webpack_require__.n(external_wp_domReady_namespaceObject);
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: external ["wp","i18n"]
 const external_wp_i18n_namespaceObject = window["wp"]["i18n"];
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/a11y/build-module/add-intro-text.js
+=======
+;// CONCATENATED MODULE: ./node_modules/@wordpress/a11y/build-module/script/add-container.js
+/**
+ * Build the live regions markup.
+ *
+ * @param {string} [ariaLive] Value for the 'aria-live' attribute; default: 'polite'.
+ *
+ * @return {HTMLDivElement} The ARIA live region HTML element.
+ */
+function addContainer(ariaLive = 'polite') {
+  const container = document.createElement('div');
+  container.id = `a11y-speak-${ariaLive}`;
+  container.className = 'a11y-speak-region';
+  container.setAttribute('style', 'position: absolute;' + 'margin: -1px;' + 'padding: 0;' + 'height: 1px;' + 'width: 1px;' + 'overflow: hidden;' + 'clip: rect(1px, 1px, 1px, 1px);' + '-webkit-clip-path: inset(50%);' + 'clip-path: inset(50%);' + 'border: 0;' + 'word-wrap: normal !important;');
+  container.setAttribute('aria-live', ariaLive);
+  container.setAttribute('aria-relevant', 'additions text');
+  container.setAttribute('aria-atomic', 'true');
+  const {
+    body
+  } = document;
+  if (body) {
+    body.appendChild(container);
+  }
+  return container;
+}
+
+;// CONCATENATED MODULE: external ["wp","i18n"]
+const external_wp_i18n_namespaceObject = window["wp"]["i18n"];
+;// CONCATENATED MODULE: ./node_modules/@wordpress/a11y/build-module/script/add-intro-text.js
+>>>>>>> 535c0c1 (initial commit)
 /**
  * WordPress dependencies
  */
@@ -90,6 +125,7 @@ function addIntroText() {
   return introText;
 }
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/a11y/build-module/add-container.js
 /**
  * Build the live regions markup.
@@ -116,6 +152,9 @@ function addContainer(ariaLive = 'polite') {
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/a11y/build-module/clear.js
+=======
+;// CONCATENATED MODULE: ./node_modules/@wordpress/a11y/build-module/shared/clear.js
+>>>>>>> 535c0c1 (initial commit)
 /**
  * Clears the a11y-speak-region elements and hides the explanatory text.
  */
@@ -132,7 +171,11 @@ function clear() {
   }
 }
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/a11y/build-module/filter-message.js
+=======
+;// CONCATENATED MODULE: ./node_modules/@wordpress/a11y/build-module/shared/filter-message.js
+>>>>>>> 535c0c1 (initial commit)
 let previousMessage = '';
 
 /**
@@ -163,18 +206,23 @@ function filterMessage(message) {
   return message;
 }
 
+<<<<<<< HEAD
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/a11y/build-module/index.js
 /**
  * WordPress dependencies
  */
 
 
+=======
+;// CONCATENATED MODULE: ./node_modules/@wordpress/a11y/build-module/shared/index.js
+>>>>>>> 535c0c1 (initial commit)
 /**
  * Internal dependencies
  */
 
 
 
+<<<<<<< HEAD
 
 
 /**
@@ -200,12 +248,19 @@ function setup() {
  */
 external_wp_domReady_default()(setup);
 
+=======
+>>>>>>> 535c0c1 (initial commit)
 /**
  * Allows you to easily announce dynamic interface updates to screen readers using ARIA live regions.
  * This module is inspired by the `speak` function in `wp-a11y.js`.
  *
+<<<<<<< HEAD
  * @param {string} message    The message to be announced by assistive technologies.
  * @param {string} [ariaLive] The politeness level for aria-live; default: 'polite'.
+=======
+ * @param {string}               message    The message to be announced by assistive technologies.
+ * @param {'polite'|'assertive'} [ariaLive] The politeness level for aria-live; default: 'polite'.
+>>>>>>> 535c0c1 (initial commit)
  *
  * @example
  * ```js
@@ -243,6 +298,45 @@ function speak(message, ariaLive) {
   }
 }
 
+<<<<<<< HEAD
+=======
+;// CONCATENATED MODULE: ./node_modules/@wordpress/a11y/build-module/index.js
+/**
+ * WordPress dependencies
+ */
+
+
+/**
+ * Internal dependencies
+ */
+
+
+
+
+/**
+ * Create the live regions.
+ */
+function setup() {
+  const introText = document.getElementById('a11y-speak-intro-text');
+  const containerAssertive = document.getElementById('a11y-speak-assertive');
+  const containerPolite = document.getElementById('a11y-speak-polite');
+  if (introText === null) {
+    addIntroText();
+  }
+  if (containerAssertive === null) {
+    addContainer('assertive');
+  }
+  if (containerPolite === null) {
+    addContainer('polite');
+  }
+}
+
+/**
+ * Run setup on domReady.
+ */
+external_wp_domReady_default()(setup);
+
+>>>>>>> 535c0c1 (initial commit)
 (window.wp = window.wp || {}).a11y = __webpack_exports__;
 /******/ })()
 ;

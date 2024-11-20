@@ -59,6 +59,22 @@
 	"supports": {
 		"reusable": false,
 		"html": false,
+<<<<<<< HEAD
+=======
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"__experimentalFontFamily": true,
+			"__experimentalFontWeight": true,
+			"__experimentalFontStyle": true,
+			"__experimentalTextTransform": true,
+			"__experimentalTextDecoration": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalDefaultControls": {
+				"fontSize": true
+			}
+		},
+>>>>>>> 535c0c1 (initial commit)
 		"interactivity": {
 			"clientNavigation": true
 		}

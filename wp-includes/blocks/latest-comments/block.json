@@ -29,6 +29,18 @@
 	},
 	"supports": {
 		"align": true,
+<<<<<<< HEAD
+=======
+		"color": {
+			"gradients": true,
+			"link": true,
+			"__experimentalDefaultControls": {
+				"background": true,
+				"text": true,
+				"link": true
+			}
+		},
+>>>>>>> 535c0c1 (initial commit)
 		"html": false,
 		"spacing": {
 			"margin": true,

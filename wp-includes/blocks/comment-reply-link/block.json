@@ -25,7 +25,15 @@
 		},
 		"spacing": {
 			"margin": true,
+<<<<<<< HEAD
 			"padding": true
+=======
+			"padding": true,
+			"__experimentalDefaultControls": {
+				"margin": false,
+				"padding": false
+			}
+>>>>>>> 535c0c1 (initial commit)
 		},
 		"typography": {
 			"fontSize": true,
@@ -40,6 +48,18 @@
 				"fontSize": true
 			}
 		},
+<<<<<<< HEAD
 		"html": false
 	}
+=======
+		"__experimentalBorder": {
+			"radius": true,
+			"color": true,
+			"width": true,
+			"style": true
+		},
+		"html": false
+	},
+	"style": "wp-block-comment-reply-link"
+>>>>>>> 535c0c1 (initial commit)
 }

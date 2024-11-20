@@ -29,7 +29,12 @@ function render_block_core_comments_pagination_previous( $attributes, $content, 
 	};
 	add_filter( 'previous_comments_link_attributes', $filter_link_attributes );
 
+<<<<<<< HEAD
 	$previous_comments_link = get_previous_comments_link( $label );
+=======
+	$comment_vars           = build_comment_query_vars_from_block( $block );
+	$previous_comments_link = get_previous_comments_link( $label, $comment_vars['paged'] ?? null );
+>>>>>>> 535c0c1 (initial commit)
 
 	remove_filter( 'previous_comments_link_attributes', $filter_link_attributes );
 

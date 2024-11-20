@@ -319,7 +319,11 @@ class Theme_Installer_Skin extends WP_Upgrader_Skin {
 			$error = sprintf(
 				/* translators: 1: Current WordPress version, 2: Version required by the uploaded theme. */
 				__( 'Your WordPress version is %1$s, however the uploaded theme requires %2$s.' ),
+<<<<<<< HEAD
 				get_bloginfo( 'version' ),
+=======
+				esc_html( wp_get_wp_version() ),
+>>>>>>> 535c0c1 (initial commit)
 				$requires_wp
 			);
 

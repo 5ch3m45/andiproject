@@ -143,17 +143,24 @@
 	 * @return {void}
 	 */
 	init : function(postid) {
+<<<<<<< HEAD
 		var t = this, old = $('#image-editor-' + t.postid),
 			x = t.intval( $('#imgedit-x-' + postid).val() ),
 			y = t.intval( $('#imgedit-y-' + postid).val() );
+=======
+		var t = this, old = $('#image-editor-' + t.postid);
+>>>>>>> 535c0c1 (initial commit)
 
 		if ( t.postid !== postid && old.length ) {
 			t.close(t.postid);
 		}
 
+<<<<<<< HEAD
 		t.hold.w = t.hold.ow = x;
 		t.hold.h = t.hold.oh = y;
 		t.hold.xy_ratio = x / y;
+=======
+>>>>>>> 535c0c1 (initial commit)
 		t.hold.sizer = parseFloat( $('#imgedit-sizer-' + postid).val() );
 		t.postid = postid;
 		$('#imgedit-response-' + postid).empty();
@@ -189,6 +196,32 @@
 	},
 
 	/**
+<<<<<<< HEAD
+=======
+	 * Calculate the image size and save it to memory.
+	 *
+	 * @since 6.7.0
+	 *
+	 * @memberof imageEdit
+	 *
+	 * @param {number} postid The post ID.
+	 *
+	 * @return {void}
+	 */
+	calculateImgSize: function( postid ) {
+		var t = this,
+		x = t.intval( $( '#imgedit-x-' + postid ).val() ),
+		y = t.intval( $( '#imgedit-y-' + postid ).val() );
+
+		t.hold.w = t.hold.ow = x;
+		t.hold.h = t.hold.oh = y;
+		t.hold.xy_ratio = x / y;
+		t.hold.sizer = parseFloat( $( '#imgedit-sizer-' + postid ).val() );
+		t.currentCropSelection = null;
+	},
+
+	/**
+>>>>>>> 535c0c1 (initial commit)
 	 * Toggles the wait/load icon in the editor.
 	 *
 	 * @since 2.9.0
@@ -278,14 +311,26 @@
 	 * Navigate popup menu by arrow keys.
 	 *
 	 * @since 6.3.0
+<<<<<<< HEAD
 	 *
 	 * @memberof imageEdit
 	 *
+=======
+	 * @since 6.7.0 Added the event parameter.
+	 *
+	 * @memberof imageEdit
+	 *
+	 * @param {Event} event The key or click event.
+>>>>>>> 535c0c1 (initial commit)
 	 * @param {HTMLElement} el The current element.
 	 *
 	 * @return {boolean} Always returns false.
 	 */
+<<<<<<< HEAD
 	browsePopup : function(el) {
+=======
+	browsePopup : function(event, el) {
+>>>>>>> 535c0c1 (initial commit)
 		var $el = $( el );
 		var $collection = $( el ).parent( '.imgedit-popup-menu' ).find( 'button' );
 		var $index = $collection.index( $el );
@@ -298,6 +343,7 @@
 		if ( $next === $last ) {
 			$next = 0;
 		}
+<<<<<<< HEAD
 		var $target = false;
 		if ( event.keyCode === 40 ) {
 			$target = $collection.get( $next );
@@ -306,6 +352,16 @@
 		}
 		if ( $target ) {
 			$target.focus();
+=======
+		var target = false;
+		if ( event.keyCode === 40 ) {
+			target = $collection.get( $next );
+		} else if ( event.keyCode === 38 ) {
+			target = $collection.get( $prev );
+		}
+		if ( target ) {
+			target.focus();
+>>>>>>> 535c0c1 (initial commit)
 			event.preventDefault();
 		}
 
@@ -525,7 +581,11 @@
 			for ( n in history ) {
 				i = history[n];
 				if ( i.hasOwnProperty('c') ) {
+<<<<<<< HEAD
 					op[n] = { 'c': { 'x': i.c.x, 'y': i.c.y, 'w': i.c.w, 'h': i.c.h } };
+=======
+					op[n] = { 'c': { 'x': i.c.x, 'y': i.c.y, 'w': i.c.w, 'h': i.c.h, 'r': i.c.r } };
+>>>>>>> 535c0c1 (initial commit)
 				} else if ( i.hasOwnProperty('r') ) {
 					op[n] = { 'r': i.r.r };
 				} else if ( i.hasOwnProperty('f') ) {
@@ -860,6 +920,10 @@
 		if ( 'undefined' === typeof this.hold.sizer ) {
 			this.init( postid );
 		}
+<<<<<<< HEAD
+=======
+		this.calculateImgSize( postid );
+>>>>>>> 535c0c1 (initial commit)
 
 		this.initCrop(postid, img, parent);
 		this.setCropSelection( postid, { 'x1': 0, 'y1': 0, 'x2': 0, 'y2': 0, 'width': img.innerWidth(), 'height': img.innerHeight() } );
@@ -909,8 +973,11 @@
 		var t = this,
 			selW = $('#imgedit-sel-width-' + postid),
 			selH = $('#imgedit-sel-height-' + postid),
+<<<<<<< HEAD
 			selX = $('#imgedit-start-x-' + postid),
 			selY = $('#imgedit-start-y-' + postid),
+=======
+>>>>>>> 535c0c1 (initial commit)
 			$image = $( image ),
 			$img;
 
@@ -945,6 +1012,7 @@
 				 *
 				 * @return {void}
 				 */
+<<<<<<< HEAD
 				parent.children().on( 'mousedown, touchstart', function(e){
 					var ratio = false, sel, defRatio;
 
@@ -952,6 +1020,18 @@
 						sel = t.iasapi.getSelection();
 						defRatio = t.getSelRatio(postid);
 						ratio = ( sel && sel.width && sel.height ) ? sel.width + ':' + sel.height : defRatio;
+=======
+				parent.children().on( 'mousedown touchstart', function(e) {
+					var ratio = false,
+					 	sel = t.iasapi.getSelection(),
+					 	cx = t.intval( $( '#imgedit-crop-width-' + postid ).val() ),
+					 	cy = t.intval( $( '#imgedit-crop-height-' + postid ).val() );
+
+					if ( cx && cy ) {
+						ratio = t.getSelRatio( postid );
+					} else if ( e.shiftKey && sel && sel.width && sel.height ) {
+						ratio = sel.width + ':' + sel.height;
+>>>>>>> 535c0c1 (initial commit)
 					}
 
 					t.iasapi.setOptions({
@@ -1000,11 +1080,25 @@
 			 * @return {void}
 			 */
 			onSelectChange: function(img, c) {
+<<<<<<< HEAD
 				var sizer = imageEdit.hold.sizer;
 				selW.val( imageEdit.round(c.width / sizer) );
 				selH.val( imageEdit.round(c.height / sizer) );
 				selX.val( imageEdit.round(c.x1 / sizer) );
 				selY.val( imageEdit.round(c.y1 / sizer) );
+=======
+				var sizer = imageEdit.hold.sizer,
+					oldSel = imageEdit.currentCropSelection;
+
+				if ( oldSel != null && oldSel.width == c.width && oldSel.height == c.height ) {
+					return;
+				}
+
+				selW.val( Math.min( imageEdit.hold.w, imageEdit.round( c.width / sizer ) ) );
+				selH.val( Math.min( imageEdit.hold.h, imageEdit.round( c.height / sizer ) ) );
+
+				t.currentCropSelection = c;
+>>>>>>> 535c0c1 (initial commit)
 			}
 		});
 	},
@@ -1022,7 +1116,15 @@
 	 * @return {boolean}
 	 */
 	setCropSelection : function(postid, c) {
+<<<<<<< HEAD
 		var sel;
+=======
+		var sel,
+			selW = $( '#imgedit-sel-width-' + postid ),
+			selH = $( '#imgedit-sel-height-' + postid ),
+			sizer = this.hold.sizer,
+			hold = this.hold;
+>>>>>>> 535c0c1 (initial commit)
 
 		c = c || 0;
 
@@ -1037,7 +1139,19 @@
 			return false;
 		}
 
+<<<<<<< HEAD
 		sel = { 'x': c.x1, 'y': c.y1, 'w': c.width, 'h': c.height };
+=======
+		// adjust the selection within the bounds of the image on 100% scale
+		var excessW = hold.w - ( Math.round( c.x1 / sizer ) + parseInt( selW.val() ) );
+		var excessH = hold.h - ( Math.round( c.y1 / sizer ) + parseInt( selH.val() ) );
+		var x = Math.round( c.x1 / sizer ) + Math.min( 0, excessW );
+		var y = Math.round( c.y1 / sizer ) + Math.min( 0, excessH );
+
+		// use 100% scaling to prevent rounding errors
+		sel = { 'r': 1, 'x': x, 'y': y, 'w': selW.val(), 'h': selH.val() };
+
+>>>>>>> 535c0c1 (initial commit)
 		this.setDisabled($('.imgedit-crop', '#imgedit-panel-' + postid), 1);
 		$('#imgedit-selection-' + postid).val( JSON.stringify(sel) );
 	},
@@ -1165,6 +1279,14 @@
 		}
 		this.closePopup(t);
 		this.addStep({ 'r': { 'r': angle, 'fw': this.hold.h, 'fh': this.hold.w }}, postid, nonce);
+<<<<<<< HEAD
+=======
+
+		// Clear the selection fields after rotating.
+		$( '#imgedit-sel-width-' + postid ).val( '' );
+		$( '#imgedit-sel-height-' + postid ).val( '' );
+		this.currentCropSelection = null;
+>>>>>>> 535c0c1 (initial commit)
 	},
 
 	/**
@@ -1187,6 +1309,14 @@
 		}
 		this.closePopup(t);
 		this.addStep({ 'f': { 'f': axis, 'fw': this.hold.w, 'fh': this.hold.h }}, postid, nonce);
+<<<<<<< HEAD
+=======
+
+		// Clear the selection fields after flipping.
+		$( '#imgedit-sel-width-' + postid ).val( '' );
+		$( '#imgedit-sel-height-' + postid ).val( '' );
+		this.currentCropSelection = null;
+>>>>>>> 535c0c1 (initial commit)
 	},
 
 	/**
@@ -1219,10 +1349,18 @@
 		}
 
 		// Clear the selection fields after cropping.
+<<<<<<< HEAD
 		$('#imgedit-sel-width-' + postid).val('');
 		$('#imgedit-sel-height-' + postid).val('');
 		$('#imgedit-start-x-' + postid).val('0');
 		$('#imgedit-start-y-' + postid).val('0');
+=======
+		$( '#imgedit-sel-width-' + postid ).val( '' );
+		$( '#imgedit-sel-height-' + postid ).val( '' );
+		$( '#imgedit-start-x-' + postid ).val( '0' );
+		$( '#imgedit-start-y-' + postid ).val( '0' );
+		this.currentCropSelection = null;
+>>>>>>> 535c0c1 (initial commit)
 	},
 
 	/**
@@ -1312,6 +1450,11 @@
 			img = $('#image-preview-' + postid), imgh = img.height(), imgw = img.width(),
 			sizer = this.hold.sizer, x1, y1, x2, y2, ias = this.iasapi;
 
+<<<<<<< HEAD
+=======
+		this.currentCropSelection = null;
+
+>>>>>>> 535c0c1 (initial commit)
 		if ( false === this.validateNumeric( el ) ) {
 			return;
 		}
@@ -1335,18 +1478,30 @@
 			if ( x2 > imgw ) {
 				x1 = 0;
 				x2 = imgw;
+<<<<<<< HEAD
 				elX.val( Math.round( x2 / sizer ) );
+=======
+				elX.val( Math.min( this.hold.w, Math.round( x2 / sizer ) ) );
+>>>>>>> 535c0c1 (initial commit)
 			}
 
 			if ( y2 > imgh ) {
 				y1 = 0;
 				y2 = imgh;
+<<<<<<< HEAD
 				elY.val( Math.round( y2 / sizer ) );
+=======
+				elY.val( Math.min( this.hold.h, Math.round( y2 / sizer ) ) );
+>>>>>>> 535c0c1 (initial commit)
 			}
 
 			ias.setSelection( x1, y1, x2, y2 );
 			ias.update();
 			this.setCropSelection(postid, ias.getSelection());
+<<<<<<< HEAD
+=======
+			this.currentCropSelection = ias.getSelection();
+>>>>>>> 535c0c1 (initial commit)
 		}
 	},
 

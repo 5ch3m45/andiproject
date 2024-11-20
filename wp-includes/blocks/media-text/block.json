@@ -18,7 +18,11 @@
 			"selector": "figure img",
 			"attribute": "alt",
 			"default": "",
+<<<<<<< HEAD
 			"__experimentalRole": "content"
+=======
+			"role": "content"
+>>>>>>> 535c0c1 (initial commit)
 		},
 		"mediaPosition": {
 			"type": "string",
@@ -26,14 +30,22 @@
 		},
 		"mediaId": {
 			"type": "number",
+<<<<<<< HEAD
 			"__experimentalRole": "content"
+=======
+			"role": "content"
+>>>>>>> 535c0c1 (initial commit)
 		},
 		"mediaUrl": {
 			"type": "string",
 			"source": "attribute",
 			"selector": "figure video,figure img",
 			"attribute": "src",
+<<<<<<< HEAD
 			"__experimentalRole": "content"
+=======
+			"role": "content"
+>>>>>>> 535c0c1 (initial commit)
 		},
 		"mediaLink": {
 			"type": "string"
@@ -52,7 +64,11 @@
 			"source": "attribute",
 			"selector": "figure a",
 			"attribute": "href",
+<<<<<<< HEAD
 			"__experimentalRole": "content"
+=======
+			"role": "content"
+>>>>>>> 535c0c1 (initial commit)
 		},
 		"rel": {
 			"type": "string",
@@ -68,7 +84,11 @@
 		},
 		"mediaType": {
 			"type": "string",
+<<<<<<< HEAD
 			"__experimentalRole": "content"
+=======
+			"role": "content"
+>>>>>>> 535c0c1 (initial commit)
 		},
 		"mediaWidth": {
 			"type": "number",
@@ -103,6 +123,21 @@
 		"anchor": true,
 		"align": [ "wide", "full" ],
 		"html": false,
+<<<<<<< HEAD
+=======
+		"__experimentalBorder": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true,
+			"__experimentalDefaultControls": {
+				"color": true,
+				"radius": true,
+				"style": true,
+				"width": true
+			}
+		},
+>>>>>>> 535c0c1 (initial commit)
 		"color": {
 			"gradients": true,
 			"heading": true,

@@ -1,6 +1,12 @@
 .block-library-query-toolbar__popover .components-popover__content{
   min-width:230px;
 }
+<<<<<<< HEAD
+=======
+.block-library-query-toolbar__popover .components-popover__content .block-library-query-toolbar__popover-number-control{
+  margin-bottom:8px;
+}
+>>>>>>> 535c0c1 (initial commit)
 
 .wp-block-query__create-new-link{
   padding:0 52px 16px 16px;
@@ -40,6 +46,7 @@
   z-index:2;
 }
 
+<<<<<<< HEAD
 .block-library-query-toolspanel__filters .components-form-token-field__help{
   margin-bottom:0;
 }
@@ -47,6 +54,8 @@
   margin-bottom:24px;
 }
 
+=======
+>>>>>>> 535c0c1 (initial commit)
 @media (min-width:600px){
   .wp-block-query__enhanced-pagination-modal{
     max-width:480px;

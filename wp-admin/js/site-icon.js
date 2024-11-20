@@ -188,6 +188,15 @@
 		$iconPreview.removeClass( 'hidden' );
 		$removeButton.removeClass( 'hidden' );
 
+<<<<<<< HEAD
+=======
+		// Set the global CSS variable for --site-icon-url to the selected image URL.
+		document.documentElement.style.setProperty(
+			'--site-icon-url',
+			'url(' + attributes.url + ')'
+		);
+
+>>>>>>> 535c0c1 (initial commit)
 		// If the choose button is not in the update state, swap the classes.
 		if ( $chooseButton.attr( 'data-state' ) !== '1' ) {
 			$chooseButton.attr( {

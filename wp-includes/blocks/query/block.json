@@ -25,7 +25,12 @@
 				"sticky": "",
 				"inherit": true,
 				"taxQuery": null,
+<<<<<<< HEAD
 				"parents": []
+=======
+				"parents": [],
+				"format": []
+>>>>>>> 535c0c1 (initial commit)
 			}
 		},
 		"tagName": {
@@ -40,6 +45,10 @@
 			"default": false
 		}
 	},
+<<<<<<< HEAD
+=======
+	"usesContext": [ "postType" ],
+>>>>>>> 535c0c1 (initial commit)
 	"providesContext": {
 		"queryId": "queryId",
 		"query": "query",

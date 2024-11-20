@@ -73,7 +73,11 @@ function mysql2date( $format, $date, $translate = true ) {
 function current_time( $type, $gmt = 0 ) {
 	// Don't use non-GMT timestamp, unless you know the difference and really need to.
 	if ( 'timestamp' === $type || 'U' === $type ) {
+<<<<<<< HEAD
 		return $gmt ? time() : time() + (int) ( get_option( 'gmt_offset' ) * HOUR_IN_SECONDS );
+=======
+		return $gmt ? time() : time() + (int) ( (float) get_option( 'gmt_offset' ) * HOUR_IN_SECONDS );
+>>>>>>> 535c0c1 (initial commit)
 	}
 
 	if ( 'mysql' === $type ) {
@@ -2257,11 +2261,19 @@ function get_temp_dir() {
  * @return bool Whether the path is writable.
  */
 function wp_is_writable( $path ) {
+<<<<<<< HEAD
 	if ( 'WIN' === strtoupper( substr( PHP_OS, 0, 3 ) ) ) {
 		return win_is_writable( $path );
 	} else {
 		return @is_writable( $path );
 	}
+=======
+	if ( 'Windows' === PHP_OS_FAMILY ) {
+		return win_is_writable( $path );
+	}
+
+	return @is_writable( $path );
+>>>>>>> 535c0c1 (initial commit)
 }
 
 /**
@@ -2706,8 +2718,12 @@ function wp_unique_filename( $dir, $filename, $unique_filename_callback = null )
 		 * when regenerated. If yes, ensure the new file name will be unique and will produce unique sub-sizes.
 		 */
 		if ( $is_image ) {
+<<<<<<< HEAD
 			/** This filter is documented in wp-includes/class-wp-image-editor.php */
 			$output_formats = apply_filters( 'image_editor_output_format', array(), $_dir . $filename, $mime_type );
+=======
+			$output_formats = wp_get_image_editor_output_format( $_dir . $filename, $mime_type );
+>>>>>>> 535c0c1 (initial commit)
 			$alt_types      = array();
 
 			if ( ! empty( $output_formats[ $mime_type ] ) ) {
@@ -3102,7 +3118,17 @@ function wp_check_filetype_and_ext( $file, $filename, $mimes = null ) {
 		// Attempt to figure out what type of image it actually is.
 		$real_mime = wp_get_image_mime( $file );
 
+<<<<<<< HEAD
 		if ( $real_mime && $real_mime !== $type ) {
+=======
+		$heic_images_extensions = array(
+			'heif',
+			'heics',
+			'heifs',
+		);
+
+		if ( $real_mime && ( $real_mime !== $type || in_array( $ext, $heic_images_extensions, true ) ) ) {
+>>>>>>> 535c0c1 (initial commit)
 			/**
 			 * Filters the list mapping image mime types to their respective extensions.
 			 *
@@ -3120,12 +3146,30 @@ function wp_check_filetype_and_ext( $file, $filename, $mimes = null ) {
 					'image/tiff' => 'tif',
 					'image/webp' => 'webp',
 					'image/avif' => 'avif',
+<<<<<<< HEAD
+=======
+
+					/*
+					 * In theory there are/should be file extensions that correspond to the
+					 * mime types: .heif, .heics and .heifs. However it seems that HEIC images
+					 * with any of the mime types commonly have a .heic file extension.
+					 * Seems keeping the status quo here is best for compatibility.
+					 */
+					'image/heic' => 'heic',
+					'image/heif' => 'heic',
+					'image/heic-sequence' => 'heic',
+					'image/heif-sequence' => 'heic',
+>>>>>>> 535c0c1 (initial commit)
 				)
 			);
 
 			// Replace whatever is after the last period in the filename with the correct extension.
 			if ( ! empty( $mime_to_ext[ $real_mime ] ) ) {
 				$filename_parts = explode( '.', $filename );
+<<<<<<< HEAD
+=======
+
+>>>>>>> 535c0c1 (initial commit)
 				array_pop( $filename_parts );
 				$filename_parts[] = $mime_to_ext[ $real_mime ];
 				$new_filename     = implode( '.', $filename_parts );
@@ -3299,6 +3343,10 @@ function wp_check_filetype_and_ext( $file, $filename, $mimes = null ) {
  * @since 4.7.1
  * @since 5.8.0 Added support for WebP images.
  * @since 6.5.0 Added support for AVIF images.
+<<<<<<< HEAD
+=======
+ * @since 6.7.0 Added support for HEIC images.
+>>>>>>> 535c0c1 (initial commit)
  *
  * @param string $file Full path to the file.
  * @return string|false The actual mime type or false if the type cannot be determined.
@@ -3315,9 +3363,13 @@ function wp_get_image_mime( $file ) {
 			$mime      = ( $imagetype ) ? image_type_to_mime_type( $imagetype ) : false;
 		} elseif ( function_exists( 'getimagesize' ) ) {
 			// Don't silence errors when in debug mode, unless running unit tests.
+<<<<<<< HEAD
 			if ( defined( 'WP_DEBUG' ) && WP_DEBUG
 				&& ! defined( 'WP_RUN_CORE_TESTS' )
 			) {
+=======
+			if ( defined( 'WP_DEBUG' ) && WP_DEBUG && ! defined( 'WP_RUN_CORE_TESTS' ) ) {
+>>>>>>> 535c0c1 (initial commit)
 				// Not using wp_getimagesize() here to avoid an infinite loop.
 				$imagesize = getimagesize( $file );
 			} else {
@@ -3364,6 +3416,7 @@ function wp_get_image_mime( $file ) {
 		// Divide the header string into 4 byte groups.
 		$magic = str_split( $magic, 8 );
 
+<<<<<<< HEAD
 		if (
 			isset( $magic[1] ) &&
 			isset( $magic[2] ) &&
@@ -3371,6 +3424,30 @@ function wp_get_image_mime( $file ) {
 			( 'avif' === hex2bin( $magic[2] ) || 'avis' === hex2bin( $magic[2] ) )
 		) {
 			$mime = 'image/avif';
+=======
+		if ( isset( $magic[1] ) && isset( $magic[2] ) && 'ftyp' === hex2bin( $magic[1] ) ) {
+			if ( 'avif' === hex2bin( $magic[2] ) || 'avis' === hex2bin( $magic[2] ) ) {
+				$mime = 'image/avif';
+			} elseif ( 'heic' === hex2bin( $magic[2] ) ) {
+				$mime = 'image/heic';
+			} elseif ( 'heif' === hex2bin( $magic[2] ) ) {
+				$mime = 'image/heif';
+			} else {
+				/*
+				 * HEIC/HEIF images and image sequences/animations may have other strings here
+				 * like mif1, msf1, etc. For now fall back to using finfo_file() to detect these.
+				 */
+				if ( extension_loaded( 'fileinfo' ) ) {
+					$fileinfo  = finfo_open( FILEINFO_MIME_TYPE );
+					$mime_type = finfo_file( $fileinfo, $file );
+					finfo_close( $fileinfo );
+
+					if ( wp_is_heic_image_mime_type( $mime_type ) ) {
+						$mime = $mime_type;
+					}
+				}
+			}
+>>>>>>> 535c0c1 (initial commit)
 		}
 	} catch ( Exception $e ) {
 		$mime = false;
@@ -3413,7 +3490,17 @@ function wp_get_mime_types() {
 			'webp'                         => 'image/webp',
 			'avif'                         => 'image/avif',
 			'ico'                          => 'image/x-icon',
+<<<<<<< HEAD
 			'heic'                         => 'image/heic',
+=======
+
+			// TODO: Needs improvement. All images with the following mime types seem to have .heic file extension.
+			'heic'                         => 'image/heic',
+			'heif'                         => 'image/heif',
+			'heics'                        => 'image/heic-sequence',
+			'heifs'                        => 'image/heif-sequence',
+
+>>>>>>> 535c0c1 (initial commit)
 			// Video formats.
 			'asf|asx'                      => 'video/x-ms-asf',
 			'wmv'                          => 'video/x-ms-wmv',
@@ -3533,7 +3620,11 @@ function wp_get_ext_types() {
 	return apply_filters(
 		'ext2type',
 		array(
+<<<<<<< HEAD
 			'image'       => array( 'jpg', 'jpeg', 'jpe', 'gif', 'png', 'bmp', 'tif', 'tiff', 'ico', 'heic', 'webp', 'avif' ),
+=======
+			'image'       => array( 'jpg', 'jpeg', 'jpe', 'gif', 'png', 'bmp', 'tif', 'tiff', 'ico', 'heic', 'heif', 'webp', 'avif' ),
+>>>>>>> 535c0c1 (initial commit)
 			'audio'       => array( 'aac', 'ac3', 'aif', 'aiff', 'flac', 'm3a', 'm4a', 'm4b', 'mka', 'mp1', 'mp2', 'mp3', 'ogg', 'oga', 'ram', 'wav', 'wma' ),
 			'video'       => array( '3g2', '3gp', '3gpp', 'asf', 'avi', 'divx', 'dv', 'flv', 'm4v', 'mkv', 'mov', 'mp4', 'mpeg', 'mpg', 'mpv', 'ogm', 'ogv', 'qt', 'rm', 'vob', 'wmv' ),
 			'document'    => array( 'doc', 'docx', 'docm', 'dotm', 'odt', 'pages', 'pdf', 'xps', 'oxps', 'rtf', 'wp', 'wpd', 'psd', 'xcf' ),
@@ -3858,7 +3949,11 @@ function _default_wp_die_handler( $message, $title = '', $args = array() ) {
 <html <?php echo $dir_attr; ?>>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $parsed_args['charset']; ?>" />
+<<<<<<< HEAD
 	<meta name="viewport" content="width=device-width">
+=======
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+>>>>>>> 535c0c1 (initial commit)
 		<?php
 		if ( function_exists( 'wp_robots' ) && function_exists( 'wp_robots_no_robots' ) && function_exists( 'add_filter' ) ) {
 			add_filter( 'wp_robots', 'wp_robots_no_robots' );
@@ -4695,7 +4790,11 @@ function _config_wp_siteurl( $url = '' ) {
  * @access private
  */
 function _delete_option_fresh_site() {
+<<<<<<< HEAD
 	update_option( 'fresh_site', '0' );
+=======
+	update_option( 'fresh_site', '0', false );
+>>>>>>> 535c0c1 (initial commit)
 }
 
 /**
@@ -5467,6 +5566,7 @@ function dead_db() {
 }
 
 /**
+<<<<<<< HEAD
  * Converts a value to non-negative integer.
  *
  * @since 2.5.0
@@ -5479,6 +5579,8 @@ function absint( $maybeint ) {
 }
 
 /**
+=======
+>>>>>>> 535c0c1 (initial commit)
  * Marks a function as deprecated and inform when it has been used.
  *
  * There is a {@see 'deprecated_function_run'} hook that will be called that can be used
@@ -6082,6 +6184,13 @@ function wp_trigger_error( $function_name, $message, $error_level = E_USER_NOTIC
 		array( 'http', 'https' )
 	);
 
+<<<<<<< HEAD
+=======
+	if ( E_USER_ERROR === $error_level ) {
+		throw new WP_Exception( $message );
+	}
+
+>>>>>>> 535c0c1 (initial commit)
 	trigger_error( $message, $error_level );
 }
 
@@ -7635,8 +7744,15 @@ function wp_validate_boolean( $value ) {
  * Deletes a file.
  *
  * @since 4.2.0
+<<<<<<< HEAD
  *
  * @param string $file The path to the file to delete.
+=======
+ * @since 6.7.0 A return value was added.
+ *
+ * @param string $file The path to the file to delete.
+ * @return bool True on success, false on failure.
+>>>>>>> 535c0c1 (initial commit)
  */
 function wp_delete_file( $file ) {
 	/**
@@ -7647,9 +7763,18 @@ function wp_delete_file( $file ) {
 	 * @param string $file Path to the file to delete.
 	 */
 	$delete = apply_filters( 'wp_delete_file', $file );
+<<<<<<< HEAD
 	if ( ! empty( $delete ) ) {
 		@unlink( $delete );
 	}
+=======
+
+	if ( ! empty( $delete ) ) {
+		return @unlink( $delete );
+	}
+
+	return false;
+>>>>>>> 535c0c1 (initial commit)
 }
 
 /**
@@ -7682,9 +7807,13 @@ function wp_delete_file_from_directory( $file, $directory ) {
 		return false;
 	}
 
+<<<<<<< HEAD
 	wp_delete_file( $file );
 
 	return true;
+=======
+	return wp_delete_file( $file );
+>>>>>>> 535c0c1 (initial commit)
 }
 
 /**
@@ -8500,7 +8629,11 @@ function wp_direct_php_update_button() {
 
 	echo '<p class="button-container">';
 	printf(
+<<<<<<< HEAD
 		'<a class="button button-primary" href="%1$s" target="_blank" rel="noopener">%2$s<span class="screen-reader-text"> %3$s</span><span aria-hidden="true" class="dashicons dashicons-external"></span></a>',
+=======
+		'<a class="button button-primary" href="%1$s" target="_blank">%2$s<span class="screen-reader-text"> %3$s</span><span aria-hidden="true" class="dashicons dashicons-external"></span></a>',
+>>>>>>> 535c0c1 (initial commit)
 		esc_url( $direct_update_url ),
 		__( 'Update PHP' ),
 		/* translators: Hidden accessibility text. */
@@ -8805,17 +8938,57 @@ function clean_dirsize_cache( $path ) {
 }
 
 /**
+<<<<<<< HEAD
+=======
+ * Returns the current WordPress version.
+ *
+ * Returns an unmodified value of `$wp_version`. Some plugins modify the global
+ * in an attempt to improve security through obscurity. This practice can cause
+ * errors in WordPress, so the ability to get an unmodified version is needed.
+ *
+ * @since 6.7.0
+ *
+ * @return string The current WordPress version.
+ */
+function wp_get_wp_version() {
+	static $wp_version;
+
+	if ( ! isset( $wp_version ) ) {
+		require ABSPATH . WPINC . '/version.php';
+	}
+
+	return $wp_version;
+}
+
+/**
+>>>>>>> 535c0c1 (initial commit)
  * Checks compatibility with the current WordPress version.
  *
  * @since 5.2.0
  *
+<<<<<<< HEAD
  * @global string $wp_version The WordPress version string.
+=======
+ * @global string $_wp_tests_wp_version The WordPress version string. Used only in Core tests.
+>>>>>>> 535c0c1 (initial commit)
  *
  * @param string $required Minimum required WordPress version.
  * @return bool True if required version is compatible or empty, false if not.
  */
 function is_wp_version_compatible( $required ) {
+<<<<<<< HEAD
 	global $wp_version;
+=======
+	if (
+		defined( 'WP_RUN_CORE_TESTS' )
+		&& WP_RUN_CORE_TESTS
+		&& isset( $GLOBALS['_wp_tests_wp_version'] )
+	) {
+		$wp_version = $GLOBALS['_wp_tests_wp_version'];
+	} else {
+		$wp_version = wp_get_wp_version();
+	}
+>>>>>>> 535c0c1 (initial commit)
 
 	// Strip off any -alpha, -RC, -beta, -src suffixes.
 	list( $version ) = explode( '-', $wp_version );
@@ -9003,3 +9176,25 @@ function wp_admin_notice( $message, $args = array() ) {
 
 	echo wp_kses_post( wp_get_admin_notice( $message, $args ) );
 }
+<<<<<<< HEAD
+=======
+
+/**
+ * Checks if a mime type is for a HEIC/HEIF image.
+ *
+ * @since 6.7.0
+ *
+ * @param string $mime_type The mime type to check.
+ * @return bool Whether the mime type is for a HEIC/HEIF image.
+ */
+function wp_is_heic_image_mime_type( $mime_type ) {
+	$heic_mime_types = array(
+		'image/heic',
+		'image/heif',
+		'image/heic-sequence',
+		'image/heif-sequence',
+	);
+
+	return in_array( $mime_type, $heic_mime_types, true );
+}
+>>>>>>> 535c0c1 (initial commit)

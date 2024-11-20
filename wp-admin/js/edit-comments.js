@@ -1188,6 +1188,10 @@ window.commentReply = {
 		if ( er ) {
 			$errorNotice.removeClass( 'hidden' );
 			$error.html( er );
+<<<<<<< HEAD
+=======
+			wp.a11y.speak( er );
+>>>>>>> 535c0c1 (initial commit)
 		}
 	},
 

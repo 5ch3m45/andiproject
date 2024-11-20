@@ -1,11 +1,26 @@
 <?php
 
 /*
+<<<<<<< HEAD
  * Disable error reporting.
  *
  * Set this to error_reporting( -1 ) for debugging.
  */
 error_reporting( 0 );
+=======
+ * The error_reporting() function can be disabled in php.ini. On systems where that is the case,
+ * it's best to add a dummy function to the wp-config.php file, but as this call to the function
+ * is run prior to wp-config.php loading, it is wrapped in a function_exists() check.
+ */
+if ( function_exists( 'error_reporting' ) ) {
+	/*
+	 * Disable error reporting.
+	 *
+	 * Set this to error_reporting( -1 ) for debugging.
+	 */
+	error_reporting( 0 );
+}
+>>>>>>> 535c0c1 (initial commit)
 
 // Set ABSPATH for execution.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -48,6 +63,7 @@ $out            = '';
 $wp_styles = new WP_Styles();
 wp_default_styles( $wp_styles );
 
+<<<<<<< HEAD
 $etag = "WP:{$wp_version};";
 
 foreach ( $load as $handle ) {
@@ -66,6 +82,9 @@ foreach ( $load as $handle ) {
  * wp_hash() function.
  */
 $etag = 'W/"' . md5( $etag ) . '"';
+=======
+$etag = $wp_styles->get_etag( $load );
+>>>>>>> 535c0c1 (initial commit)
 
 if ( isset( $_SERVER['HTTP_IF_NONE_MATCH'] ) && stripslashes( $_SERVER['HTTP_IF_NONE_MATCH'] ) === $etag ) {
 	header( "$protocol 304 Not Modified" );

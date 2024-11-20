@@ -98,10 +98,13 @@
   box-shadow:inset 0 0 0 1px #fff, 0 0 0 var(--wp-admin-border-width-focus) var(--wp-admin-theme-color);
   outline:2px solid #0000;
 }
+<<<<<<< HEAD
 .components-autocomplete__result.components-button.is-selected,.components-autocomplete__result.components-button:not(:disabled,[aria-disabled=true]):active{
   background:var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));
   color:#fff;
 }
+=======
+>>>>>>> 535c0c1 (initial commit)
 
 .components-button-group{
   display:inline-block;
@@ -128,7 +131,10 @@
 .components-button-group .components-button.is-primary{
   box-shadow:inset 0 0 0 1px #1e1e1e;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 535c0c1 (initial commit)
 .components-button{
   align-items:center;
   -webkit-appearance:none;
@@ -157,12 +163,18 @@
 .components-button.is-next-40px-default-size{
   height:40px;
 }
+<<<<<<< HEAD
 .components-button:hover,.components-button[aria-expanded=true]{
   color:var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));
 }
 .components-button:disabled:hover,.components-button[aria-disabled=true]:hover{
   color:initial;
 }
+=======
+.components-button:hover:not(:disabled,[aria-disabled=true]),.components-button[aria-expanded=true]{
+  color:var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));
+}
+>>>>>>> 535c0c1 (initial commit)
 .components-button:focus:not(:disabled){
   box-shadow:0 0 0 var(--wp-admin-border-width-focus) var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));
   outline:3px solid #0000;
@@ -191,7 +203,10 @@
   background:var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));
   border-color:var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));
   color:#fff6;
+<<<<<<< HEAD
   opacity:1;
+=======
+>>>>>>> 535c0c1 (initial commit)
   outline:none;
 }
 .components-button.is-primary:disabled:active:enabled:focus:enabled,.components-button.is-primary:disabled:focus:enabled,.components-button.is-primary[aria-disabled=true]:active:enabled:focus:enabled,.components-button.is-primary[aria-disabled=true]:enabled:focus:enabled,.components-button.is-primary[aria-disabled=true]:focus:enabled{
@@ -212,7 +227,10 @@
 .components-button.is-secondary:disabled,.components-button.is-secondary[aria-disabled=true],.components-button.is-secondary[aria-disabled=true]:hover,.components-button.is-tertiary:disabled,.components-button.is-tertiary[aria-disabled=true],.components-button.is-tertiary[aria-disabled=true]:hover{
   background:#0000;
   color:#949494;
+<<<<<<< HEAD
   opacity:1;
+=======
+>>>>>>> 535c0c1 (initial commit)
   transform:none;
 }
 .components-button.is-secondary{
@@ -254,6 +272,7 @@ p+.components-button.is-tertiary{
 .components-button.is-destructive:not(.is-primary):not(.is-secondary):not(.is-tertiary):not(.is-link){
   color:#cc1818;
 }
+<<<<<<< HEAD
 .components-button.is-destructive:not(.is-primary):not(.is-secondary):not(.is-tertiary):not(.is-link):hover:not(:disabled){
   color:#710d0d;
 }
@@ -263,6 +282,26 @@ p+.components-button.is-tertiary{
 .components-button.is-destructive:not(.is-primary):not(.is-secondary):not(.is-tertiary):not(.is-link):active:not(:disabled){
   background:#ccc;
 }
+=======
+.components-button.is-destructive:not(.is-primary):not(.is-secondary):not(.is-tertiary):not(.is-link):hover:not(:disabled,[aria-disabled=true]){
+  color:#710d0d;
+}
+.components-button.is-destructive:not(.is-primary):not(.is-secondary):not(.is-tertiary):not(.is-link):focus{
+  box-shadow:0 0 0 var(--wp-admin-border-width-focus) #cc1818;
+}
+.components-button.is-destructive:not(.is-primary):not(.is-secondary):not(.is-tertiary):not(.is-link):active:not(:disabled,[aria-disabled=true]){
+  background:#ccc;
+}
+.components-button.is-destructive:not(.is-primary):not(.is-secondary):not(.is-tertiary):not(.is-link):disabled,.components-button.is-destructive:not(.is-primary):not(.is-secondary):not(.is-tertiary):not(.is-link)[aria-disabled=true]{
+  color:#949494;
+}
+.components-button.is-destructive.is-tertiary:hover:not(:disabled,[aria-disabled=true]){
+  background:#cc18180a;
+}
+.components-button.is-destructive.is-tertiary:active:not(:disabled,[aria-disabled=true]){
+  background:#cc181814;
+}
+>>>>>>> 535c0c1 (initial commit)
 .components-button.is-link{
   background:none;
   border:0;
@@ -288,18 +327,32 @@ p+.components-button.is-tertiary{
 .components-button.is-link:focus{
   border-radius:2px;
 }
+<<<<<<< HEAD
+=======
+.components-button.is-link:disabled,.components-button.is-link[aria-disabled=true]{
+  color:#949494;
+}
+>>>>>>> 535c0c1 (initial commit)
 .components-button:not(:disabled,[aria-disabled=true]):active{
   color:var(--wp-components-color-foreground, #1e1e1e);
 }
 .components-button:disabled,.components-button[aria-disabled=true]{
+<<<<<<< HEAD
   cursor:default;
   opacity:.3;
+=======
+  color:#949494;
+  cursor:default;
+>>>>>>> 535c0c1 (initial commit)
 }
 .components-button.is-busy,.components-button.is-secondary.is-busy,.components-button.is-secondary.is-busy:disabled,.components-button.is-secondary.is-busy[aria-disabled=true]{
   animation:components-button__busy-animation 2.5s linear infinite;
   background-image:linear-gradient(45deg, #fafafa 33%, #e0e0e0 0, #e0e0e0 70%, #fafafa 0);
   background-size:100px 100%;
+<<<<<<< HEAD
   opacity:1;
+=======
+>>>>>>> 535c0c1 (initial commit)
 }
 @media (prefers-reduced-motion:reduce){
   .components-button.is-busy,.components-button.is-secondary.is-busy,.components-button.is-secondary.is-busy:disabled,.components-button.is-secondary.is-busy[aria-disabled=true]{
@@ -346,18 +399,35 @@ p+.components-button.is-tertiary{
   padding-left:12px;
   padding-right:8px;
 }
+<<<<<<< HEAD
 .components-button.is-pressed{
   background:var(--wp-components-color-foreground, #1e1e1e);
+=======
+.components-button.is-pressed,.components-button.is-pressed:hover{
+  color:var(--wp-components-color-foreground-inverted, #fff);
+}
+.components-button.is-pressed:hover:not(:disabled,[aria-disabled=true]),.components-button.is-pressed:not(:disabled,[aria-disabled=true]){
+  background:var(--wp-components-color-foreground, #1e1e1e);
+}
+.components-button.is-pressed:disabled,.components-button.is-pressed[aria-disabled=true]{
+  color:#949494;
+}
+.components-button.is-pressed:disabled:not(.is-primary):not(.is-secondary):not(.is-tertiary),.components-button.is-pressed[aria-disabled=true]:not(.is-primary):not(.is-secondary):not(.is-tertiary){
+  background:#949494;
+>>>>>>> 535c0c1 (initial commit)
   color:var(--wp-components-color-foreground-inverted, #fff);
 }
 .components-button.is-pressed:focus:not(:disabled){
   box-shadow:inset 0 0 0 1px var(--wp-components-color-background, #fff), 0 0 0 var(--wp-admin-border-width-focus) var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));
   outline:2px solid #0000;
 }
+<<<<<<< HEAD
 .components-button.is-pressed:hover:not(:disabled){
   background:var(--wp-components-color-foreground, #1e1e1e);
   color:var(--wp-components-color-foreground-inverted, #fff);
 }
+=======
+>>>>>>> 535c0c1 (initial commit)
 .components-button svg{
   fill:currentColor;
   outline:none;
@@ -378,14 +448,26 @@ p+.components-button.is-tertiary{
 }
 .components-checkbox-control{
   --checkbox-input-size:24px;
+<<<<<<< HEAD
 }
 @media (min-width:600px){
   .components-checkbox-control{
     --checkbox-input-size:20px;
+=======
+  --checkbox-input-margin:8px;
+}
+@media (min-width:600px){
+  .components-checkbox-control{
+    --checkbox-input-size:16px;
+>>>>>>> 535c0c1 (initial commit)
   }
 }
 
 .components-checkbox-control__label{
+<<<<<<< HEAD
+=======
+  cursor:pointer;
+>>>>>>> 535c0c1 (initial commit)
   line-height:var(--checkbox-input-size);
 }
 
@@ -507,7 +589,12 @@ p+.components-button.is-tertiary{
   aspect-ratio:1;
   display:inline-block;
   flex-shrink:0;
+<<<<<<< HEAD
   margin-left:12px;
+=======
+  line-height:1;
+  margin-left:var(--checkbox-input-margin);
+>>>>>>> 535c0c1 (initial commit)
   position:relative;
   vertical-align:middle;
   width:var(--checkbox-input-size);
@@ -535,7 +622,11 @@ svg.components-checkbox-control__checked,svg.components-checkbox-control__indete
 
 .components-checkbox-control__help{
   display:inline-block;
+<<<<<<< HEAD
   margin-inline-start:calc(var(--checkbox-input-size) + 12px);
+=======
+  margin-inline-start:calc(var(--checkbox-input-size) + var(--checkbox-input-margin));
+>>>>>>> 535c0c1 (initial commit)
 }
 
 .components-circular-option-picker{
@@ -778,7 +869,11 @@ input.components-combobox-control__input[type=text]:focus{
 .components-color-palette__custom-color-button{
   background:none;
   border:none;
+<<<<<<< HEAD
   border-radius:2px 2px 0 0;
+=======
+  border-radius:4px 4px 0 0;
+>>>>>>> 535c0c1 (initial commit)
   box-shadow:inset 0 0 0 1px #0003;
   box-sizing:border-box;
   cursor:pointer;
@@ -805,7 +900,11 @@ input.components-combobox-control__input[type=text]:focus{
 }
 
 .components-color-palette__custom-color-text-wrapper{
+<<<<<<< HEAD
   border-radius:0 0 2px 2px;
+=======
+  border-radius:0 0 4px 4px;
+>>>>>>> 535c0c1 (initial commit)
   box-shadow:inset 0 -1px 0 0 #0003,inset -1px 0 0 0 #0003,inset 1px 0 0 0 #0003;
   font-size:13px;
   padding:12px 16px;
@@ -899,6 +998,7 @@ input.components-combobox-control__input[type=text]:focus{
   width:20px;
 }
 
+<<<<<<< HEAD
 .components-custom-gradient-picker .components-custom-gradient-picker__toolbar{
   border:none;
 }
@@ -911,11 +1011,14 @@ input.components-combobox-control__input[type=text]:focus{
   border-radius:2px;
 }
 
+=======
+>>>>>>> 535c0c1 (initial commit)
 .components-custom-gradient-picker__ui-line{
   position:relative;
   z-index:0;
 }
 
+<<<<<<< HEAD
 .components-custom-select-control{
   font-size:13px;
   position:relative;
@@ -985,6 +1088,8 @@ input.components-combobox-control__input[type=text]:focus{
   margin-bottom:0;
 }
 
+=======
+>>>>>>> 535c0c1 (initial commit)
 .block-editor-dimension-control .components-base-control__field{
   align-items:center;
   display:flex;
@@ -1037,8 +1142,12 @@ body.is-dragging-components-draggable{
   opacity:1;
   visibility:visible;
 }
+<<<<<<< HEAD
 
 .components-drop-zone__content{
+=======
+.components-drop-zone .components-drop-zone__content{
+>>>>>>> 535c0c1 (initial commit)
   align-items:center;
   background-color:var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));
   bottom:0;
@@ -1047,6 +1156,11 @@ body.is-dragging-components-draggable{
   height:100%;
   justify-content:center;
   left:0;
+<<<<<<< HEAD
+=======
+  opacity:0;
+  pointer-events:none;
+>>>>>>> 535c0c1 (initial commit)
   position:absolute;
   right:0;
   text-align:center;
@@ -1054,6 +1168,32 @@ body.is-dragging-components-draggable{
   width:100%;
   z-index:50;
 }
+<<<<<<< HEAD
+=======
+.components-drop-zone .components-drop-zone__content-inner{
+  opacity:0;
+  transform:scale(.9);
+}
+.components-drop-zone.is-active.is-dragging-over-element .components-drop-zone__content{
+  opacity:1;
+  transition:opacity .2s ease-in-out;
+}
+@media (prefers-reduced-motion){
+  .components-drop-zone.is-active.is-dragging-over-element .components-drop-zone__content{
+    transition:none;
+  }
+}
+.components-drop-zone.is-active.is-dragging-over-element .components-drop-zone__content-inner{
+  opacity:1;
+  transform:scale(1);
+  transition:opacity .1s ease-in-out .1s,transform .1s ease-in-out .1s;
+}
+@media (prefers-reduced-motion){
+  .components-drop-zone.is-active.is-dragging-over-element .components-drop-zone__content-inner{
+    transition:none;
+  }
+}
+>>>>>>> 535c0c1 (initial commit)
 
 .components-drop-zone__content-icon,.components-drop-zone__content-text{
   display:block;
@@ -1189,13 +1329,20 @@ body.is-dragging-components-draggable{
   font-weight:400;
   margin-right:.5ch;
 }
+<<<<<<< HEAD
 
 .components-form-toggle{
   display:inline-block;
+=======
+.components-form-toggle,.components-form-toggle .components-form-toggle__track{
+  display:inline-block;
+  height:16px;
+>>>>>>> 535c0c1 (initial commit)
   position:relative;
 }
 .components-form-toggle .components-form-toggle__track{
   background-color:#fff;
+<<<<<<< HEAD
   border:1px solid #1e1e1e;
   border-radius:9px;
   box-sizing:border-box;
@@ -1207,6 +1354,16 @@ body.is-dragging-components-draggable{
   transition:background-color .2s ease,border-color .2s ease;
   vertical-align:top;
   width:36px;
+=======
+  border:1px solid #949494;
+  border-radius:8px;
+  box-sizing:border-box;
+  content:"";
+  overflow:hidden;
+  transition:background-color .2s ease,border-color .2s ease;
+  vertical-align:top;
+  width:32px;
+>>>>>>> 535c0c1 (initial commit)
 }
 @media (prefers-reduced-motion:reduce){
   .components-form-toggle .components-form-toggle__track{
@@ -1215,7 +1372,11 @@ body.is-dragging-components-draggable{
   }
 }
 .components-form-toggle .components-form-toggle__track:after{
+<<<<<<< HEAD
   border-top:18px solid #0000;
+=======
+  border-top:16px solid #0000;
+>>>>>>> 535c0c1 (initial commit)
   box-sizing:border-box;
   content:"";
   inset:0;
@@ -1233,12 +1394,21 @@ body.is-dragging-components-draggable{
   background-color:#1e1e1e;
   border:6px solid #0000;
   border-radius:50%;
+<<<<<<< HEAD
+=======
+  box-shadow:0 1px 1px #00000008,0 1px 2px #00000005,0 3px 3px #00000005,0 4px 4px #00000003;
+>>>>>>> 535c0c1 (initial commit)
   box-sizing:border-box;
   display:block;
   height:12px;
   position:absolute;
+<<<<<<< HEAD
   right:3px;
   top:3px;
+=======
+  right:2px;
+  top:2px;
+>>>>>>> 535c0c1 (initial commit)
   transition:transform .2s ease,background-color .2s ease-out;
   width:12px;
 }
@@ -1263,7 +1433,11 @@ body.is-dragging-components-draggable{
 .components-form-toggle.is-checked .components-form-toggle__thumb{
   background-color:#fff;
   border-width:0;
+<<<<<<< HEAD
   transform:translateX(-18px);
+=======
+  transform:translateX(-16px);
+>>>>>>> 535c0c1 (initial commit)
 }
 .components-disabled .components-form-toggle,.components-form-toggle.is-disabled{
   opacity:.3;
@@ -1287,6 +1461,12 @@ body.is-dragging-components-draggable{
 .components-form-toggle input.components-form-toggle__input[type=checkbox]:before{
   content:"";
 }
+<<<<<<< HEAD
+=======
+.components-form-toggle input.components-form-toggle__input[type=checkbox]:not(:disabled,[aria-disabled=true]){
+  cursor:pointer;
+}
+>>>>>>> 535c0c1 (initial commit)
 
 .components-form-token-field__input-container{
   border:1px solid #949494;
@@ -1400,7 +1580,10 @@ body.is-dragging-components-draggable{
   color:#4ab866;
 }
 .components-form-token-field__token.is-borderless.is-error .components-form-token-field__token-text{
+<<<<<<< HEAD
   border-radius:0 4px 4px 0;
+=======
+>>>>>>> 535c0c1 (initial commit)
   color:#cc1818;
   padding:0 6px 0 4px;
 }
@@ -1429,7 +1612,11 @@ body.is-dragging-components-draggable{
 }
 
 .components-form-token-field__token-text{
+<<<<<<< HEAD
   border-radius:0 2px 2px 0;
+=======
+  border-radius:0 1px 1px 0;
+>>>>>>> 535c0c1 (initial commit)
   overflow:hidden;
   padding:0 8px 0 0;
   text-overflow:ellipsis;
@@ -1437,7 +1624,11 @@ body.is-dragging-components-draggable{
 }
 
 .components-form-token-field__remove-token.components-button{
+<<<<<<< HEAD
   border-radius:2px 0 0 2px;
+=======
+  border-radius:1px 0 0 1px;
+>>>>>>> 535c0c1 (initial commit)
   color:#1e1e1e;
   cursor:pointer;
   line-height:10px;
@@ -1494,7 +1685,10 @@ body.is-dragging-components-draggable{
   }
 }
 .components-guide .components-modal__content{
+<<<<<<< HEAD
   border-radius:2px;
+=======
+>>>>>>> 535c0c1 (initial commit)
   margin-top:0;
   padding:0;
 }
@@ -1586,6 +1780,23 @@ body.is-dragging-components-draggable{
 [role=region]{
   position:relative;
 }
+<<<<<<< HEAD
+=======
+[role=region].interface-interface-skeleton__content:focus-visible:after{
+  bottom:0;
+  content:"";
+  left:0;
+  outline-color:var(--wp-admin-theme-color);
+  outline-offset:calc(((-1*var(--wp-admin-border-width-focus))/var(--wp-block-editor-iframe-zoom-out-scale, 1))*2);
+  outline-style:solid;
+  outline-width:calc((var(--wp-admin-border-width-focus)/var(--wp-block-editor-iframe-zoom-out-scale, 1))*2);
+  pointer-events:none;
+  position:absolute;
+  right:0;
+  top:0;
+  z-index:1000000;
+}
+>>>>>>> 535c0c1 (initial commit)
 
 .is-focusing-regions [role=region]:focus:after{
   bottom:0;
@@ -1598,8 +1809,15 @@ body.is-dragging-components-draggable{
   z-index:1000000;
 }
 .is-focusing-regions .editor-post-publish-panel,.is-focusing-regions .interface-interface-skeleton__actions .editor-layout__toggle-entities-saved-states-panel,.is-focusing-regions .interface-interface-skeleton__actions .editor-layout__toggle-publish-panel,.is-focusing-regions .interface-interface-skeleton__sidebar .editor-layout__toggle-sidebar-panel,.is-focusing-regions [role=region]:focus:after,.is-focusing-regions.is-distraction-free .interface-interface-skeleton__header .edit-post-header{
+<<<<<<< HEAD
   outline:4px solid var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));
   outline-offset:-4px;
+=======
+  outline-color:var(--wp-admin-theme-color);
+  outline-offset:calc(((-1*var(--wp-admin-border-width-focus))/var(--wp-block-editor-iframe-zoom-out-scale, 1))*2);
+  outline-style:solid;
+  outline-width:calc((var(--wp-admin-border-width-focus)/var(--wp-block-editor-iframe-zoom-out-scale, 1))*2);
+>>>>>>> 535c0c1 (initial commit)
 }
 
 .components-menu-group+.components-menu-group{
@@ -1701,7 +1919,11 @@ body.is-dragging-components-draggable{
 }
 
 .components-modal__screen-overlay{
+<<<<<<< HEAD
   animation:edit-post__fade-in-animation .2s ease-out 0s;
+=======
+  animation:__wp-base-styles-fade-in .08s linear 0s;
+>>>>>>> 535c0c1 (initial commit)
   animation-fill-mode:forwards;
   background-color:#00000059;
   bottom:0;
@@ -1712,12 +1934,24 @@ body.is-dragging-components-draggable{
   top:0;
   z-index:100000;
 }
+<<<<<<< HEAD
+=======
+@keyframes __wp-base-styles-fade-in{
+  0%{
+    opacity:0;
+  }
+  to{
+    opacity:1;
+  }
+}
+>>>>>>> 535c0c1 (initial commit)
 @media (prefers-reduced-motion:reduce){
   .components-modal__screen-overlay{
     animation-delay:0s;
     animation-duration:1ms;
   }
 }
+<<<<<<< HEAD
 
 .components-modal__frame{
   animation:components-modal__appear-animation .1s ease-out;
@@ -1725,6 +1959,35 @@ body.is-dragging-components-draggable{
   background:#fff;
   border-radius:4px 4px 0 0;
   box-shadow:0 .7px 1px #00000026,0 2.7px 3.8px -.2px #00000026,0 5.5px 7.8px -.3px #00000026,-.1px 11.5px 16.4px -.5px #00000026;
+=======
+.components-modal__screen-overlay.is-animating-out{
+  animation:__wp-base-styles-fade-out .08s linear 80ms;
+  animation-fill-mode:forwards;
+}
+@keyframes __wp-base-styles-fade-out{
+  0%{
+    opacity:1;
+  }
+  to{
+    opacity:0;
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  .components-modal__screen-overlay.is-animating-out{
+    animation-delay:0s;
+    animation-duration:1ms;
+  }
+}
+
+.components-modal__frame{
+  animation-duration:var(--modal-frame-animation-duration);
+  animation-fill-mode:forwards;
+  animation-name:components-modal__appear-animation;
+  animation-timing-function:cubic-bezier(.29, 0, 0, 1);
+  background:#fff;
+  border-radius:8px 8px 0 0;
+  box-shadow:0 5px 15px #00000014,0 15px 27px #00000012,0 30px 36px #0000000a,0 50px 43px #00000005;
+>>>>>>> 535c0c1 (initial commit)
   box-sizing:border-box;
   display:flex;
   margin:40px 0 0;
@@ -1740,9 +2003,19 @@ body.is-dragging-components-draggable{
     animation-duration:1ms;
   }
 }
+<<<<<<< HEAD
 @media (min-width:600px){
   .components-modal__frame{
     border-radius:4px;
+=======
+.components-modal__screen-overlay.is-animating-out .components-modal__frame{
+  animation-name:components-modal__disappear-animation;
+  animation-timing-function:cubic-bezier(1, 0, .2, 1);
+}
+@media (min-width:600px){
+  .components-modal__frame{
+    border-radius:8px;
+>>>>>>> 535c0c1 (initial commit)
     margin:auto;
     max-height:calc(100% - 120px);
     max-width:calc(100% - 32px);
@@ -1786,10 +2059,29 @@ body.is-dragging-components-draggable{
 
 @keyframes components-modal__appear-animation{
   0%{
+<<<<<<< HEAD
     transform:translateY(32px);
   }
   to{
     transform:translateY(0);
+=======
+    opacity:0;
+    transform:scale(.9);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+@keyframes components-modal__disappear-animation{
+  0%{
+    opacity:1;
+    transform:scale(1);
+  }
+  to{
+    opacity:0;
+    transform:scale(.9);
+>>>>>>> 535c0c1 (initial commit)
   }
 }
 .components-modal__header{
@@ -1815,10 +2107,13 @@ body.is-dragging-components-draggable{
   line-height:1;
   margin:0;
 }
+<<<<<<< HEAD
 .components-modal__header .components-button{
   position:relative;
   right:8px;
 }
+=======
+>>>>>>> 535c0c1 (initial commit)
 .components-modal__content.has-scrolled-content:not(.hide-header) .components-modal__header{
   border-bottom-color:#ddd;
 }
@@ -2219,7 +2514,11 @@ body.rtl .components-panel__body-toggle.components-button .dashicons-arrow-right
           backdrop-filter:blur(100px);
   backface-visibility:hidden;
   background-color:initial;
+<<<<<<< HEAD
   border-radius:2px;
+=======
+  border-radius:0;
+>>>>>>> 535c0c1 (initial commit)
   box-shadow:none;
   color:inherit;
   display:flex;
@@ -2298,12 +2597,21 @@ body.rtl .components-panel__body-toggle.components-button .dashicons-arrow-right
 
 .components-popover__content{
   background:#fff;
+<<<<<<< HEAD
   border-radius:2px;
   box-shadow:0 0 0 1px #ccc,0 .7px 1px #0000001a,0 1.2px 1.7px -.2px #0000001a,0 2.3px 3.3px -.5px #0000001a;
+=======
+  border-radius:4px;
+  box-shadow:0 0 0 1px #ccc,0 2px 3px #0000000d,0 4px 5px #0000000a,0 12px 12px #00000008,0 16px 16px #00000005;
+>>>>>>> 535c0c1 (initial commit)
   box-sizing:border-box;
   width:min-content;
 }
 .is-alternate .components-popover__content{
+<<<<<<< HEAD
+=======
+  border-radius:2px;
+>>>>>>> 535c0c1 (initial commit)
   box-shadow:0 0 0 1px #1e1e1e;
 }
 .is-unstyled .components-popover__content{
@@ -2393,9 +2701,30 @@ body.rtl .components-panel__body-toggle.components-button .dashicons-arrow-right
   stroke:#1e1e1e;
 }
 
+<<<<<<< HEAD
 .components-radio-control__option{
   align-items:center;
   display:flex;
+=======
+.components-radio-control{
+  border:0;
+  font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
+  font-size:13px;
+  margin:0;
+  padding:0;
+}
+
+.components-radio-control__group-wrapper.has-help{
+  margin-block-end:12px;
+}
+
+.components-radio-control__option{
+  align-items:center;
+  column-gap:8px;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  grid-template-rows:auto minmax(0, max-content);
+>>>>>>> 535c0c1 (initial commit)
 }
 
 .components-radio-control__input[type=radio]{
@@ -2408,12 +2737,24 @@ body.rtl .components-panel__body-toggle.components-button .dashicons-arrow-right
   display:inline-flex;
   font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
   font-size:16px;
+<<<<<<< HEAD
   height:24px;
   line-height:normal;
   margin:0 0 0 6px;
   max-width:24px;
   min-width:24px;
   padding:0;
+=======
+  grid-column:1;
+  grid-row:1;
+  height:24px;
+  line-height:normal;
+  margin:0;
+  max-width:24px;
+  min-width:24px;
+  padding:0;
+  position:relative;
+>>>>>>> 535c0c1 (initial commit)
   transition:box-shadow .1s linear;
   transition:none;
   width:24px;
@@ -2446,16 +2787,24 @@ body.rtl .components-panel__body-toggle.components-button .dashicons-arrow-right
 }
 @media (min-width:600px){
   .components-radio-control__input[type=radio]{
+<<<<<<< HEAD
     height:20px;
     max-width:20px;
     min-width:20px;
     width:20px;
+=======
+    height:16px;
+    max-width:16px;
+    min-width:16px;
+    width:16px;
+>>>>>>> 535c0c1 (initial commit)
   }
 }
 .components-radio-control__input[type=radio]:checked:before{
   background-color:#fff;
   border:4px solid #fff;
   box-sizing:inherit;
+<<<<<<< HEAD
   height:8px;
   margin:0;
   transform:translate(-7px, 7px);
@@ -2464,10 +2813,25 @@ body.rtl .components-panel__body-toggle.components-button .dashicons-arrow-right
 @media (min-width:600px){
   .components-radio-control__input[type=radio]:checked:before{
     transform:translate(-5px, 5px);
+=======
+  height:12px;
+  margin:0;
+  position:absolute;
+  right:50%;
+  top:50%;
+  transform:translate(50%, -50%);
+  width:12px;
+}
+@media (min-width:600px){
+  .components-radio-control__input[type=radio]:checked:before{
+    height:8px;
+    width:8px;
+>>>>>>> 535c0c1 (initial commit)
   }
 }
 .components-radio-control__input[type=radio]:focus{
   box-shadow:0 0 0 2px #fff, 0 0 0 4px var(--wp-admin-theme-color);
+<<<<<<< HEAD
   outline:2px solid #0000;
 }
 .components-radio-control__input[type=radio]:checked{
@@ -2476,6 +2840,17 @@ body.rtl .components-panel__body-toggle.components-button .dashicons-arrow-right
 }
 .components-radio-control__input[type=radio]:focus{
   box-shadow:0 0 0 2px var(--wp-components-color-background, #fff), 0 0 0 4px var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));
+=======
+}
+.components-radio-control__input[type=radio]:checked{
+  background:var(--wp-admin-theme-color);
+  border:none;
+}
+.components-radio-control__input[type=radio]:focus{
+  box-shadow:0 0 0 var(--wp-admin-border-width-focus) #fff, 0 0 0 calc(var(--wp-admin-border-width-focus)*2) var(--wp-admin-theme-color);
+  outline:2px solid #0000;
+  outline-offset:2px;
+>>>>>>> 535c0c1 (initial commit)
 }
 .components-radio-control__input[type=radio]:checked{
   background:var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));
@@ -2488,6 +2863,26 @@ body.rtl .components-panel__body-toggle.components-button .dashicons-arrow-right
 
 .components-radio-control__label{
   cursor:pointer;
+<<<<<<< HEAD
+=======
+  grid-column:2;
+  grid-row:1;
+  line-height:24px;
+}
+@media (min-width:600px){
+  .components-radio-control__label{
+    line-height:16px;
+  }
+}
+
+.components-radio-control__option-description{
+  grid-column:2;
+  grid-row:2;
+  padding-block-start:4px;
+}
+.components-radio-control__option-description.components-radio-control__option-description{
+  margin-top:0;
+>>>>>>> 535c0c1 (initial commit)
 }
 
 .components-resizable-box__handle{
@@ -2507,7 +2902,11 @@ body.rtl .components-panel__body-toggle.components-button .dashicons-arrow-right
 .components-resizable-box__handle:after{
   background:#fff;
   border-radius:50%;
+<<<<<<< HEAD
   box-shadow:inset 0 0 0 var(--wp-admin-border-width-focus) var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));
+=======
+  box-shadow:inset 0 0 0 var(--wp-admin-border-width-focus) var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9)), 0 1px 1px #00000008, 0 1px 2px #00000005, 0 3px 3px #00000005, 0 4px 4px #00000003;
+>>>>>>> 535c0c1 (initial commit)
   content:"";
   cursor:inherit;
   display:block;
@@ -2521,7 +2920,11 @@ body.rtl .components-panel__body-toggle.components-button .dashicons-arrow-right
 
 .components-resizable-box__side-handle:before{
   background:var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));
+<<<<<<< HEAD
   border-radius:2px;
+=======
+  border-radius:9999px;
+>>>>>>> 535c0c1 (initial commit)
   content:"";
   cursor:inherit;
   display:block;
@@ -2663,8 +3066,13 @@ body.lockscroll,html.lockscroll{
   -webkit-backdrop-filter:blur(16px) saturate(180%);
           backdrop-filter:blur(16px) saturate(180%);
   background:#000000d9;
+<<<<<<< HEAD
   border-radius:2px;
   box-shadow:0 .7px 1px #0000001a,0 1.2px 1.7px -.2px #0000001a,0 2.3px 3.3px -.5px #0000001a;
+=======
+  border-radius:4px;
+  box-shadow:0 1px 2px #0000000d,0 2px 3px #0000000a,0 6px 6px #00000008,0 8px 8px #00000005;
+>>>>>>> 535c0c1 (initial commit)
   box-sizing:border-box;
   color:#fff;
   cursor:pointer;
@@ -2820,7 +3228,10 @@ body.lockscroll,html.lockscroll{
   outline:none;
 }
 .components-tab-panel__tab-content:focus-visible{
+<<<<<<< HEAD
   border-radius:2px;
+=======
+>>>>>>> 535c0c1 (initial commit)
   box-shadow:0 0 0 var(--wp-admin-border-width-focus) var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9));
   outline:2px solid #0000;
   outline-offset:0;
@@ -2868,6 +3279,11 @@ body.lockscroll,html.lockscroll{
 }
 .components-text-control__input.is-next-40px-default-size,.components-text-control__input[type=color].is-next-40px-default-size,.components-text-control__input[type=date].is-next-40px-default-size,.components-text-control__input[type=datetime-local].is-next-40px-default-size,.components-text-control__input[type=datetime].is-next-40px-default-size,.components-text-control__input[type=email].is-next-40px-default-size,.components-text-control__input[type=month].is-next-40px-default-size,.components-text-control__input[type=number].is-next-40px-default-size,.components-text-control__input[type=password].is-next-40px-default-size,.components-text-control__input[type=tel].is-next-40px-default-size,.components-text-control__input[type=text].is-next-40px-default-size,.components-text-control__input[type=time].is-next-40px-default-size,.components-text-control__input[type=url].is-next-40px-default-size,.components-text-control__input[type=week].is-next-40px-default-size{
   height:40px;
+<<<<<<< HEAD
+=======
+  padding-left:12px;
+  padding-right:12px;
+>>>>>>> 535c0c1 (initial commit)
 }
 
 .components-tip{
@@ -2884,6 +3300,21 @@ body.lockscroll,html.lockscroll{
   margin:0;
 }
 
+<<<<<<< HEAD
+=======
+.components-toggle-control__label{
+  line-height:16px;
+}
+.components-toggle-control__label:not(.is-disabled){
+  cursor:pointer;
+}
+
+.components-toggle-control__help{
+  display:inline-block;
+  margin-inline-start:40px;
+}
+
+>>>>>>> 535c0c1 (initial commit)
 .components-accessible-toolbar{
   border:1px solid #1e1e1e;
   border-radius:2px;
@@ -2900,6 +3331,14 @@ body.lockscroll,html.lockscroll{
   border-left:none;
 }
 
+<<<<<<< HEAD
+=======
+.components-accessible-toolbar[aria-orientation=vertical],.components-toolbar[aria-orientation=vertical]{
+  align-items:center;
+  display:flex;
+  flex-direction:column;
+}
+>>>>>>> 535c0c1 (initial commit)
 .components-accessible-toolbar .components-button,.components-toolbar .components-button{
   height:48px;
   padding-left:16px;
@@ -3045,6 +3484,10 @@ div.components-toolbar>div+div.has-left-divider:before{
 .components-tooltip{
   background:#000;
   border-radius:2px;
+<<<<<<< HEAD
+=======
+  box-shadow:0 1px 2px #0000000d,0 2px 3px #0000000a,0 6px 6px #00000008,0 8px 8px #00000005;
+>>>>>>> 535c0c1 (initial commit)
   color:#f0f0f0;
   font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
   font-size:12px;

@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+@use "sass:color";
+
+>>>>>>> 535c0c1 (initial commit)
 $scheme-name: "modern";
 $base-color: #1e1e1e;
 $highlight-color: #3858e9;
@@ -5,7 +10,11 @@ $menu-submenu-focus-text: #33f078;
 $notification-color: $highlight-color;
 
 $link: $highlight-color;
+<<<<<<< HEAD
 $link-focus: darken($highlight-color, 10%);
+=======
+$link-focus: color.adjust($highlight-color, $lightness: -10%);
+>>>>>>> 535c0c1 (initial commit)
 
 $custom-welcome-panel: "false";
 

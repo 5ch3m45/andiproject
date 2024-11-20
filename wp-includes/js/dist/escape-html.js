@@ -57,9 +57,15 @@ __webpack_require__.d(__webpack_exports__, {
  *
  * See: https://core.trac.wordpress.org/ticket/45387
  *
+<<<<<<< HEAD
  * @param {string} value Original string.
  *
  * @return {string} Escaped string.
+=======
+ * @param value Original string.
+ *
+ * @return Escaped string.
+>>>>>>> 535c0c1 (initial commit)
  */
 function __unstableEscapeGreaterThan(value) {
   return value.replace(/>/g, '&gt;');
@@ -79,8 +85,11 @@ function __unstableEscapeGreaterThan(value) {
  * and noncharacters."
  *
  * @see https://html.spec.whatwg.org/multipage/syntax.html#attributes-2
+<<<<<<< HEAD
  *
  * @type {RegExp}
+=======
+>>>>>>> 535c0c1 (initial commit)
  */
 const REGEXP_INVALID_ATTRIBUTE_NAME = /[\u007F-\u009F "'>/="\uFDD0-\uFDEF]/;
 
@@ -94,9 +103,15 @@ const REGEXP_INVALID_ATTRIBUTE_NAME = /[\u007F-\u009F "'>/="\uFDD0-\uFDEF]/;
  * @see https://w3c.github.io/html/syntax.html#ambiguous-ampersand
  * @see https://w3c.github.io/html/syntax.html#named-character-references
  *
+<<<<<<< HEAD
  * @param {string} value Original string.
  *
  * @return {string} Escaped string.
+=======
+ * @param value Original string.
+ *
+ * @return Escaped string.
+>>>>>>> 535c0c1 (initial commit)
  */
 function escapeAmpersand(value) {
   return value.replace(/&(?!([a-z0-9]+|#[0-9]+|#x[a-f0-9]+);)/gi, '&amp;');
@@ -105,9 +120,15 @@ function escapeAmpersand(value) {
 /**
  * Returns a string with quotation marks replaced.
  *
+<<<<<<< HEAD
  * @param {string} value Original string.
  *
  * @return {string} Escaped string.
+=======
+ * @param value Original string.
+ *
+ * @return Escaped string.
+>>>>>>> 535c0c1 (initial commit)
  */
 function escapeQuotationMark(value) {
   return value.replace(/"/g, '&quot;');
@@ -116,9 +137,15 @@ function escapeQuotationMark(value) {
 /**
  * Returns a string with less-than sign replaced.
  *
+<<<<<<< HEAD
  * @param {string} value Original string.
  *
  * @return {string} Escaped string.
+=======
+ * @param value Original string.
+ *
+ * @return Escaped string.
+>>>>>>> 535c0c1 (initial commit)
  */
 function escapeLessThan(value) {
   return value.replace(/</g, '&lt;');
@@ -140,9 +167,15 @@ function escapeLessThan(value) {
  *
  * See: https://core.trac.wordpress.org/ticket/45387
  *
+<<<<<<< HEAD
  * @param {string} value Attribute value.
  *
  * @return {string} Escaped attribute value.
+=======
+ * @param value Attribute value.
+ *
+ * @return Escaped attribute value.
+>>>>>>> 535c0c1 (initial commit)
  */
 function escapeAttribute(value) {
   return __unstableEscapeGreaterThan(escapeQuotationMark(escapeAmpersand(value)));
@@ -156,9 +189,15 @@ function escapeAttribute(value) {
  * "the text must not contain the character U+003C LESS-THAN SIGN (<) or an
  * ambiguous ampersand."
  *
+<<<<<<< HEAD
  * @param {string} value Element value.
  *
  * @return {string} Escaped HTML element value.
+=======
+ * @param value Element value.
+ *
+ * @return Escaped HTML element value.
+>>>>>>> 535c0c1 (initial commit)
  */
 function escapeHTML(value) {
   return escapeLessThan(escapeAmpersand(value));
@@ -169,9 +208,15 @@ function escapeHTML(value) {
  * `escapeHTML`, because for editable HTML, ALL ampersands must be escaped in
  * order to render the content correctly on the page.
  *
+<<<<<<< HEAD
  * @param {string} value Element value.
  *
  * @return {string} Escaped HTML element value.
+=======
+ * @param value Element value.
+ *
+ * @return Escaped HTML element value.
+>>>>>>> 535c0c1 (initial commit)
  */
 function escapeEditableHTML(value) {
   return escapeLessThan(value.replace(/&/g, '&amp;'));
@@ -180,9 +225,15 @@ function escapeEditableHTML(value) {
 /**
  * Returns true if the given attribute name is valid, or false otherwise.
  *
+<<<<<<< HEAD
  * @param {string} name Attribute name to test.
  *
  * @return {boolean} Whether attribute is valid.
+=======
+ * @param name Attribute name to test.
+ *
+ * @return Whether attribute is valid.
+>>>>>>> 535c0c1 (initial commit)
  */
 function isValidAttributeName(name) {
   return !REGEXP_INVALID_ATTRIBUTE_NAME.test(name);

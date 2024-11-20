@@ -12,7 +12,11 @@
 			"source": "rich-text",
 			"selector": "pre",
 			"__unstablePreserveWhiteSpace": true,
+<<<<<<< HEAD
 			"__experimentalRole": "content"
+=======
+			"role": "content"
+>>>>>>> 535c0c1 (initial commit)
 		}
 	},
 	"supports": {
@@ -43,6 +47,21 @@
 		},
 		"interactivity": {
 			"clientNavigation": true
+<<<<<<< HEAD
+=======
+		},
+		"__experimentalBorder": {
+			"radius": true,
+			"color": true,
+			"width": true,
+			"style": true,
+			"__experimentalDefaultControls": {
+				"radius": true,
+				"color": true,
+				"width": true,
+				"style": true
+			}
+>>>>>>> 535c0c1 (initial commit)
 		}
 	},
 	"style": "wp-block-preformatted"

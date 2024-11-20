@@ -21,7 +21,11 @@
   width:100% !important;
 }
 
+<<<<<<< HEAD
 .wp-block-media-text.is-image-fill .components-placeholder.has-illustration,.wp-block-media-text.is-image-fill .editor-media-container__resizer{
+=======
+.wp-block-media-text.is-image-fill .components-placeholder.has-illustration,.wp-block-media-text.is-image-fill .editor-media-container__resizer,.wp-block-media-text.is-image-fill-element .components-placeholder.has-illustration,.wp-block-media-text.is-image-fill-element .editor-media-container__resizer{
+>>>>>>> 535c0c1 (initial commit)
   height:100% !important;
 }
 

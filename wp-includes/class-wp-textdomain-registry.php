@@ -182,8 +182,13 @@ class WP_Textdomain_Registry {
 		 * @since 6.5.0
 		 *
 		 * @param null|array $files List of translation files. Default null.
+<<<<<<< HEAD
 		 * @param string $path The path from which translation files are being fetched.
 		 **/
+=======
+		 * @param string     $path  The path from which translation files are being fetched.
+		 */
+>>>>>>> 535c0c1 (initial commit)
 		$files = apply_filters( 'pre_get_language_files_from_path', null, $path );
 
 		if ( null !== $files ) {

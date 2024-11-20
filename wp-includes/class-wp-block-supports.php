@@ -104,7 +104,11 @@ class WP_Block_Supports {
 		}
 
 		$block_attributes = array_key_exists( 'attrs', self::$block_to_render ) && is_array( self::$block_to_render['attrs'] )
+<<<<<<< HEAD
 			? self::$block_to_render['attrs']
+=======
+			? $block_type->prepare_attributes_for_render( self::$block_to_render['attrs'] )
+>>>>>>> 535c0c1 (initial commit)
 			: array();
 
 		$output = array();

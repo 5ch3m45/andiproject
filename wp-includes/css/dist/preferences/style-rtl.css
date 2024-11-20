@@ -19,10 +19,13 @@
 .preference-base-option+.preference-base-option{
   margin-top:16px;
 }
+<<<<<<< HEAD
 .preference-base-option .components-base-control__help{
   margin-right:48px;
   margin-top:0;
 }
+=======
+>>>>>>> 535c0c1 (initial commit)
 
 @media (min-width:600px){
   .preferences-modal{
@@ -52,6 +55,7 @@
   top:84px;
   width:160px;
 }
+<<<<<<< HEAD
 .preferences__tabs-tablist:after{
   content:none !important;
 }
@@ -72,6 +76,8 @@
 .preferences__tabs-tab:focus-visible:before{
   content:none;
 }
+=======
+>>>>>>> 535c0c1 (initial commit)
 
 .preferences__tabs-tabpanel{
   margin-right:160px;

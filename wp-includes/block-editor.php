@@ -366,6 +366,10 @@ function _wp_get_iframed_editor_assets() {
 	ob_start();
 	wp_print_styles();
 	wp_print_font_faces();
+<<<<<<< HEAD
+=======
+	wp_print_font_faces_from_style_variations();
+>>>>>>> 535c0c1 (initial commit)
 	$styles = ob_get_clean();
 
 	if ( $has_emoji_styles ) {
@@ -532,7 +536,11 @@ function get_block_editor_settings( array $custom_settings, $block_editor_contex
 		 * entered by users does not break other global styles.
 		 */
 		$global_styles[] = array(
+<<<<<<< HEAD
 			'css'            => wp_get_global_styles_custom_css(),
+=======
+			'css'            => wp_get_global_stylesheet( array( 'custom-css' ) ),
+>>>>>>> 535c0c1 (initial commit)
 			'__unstableType' => 'user',
 			'isGlobalStyles' => true,
 		);
@@ -648,6 +656,11 @@ function get_block_editor_settings( array $custom_settings, $block_editor_contex
 		$editor_settings['postContentAttributes'] = $post_content_block_attributes;
 	}
 
+<<<<<<< HEAD
+=======
+	$editor_settings['canUpdateBlockBindings'] = current_user_can( 'edit_block_binding', $block_editor_context );
+
+>>>>>>> 535c0c1 (initial commit)
 	/**
 	 * Filters the settings to pass to the block editor for all editor type.
 	 *

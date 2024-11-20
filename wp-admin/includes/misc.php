@@ -1477,7 +1477,11 @@ function update_option_new_admin_email( $old_value, $value ) {
 		'hash'     => $hash,
 		'newemail' => $value,
 	);
+<<<<<<< HEAD
 	update_option( 'adminhash', $new_admin_email );
+=======
+	update_option( 'adminhash', $new_admin_email, false );
+>>>>>>> 535c0c1 (initial commit)
 
 	$switched_locale = switch_to_user_locale( get_current_user_id() );
 

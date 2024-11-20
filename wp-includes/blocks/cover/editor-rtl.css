@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 .editor-styles-wrapper .wp-block-cover{
   box-sizing:border-box;
 }
+=======
+>>>>>>> 535c0c1 (initial commit)
 .wp-block-cover.is-placeholder{
   align-items:stretch;
   display:flex;

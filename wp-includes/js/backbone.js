@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 //     Backbone.js 1.5.0
 
 //     (c) 2010-2022 Jeremy Ashkenas and DocumentCloud
+=======
+//     Backbone.js 1.6.0
+
+//     (c) 2010-2024 Jeremy Ashkenas and DocumentCloud
+>>>>>>> 535c0c1 (initial commit)
 //     Backbone may be freely distributed under the MIT license.
 //     For all details and documentation:
 //     http://backbonejs.org
@@ -44,7 +50,11 @@
   var slice = Array.prototype.slice;
 
   // Current version of the library. Keep in sync with `package.json`.
+<<<<<<< HEAD
   Backbone.VERSION = '1.5.0';
+=======
+  Backbone.VERSION = '1.6.0';
+>>>>>>> 535c0c1 (initial commit)
 
   // For Backbone's purposes, jQuery, Zepto, Ender, or My Library (kidding) owns
   // the `$` variable.
@@ -1085,7 +1095,11 @@
       var success = options.success;
       options.success = function(m, resp, callbackOpts) {
         if (wait) {
+<<<<<<< HEAD
           m.off('error', this._forwardPristineError, this);
+=======
+          m.off('error', collection._forwardPristineError, collection);
+>>>>>>> 535c0c1 (initial commit)
           collection.add(m, callbackOpts);
         }
         if (success) success.call(callbackOpts.context, m, resp, callbackOpts);
@@ -1985,7 +1999,14 @@
         current = this.getHash(this.iframe.contentWindow);
       }
 
+<<<<<<< HEAD
       if (current === this.fragment) return false;
+=======
+      if (current === this.fragment) {
+        if (!this.matchRoot()) return this.notfound();
+        return false;
+      }
+>>>>>>> 535c0c1 (initial commit)
       if (this.iframe) this.navigate(current);
       this.loadUrl();
     },
@@ -1995,14 +2016,30 @@
     // returns `false`.
     loadUrl: function(fragment) {
       // If the root doesn't match, no routes can match either.
+<<<<<<< HEAD
       if (!this.matchRoot()) return false;
+=======
+      if (!this.matchRoot()) return this.notfound();
+>>>>>>> 535c0c1 (initial commit)
       fragment = this.fragment = this.getFragment(fragment);
       return _.some(this.handlers, function(handler) {
         if (handler.route.test(fragment)) {
           handler.callback(fragment);
           return true;
         }
+<<<<<<< HEAD
       });
+=======
+      }) || this.notfound();
+    },
+
+    // When no route could be matched, this method is called internally to
+    // trigger the `'notfound'` event. It returns `false` so that it can be used
+    // in tail position.
+    notfound: function() {
+      this.trigger('notfound');
+      return false;
+>>>>>>> 535c0c1 (initial commit)
     },
 
     // Save a fragment into the hash history, or replace the URL state if the
@@ -2133,5 +2170,15 @@
     };
   };
 
+<<<<<<< HEAD
+=======
+  // Provide useful information when things go wrong. This method is not meant
+  // to be used directly; it merely provides the necessary introspection for the
+  // external `debugInfo` function.
+  Backbone._debug = function() {
+    return {root: root, _: _};
+  };
+
+>>>>>>> 535c0c1 (initial commit)
   return Backbone;
 });

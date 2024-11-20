@@ -15,6 +15,12 @@
 			"type": "number",
 			"default": 2
 		},
+<<<<<<< HEAD
+=======
+		"levelOptions": {
+			"type": "array"
+		},
+>>>>>>> 535c0c1 (initial commit)
 		"isLink": {
 			"type": "boolean",
 			"default": false
@@ -29,6 +35,12 @@
 			"default": "_self"
 		}
 	},
+<<<<<<< HEAD
+=======
+	"example": {
+		"viewportWidth": 350
+	},
+>>>>>>> 535c0c1 (initial commit)
 	"supports": {
 		"align": [ "wide", "full" ],
 		"html": false,
@@ -60,6 +72,21 @@
 		},
 		"interactivity": {
 			"clientNavigation": true
+<<<<<<< HEAD
+=======
+		},
+		"__experimentalBorder": {
+			"radius": true,
+			"color": true,
+			"width": true,
+			"style": true,
+			"__experimentalDefaultControls": {
+				"radius": true,
+				"color": true,
+				"width": true,
+				"style": true
+			}
+>>>>>>> 535c0c1 (initial commit)
 		}
 	},
 	"style": "wp-block-post-title"

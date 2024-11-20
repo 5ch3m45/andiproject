@@ -526,6 +526,13 @@ const mediaUploadMiddleware = (options, next) => {
     ...options,
     parse: false
   }).catch(response => {
+<<<<<<< HEAD
+=======
+    // `response` could actually be an error thrown by `defaultFetchHandler`.
+    if (!response.headers) {
+      return Promise.reject(response);
+    }
+>>>>>>> 535c0c1 (initial commit)
     const attachmentId = response.headers.get('x-wp-upload-attachment-id');
     if (response.status >= 500 && response.status < 600 && attachmentId) {
       return postProcess(attachmentId).catch(() => {

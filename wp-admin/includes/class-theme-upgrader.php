@@ -371,8 +371,11 @@ class Theme_Upgrader extends WP_Upgrader {
 	 * @since 3.0.0
 	 * @since 3.7.0 The `$args` parameter was added, making clearing the update cache optional.
 	 *
+<<<<<<< HEAD
 	 * @global string $wp_version The WordPress version string.
 	 *
+=======
+>>>>>>> 535c0c1 (initial commit)
 	 * @param string[] $themes Array of the theme slugs.
 	 * @param array    $args {
 	 *     Optional. Other arguments for upgrading several themes at once. Default empty array.
@@ -383,8 +386,12 @@ class Theme_Upgrader extends WP_Upgrader {
 	 * @return array[]|false An array of results, or false if unable to connect to the filesystem.
 	 */
 	public function bulk_upgrade( $themes, $args = array() ) {
+<<<<<<< HEAD
 		global $wp_version;
 
+=======
+		$wp_version  = wp_get_wp_version();
+>>>>>>> 535c0c1 (initial commit)
 		$defaults    = array(
 			'clear_update_cache' => true,
 		);
@@ -558,14 +565,23 @@ class Theme_Upgrader extends WP_Upgrader {
 	 * @since 3.3.0
 	 *
 	 * @global WP_Filesystem_Base $wp_filesystem WordPress filesystem subclass.
+<<<<<<< HEAD
 	 * @global string             $wp_version    The WordPress version string.
+=======
+>>>>>>> 535c0c1 (initial commit)
 	 *
 	 * @param string $source The path to the downloaded package source.
 	 * @return string|WP_Error The source as passed, or a WP_Error object on failure.
 	 */
 	public function check_package( $source ) {
+<<<<<<< HEAD
 		global $wp_filesystem, $wp_version;
 
+=======
+		global $wp_filesystem;
+
+		$wp_version           = wp_get_wp_version();
+>>>>>>> 535c0c1 (initial commit)
 		$this->new_theme_data = array();
 
 		if ( is_wp_error( $source ) ) {

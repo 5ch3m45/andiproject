@@ -1,0 +1,485 @@
+# <!=Copyright (C) 2024 wpWax
+# This file is distributed under the GNU General Public License v2 or later.=!>
+msgid ""
+msgstr ""
+"Project-Id-Version: Pixetiq 1.4\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/pixetiq\n"
+"POT-Creation-Date: 2024-11-10 05:01:23+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: grunt-wp-i18n 1.0.3\n"
+
+#: patterns/pixetiq-404.php:23
+msgid "404"
+msgstr ""
+
+#: functions.php:28
+msgid "Arrow icon"
+msgstr ""
+
+#: functions.php:50
+msgid "Pill"
+msgstr ""
+
+#: functions.php:71
+msgid "Checkmark"
+msgstr ""
+
+#: functions.php:89
+msgid "With arrow"
+msgstr ""
+
+#: functions.php:125
+msgid "A collection of full page layouts."
+msgstr ""
+
+#: patterns/pixetiq-404.php:19
+msgid "Sorry"
+msgstr ""
+
+#: patterns/pixetiq-404.php:23
+msgid "Error"
+msgstr ""
+
+#: patterns/pixetiq-404.php:30
+msgid "Sorry, the page you are looking for does not exist."
+msgstr ""
+
+#: patterns/pixetiq-archive.php:29 patterns/pixetiq-search.php:31
+msgid "Development"
+msgstr ""
+
+#: patterns/pixetiq-archive.php:33 patterns/pixetiq-search.php:35
+msgid "Design"
+msgstr ""
+
+#: patterns/pixetiq-banner-getting.php:14
+msgid "We’re Just Getting Started"
+msgstr ""
+
+#: patterns/pixetiq-banner-getting.php:23
+msgid ""
+"Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam suspendisse "
+"morbi eleifend faucibus eget vestibulum felis. Dictum quis montes, sit sit. "
+"Tellus aliquam enim urna, etiam.<br><br>Eget quis mi enim, leo lacinia "
+"pharetra, semper. Eget in volutpat mollis at volutpat lectus velit, sed "
+"auctor. Porttitor fames arcu quis fusce augue enim. Quis at habitant diam "
+"at. Suscipit tristique risus, at donec. In turpis vel et quam imperdiet. "
+"Ipsum molestie aliquet sodales id est ac volutpat."
+msgstr ""
+
+#: patterns/pixetiq-brand.php:14
+msgid "Trusted by 4,000+ companies worldwide"
+msgstr ""
+
+#: patterns/pixetiq-breadcrumbs.php:12
+msgid "Breadcrumbs"
+msgstr ""
+
+#: patterns/pixetiq-button-light.php:12
+msgid "Light"
+msgstr ""
+
+#: patterns/pixetiq-button-primary.php:13
+msgid "Primary"
+msgstr ""
+
+#: patterns/pixetiq-button-white.php:12
+msgid "White"
+msgstr ""
+
+#: patterns/pixetiq-call-to-action.php:30 patterns/pixetiq-subscribe.php:30
+msgid "Get Started"
+msgstr ""
+
+#: patterns/pixetiq-contact-information.php:20
+#: patterns/pixetiq-contact-information.php:64
+#: patterns/pixetiq-contact-information.php:108
+msgid "New South Wales, Australia&nbsp;"
+msgstr ""
+
+#: patterns/pixetiq-contact-information.php:30
+#: patterns/pixetiq-contact-information.php:74
+#: patterns/pixetiq-contact-information.php:118
+msgid "support@example.com"
+msgstr ""
+
+#: patterns/pixetiq-contact-information.php:40
+#: patterns/pixetiq-contact-information.php:84
+#: patterns/pixetiq-contact-information.php:128
+msgid "981-2334-5679"
+msgstr ""
+
+#: patterns/pixetiq-contact-information.php:50
+#: patterns/pixetiq-contact-information.php:94
+#: patterns/pixetiq-contact-information.php:138
+msgid "10 AM - 5 PM"
+msgstr ""
+
+#: patterns/pixetiq-distributed-team.php:12
+msgid "We’re a Distributed Team"
+msgstr ""
+
+#: patterns/pixetiq-distributed-team.php:20
+msgid "We have offices and teams all around the world."
+msgstr ""
+
+#: patterns/pixetiq-faq.php:14
+msgid "Frequently asked questions"
+msgstr ""
+
+#: patterns/pixetiq-faq.php:19
+msgid "Is there a free trial available?"
+msgstr ""
+
+#: patterns/pixetiq-faq.php:20
+msgid ""
+"Yes, you can try us for free for 30 days. If you want, we’ll provide you "
+"with a free, personalized 30-minute onboarding call to get you up and "
+"running as soon as possible."
+msgstr ""
+
+#: patterns/pixetiq-faq.php:25
+msgid "Can I change my plan later?"
+msgstr ""
+
+#: patterns/pixetiq-faq.php:26 patterns/pixetiq-faq.php:32
+#: patterns/pixetiq-faq.php:38 patterns/pixetiq-faq.php:44
+#: patterns/pixetiq-faq.php:50
+msgid ""
+"Études offers comprehensive consulting, management, design, and research "
+"solutions. Our vision is to be at the forefront of architectural "
+"innovation, fostering a global community of architects and enthusiasts "
+"united by a passion for creating spaces. Every architectural endeavor is an "
+"opportunity to shape the future."
+msgstr ""
+
+#: patterns/pixetiq-faq.php:31
+msgid "What is your cancellation policy?"
+msgstr ""
+
+#: patterns/pixetiq-faq.php:37
+msgid "Can other info be added to an invoice?"
+msgstr ""
+
+#: patterns/pixetiq-faq.php:43
+msgid "How does billing work?"
+msgstr ""
+
+#: patterns/pixetiq-faq.php:49
+msgid "How do I change my account email?"
+msgstr ""
+
+#: patterns/pixetiq-footer.php:14
+msgid "Product"
+msgstr ""
+
+#: patterns/pixetiq-footer.php:19
+msgid "Overview"
+msgstr ""
+
+#: patterns/pixetiq-footer.php:23
+msgid "Features"
+msgstr ""
+
+#: patterns/pixetiq-footer.php:27
+msgid "Solutions"
+msgstr ""
+
+#: patterns/pixetiq-footer.php:31
+msgid "Tutorials"
+msgstr ""
+
+#: patterns/pixetiq-footer.php:38
+msgid "Company"
+msgstr ""
+
+#: patterns/pixetiq-footer.php:43
+msgid "About"
+msgstr ""
+
+#: patterns/pixetiq-footer.php:47
+msgid "Carrers"
+msgstr ""
+
+#: patterns/pixetiq-footer.php:51
+msgid "Press"
+msgstr ""
+
+#: patterns/pixetiq-footer.php:55
+msgid "News"
+msgstr ""
+
+#: patterns/pixetiq-footer.php:62
+msgid "Resources"
+msgstr ""
+
+#: patterns/pixetiq-footer.php:67
+msgid "Blogs"
+msgstr ""
+
+#: patterns/pixetiq-footer.php:71
+msgid "Newsletters"
+msgstr ""
+
+#: patterns/pixetiq-footer.php:75
+msgid "Events"
+msgstr ""
+
+#: patterns/pixetiq-footer.php:79
+msgid "Help center"
+msgstr ""
+
+#: patterns/pixetiq-footer.php:86
+msgid "Use"
+msgstr ""
+
+#: patterns/pixetiq-footer.php:91
+msgid "Startup"
+msgstr ""
+
+#: patterns/pixetiq-footer.php:95
+msgid "Enterprice"
+msgstr ""
+
+#: patterns/pixetiq-footer.php:99
+msgid "Govment"
+msgstr ""
+
+#: patterns/pixetiq-footer.php:103
+msgid "SaaS Center"
+msgstr ""
+
+#: patterns/pixetiq-footer.php:110
+msgid "Social"
+msgstr ""
+
+#: patterns/pixetiq-footer.php:115
+msgid "Twitter"
+msgstr ""
+
+#: patterns/pixetiq-footer.php:119
+msgid "LinkedIn"
+msgstr ""
+
+#: patterns/pixetiq-footer.php:123
+msgid "Facebook"
+msgstr ""
+
+#: patterns/pixetiq-footer.php:127
+msgid "Github"
+msgstr ""
+
+#: patterns/pixetiq-footer.php:145
+msgid "© Pixetiq 2024. All rights reserved."
+msgstr ""
+
+#: patterns/pixetiq-header.php:21
+msgid "Start for Free"
+msgstr ""
+
+#: patterns/pixetiq-our-team.php:12
+msgid "Meet Our Awesome Team"
+msgstr ""
+
+#: patterns/pixetiq-our-team.php:29
+msgid "Amélie Laurent"
+msgstr ""
+
+#: patterns/pixetiq-our-team.php:33
+msgid "Founder &amp; CEO"
+msgstr ""
+
+#: patterns/pixetiq-our-team.php:51
+msgid "Nikolas Gibbons"
+msgstr ""
+
+#: patterns/pixetiq-our-team.php:55
+msgid "Engineering Manager"
+msgstr ""
+
+#: patterns/pixetiq-our-team.php:73
+msgid "Sienna Hewitt"
+msgstr ""
+
+#: patterns/pixetiq-our-team.php:77
+msgid "Product Manager"
+msgstr ""
+
+#: patterns/pixetiq-our-team.php:95
+msgid "Lily-Rose Chedjou"
+msgstr ""
+
+#: patterns/pixetiq-our-team.php:99
+msgid "Frontend Developer"
+msgstr ""
+
+#: patterns/pixetiq-our-team.php:119
+msgid "Zahra Christensen"
+msgstr ""
+
+#: patterns/pixetiq-our-team.php:123
+msgid "Backend Developer"
+msgstr ""
+
+#: patterns/pixetiq-our-team.php:141
+msgid "Caitlyn King"
+msgstr ""
+
+#: patterns/pixetiq-our-team.php:145
+msgid "Product Designer"
+msgstr ""
+
+#: patterns/pixetiq-our-team.php:163
+msgid "Zaid Schwartz"
+msgstr ""
+
+#: patterns/pixetiq-our-team.php:167
+msgid "UX Researcher"
+msgstr ""
+
+#: patterns/pixetiq-our-team.php:185
+msgid "Marco Kelly"
+msgstr ""
+
+#: patterns/pixetiq-our-team.php:189
+msgid "Customer Success"
+msgstr ""
+
+#: patterns/pixetiq-our-value.php:12
+msgid "Inside Our Value"
+msgstr ""
+
+#: patterns/pixetiq-our-value.php:31
+msgid "Share team inboxes"
+msgstr ""
+
+#: patterns/pixetiq-our-value.php:35
+msgid ""
+"Experience the fusion of imagination and expertise with Études "
+"Architectural Solutions."
+msgstr ""
+
+#: patterns/pixetiq-our-value.php:51
+msgid "Deliver instant answers"
+msgstr ""
+
+#: patterns/pixetiq-our-value.php:55
+msgid ""
+"An all-in-one customer service platform that helps you balance everything "
+"your customers need to be happy."
+msgstr ""
+
+#: patterns/pixetiq-our-value.php:71
+msgid "Manage your team with reports"
+msgstr ""
+
+#: patterns/pixetiq-our-value.php:75
+msgid ""
+"Measure what matters with Untitled’s easy-to-use reports. You can filter, "
+"export, and drilldown on the"
+msgstr ""
+
+#: patterns/pixetiq-our-value.php:93
+msgid "Connect with customers"
+msgstr ""
+
+#: patterns/pixetiq-our-value.php:97
+msgid ""
+"Solve a problem or close a sale in real-time with chat. If no one is "
+"available, customers are seamlessly routed to email without confusion."
+msgstr ""
+
+#: patterns/pixetiq-our-value.php:113
+msgid "Connect the tools you already use"
+msgstr ""
+
+#: patterns/pixetiq-our-value.php:117
+msgid ""
+"Explore 100+ integrations that make your day-to-day workflow more efficient "
+"and familiar. Plus, our extensive developer tools."
+msgstr ""
+
+#: patterns/pixetiq-our-value.php:133
+msgid "Our people make the difference"
+msgstr ""
+
+#: patterns/pixetiq-our-value.php:137
+msgid ""
+"We’re an extension of your customer service team, and all of our resources "
+"are free. Chat to our friendly team 24/7 when you need help."
+msgstr ""
+
+#: patterns/pixetiq-search.php:52
+msgid "by"
+msgstr ""
+
+#: patterns/pixetiq-services.php:13
+msgid "Our Services"
+msgstr ""
+
+#: patterns/pixetiq-services.php:30
+msgid "WordPress Development"
+msgstr ""
+
+#: patterns/pixetiq-services.php:34 patterns/pixetiq-services.php:52
+#: patterns/pixetiq-services.php:70
+msgid ""
+"Untitled is a next-generation financial technology company in the process "
+"of reinventing"
+msgstr ""
+
+#: patterns/pixetiq-services.php:48
+msgid "Project Management System"
+msgstr ""
+
+#: patterns/pixetiq-services.php:66
+msgid "App Development"
+msgstr ""
+
+#: patterns/pixetiq-subscribe.php:16
+msgid "Still Thinking About It ?"
+msgstr ""
+
+#: patterns/pixetiq-subscribe.php:20
+msgid "Join over 4,000+ startups already growing with Untitled."
+msgstr ""
+
+#: patterns/pixetiq-testimonials.php:32
+msgid "Ammar Foley"
+msgstr ""
+
+#: patterns/pixetiq-testimonials.php:36
+msgid "UX Designer, GlobalBank"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Pixetiq"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://pixetiq.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Welcome to Pixetiq, the ultimate pixel-perfect WordPress multi-purpose "
+"theme designed to bring your website vision to life with stunning precision "
+"and unmatched versatility. Whether you're a blogger, business owner, "
+"creative professional, or developer, Pixetiq offers a robust and flexible "
+"framework that adapts to your needs, ensuring your site looks beautiful and "
+"performs flawlessly."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "wpWax"
+msgstr ""
+
+#: functions.php:124
+msgctxt "Block pattern category"
+msgid "Pixetiq Pages"
+msgstr ""

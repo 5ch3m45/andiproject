@@ -159,6 +159,11 @@ add_filter( 'pre_set_theme_mod_custom_logo', '_sync_custom_logo_to_site_logo' );
  *
  * @since 5.8.0
  *
+<<<<<<< HEAD
+=======
+ * @global array $_ignore_site_logo_changes
+ *
+>>>>>>> 535c0c1 (initial commit)
  * @param array $old_value Previous theme mod settings.
  * @param array $value     Updated theme mod settings.
  */
@@ -179,6 +184,11 @@ function _delete_site_logo_on_remove_custom_logo( $old_value, $value ) {
  * Deletes the site logo when all theme mods are being removed.
  *
  * @since 5.8.0
+<<<<<<< HEAD
+=======
+ *
+ * @global array $_ignore_site_logo_changes
+>>>>>>> 535c0c1 (initial commit)
  */
 function _delete_site_logo_on_remove_theme_mods() {
 	global $_ignore_site_logo_changes;
@@ -211,6 +221,11 @@ add_action( 'setup_theme', '_delete_site_logo_on_remove_custom_logo_on_setup_the
  * Removes the custom_logo theme-mod when the site_logo option gets deleted.
  *
  * @since 5.9.0
+<<<<<<< HEAD
+=======
+ *
+ * @global array $_ignore_site_logo_changes
+>>>>>>> 535c0c1 (initial commit)
  */
 function _delete_custom_logo_on_remove_site_logo() {
 	global $_ignore_site_logo_changes;

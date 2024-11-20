@@ -53,7 +53,10 @@
 }
 .is-editing>.wp-block-navigation__submenu-container>.block-list-appender .block-editor-button-block-appender{
   background:#1e1e1e;
+<<<<<<< HEAD
   border-radius:2px;
+=======
+>>>>>>> 535c0c1 (initial commit)
   color:#fff;
   margin-left:0;
   margin-right:auto;
@@ -119,6 +122,10 @@
 .wp-block-navigation .wp-block+.block-list-appender .block-editor-button-block-appender{
   background-color:#1e1e1e;
   color:#fff;
+<<<<<<< HEAD
+=======
+  height:24px;
+>>>>>>> 535c0c1 (initial commit)
 }
 .wp-block-navigation .wp-block+.block-list-appender .block-editor-button-block-appender.block-editor-button-block-appender.block-editor-button-block-appender{
   padding:0;
@@ -171,7 +178,10 @@
 }
 .wp-block-navigation-placeholder__preview:before{
   border:1px dashed;
+<<<<<<< HEAD
   border-radius:2px;
+=======
+>>>>>>> 535c0c1 (initial commit)
   border-radius:inherit;
   bottom:0;
   content:"";
@@ -182,6 +192,7 @@
   right:0;
   top:0;
 }
+<<<<<<< HEAD
 .wp-block-navigation-placeholder__preview:before:before{
   background:currentColor;
   bottom:0;
@@ -193,6 +204,8 @@
   right:0;
   top:0;
 }
+=======
+>>>>>>> 535c0c1 (initial commit)
 .wp-block-navigation-placeholder__preview>svg{
   fill:currentColor;
 }
@@ -299,12 +312,15 @@
   }
 }
 
+<<<<<<< HEAD
 @media (min-width:782px){
   .has-fixed-toolbar .wp-block-navigation__responsive-container.is-menu-open{
     top:141px;
   }
 }
 
+=======
+>>>>>>> 535c0c1 (initial commit)
 .is-mobile-preview .wp-block-navigation__responsive-container.is-menu-open,.is-tablet-preview .wp-block-navigation__responsive-container.is-menu-open{
   top:141px;
 }
@@ -317,9 +333,12 @@
   .is-fullscreen-mode .wp-block-navigation__responsive-container.is-menu-open{
     top:61px;
   }
+<<<<<<< HEAD
   .is-fullscreen-mode .has-fixed-toolbar .wp-block-navigation__responsive-container.is-menu-open{
     top:109px;
   }
+=======
+>>>>>>> 535c0c1 (initial commit)
 }
 .is-fullscreen-mode .is-mobile-preview .wp-block-navigation__responsive-container.is-menu-open,.is-fullscreen-mode .is-tablet-preview .wp-block-navigation__responsive-container.is-menu-open{
   top:109px;
@@ -388,7 +407,11 @@ body.editor-styles-wrapper .wp-block-navigation__responsive-container.is-menu-op
   align-items:center;
   background-color:#f0f0f0;
   display:flex;
+<<<<<<< HEAD
   height:64px;
+=======
+  height:64px !important;
+>>>>>>> 535c0c1 (initial commit)
   justify-content:space-between;
   margin-bottom:12px;
   padding:0 24px;
@@ -469,4 +492,11 @@ body.editor-styles-wrapper .wp-block-navigation__responsive-container.is-menu-op
 
 .wp-block-navigation__menu-inspector-controls__empty-message{
   margin-right:24px;
+<<<<<<< HEAD
+=======
+}
+
+.wp-block-navigation__overlay-menu-icon-toggle-group{
+  margin-bottom:16px;
+>>>>>>> 535c0c1 (initial commit)
 }

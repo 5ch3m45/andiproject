@@ -1107,7 +1107,11 @@
 			var section = this,
 				$title;
 
+<<<<<<< HEAD
 			$title = section.container.find( '.accordion-section-title:first' );
+=======
+			$title = section.container.find( '.accordion-section-title button:first' );
+>>>>>>> 535c0c1 (initial commit)
 			$title.find( '.menu-in-location' ).remove();
 			_.each( themeLocationSlugs, function( themeLocationSlug ) {
 				var $label, locationName;

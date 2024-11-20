@@ -959,6 +959,10 @@ add_filter( 'render_block', 'wp_render_layout_support_flag', 10, 2 );
  * to avoid breaking styles relying on that div.
  *
  * @since 5.8.0
+<<<<<<< HEAD
+=======
+ * @since 6.6.1 Removed inner container from Grid variations.
+>>>>>>> 535c0c1 (initial commit)
  * @access private
  *
  * @param string $block_content Rendered block content.
@@ -975,7 +979,11 @@ function wp_restore_group_inner_container( $block_content, $block ) {
 	if (
 		wp_theme_has_theme_json() ||
 		1 === preg_match( $group_with_inner_container_regex, $block_content ) ||
+<<<<<<< HEAD
 		( isset( $block['attrs']['layout']['type'] ) && 'flex' === $block['attrs']['layout']['type'] )
+=======
+		( isset( $block['attrs']['layout']['type'] ) && ( 'flex' === $block['attrs']['layout']['type'] || 'grid' === $block['attrs']['layout']['type'] ) )
+>>>>>>> 535c0c1 (initial commit)
 	) {
 		return $block_content;
 	}

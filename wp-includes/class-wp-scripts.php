@@ -289,12 +289,21 @@ class WP_Scripts extends WP_Dependencies {
 			$ver = $ver ? $ver . '&amp;' . $this->args[ $handle ] : $this->args[ $handle ];
 		}
 
+<<<<<<< HEAD
 		$src               = $obj->src;
 		$strategy          = $this->get_eligible_loading_strategy( $handle );
 		$intended_strategy = (string) $this->get_data( $handle, 'strategy' );
 		$cond_before       = '';
 		$cond_after        = '';
 		$conditional       = isset( $obj->extra['conditional'] ) ? $obj->extra['conditional'] : '';
+=======
+		$src                   = $obj->src;
+		$strategy              = $this->get_eligible_loading_strategy( $handle );
+		$intended_strategy     = (string) $this->get_data( $handle, 'strategy' );
+		$ie_conditional_prefix = '';
+		$ie_conditional_suffix = '';
+		$conditional           = isset( $obj->extra['conditional'] ) ? $obj->extra['conditional'] : '';
+>>>>>>> 535c0c1 (initial commit)
 
 		if ( ! $this->is_delayed_strategy( $intended_strategy ) ) {
 			$intended_strategy = '';
@@ -320,15 +329,24 @@ class WP_Scripts extends WP_Dependencies {
 		}
 
 		if ( $conditional ) {
+<<<<<<< HEAD
 			$cond_before = "<!--[if {$conditional}]>\n";
 			$cond_after  = "<![endif]-->\n";
+=======
+			$ie_conditional_prefix = "<!--[if {$conditional}]>\n";
+			$ie_conditional_suffix = "<![endif]-->\n";
+>>>>>>> 535c0c1 (initial commit)
 		}
 
 		$before_script = $this->get_inline_script_tag( $handle, 'before' );
 		$after_script  = $this->get_inline_script_tag( $handle, 'after' );
 
 		if ( $before_script || $after_script ) {
+<<<<<<< HEAD
 			$inline_script_tag = $cond_before . $before_script . $after_script . $cond_after;
+=======
+			$inline_script_tag = $ie_conditional_prefix . $before_script . $after_script . $ie_conditional_suffix;
+>>>>>>> 535c0c1 (initial commit)
 		} else {
 			$inline_script_tag = '';
 		}
@@ -353,10 +371,17 @@ class WP_Scripts extends WP_Dependencies {
 			 * @param string $src    Script loader source path.
 			 * @param string $handle Script handle.
 			 */
+<<<<<<< HEAD
 			$srce = apply_filters( 'script_loader_src', $src, $handle );
 
 			if (
 				$this->in_default_dir( $srce )
+=======
+			$filtered_src = apply_filters( 'script_loader_src', $src, $handle );
+
+			if (
+				$this->in_default_dir( $filtered_src )
+>>>>>>> 535c0c1 (initial commit)
 				&& ( $before_script || $after_script || $translations_stop_concat || $this->is_delayed_strategy( $strategy ) )
 			) {
 				$this->do_concat = false;
@@ -364,7 +389,11 @@ class WP_Scripts extends WP_Dependencies {
 				// Have to print the so-far concatenated scripts right away to maintain the right order.
 				_print_scripts();
 				$this->reset();
+<<<<<<< HEAD
 			} elseif ( $this->in_default_dir( $srce ) && ! $conditional ) {
+=======
+			} elseif ( $this->in_default_dir( $filtered_src ) && ! $conditional ) {
+>>>>>>> 535c0c1 (initial commit)
 				$this->print_code     .= $this->print_extra_script( $handle, false );
 				$this->concat         .= "$handle,";
 				$this->concat_version .= "$handle$ver";
@@ -378,13 +407,21 @@ class WP_Scripts extends WP_Dependencies {
 		$has_conditional_data = $conditional && $this->get_data( $handle, 'data' );
 
 		if ( $has_conditional_data ) {
+<<<<<<< HEAD
 			echo $cond_before;
+=======
+			echo $ie_conditional_prefix;
+>>>>>>> 535c0c1 (initial commit)
 		}
 
 		$this->print_extra_script( $handle );
 
 		if ( $has_conditional_data ) {
+<<<<<<< HEAD
 			echo $cond_after;
+=======
+			echo $ie_conditional_suffix;
+>>>>>>> 535c0c1 (initial commit)
 		}
 
 		// A single item may alias a set of items, by having dependencies, but no source.
@@ -425,9 +462,15 @@ class WP_Scripts extends WP_Dependencies {
 		if ( $intended_strategy ) {
 			$attr['data-wp-strategy'] = $intended_strategy;
 		}
+<<<<<<< HEAD
 		$tag  = $translations . $cond_before . $before_script;
 		$tag .= wp_get_script_tag( $attr );
 		$tag .= $after_script . $cond_after;
+=======
+		$tag  = $translations . $ie_conditional_prefix . $before_script;
+		$tag .= wp_get_script_tag( $attr );
+		$tag .= $after_script . $ie_conditional_suffix;
+>>>>>>> 535c0c1 (initial commit)
 
 		/**
 		 * Filters the HTML script tag of an enqueued script.
@@ -626,6 +669,7 @@ class WP_Scripts extends WP_Dependencies {
 	 */
 	public function set_group( $handle, $recursion, $group = false ) {
 		if ( isset( $this->registered[ $handle ]->args ) && 1 === $this->registered[ $handle ]->args ) {
+<<<<<<< HEAD
 			$grp = 1;
 		} else {
 			$grp = (int) $this->get_data( $handle, 'group' );
@@ -636,6 +680,18 @@ class WP_Scripts extends WP_Dependencies {
 		}
 
 		return parent::set_group( $handle, $recursion, $grp );
+=======
+			$calculated_group = 1;
+		} else {
+			$calculated_group = (int) $this->get_data( $handle, 'group' );
+		}
+
+		if ( false !== $group && $calculated_group > $group ) {
+			$calculated_group = $group;
+		}
+
+		return parent::set_group( $handle, $recursion, $calculated_group );
+>>>>>>> 535c0c1 (initial commit)
 	}
 
 	/**
@@ -723,7 +779,11 @@ JS;
 	 * @return bool True on success, false on failure.
 	 */
 	public function all_deps( $handles, $recursion = false, $group = false ) {
+<<<<<<< HEAD
 		$r = parent::all_deps( $handles, $recursion, $group );
+=======
+		$result = parent::all_deps( $handles, $recursion, $group );
+>>>>>>> 535c0c1 (initial commit)
 		if ( ! $recursion ) {
 			/**
 			 * Filters the list of script dependencies left to print.
@@ -734,7 +794,11 @@ JS;
 			 */
 			$this->to_do = apply_filters( 'print_scripts_array', $this->to_do );
 		}
+<<<<<<< HEAD
 		return $r;
+=======
+		return $result;
+>>>>>>> 535c0c1 (initial commit)
 	}
 
 	/**
@@ -889,10 +953,17 @@ JS;
 	 * @return string The best eligible loading strategy.
 	 */
 	private function get_eligible_loading_strategy( $handle ) {
+<<<<<<< HEAD
 		$intended = (string) $this->get_data( $handle, 'strategy' );
 
 		// Bail early if there is no intended strategy.
 		if ( ! $intended ) {
+=======
+		$intended_strategy = (string) $this->get_data( $handle, 'strategy' );
+
+		// Bail early if there is no intended strategy.
+		if ( ! $intended_strategy ) {
+>>>>>>> 535c0c1 (initial commit)
 			return '';
 		}
 
@@ -900,6 +971,7 @@ JS;
 		 * If the intended strategy is 'defer', limit the initial list of eligible
 		 * strategies, since 'async' can fallback to 'defer', but not vice-versa.
 		 */
+<<<<<<< HEAD
 		$initial = ( 'defer' === $intended ) ? array( 'defer' ) : null;
 
 		$eligible = $this->filter_eligible_strategies( $handle, $initial );
@@ -910,6 +982,18 @@ JS;
 		}
 
 		return in_array( 'async', $eligible, true ) ? 'async' : 'defer';
+=======
+		$initial_strategy = ( 'defer' === $intended_strategy ) ? array( 'defer' ) : null;
+
+		$eligible_strategies = $this->filter_eligible_strategies( $handle, $initial_strategy );
+
+		// Return early once we know the eligible strategy is blocking.
+		if ( empty( $eligible_strategies ) ) {
+			return '';
+		}
+
+		return in_array( 'async', $eligible_strategies, true ) ? 'async' : 'defer';
+>>>>>>> 535c0c1 (initial commit)
 	}
 
 	/**
@@ -917,6 +1001,7 @@ JS;
 	 *
 	 * @since 6.3.0
 	 *
+<<<<<<< HEAD
 	 * @param string              $handle   The script handle.
 	 * @param string[]|null       $eligible Optional. The list of strategies to filter. Default null.
 	 * @param array<string, true> $checked  Optional. An array of already checked script handles, used to avoid recursive loops.
@@ -926,11 +1011,26 @@ JS;
 		// If no strategies are being passed, all strategies are eligible.
 		if ( null === $eligible ) {
 			$eligible = $this->delayed_strategies;
+=======
+	 * @param string              $handle              The script handle.
+	 * @param string[]|null       $eligible_strategies Optional. The list of strategies to filter. Default null.
+	 * @param array<string, true> $checked             Optional. An array of already checked script handles, used to avoid recursive loops.
+	 * @return string[] A list of eligible loading strategies that could be used.
+	 */
+	private function filter_eligible_strategies( $handle, $eligible_strategies = null, $checked = array() ) {
+		// If no strategies are being passed, all strategies are eligible.
+		if ( null === $eligible_strategies ) {
+			$eligible_strategies = $this->delayed_strategies;
+>>>>>>> 535c0c1 (initial commit)
 		}
 
 		// If this handle was already checked, return early.
 		if ( isset( $checked[ $handle ] ) ) {
+<<<<<<< HEAD
 			return $eligible;
+=======
+			return $eligible_strategies;
+>>>>>>> 535c0c1 (initial commit)
 		}
 
 		// Mark this handle as checked.
@@ -938,12 +1038,20 @@ JS;
 
 		// If this handle isn't registered, don't filter anything and return.
 		if ( ! isset( $this->registered[ $handle ] ) ) {
+<<<<<<< HEAD
 			return $eligible;
+=======
+			return $eligible_strategies;
+>>>>>>> 535c0c1 (initial commit)
 		}
 
 		// If the handle is not enqueued, don't filter anything and return.
 		if ( ! $this->query( $handle, 'enqueued' ) ) {
+<<<<<<< HEAD
 			return $eligible;
+=======
+			return $eligible_strategies;
+>>>>>>> 535c0c1 (initial commit)
 		}
 
 		$is_alias          = (bool) ! $this->registered[ $handle ]->src;
@@ -961,7 +1069,11 @@ JS;
 
 		// If the intended strategy is 'defer', filter out 'async'.
 		if ( 'defer' === $intended_strategy ) {
+<<<<<<< HEAD
 			$eligible = array( 'defer' );
+=======
+			$eligible_strategies = array( 'defer' );
+>>>>>>> 535c0c1 (initial commit)
 		}
 
 		$dependents = $this->get_dependents( $handle );
@@ -969,6 +1081,7 @@ JS;
 		// Recursively filter eligible strategies for dependents.
 		foreach ( $dependents as $dependent ) {
 			// Bail early once we know the eligible strategy is blocking.
+<<<<<<< HEAD
 			if ( empty( $eligible ) ) {
 				return array();
 			}
@@ -977,6 +1090,16 @@ JS;
 		}
 
 		return $eligible;
+=======
+			if ( empty( $eligible_strategies ) ) {
+				return array();
+			}
+
+			$eligible_strategies = $this->filter_eligible_strategies( $dependent, $eligible_strategies, $checked );
+		}
+
+		return $eligible_strategies;
+>>>>>>> 535c0c1 (initial commit)
 	}
 
 	/**

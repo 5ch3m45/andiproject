@@ -5,6 +5,14 @@
  * @package WordPress
  */
 
+<<<<<<< HEAD
+=======
+// Don't load directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+
+>>>>>>> 535c0c1 (initial commit)
 define( 'BLOCKS_PATH', ABSPATH . WPINC . '/blocks/' );
 
 // Include files required for core blocks registration.
@@ -20,11 +28,17 @@ require BLOCKS_PATH . 'require-dynamic-blocks.php';
  * avoids unnecessary logic and filesystem lookups in the other function.
  *
  * @since 6.3.0
+<<<<<<< HEAD
  *
  * @global string $wp_version The WordPress version string.
  */
 function register_core_block_style_handles() {
 	global $wp_version;
+=======
+ */
+function register_core_block_style_handles() {
+	$wp_version = wp_get_wp_version();
+>>>>>>> 535c0c1 (initial commit)
 
 	if ( ! wp_should_load_separate_core_block_assets() ) {
 		return;
@@ -155,3 +169,23 @@ function register_core_block_types_from_metadata() {
 	}
 }
 add_action( 'init', 'register_core_block_types_from_metadata' );
+<<<<<<< HEAD
+=======
+
+/**
+ * Registers the core block metadata collection.
+ *
+ * This function is hooked into the 'init' action with a priority of 9,
+ * ensuring that the core block metadata is registered before the regular
+ * block initialization that happens at priority 10.
+ *
+ * @since 6.7.0
+ */
+function wp_register_core_block_metadata_collection() {
+	wp_register_block_metadata_collection(
+		BLOCKS_PATH,
+		BLOCKS_PATH . 'blocks-json.php'
+	);
+}
+add_action( 'init', 'wp_register_core_block_metadata_collection', 9 );
+>>>>>>> 535c0c1 (initial commit)

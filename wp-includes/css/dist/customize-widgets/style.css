@@ -135,7 +135,10 @@
 }
 .customize-widgets-keyboard-shortcut-help-modal__shortcut-description{
   flex:1;
+<<<<<<< HEAD
   flex-basis:auto;
+=======
+>>>>>>> 535c0c1 (initial commit)
   margin:0;
 }
 .customize-widgets-keyboard-shortcut-help-modal__shortcut-key-combination{
