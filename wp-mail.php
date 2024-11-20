@@ -44,7 +44,11 @@ if ( $last_checked ) {
 
 set_transient( 'mailserver_last_checked', true, WP_MAIL_INTERVAL );
 
+<<<<<<< HEAD
 $time_difference = get_option( 'gmt_offset' ) * HOUR_IN_SECONDS;
+=======
+$time_difference = (int) ( (float) get_option( 'gmt_offset' ) * HOUR_IN_SECONDS );
+>>>>>>> 5102852 (initial commit 3)
 
 $phone_delim = '::';
 
